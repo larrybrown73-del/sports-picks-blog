@@ -77,11 +77,11 @@ def _fetch_final_scores(predictor_path: Path, game_date: date) -> dict[tuple[str
             }
             continue
 
-        try:
-            linescore = statsapi.linescore(game["game_id"])
-            away_runs = int(linescore["teams"]["away"]["runs"])
-            home_runs = int(linescore["teams"]["home"]["runs"])
-        except Exception:
+        away_score = game.get("away_score")
+        home_score = game.get("home_score")
+        winning_team = game.get("winning_team")
+
+        if away_score is None or home_score is None:
             results[key] = {
                 "status": status,
                 "away_score": None,
@@ -90,17 +90,19 @@ def _fetch_final_scores(predictor_path: Path, game_date: date) -> dict[tuple[str
             }
             continue
 
-        if away_runs > home_runs:
+        if winning_team:
+            winner = winning_team
+        elif away_score > home_score:
             winner = away_name
-        elif home_runs > away_runs:
+        elif home_score > away_score:
             winner = home_name
         else:
             winner = None
 
         results[key] = {
             "status": status,
-            "away_score": away_runs,
-            "home_score": home_runs,
+            "away_score": int(away_score),
+            "home_score": int(home_score),
             "winner": winner,
         }
 
