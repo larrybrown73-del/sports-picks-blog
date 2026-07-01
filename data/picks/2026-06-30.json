@@ -1,83 +1,1680 @@
 {
   "date": "2026-06-30",
-  "generatedAt": "2026-06-30T22:24:45Z",
+  "generatedAt": "2026-07-01T13:53:24Z",
+  "meta": {
+    "slateGames": 15,
+    "valuePicks": 11,
+    "propsAvailable": false,
+    "scheduleGames": 15
+  },
+  "slate": [
+    {
+      "gameId": "824819",
+      "awayTeam": "Chicago White Sox",
+      "homeTeam": "Baltimore Orioles",
+      "awayAbbrev": "CWS",
+      "homeAbbrev": "BAL",
+      "awayPitcher": "Erick Fedde",
+      "homePitcher": "Trey Gibson",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Kyle Teel",
+          "playerId": "691019"
+        },
+        {
+          "slot": 2,
+          "name": "Miguel Vargas",
+          "playerId": "678246"
+        },
+        {
+          "slot": 3,
+          "name": "Andrew Benintendi",
+          "playerId": "643217"
+        },
+        {
+          "slot": 4,
+          "name": "Colson Montgomery",
+          "playerId": "695657"
+        },
+        {
+          "slot": 5,
+          "name": "Braden Montgomery",
+          "playerId": "695731"
+        },
+        {
+          "slot": 6,
+          "name": "Chase Meidroth",
+          "playerId": "805367"
+        },
+        {
+          "slot": 7,
+          "name": "Tristan Peters",
+          "playerId": "671976"
+        },
+        {
+          "slot": 8,
+          "name": "Jacob Gonzalez",
+          "playerId": "694378"
+        },
+        {
+          "slot": 9,
+          "name": "Junior Perez",
+          "playerId": "678577"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Gunnar Henderson",
+          "playerId": "683002"
+        },
+        {
+          "slot": 2,
+          "name": "Taylor Ward",
+          "playerId": "621493"
+        },
+        {
+          "slot": 3,
+          "name": "Dylan Beavers",
+          "playerId": "687637"
+        },
+        {
+          "slot": 4,
+          "name": "Pete Alonso",
+          "playerId": "624413"
+        },
+        {
+          "slot": 5,
+          "name": "Samuel Basallo",
+          "playerId": "694212"
+        },
+        {
+          "slot": 6,
+          "name": "Leody Taveras",
+          "playerId": "665750"
+        },
+        {
+          "slot": 7,
+          "name": "Colton Cowser",
+          "playerId": "681297"
+        },
+        {
+          "slot": 8,
+          "name": "Blaze Alexander",
+          "playerId": "677942"
+        },
+        {
+          "slot": 9,
+          "name": "Jackson Holliday",
+          "playerId": "702616"
+        }
+      ]
+    },
+    {
+      "gameId": "824418",
+      "awayTeam": "Texas Rangers",
+      "homeTeam": "Cleveland Guardians",
+      "awayAbbrev": "TEX",
+      "homeAbbrev": "CLE",
+      "awayPitcher": "Jacob deGrom",
+      "homePitcher": "Tanner Bibee",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Joc Pederson",
+          "playerId": "592626"
+        },
+        {
+          "slot": 2,
+          "name": "Josh Jung",
+          "playerId": "673962"
+        },
+        {
+          "slot": 3,
+          "name": "Cam Cauley",
+          "playerId": "695508"
+        },
+        {
+          "slot": 4,
+          "name": "Jake Burger",
+          "playerId": "669394"
+        },
+        {
+          "slot": 5,
+          "name": "Ezequiel Duran",
+          "playerId": "677649"
+        },
+        {
+          "slot": 6,
+          "name": "Evan Carter",
+          "playerId": "694497"
+        },
+        {
+          "slot": 7,
+          "name": "Alejandro Osuna",
+          "playerId": "696030"
+        },
+        {
+          "slot": 8,
+          "name": "Elias D\u00edaz",
+          "playerId": "553869"
+        },
+        {
+          "slot": 9,
+          "name": "Nicky Lopez",
+          "playerId": "670032"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Travis Bazzana",
+          "playerId": "683953"
+        },
+        {
+          "slot": 2,
+          "name": "Chase DeLauter",
+          "playerId": "800050"
+        },
+        {
+          "slot": 3,
+          "name": "Brayan Rocchio",
+          "playerId": "677587"
+        },
+        {
+          "slot": 4,
+          "name": "David Fry",
+          "playerId": "681807"
+        },
+        {
+          "slot": 5,
+          "name": "Cooper Ingle",
+          "playerId": "694876"
+        },
+        {
+          "slot": 6,
+          "name": "Daniel Schneemann",
+          "playerId": "682177"
+        },
+        {
+          "slot": 7,
+          "name": "Gabriel Arias",
+          "playerId": "672356"
+        },
+        {
+          "slot": 8,
+          "name": "Patrick Bailey",
+          "playerId": "672275"
+        },
+        {
+          "slot": 9,
+          "name": "Steven Kwan",
+          "playerId": "680757"
+        }
+      ]
+    },
+    {
+      "gameId": "823445",
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "Philadelphia Phillies",
+      "awayAbbrev": "PIT",
+      "homeAbbrev": "PHI",
+      "awayPitcher": "Bubba Chandler",
+      "homePitcher": "Cristopher S\u00e1nchez",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Konnor Griffin",
+          "playerId": "804606"
+        },
+        {
+          "slot": 2,
+          "name": "Esmerlyn Valdez",
+          "playerId": "699013"
+        },
+        {
+          "slot": 3,
+          "name": "Bryan Reynolds",
+          "playerId": "668804"
+        },
+        {
+          "slot": 4,
+          "name": "Marcell Ozuna",
+          "playerId": "542303"
+        },
+        {
+          "slot": 5,
+          "name": "Nick Gonzales",
+          "playerId": "693304"
+        },
+        {
+          "slot": 6,
+          "name": "Endy Rodr\u00edguez",
+          "playerId": "682848"
+        },
+        {
+          "slot": 7,
+          "name": "Jared Triolo",
+          "playerId": "669707"
+        },
+        {
+          "slot": 8,
+          "name": "Billy Cook",
+          "playerId": "695257"
+        },
+        {
+          "slot": 9,
+          "name": "Ryan O'Hearn",
+          "playerId": "656811"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Trea Turner",
+          "playerId": "607208"
+        },
+        {
+          "slot": 2,
+          "name": "Kyle Schwarber",
+          "playerId": "656941"
+        },
+        {
+          "slot": 3,
+          "name": "Bryce Harper",
+          "playerId": "547180"
+        },
+        {
+          "slot": 4,
+          "name": "Brandon Marsh",
+          "playerId": "669016"
+        },
+        {
+          "slot": 5,
+          "name": "Alec Bohm",
+          "playerId": "664761"
+        },
+        {
+          "slot": 6,
+          "name": "Bryson Stott",
+          "playerId": "681082"
+        },
+        {
+          "slot": 7,
+          "name": "J.T. Realmuto",
+          "playerId": "592663"
+        },
+        {
+          "slot": 8,
+          "name": "Derek Hill",
+          "playerId": "656537"
+        },
+        {
+          "slot": 9,
+          "name": "Justin Crawford",
+          "playerId": "702222"
+        }
+      ]
+    },
+    {
+      "gameId": "823528",
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "New York Yankees",
+      "awayAbbrev": "DET",
+      "homeAbbrev": "NYY",
+      "awayPitcher": "Tarik Skubal",
+      "homePitcher": "Cam Schlittler",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Kevin McGonigle",
+          "playerId": "805808"
+        },
+        {
+          "slot": 2,
+          "name": "Dillon Dingler",
+          "playerId": "693307"
+        },
+        {
+          "slot": 3,
+          "name": "Kerry Carpenter",
+          "playerId": "681481"
+        },
+        {
+          "slot": 4,
+          "name": "Riley Greene",
+          "playerId": "682985"
+        },
+        {
+          "slot": 5,
+          "name": "Colt Keith",
+          "playerId": "690993"
+        },
+        {
+          "slot": 6,
+          "name": "Spencer Torkelson",
+          "playerId": "679529"
+        },
+        {
+          "slot": 7,
+          "name": "Zach McKinstry",
+          "playerId": "656716"
+        },
+        {
+          "slot": 8,
+          "name": "James Outman",
+          "playerId": "681546"
+        },
+        {
+          "slot": 9,
+          "name": "Hao-Yu Lee",
+          "playerId": "701678"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Paul Goldschmidt",
+          "playerId": "502671"
+        },
+        {
+          "slot": 2,
+          "name": "Amed Rosario",
+          "playerId": "642708"
+        },
+        {
+          "slot": 3,
+          "name": "Ben Rice",
+          "playerId": "700250"
+        },
+        {
+          "slot": 4,
+          "name": "Jasson Dom\u00ednguez",
+          "playerId": "691176"
+        },
+        {
+          "slot": 5,
+          "name": "Anthony Volpe",
+          "playerId": "683011"
+        },
+        {
+          "slot": 6,
+          "name": "Jos\u00e9 Caballero",
+          "playerId": "676609"
+        },
+        {
+          "slot": 7,
+          "name": "Spencer Jones",
+          "playerId": "682987"
+        },
+        {
+          "slot": 8,
+          "name": "Max Schuemann",
+          "playerId": "680474"
+        },
+        {
+          "slot": 9,
+          "name": "Ali S\u00e1nchez",
+          "playerId": "645305"
+        }
+      ]
+    },
+    {
+      "gameId": "822793",
+      "awayTeam": "New York Mets",
+      "homeTeam": "Toronto Blue Jays",
+      "awayAbbrev": "NYM",
+      "homeAbbrev": "TOR",
+      "awayPitcher": "Nolan McLean",
+      "homePitcher": "Kevin Gausman",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Carson Benge",
+          "playerId": "701807"
+        },
+        {
+          "slot": 2,
+          "name": "Juan Soto",
+          "playerId": "665742"
+        },
+        {
+          "slot": 3,
+          "name": "Bo Bichette",
+          "playerId": "666182"
+        },
+        {
+          "slot": 4,
+          "name": "Francisco Lindor",
+          "playerId": "596019"
+        },
+        {
+          "slot": 5,
+          "name": "Jared Young",
+          "playerId": "676724"
+        },
+        {
+          "slot": 6,
+          "name": "A.J. Ewing",
+          "playerId": "805999"
+        },
+        {
+          "slot": 7,
+          "name": "Francisco Alvarez",
+          "playerId": "682626"
+        },
+        {
+          "slot": 8,
+          "name": "Brett Baty",
+          "playerId": "683146"
+        },
+        {
+          "slot": 9,
+          "name": "Luis Torrens",
+          "playerId": "620443"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "George Springer",
+          "playerId": "543807"
+        },
+        {
+          "slot": 2,
+          "name": "Nathan Lukes",
+          "playerId": "664770"
+        },
+        {
+          "slot": 3,
+          "name": "Alejandro Kirk",
+          "playerId": "672386"
+        },
+        {
+          "slot": 4,
+          "name": "Sean Keys",
+          "playerId": "815873"
+        },
+        {
+          "slot": 5,
+          "name": "Ernie Clement",
+          "playerId": "676391"
+        },
+        {
+          "slot": 6,
+          "name": "Daulton Varsho",
+          "playerId": "662139"
+        },
+        {
+          "slot": 7,
+          "name": "Luis Ur\u00edas",
+          "playerId": "649966"
+        },
+        {
+          "slot": 8,
+          "name": "Myles Straw",
+          "playerId": "664702"
+        },
+        {
+          "slot": 9,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "playerId": "665926"
+        }
+      ]
+    },
+    {
+      "gameId": "824742",
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Boston Red Sox",
+      "awayAbbrev": "WSH",
+      "homeAbbrev": "BOS",
+      "awayPitcher": "Cade Cavalli",
+      "homePitcher": "Connelly Early",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "James Wood",
+          "playerId": "695578"
+        },
+        {
+          "slot": 2,
+          "name": "Luis Garc\u00eda Jr.",
+          "playerId": "671277"
+        },
+        {
+          "slot": 3,
+          "name": "Curtis Mead",
+          "playerId": "678554"
+        },
+        {
+          "slot": 4,
+          "name": "CJ Abrams",
+          "playerId": "682928"
+        },
+        {
+          "slot": 5,
+          "name": "Dylan Crews",
+          "playerId": "686611"
+        },
+        {
+          "slot": 6,
+          "name": "Zak Kent",
+          "playerId": "687849"
+        },
+        {
+          "slot": 7,
+          "name": "Daylen Lile",
+          "playerId": "695734"
+        },
+        {
+          "slot": 8,
+          "name": "Nasim Nu\u00f1ez",
+          "playerId": "683083"
+        },
+        {
+          "slot": 9,
+          "name": "Keibert Ruiz",
+          "playerId": "660688"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Anthony Seigler",
+          "playerId": "678011"
+        },
+        {
+          "slot": 2,
+          "name": "Ceddanne Rafaela",
+          "playerId": "678882"
+        },
+        {
+          "slot": 3,
+          "name": "Wilyer Abreu",
+          "playerId": "677800"
+        },
+        {
+          "slot": 4,
+          "name": "Andruw Monasterio",
+          "playerId": "655316"
+        },
+        {
+          "slot": 5,
+          "name": "Jarren Duran",
+          "playerId": "680776"
+        },
+        {
+          "slot": 6,
+          "name": "Romy Gonzalez",
+          "playerId": "663853"
+        },
+        {
+          "slot": 7,
+          "name": "Caleb Durbin",
+          "playerId": "702332"
+        },
+        {
+          "slot": 8,
+          "name": "Carlos Narv\u00e1ez",
+          "playerId": "665966"
+        },
+        {
+          "slot": 9,
+          "name": "Tsung-Che Cheng",
+          "playerId": "691907"
+        }
+      ]
+    },
+    {
+      "gameId": "824907",
+      "awayTeam": "St. Louis Cardinals",
+      "homeTeam": "Atlanta Braves",
+      "awayAbbrev": "STL",
+      "homeAbbrev": "ATL",
+      "awayPitcher": "Matthew Liberatore",
+      "homePitcher": "Mart\u00edn P\u00e9rez",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "JJ Wetherholt",
+          "playerId": "802139"
+        },
+        {
+          "slot": 2,
+          "name": "Iv\u00e1n Herrera",
+          "playerId": "671056"
+        },
+        {
+          "slot": 3,
+          "name": "Jordan Walker",
+          "playerId": "691023"
+        },
+        {
+          "slot": 4,
+          "name": "Alec Burleson",
+          "playerId": "676475"
+        },
+        {
+          "slot": 5,
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "playerId": "665877"
+        },
+        {
+          "slot": 6,
+          "name": "Masyn Winn",
+          "playerId": "691026"
+        },
+        {
+          "slot": 7,
+          "name": "Lars Nootbaar",
+          "playerId": "663457"
+        },
+        {
+          "slot": 8,
+          "name": "Blaze Jordan",
+          "playerId": "691458"
+        },
+        {
+          "slot": 9,
+          "name": "Nathan Church",
+          "playerId": "701675"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Drake Baldwin",
+          "playerId": "686948"
+        },
+        {
+          "slot": 2,
+          "name": "Ozzie Albies",
+          "playerId": "645277"
+        },
+        {
+          "slot": 3,
+          "name": "Matt Olson",
+          "playerId": "621566"
+        },
+        {
+          "slot": 4,
+          "name": "Michael Harris II",
+          "playerId": "671739"
+        },
+        {
+          "slot": 5,
+          "name": "Mauricio Dub\u00f3n",
+          "playerId": "643289"
+        },
+        {
+          "slot": 6,
+          "name": "Mike Yastrzemski",
+          "playerId": "573262"
+        },
+        {
+          "slot": 7,
+          "name": "Austin Riley",
+          "playerId": "663586"
+        },
+        {
+          "slot": 8,
+          "name": "Ha-Seong Kim",
+          "playerId": "673490"
+        },
+        {
+          "slot": 9,
+          "name": "Raisel Iglesias",
+          "playerId": "628452"
+        }
+      ]
+    },
+    {
+      "gameId": "824096",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Kansas City Royals",
+      "awayAbbrev": "TB",
+      "homeAbbrev": "KC",
+      "awayPitcher": "Griffin Jax",
+      "homePitcher": "Noah Cameron",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Yandy D\u00edaz",
+          "playerId": "650490"
+        },
+        {
+          "slot": 2,
+          "name": "Jonathan Aranda",
+          "playerId": "666018"
+        },
+        {
+          "slot": 3,
+          "name": "Junior Caminero",
+          "playerId": "691406"
+        },
+        {
+          "slot": 4,
+          "name": "Ryan Vilade",
+          "playerId": "668723"
+        },
+        {
+          "slot": 5,
+          "name": "Jonny DeLuca",
+          "playerId": "676356"
+        },
+        {
+          "slot": 6,
+          "name": "Chandler Simpson",
+          "playerId": "802415"
+        },
+        {
+          "slot": 7,
+          "name": "Ben Williamson",
+          "playerId": "810938"
+        },
+        {
+          "slot": 8,
+          "name": "Taylor Walls",
+          "playerId": "670764"
+        },
+        {
+          "slot": 9,
+          "name": "Nick Fortes",
+          "playerId": "663743"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Carter Jensen",
+          "playerId": "695600"
+        },
+        {
+          "slot": 2,
+          "name": "Bobby Witt Jr.",
+          "playerId": "677951"
+        },
+        {
+          "slot": 3,
+          "name": "Jac Caglianone",
+          "playerId": "695506"
+        },
+        {
+          "slot": 4,
+          "name": "Lane Thomas",
+          "playerId": "657041"
+        },
+        {
+          "slot": 5,
+          "name": "Michael Massey",
+          "playerId": "686681"
+        },
+        {
+          "slot": 6,
+          "name": "Salvador Perez",
+          "playerId": "521692"
+        },
+        {
+          "slot": 7,
+          "name": "John Rave",
+          "playerId": "670231"
+        },
+        {
+          "slot": 8,
+          "name": "Nick Loftin",
+          "playerId": "679845"
+        },
+        {
+          "slot": 9,
+          "name": "Isaac Collins",
+          "playerId": "686555"
+        }
+      ]
+    },
+    {
+      "gameId": "823768",
+      "awayTeam": "Cincinnati Reds",
+      "homeTeam": "Milwaukee Brewers",
+      "awayAbbrev": "CIN",
+      "homeAbbrev": "MIL",
+      "awayPitcher": "Rhett Lowder",
+      "homePitcher": "Brandon Sproat",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Elly De La Cruz",
+          "playerId": "682829"
+        },
+        {
+          "slot": 2,
+          "name": "Sal Stewart",
+          "playerId": "701398"
+        },
+        {
+          "slot": 3,
+          "name": "JJ Bleday",
+          "playerId": "668709"
+        },
+        {
+          "slot": 4,
+          "name": "Eugenio Su\u00e1rez",
+          "playerId": "553993"
+        },
+        {
+          "slot": 5,
+          "name": "Nathaniel Lowe",
+          "playerId": "663993"
+        },
+        {
+          "slot": 6,
+          "name": "Ivan Johnson",
+          "playerId": "671155"
+        },
+        {
+          "slot": 7,
+          "name": "Edwin Arroyo",
+          "playerId": "695490"
+        },
+        {
+          "slot": 8,
+          "name": "Jose Trevino",
+          "playerId": "624431"
+        },
+        {
+          "slot": 9,
+          "name": "Matt McLain",
+          "playerId": "680574"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Christian Yelich",
+          "playerId": "592885"
+        },
+        {
+          "slot": 2,
+          "name": "Jackson Chourio",
+          "playerId": "694192"
+        },
+        {
+          "slot": 3,
+          "name": "Brice Turang",
+          "playerId": "668930"
+        },
+        {
+          "slot": 4,
+          "name": "William Contreras",
+          "playerId": "661388"
+        },
+        {
+          "slot": 5,
+          "name": "Jake Bauers",
+          "playerId": "641343"
+        },
+        {
+          "slot": 6,
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
+        },
+        {
+          "slot": 7,
+          "name": "Sal Frelick",
+          "playerId": "686217"
+        },
+        {
+          "slot": 8,
+          "name": "Joey Ortiz",
+          "playerId": "687401"
+        },
+        {
+          "slot": 9,
+          "name": "David Hamilton",
+          "playerId": "666152"
+        }
+      ]
+    },
+    {
+      "gameId": "824661",
+      "awayTeam": "San Diego Padres",
+      "homeTeam": "Chicago Cubs",
+      "awayAbbrev": "SD",
+      "homeAbbrev": "CHC",
+      "awayPitcher": "JP Sears",
+      "homePitcher": "Matthew Boyd",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Fernando Tatis Jr.",
+          "playerId": "665487"
+        },
+        {
+          "slot": 2,
+          "name": "Samad Taylor",
+          "playerId": "669392"
+        },
+        {
+          "slot": 3,
+          "name": "Manny Machado",
+          "playerId": "592518"
+        },
+        {
+          "slot": 4,
+          "name": "Jake Cronenworth",
+          "playerId": "630105"
+        },
+        {
+          "slot": 5,
+          "name": "Ty France",
+          "playerId": "664034"
+        },
+        {
+          "slot": 6,
+          "name": "Jackson Merrill",
+          "playerId": "701538"
+        },
+        {
+          "slot": 7,
+          "name": "Xander Bogaerts",
+          "playerId": "593428"
+        },
+        {
+          "slot": 8,
+          "name": "Gavin Sheets",
+          "playerId": "657757"
+        },
+        {
+          "slot": 9,
+          "name": "Freddy Fermin",
+          "playerId": "666023"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Pete Crow-Armstrong",
+          "playerId": "691718"
+        },
+        {
+          "slot": 2,
+          "name": "Alex Bregman",
+          "playerId": "608324"
+        },
+        {
+          "slot": 3,
+          "name": "Seiya Suzuki",
+          "playerId": "673548"
+        },
+        {
+          "slot": 4,
+          "name": "Carson Kelly",
+          "playerId": "608348"
+        },
+        {
+          "slot": 5,
+          "name": "Michael Busch",
+          "playerId": "683737"
+        },
+        {
+          "slot": 6,
+          "name": "Nico Hoerner",
+          "playerId": "663538"
+        },
+        {
+          "slot": 7,
+          "name": "Ian Happ",
+          "playerId": "664023"
+        },
+        {
+          "slot": 8,
+          "name": "Dansby Swanson",
+          "playerId": "621020"
+        },
+        {
+          "slot": 9,
+          "name": "Justin Dean",
+          "playerId": "681909"
+        }
+      ]
+    },
+    {
+      "gameId": "824175",
+      "awayTeam": "Minnesota Twins",
+      "homeTeam": "Houston Astros",
+      "awayAbbrev": "MIN",
+      "homeAbbrev": "HOU",
+      "awayPitcher": "Joe Ryan",
+      "homePitcher": "Mike Burrows",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Luke Keaschall",
+          "playerId": "807712"
+        },
+        {
+          "slot": 2,
+          "name": "Brooks Lee",
+          "playerId": "686797"
+        },
+        {
+          "slot": 3,
+          "name": "Kody Clemens",
+          "playerId": "665019"
+        },
+        {
+          "slot": 4,
+          "name": "Josh Bell",
+          "playerId": "605137"
+        },
+        {
+          "slot": 5,
+          "name": "Royce Lewis",
+          "playerId": "668904"
+        },
+        {
+          "slot": 6,
+          "name": "Victor Caratini",
+          "playerId": "605170"
+        },
+        {
+          "slot": 7,
+          "name": "Ryan Kreidler",
+          "playerId": "668952"
+        },
+        {
+          "slot": 8,
+          "name": "Alex Jackson",
+          "playerId": "656577"
+        },
+        {
+          "slot": 9,
+          "name": "Austin Martin",
+          "playerId": "668885"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Jose Altuve",
+          "playerId": "514888"
+        },
+        {
+          "slot": 2,
+          "name": "Brice Matthews",
+          "playerId": "694728"
+        },
+        {
+          "slot": 3,
+          "name": "Isaac Paredes",
+          "playerId": "670623"
+        },
+        {
+          "slot": 4,
+          "name": "Christian Walker",
+          "playerId": "572233"
+        },
+        {
+          "slot": 5,
+          "name": "Cam Smith",
+          "playerId": "701358"
+        },
+        {
+          "slot": 6,
+          "name": "Jake Meyers",
+          "playerId": "676694"
+        },
+        {
+          "slot": 7,
+          "name": "Yainer Diaz",
+          "playerId": "673237"
+        },
+        {
+          "slot": 8,
+          "name": "Nick Allen",
+          "playerId": "669397"
+        },
+        {
+          "slot": 9,
+          "name": "Raynel Delgado",
+          "playerId": "669384"
+        }
+      ]
+    },
+    {
+      "gameId": "824338",
+      "awayTeam": "Miami Marlins",
+      "homeTeam": "Colorado Rockies",
+      "awayAbbrev": "MIA",
+      "homeAbbrev": "COL",
+      "awayPitcher": "Eury P\u00e9rez",
+      "homePitcher": "Tanner Gordon",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Liam Hicks",
+          "playerId": "689414"
+        },
+        {
+          "slot": 2,
+          "name": "Kyle Stowers",
+          "playerId": "669065"
+        },
+        {
+          "slot": 3,
+          "name": "Griffin Conine",
+          "playerId": "665052"
+        },
+        {
+          "slot": 4,
+          "name": "Xavier Edwards",
+          "playerId": "669364"
+        },
+        {
+          "slot": 5,
+          "name": "Jakob Marsee",
+          "playerId": "805300"
+        },
+        {
+          "slot": 6,
+          "name": "Owen Caissie",
+          "playerId": "683357"
+        },
+        {
+          "slot": 7,
+          "name": "Javier Sanoja",
+          "playerId": "691594"
+        },
+        {
+          "slot": 8,
+          "name": "Brian Navarreto",
+          "playerId": "640459"
+        },
+        {
+          "slot": 9,
+          "name": "Leo Jim\u00e9nez",
+          "playerId": "677870"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Jake McCarthy",
+          "playerId": "664983"
+        },
+        {
+          "slot": 2,
+          "name": "Mickey Moniak",
+          "playerId": "666160"
+        },
+        {
+          "slot": 3,
+          "name": "Braxton Fulford",
+          "playerId": "690924"
+        },
+        {
+          "slot": 4,
+          "name": "TJ Rumfield",
+          "playerId": "681198"
+        },
+        {
+          "slot": 5,
+          "name": "Cole Carrigg",
+          "playerId": "694249"
+        },
+        {
+          "slot": 6,
+          "name": "Brett Sullivan",
+          "playerId": "664954"
+        },
+        {
+          "slot": 7,
+          "name": "Edouard Julien",
+          "playerId": "666397"
+        },
+        {
+          "slot": 8,
+          "name": "Kyle Karros",
+          "playerId": "691720"
+        },
+        {
+          "slot": 9,
+          "name": "Ezequiel Tovar",
+          "playerId": "678662"
+        }
+      ]
+    },
+    {
+      "gameId": "824984",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "Athletics",
+      "awayAbbrev": "LAD",
+      "homeAbbrev": "ATH",
+      "awayPitcher": "Justin Wrobleski",
+      "homePitcher": "Jeffrey Springs",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Shohei Ohtani",
+          "playerId": "660271"
+        },
+        {
+          "slot": 2,
+          "name": "Andy Pages",
+          "playerId": "681624"
+        },
+        {
+          "slot": 3,
+          "name": "Freddie Freeman",
+          "playerId": "518692"
+        },
+        {
+          "slot": 4,
+          "name": "Mookie Betts",
+          "playerId": "605141"
+        },
+        {
+          "slot": 5,
+          "name": "Teoscar Hern\u00e1ndez",
+          "playerId": "606192"
+        },
+        {
+          "slot": 6,
+          "name": "Kyle Tucker",
+          "playerId": "663656"
+        },
+        {
+          "slot": 7,
+          "name": "Tommy Edman",
+          "playerId": "669242"
+        },
+        {
+          "slot": 8,
+          "name": "Miguel Rojas",
+          "playerId": "500743"
+        },
+        {
+          "slot": 9,
+          "name": "Dalton Rushing",
+          "playerId": "687221"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Henry Bolte",
+          "playerId": "703607"
+        },
+        {
+          "slot": 2,
+          "name": "Shea Langeliers",
+          "playerId": "669127"
+        },
+        {
+          "slot": 3,
+          "name": "Nick Kurtz",
+          "playerId": "701762"
+        },
+        {
+          "slot": 4,
+          "name": "Jonah Heim",
+          "playerId": "641680"
+        },
+        {
+          "slot": 5,
+          "name": "Lawrence Butler",
+          "playerId": "671732"
+        },
+        {
+          "slot": 6,
+          "name": "Carlos Cortes",
+          "playerId": "666126"
+        },
+        {
+          "slot": 7,
+          "name": "Max Muncy",
+          "playerId": "691777"
+        },
+        {
+          "slot": 8,
+          "name": "Alika Williams",
+          "playerId": "675961"
+        },
+        {
+          "slot": 9,
+          "name": "Joshua Kuroda-Grauer",
+          "playerId": "811965"
+        }
+      ]
+    },
+    {
+      "gameId": "823122",
+      "awayTeam": "Los Angeles Angels",
+      "homeTeam": "Seattle Mariners",
+      "awayAbbrev": "LAA",
+      "homeAbbrev": "SEA",
+      "awayPitcher": "Jos\u00e9 Soriano",
+      "homePitcher": "Bryan Woo",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Zach Neto",
+          "playerId": "687263"
+        },
+        {
+          "slot": 2,
+          "name": "Vaughn Grissom",
+          "playerId": "687093"
+        },
+        {
+          "slot": 3,
+          "name": "Nolan Schanuel",
+          "playerId": "694384"
+        },
+        {
+          "slot": 4,
+          "name": "Jorge Soler",
+          "playerId": "624585"
+        },
+        {
+          "slot": 5,
+          "name": "Wade Meckler",
+          "playerId": "685133"
+        },
+        {
+          "slot": 6,
+          "name": "Jo Adell",
+          "playerId": "666176"
+        },
+        {
+          "slot": 7,
+          "name": "Josh Lowe",
+          "playerId": "666139"
+        },
+        {
+          "slot": 8,
+          "name": "Logan O'Hoppe",
+          "playerId": "681351"
+        },
+        {
+          "slot": 9,
+          "name": "Donovan Walton",
+          "playerId": "622268"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "J.P. Crawford",
+          "playerId": "641487"
+        },
+        {
+          "slot": 2,
+          "name": "Julio Rodr\u00edguez",
+          "playerId": "677594"
+        },
+        {
+          "slot": 3,
+          "name": "Josh Naylor",
+          "playerId": "647304"
+        },
+        {
+          "slot": 4,
+          "name": "Randy Arozarena",
+          "playerId": "668227"
+        },
+        {
+          "slot": 5,
+          "name": "Cal Raleigh",
+          "playerId": "663728"
+        },
+        {
+          "slot": 6,
+          "name": "Cole Young",
+          "playerId": "702284"
+        },
+        {
+          "slot": 7,
+          "name": "Colt Emerson",
+          "playerId": "806068"
+        },
+        {
+          "slot": 8,
+          "name": "Victor Robles",
+          "playerId": "645302"
+        },
+        {
+          "slot": 9,
+          "name": "Weston Wilson",
+          "playerId": "642215"
+        }
+      ]
+    },
+    {
+      "gameId": "825066",
+      "awayTeam": "San Francisco Giants",
+      "homeTeam": "Arizona Diamondbacks",
+      "awayAbbrev": "SF",
+      "homeAbbrev": "AZ",
+      "awayPitcher": "Landen Roupp",
+      "homePitcher": "Brandon Pfaadt",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Luis Arraez",
+          "playerId": "650333"
+        },
+        {
+          "slot": 2,
+          "name": "Bryce Eldridge",
+          "playerId": "805811"
+        },
+        {
+          "slot": 3,
+          "name": "Casey Schmitt",
+          "playerId": "669477"
+        },
+        {
+          "slot": 4,
+          "name": "Rafael Devers",
+          "playerId": "646240"
+        },
+        {
+          "slot": 5,
+          "name": "Jung Hoo Lee",
+          "playerId": "808982"
+        },
+        {
+          "slot": 6,
+          "name": "Heliot Ramos",
+          "playerId": "671218"
+        },
+        {
+          "slot": 7,
+          "name": "Jonah Cox",
+          "playerId": "813841"
+        },
+        {
+          "slot": 8,
+          "name": "Drew Gilbert",
+          "playerId": "687551"
+        },
+        {
+          "slot": 9,
+          "name": "Drew Cavanaugh",
+          "playerId": "701852"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Ketel Marte",
+          "playerId": "606466"
+        },
+        {
+          "slot": 2,
+          "name": "Geraldo Perdomo",
+          "playerId": "672695"
+        },
+        {
+          "slot": 3,
+          "name": "Corbin Carroll",
+          "playerId": "682998"
+        },
+        {
+          "slot": 4,
+          "name": "Gabriel Moreno",
+          "playerId": "672515"
+        },
+        {
+          "slot": 5,
+          "name": "Lourdes Gurriel Jr.",
+          "playerId": "666971"
+        },
+        {
+          "slot": 6,
+          "name": "Max Kepler",
+          "playerId": "596146"
+        },
+        {
+          "slot": 7,
+          "name": "Nolan Arenado",
+          "playerId": "571448"
+        },
+        {
+          "slot": 8,
+          "name": "Ildemaro Vargas",
+          "playerId": "545121"
+        },
+        {
+          "slot": 9,
+          "name": "Jorge Barrosa",
+          "playerId": "678489"
+        }
+      ]
+    }
+  ],
   "moneylinePicks": [
     {
       "awayTeam": "Miami Marlins",
       "homeTeam": "Colorado Rockies",
       "play": "Colorado Rockies",
       "edgePct": 16.99,
-      "sizingPct": 7.28
+      "sizingPct": 7.28,
+      "americanOdds": 140,
+      "modelWinProb": 0.5865,
+      "confidenceScore": 75,
+      "confidenceLabel": "High"
     },
     {
       "awayTeam": "Pittsburgh Pirates",
       "homeTeam": "Philadelphia Phillies",
       "play": "Pittsburgh Pirates",
       "edgePct": 16.06,
-      "sizingPct": 6.88
+      "sizingPct": 6.88,
+      "americanOdds": 140,
+      "modelWinProb": 0.5772,
+      "confidenceScore": 70,
+      "confidenceLabel": "High"
     },
     {
       "awayTeam": "Los Angeles Dodgers",
       "homeTeam": "Athletics",
       "play": "Athletics",
       "edgePct": 10.25,
-      "sizingPct": 4.39
+      "sizingPct": 4.39,
+      "americanOdds": 140,
+      "modelWinProb": 0.5191,
+      "confidenceScore": 43,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "Washington Nationals",
       "homeTeam": "Boston Red Sox",
       "play": "Washington Nationals",
       "edgePct": 9.73,
-      "sizingPct": 4.17
+      "sizingPct": 4.17,
+      "americanOdds": 140,
+      "modelWinProb": 0.514,
+      "confidenceScore": 40,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "Minnesota Twins",
       "homeTeam": "Houston Astros",
       "play": "Minnesota Twins",
       "edgePct": 8.46,
-      "sizingPct": 4.04
+      "sizingPct": 4.04,
+      "americanOdds": 110,
+      "modelWinProb": 0.5608,
+      "confidenceScore": 39,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "Detroit Tigers",
       "homeTeam": "New York Yankees",
       "play": "New York Yankees",
       "edgePct": 6.9,
-      "sizingPct": 2.96
+      "sizingPct": 2.96,
+      "americanOdds": 140,
+      "modelWinProb": 0.4856,
+      "confidenceScore": 26,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "Los Angeles Angels",
       "homeTeam": "Seattle Mariners",
       "play": "Seattle Mariners",
       "edgePct": 6.81,
-      "sizingPct": 2.92
+      "sizingPct": 2.92,
+      "americanOdds": 140,
+      "modelWinProb": 0.4847,
+      "confidenceScore": 26,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "St. Louis Cardinals",
       "homeTeam": "Atlanta Braves",
       "play": "St. Louis Cardinals",
       "edgePct": 6.16,
-      "sizingPct": 3.16
+      "sizingPct": 3.16,
+      "americanOdds": -105,
+      "modelWinProb": 0.5738,
+      "confidenceScore": 31,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "New York Mets",
       "homeTeam": "Toronto Blue Jays",
       "play": "New York Mets",
       "edgePct": 4.79,
-      "sizingPct": 2.05
+      "sizingPct": 2.05,
+      "americanOdds": 140,
+      "modelWinProb": 0.4646,
+      "confidenceScore": 16,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "San Diego Padres",
       "homeTeam": "Chicago Cubs",
       "play": "San Diego Padres",
       "edgePct": 4.76,
-      "sizingPct": 2.04
+      "sizingPct": 2.04,
+      "americanOdds": 140,
+      "modelWinProb": 0.4643,
+      "confidenceScore": 16,
+      "confidenceLabel": "Low"
     },
     {
       "awayTeam": "Texas Rangers",
       "homeTeam": "Cleveland Guardians",
       "play": "Cleveland Guardians",
       "edgePct": 3.94,
-      "sizingPct": 1.69
+      "sizingPct": 1.69,
+      "americanOdds": 140,
+      "modelWinProb": 0.4561,
+      "confidenceScore": 12,
+      "confidenceLabel": "Low"
     }
   ],
   "propPicks": {
@@ -86,10 +1683,10 @@
     "pitcherEdges": []
   },
   "performance": {
-    "accuracy": "66.5%",
-    "roi": "+36.35%",
-    "netProfit": "51051.53",
-    "brierScore": "0.2315",
+    "accuracy": "65.8%",
+    "roi": "+43.99%",
+    "netProfit": "59847.57",
+    "brierScore": "0.2321",
     "gamesScored": 600,
     "betsPlaced": 201
   }

@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-29",
+  "generatedAt": "2026-07-01T13:53:38Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-06-29",
+      "matchup": "Chicago Cubs @ Milwaukee Brewers",
+      "pick": "Chicago Cubs",
+      "americanOdds": 0,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-06-29",
+      "matchup": "Houston Astros @ Texas Rangers",
+      "pick": "Houston Astros",
+      "americanOdds": 0,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 0,
+    "losses": 0,
+    "pending": 2,
+    "netProfitLoss": 0.0
+  }
+}
