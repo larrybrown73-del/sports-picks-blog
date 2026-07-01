@@ -57,7 +57,12 @@ export default function HomePage() {
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-white">
-          Today&apos;s Slate ({slate.length} games)
+          Lineup &amp; Slate Details
+          {slate.length > 0 && (
+            <span className="ml-2 text-base font-normal text-[var(--muted)]">
+              ({slate.length} games)
+            </span>
+          )}
         </h2>
         <SlateBoard slate={slate} />
       </section>
