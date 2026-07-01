@@ -1,14 +1,16 @@
 import type { MoneylinePick } from "@/lib/types";
 
+type ConfidenceLabel = NonNullable<MoneylinePick["confidenceLabel"]>;
+
 export function confidenceFromEdge(edgePct: number, modelWinProb = 0.52): {
   score: number;
-  label: MoneylinePick["confidenceLabel"];
+  label: ConfidenceLabel;
 } {
   const score = Math.min(
     100,
     Math.max(0, Math.round(edgePct * 4.0 + (modelWinProb - 0.5) * 80)),
   );
-  let label: NonNullable<MoneylinePick["confidenceLabel"]> = "Low";
+  let label: ConfidenceLabel = "Low";
   if (score >= 85) {
     label = "Elite";
   } else if (score >= 70) {
@@ -21,7 +23,7 @@ export function confidenceFromEdge(edgePct: number, modelWinProb = 0.52): {
 
 export function resolveConfidence(pick: MoneylinePick): {
   score: number;
-  label: NonNullable<MoneylinePick["confidenceLabel"]>;
+  label: ConfidenceLabel;
 } {
   if (pick.confidenceScore != null && pick.confidenceLabel) {
     return { score: pick.confidenceScore, label: pick.confidenceLabel };
@@ -29,9 +31,7 @@ export function resolveConfidence(pick: MoneylinePick): {
   return confidenceFromEdge(pick.edgePct, pick.modelWinProb ?? 0.52);
 }
 
-export function confidenceLabelClass(
-  label: NonNullable<MoneylinePick["confidenceLabel"]>,
-): string {
+export function confidenceLabelClass(label: ConfidenceLabel): string {
   switch (label) {
     case "Elite":
       return "text-emerald-300";
