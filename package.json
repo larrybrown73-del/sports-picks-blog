@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync-picks": "python scripts/export_daily_picks.py"
+    "sync-picks": "python scripts/export_daily_picks.py --skip-props",
+    "grade-picks": "python scripts/grade_picks.py"
   },
   "dependencies": {
     "next": "^15.1.0",

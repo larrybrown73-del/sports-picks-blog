@@ -60,11 +60,14 @@ Each morning on your PC:
 ```powershell
 cd C:\Users\Mamas\sports-picks-blog
 
-# 1. Export fresh picks
-& "D:\Juniors Files\baseball-predictor\.venv\Scripts\python.exe" scripts/export_daily_picks.py --skip-props
+# 1. Export fresh picks (includes slate, meta, and auto-grades yesterday)
+npm run sync-picks
 
-# 2. Push to GitHub — Vercel auto-rebuilds in ~1–2 min
-git add data/picks/
+# 2. Or grade yesterday manually after games finish
+npm run grade-picks
+
+# 3. Push to GitHub — Vercel auto-rebuilds in ~1–2 min
+git add data/picks/ data/results/
 git commit -m "Update picks for $(Get-Date -Format yyyy-MM-dd)"
 git push
 ```

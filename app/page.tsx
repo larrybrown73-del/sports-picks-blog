@@ -1,11 +1,13 @@
 import Link from "next/link";
 
-import { DailyPicksTabs } from "@/components/DailyPicksTabs";
+import { ModelNotes } from "@/components/ModelNotes";
 import { PerformanceStatsBar } from "@/components/PerformanceStatsBar";
 import { PropPickTable } from "@/components/PropPickTable";
 import { PickCard } from "@/components/PickCard";
 import { SlateBoard } from "@/components/SlateBoard";
+import { YesterdayResultsTable } from "@/components/YesterdayResultsTable";
 import { formatGeneratedAt, getLatestPicks, getPickDates } from "@/lib/picks";
+import { resolvePickCounts, slateHeaderLabel } from "@/lib/pickMeta";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +29,9 @@ export default function HomePage() {
 
   const topProps = picks.propPicks.conviction.slice(0, 10);
   const slate = picks.slate ?? [];
+  const { slateGames, scheduleGames } = resolvePickCounts(picks);
+  const propsAvailable = picks.meta?.propsAvailable ?? topProps.length > 0;
+  const slateMissing = scheduleGames != null && scheduleGames > 0 && slateGames === 0;
 
   return (
     <div className="space-y-10">
@@ -38,7 +43,7 @@ export default function HomePage() {
           Today&apos;s MLB Picks
         </h1>
         <p className="text-sm text-[var(--muted)]">
-          Last synced {formatGeneratedAt(picks.generatedAt)}
+          {slateHeaderLabel(picks)} · Last synced {formatGeneratedAt(picks.generatedAt)}
         </p>
         {archiveDates.length > 1 && (
           <Link
@@ -50,15 +55,23 @@ export default function HomePage() {
         )}
       </section>
 
+      <ModelNotes />
+
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-white">System Performance</h2>
         <PerformanceStatsBar stats={picks.performance} />
       </section>
 
+      <YesterdayResultsTable todayDate={picks.date} />
+
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">
-          Today&apos;s Slate ({slate.length} games)
-        </h2>
+        <h2 className="text-xl font-semibold text-white">Today&apos;s Slate &amp; Lineups</h2>
+        {slateMissing ? (
+          <p className="rounded-xl border border-amber-900/40 bg-amber-950/20 px-5 py-4 text-sm text-amber-200">
+            Slate lineups are missing from the latest export. Run{" "}
+            <code>npm run sync-picks</code> to reload all {scheduleGames} games.
+          </p>
+        ) : null}
         <SlateBoard slate={slate} />
       </section>
 
@@ -77,18 +90,19 @@ export default function HomePage() {
         )}
       </section>
 
-      <section className="space-y-4">
-        <PropPickTable
-          picks={topProps}
-          title="Top Prop Conviction Plays"
-          emptyMessage="No prop conviction plays available for this slate."
-        />
-      </section>
-
-      <section className="space-y-4 border-t border-[var(--card-border)] pt-8">
-        <h2 className="text-xl font-semibold text-white">Full Slate</h2>
-        <DailyPicksTabs picks={picks} />
-      </section>
+      {propsAvailable ? (
+        <section className="space-y-4">
+          <PropPickTable
+            picks={topProps}
+            title="Top Prop Conviction Plays"
+            emptyMessage="No prop conviction plays available for this slate."
+          />
+        </section>
+      ) : (
+        <section className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-5 py-4 text-sm text-[var(--muted)]">
+          Player prop picks are hidden until enough live market data is available.
+        </section>
+      )}
     </div>
   );
 }

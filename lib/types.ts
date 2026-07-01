@@ -4,6 +4,7 @@ export interface MoneylinePick {
   play: string;
   edgePct: number;
   sizingPct: number;
+  americanOdds?: number;
   modelWinProb?: number;
   confidenceScore?: number;
   confidenceLabel?: "Low" | "Medium" | "High" | "Elite";
@@ -43,6 +44,13 @@ export interface SlateGame {
   homeLineup: LineupPlayer[];
 }
 
+export interface PickMeta {
+  slateGames: number;
+  valuePicks: number;
+  propsAvailable: boolean;
+  scheduleGames?: number;
+}
+
 export interface PerformanceStats {
   accuracy: string;
   roi: string;
@@ -55,7 +63,8 @@ export interface PerformanceStats {
 export interface DailyPicks {
   date: string;
   generatedAt: string;
-  slate: SlateGame[];
+  meta?: PickMeta;
+  slate?: SlateGame[];
   moneylinePicks: MoneylinePick[];
   propPicks: PropPicks;
   performance: PerformanceStats;
@@ -65,4 +74,29 @@ export interface PerformanceSnapshot {
   date: string;
   generatedAt: string;
   performance: PerformanceStats;
+}
+
+export type GradedPickResult = "Win" | "Loss" | "Push" | "Pending" | "NoLine";
+
+export interface GradedPick {
+  date: string;
+  matchup: string;
+  pick: string;
+  americanOdds: number;
+  result: GradedPickResult;
+  profitLoss: number;
+  stake: number;
+}
+
+export interface DailyResults {
+  date: string;
+  generatedAt: string;
+  unitStake: number;
+  picks: GradedPick[];
+  summary: {
+    wins: number;
+    losses: number;
+    pending: number;
+    netProfitLoss: number;
+  };
 }

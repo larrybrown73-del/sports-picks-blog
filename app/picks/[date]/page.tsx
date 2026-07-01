@@ -6,6 +6,7 @@ import { DateSidebar } from "@/components/DateSidebar";
 import { PerformanceStatsBar } from "@/components/PerformanceStatsBar";
 import { SlateBoard } from "@/components/SlateBoard";
 import { formatGeneratedAt, getPicksByDate } from "@/lib/picks";
+import { slateHeaderLabel } from "@/lib/pickMeta";
 
 export const dynamic = "force-dynamic";
 
@@ -31,7 +32,7 @@ export default async function PickDatePage({ params }: PickDatePageProps) {
           </Link>
           <h1 className="text-3xl font-bold text-white">Picks for {date}</h1>
           <p className="text-sm text-[var(--muted)]">
-            Exported {formatGeneratedAt(picks.generatedAt)}
+            {slateHeaderLabel(picks)} · Exported {formatGeneratedAt(picks.generatedAt)}
           </p>
         </section>
 

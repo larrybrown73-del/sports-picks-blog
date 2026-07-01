@@ -8,7 +8,7 @@ import os
 import subprocess
 import sys
 import traceback
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +16,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PICKS_DIR = PROJECT_ROOT / "data" / "picks"
+RESULTS_DIR = PROJECT_ROOT / "data" / "results"
 
 DEFAULT_PREDICTOR_PATH = Path(r"D:\Juniors Files\baseball-predictor")
 DEFAULT_PROPS_PATH = Path(r"D:\Juniors Files\baseball-props-model")
@@ -76,6 +77,58 @@ def load_props_env(props_path: Path) -> None:
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
+def _load_existing_picks(game_date: date) -> dict[str, Any] | None:
+    path = PICKS_DIR / f"{game_date.isoformat()}.json"
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def _merge_with_existing(payload: dict[str, Any], game_date: date) -> dict[str, Any]:
+    existing = _load_existing_picks(game_date)
+    if not existing:
+        return payload
+
+    if not payload.get("slate") and existing.get("slate"):
+        payload["slate"] = existing["slate"]
+        print("  Preserved slate from previous export")
+
+    existing_props = existing.get("propPicks") or {}
+    new_props = payload.get("propPicks") or {}
+    if not new_props.get("conviction") and existing_props.get("conviction"):
+        payload["propPicks"] = existing_props
+        print("  Preserved prop picks from previous export")
+
+    return payload
+
+
+def _fetch_schedule_game_count(props_path: Path, game_date: date) -> int:
+    add_to_syspath(props_path)
+    load_props_env(props_path)
+    try:
+        from baseball_props.data.mlb_live import fetch_todays_schedule
+
+        return len(fetch_todays_schedule(game_date))
+    except Exception:
+        return 0
+
+
+def _run_grade_yesterday(game_date: date) -> None:
+    grade_script = Path(__file__).resolve().parent / "grade_picks.py"
+    yesterday = game_date - timedelta(days=1)
+    try:
+        subprocess.run(
+            [sys.executable, str(grade_script), yesterday.isoformat()],
+            check=False,
+            timeout=120,
+        )
+    except Exception as exc:
+        print(f"  Warning: could not grade yesterday's picks: {exc}")
+
+
 def serialize_moneyline_picks(predictor_path: Path, game_date: date) -> list[dict[str, Any]]:
     add_to_syspath(predictor_path)
     from performance_check import get_upcoming_value_picks
@@ -88,6 +141,7 @@ def serialize_moneyline_picks(predictor_path: Path, game_date: date) -> list[dic
             "play": pick.play,
             "edgePct": round(pick.edge_pct, 2),
             "sizingPct": round(pick.quarter_kelly_pct, 2),
+            "americanOdds": pick.american_odds,
             "modelWinProb": round(pick.model_win_prob, 4),
             "confidenceScore": pick.confidence_score,
             "confidenceLabel": pick.confidence_label,
@@ -336,13 +390,41 @@ def export_daily_picks(
         "betsPlaced": 0,
     }
 
+    schedule_games = _fetch_schedule_game_count(props_path, game_date) if props_path.exists() else 0
+    if schedule_games and not slate:
+        print(f"  WARNING: slate count (0) != schedule count ({schedule_games})")
+
+    props_available = bool(
+        prop_picks.get("conviction")
+        or prop_picks.get("batterEdges")
+        or prop_picks.get("pitcherEdges")
+    )
+
     payload = {
         "date": game_date.isoformat(),
         "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "meta": {
+            "slateGames": len(slate),
+            "valuePicks": len(moneyline_picks),
+            "propsAvailable": props_available,
+            "scheduleGames": schedule_games or None,
+        },
         "slate": slate,
         "moneylinePicks": moneyline_picks,
         "propPicks": prop_picks,
         "performance": performance,
+    }
+
+    payload = _merge_with_existing(payload, game_date)
+    payload["meta"] = {
+        "slateGames": len(payload.get("slate") or []),
+        "valuePicks": len(payload.get("moneylinePicks") or []),
+        "propsAvailable": bool(
+            (payload.get("propPicks") or {}).get("conviction")
+            or (payload.get("propPicks") or {}).get("batterEdges")
+            or (payload.get("propPicks") or {}).get("pitcherEdges")
+        ),
+        "scheduleGames": schedule_games or payload.get("meta", {}).get("scheduleGames"),
     }
 
     PICKS_DIR.mkdir(parents=True, exist_ok=True)
@@ -354,6 +436,8 @@ def export_daily_picks(
 
     print(f"Wrote {dated_path}")
     print(f"Wrote {latest_path}")
+
+    _run_grade_yesterday(game_date)
     return dated_path
 
 
