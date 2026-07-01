@@ -1,0 +1,96 @@
+{
+  "date": "2026-06-30",
+  "generatedAt": "2026-06-30T22:24:45Z",
+  "moneylinePicks": [
+    {
+      "awayTeam": "Miami Marlins",
+      "homeTeam": "Colorado Rockies",
+      "play": "Colorado Rockies",
+      "edgePct": 16.99,
+      "sizingPct": 7.28
+    },
+    {
+      "awayTeam": "Pittsburgh Pirates",
+      "homeTeam": "Philadelphia Phillies",
+      "play": "Pittsburgh Pirates",
+      "edgePct": 16.06,
+      "sizingPct": 6.88
+    },
+    {
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "Athletics",
+      "play": "Athletics",
+      "edgePct": 10.25,
+      "sizingPct": 4.39
+    },
+    {
+      "awayTeam": "Washington Nationals",
+      "homeTeam": "Boston Red Sox",
+      "play": "Washington Nationals",
+      "edgePct": 9.73,
+      "sizingPct": 4.17
+    },
+    {
+      "awayTeam": "Minnesota Twins",
+      "homeTeam": "Houston Astros",
+      "play": "Minnesota Twins",
+      "edgePct": 8.46,
+      "sizingPct": 4.04
+    },
+    {
+      "awayTeam": "Detroit Tigers",
+      "homeTeam": "New York Yankees",
+      "play": "New York Yankees",
+      "edgePct": 6.9,
+      "sizingPct": 2.96
+    },
+    {
+      "awayTeam": "Los Angeles Angels",
+      "homeTeam": "Seattle Mariners",
+      "play": "Seattle Mariners",
+      "edgePct": 6.81,
+      "sizingPct": 2.92
+    },
+    {
+      "awayTeam": "St. Louis Cardinals",
+      "homeTeam": "Atlanta Braves",
+      "play": "St. Louis Cardinals",
+      "edgePct": 6.16,
+      "sizingPct": 3.16
+    },
+    {
+      "awayTeam": "New York Mets",
+      "homeTeam": "Toronto Blue Jays",
+      "play": "New York Mets",
+      "edgePct": 4.79,
+      "sizingPct": 2.05
+    },
+    {
+      "awayTeam": "San Diego Padres",
+      "homeTeam": "Chicago Cubs",
+      "play": "San Diego Padres",
+      "edgePct": 4.76,
+      "sizingPct": 2.04
+    },
+    {
+      "awayTeam": "Texas Rangers",
+      "homeTeam": "Cleveland Guardians",
+      "play": "Cleveland Guardians",
+      "edgePct": 3.94,
+      "sizingPct": 1.69
+    }
+  ],
+  "propPicks": {
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "66.5%",
+    "roi": "+36.35%",
+    "netProfit": "51051.53",
+    "brierScore": "0.2315",
+    "gamesScored": 600,
+    "betsPlaced": 201
+  }
+}

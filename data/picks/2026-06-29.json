@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-29",
+  "generatedAt": "2026-06-29T10:28:00Z",
+  "moneylinePicks": [
+    {
+      "awayTeam": "Chicago Cubs",
+      "homeTeam": "Milwaukee Brewers",
+      "play": "Chicago Cubs",
+      "edgePct": 4.8,
+      "sizingPct": 1.1
+    },
+    {
+      "awayTeam": "Houston Astros",
+      "homeTeam": "Texas Rangers",
+      "play": "Houston Astros",
+      "edgePct": 3.6,
+      "sizingPct": 0.85
+    }
+  ],
+  "propPicks": {
+    "conviction": [
+      {
+        "player": "Mookie Betts",
+        "market": "batter_total_bases",
+        "line": 1.5,
+        "recommendation": "Over",
+        "edgePct": 7.2,
+        "modelProb": 0.61,
+        "modelValue": 2.0
+      },
+      {
+        "player": "Gerrit Cole",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Under",
+        "edgePct": 5.1,
+        "modelProb": null,
+        "modelValue": 16.4
+      }
+    ],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "66.8%",
+    "roi": "+39.16%",
+    "netProfit": "+53690.64",
+    "brierScore": "0.2312",
+    "gamesScored": 600,
+    "betsPlaced": 199
+  }
+}
