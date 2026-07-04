@@ -1,4 +1,5 @@
 import { PerformanceChart } from "@/components/PerformanceChart";
+import { formatCurrency, formatSignedPercent, parseNetProfit } from "@/lib/formatters";
 import { getAllPerformanceSnapshots } from "@/lib/picks";
 
 export default function PerformancePage() {
@@ -45,14 +46,20 @@ export default function PerformancePage() {
                     className="border-t border-[var(--card-border)]"
                   >
                     <td className="px-5 py-3 font-medium text-white">{snapshot.date}</td>
-                    <td className="px-5 py-3">{snapshot.performance.accuracy}</td>
+                    <td className="px-5 py-3">{formatSignedPercent(snapshot.performance.accuracy)}</td>
                     <td className="px-5 py-3 text-[var(--accent)]">
-                      {snapshot.performance.roi}
+                      {formatSignedPercent(snapshot.performance.roi)}
                     </td>
-                    <td className="px-5 py-3">{snapshot.performance.netProfit}</td>
+                    <td className="px-5 py-3">
+                      {formatCurrency(parseNetProfit(snapshot.performance.netProfit))}
+                    </td>
                     <td className="px-5 py-3">{snapshot.performance.brierScore}</td>
-                    <td className="px-5 py-3">{snapshot.performance.gamesScored}</td>
-                    <td className="px-5 py-3">{snapshot.performance.betsPlaced}</td>
+                    <td className="px-5 py-3">
+                      {snapshot.performance.gamesScored.toLocaleString("en-US")}
+                    </td>
+                    <td className="px-5 py-3">
+                      {snapshot.performance.betsPlaced.toLocaleString("en-US")}
+                    </td>
                   </tr>
                 ))}
               </tbody>

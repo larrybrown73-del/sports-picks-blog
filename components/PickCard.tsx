@@ -1,5 +1,6 @@
 import type { MoneylinePick } from "@/lib/types";
 import { confidenceLabelClass, resolveConfidence } from "@/lib/confidence";
+import { formatAmericanOdds } from "@/lib/formatters";
 
 interface PickCardProps {
   pick: MoneylinePick;
@@ -22,10 +23,14 @@ export function PickCard({ pick, rank }: PickCardProps) {
       <p className="text-lg font-semibold text-white">
         {pick.awayTeam} @ {pick.homeTeam}
       </p>
-      <div className="mt-4 grid grid-cols-3 gap-3 text-sm">
+      <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
         <div className="rounded-lg bg-black/20 px-3 py-2">
           <p className="text-[var(--muted)]">Play</p>
           <p className="font-medium text-white">{pick.play}</p>
+        </div>
+        <div className="rounded-lg bg-black/20 px-3 py-2">
+          <p className="text-[var(--muted)]">Odds</p>
+          <p className="font-medium text-white">{formatAmericanOdds(pick.americanOdds)}</p>
         </div>
         <div className="rounded-lg bg-black/20 px-3 py-2">
           <p className="text-[var(--muted)]">Quarter-Kelly</p>

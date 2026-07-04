@@ -1,0 +1,103 @@
+{
+  "date": "2026-07-01",
+  "generatedAt": "2026-07-02T13:20:50Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-01",
+      "matchup": "Minnesota Twins @ Houston Astros",
+      "pick": "Minnesota Twins",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Pittsburgh Pirates @ Philadelphia Phillies",
+      "pick": "Pittsburgh Pirates",
+      "americanOdds": 140,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Washington Nationals @ Boston Red Sox",
+      "pick": "Washington Nationals",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Miami Marlins @ Colorado Rockies",
+      "pick": "Colorado Rockies",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Los Angeles Dodgers @ Athletics",
+      "pick": "Athletics",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Chicago White Sox @ Baltimore Orioles",
+      "pick": "Baltimore Orioles",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Detroit Tigers @ New York Yankees",
+      "pick": "New York Yankees",
+      "americanOdds": 140,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "Texas Rangers @ Cleveland Guardians",
+      "pick": "Cleveland Guardians",
+      "americanOdds": 140,
+      "result": "Win",
+      "profitLoss": 140.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "New York Mets @ Toronto Blue Jays",
+      "pick": "New York Mets",
+      "americanOdds": 140,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-01",
+      "matchup": "San Diego Padres @ Chicago Cubs",
+      "pick": "San Diego Padres",
+      "americanOdds": 140,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 6,
+    "losses": 4,
+    "pending": 0,
+    "netProfitLoss": 440.0
+  }
+}
