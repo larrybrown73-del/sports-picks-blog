@@ -2,12 +2,17 @@ export interface MoneylinePick {
   awayTeam: string;
   homeTeam: string;
   play: string;
+  book?: string;
   edgePct: number;
   sizingPct: number;
   americanOdds?: number;
   modelWinProb?: number;
   confidenceScore?: number;
   confidenceLabel?: "Low" | "Medium" | "High" | "Elite";
+  confidenceTier?: string;
+  evPerUnit?: number;
+  predHomeRuns?: number;
+  predAwayRuns?: number;
 }
 
 export interface PropPick {
@@ -18,6 +23,12 @@ export interface PropPick {
   edgePct: number;
   modelProb: number | null;
   modelValue?: number | null;
+  evPerUnit?: number | null;
+  fractionalKellyPct?: number | null;
+  confidenceTier?: string | null;
+  confidenceScore?: number | null;
+  dataWarnings?: string[];
+  verdict?: string | null;
 }
 
 export interface PropPicks {

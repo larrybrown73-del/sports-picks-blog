@@ -21,7 +21,7 @@ RESULTS_DIR = PROJECT_ROOT / "data" / "results"
 DEFAULT_PREDICTOR_PATH = Path(r"D:\Juniors Files\baseball-predictor")
 DEFAULT_PROPS_PATH = Path(r"D:\Juniors Files\baseball-props-model")
 
-PROPS_TIMEOUT_SECONDS = 600
+PROPS_TIMEOUT_SECONDS = int(os.environ.get("PROPS_EXPORT_TIMEOUT_SECONDS", "1800"))
 
 
 def load_env_file(path: Path) -> dict[str, str]:
@@ -62,6 +62,23 @@ def add_to_syspath(path: Path) -> None:
 
 def load_props_env(props_path: Path) -> None:
     env_file = props_path / ".env"
+    if not env_file.exists():
+        return
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv(env_file)
+    except ImportError:
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+def load_predictor_env(predictor_path: Path) -> None:
+    env_file = predictor_path / ".env"
     if not env_file.exists():
         return
     try:
@@ -131,23 +148,35 @@ def _run_grade_yesterday(game_date: date) -> None:
 
 def serialize_moneyline_picks(predictor_path: Path, game_date: date) -> list[dict[str, Any]]:
     add_to_syspath(predictor_path)
-    from performance_check import get_upcoming_value_picks
+    load_predictor_env(predictor_path)
+    from market.calculations import confidence_from_edge_and_prob
+    from run_odds_slate import evaluate_slate
 
-    picks = get_upcoming_value_picks(game_date)
-    return [
-        {
-            "awayTeam": pick.away_name,
-            "homeTeam": pick.home_name,
-            "play": pick.play,
-            "edgePct": round(pick.edge_pct, 2),
-            "sizingPct": round(pick.quarter_kelly_pct, 2),
-            "americanOdds": pick.american_odds,
-            "modelWinProb": round(pick.model_win_prob, 4),
-            "confidenceScore": pick.confidence_score,
-            "confidenceLabel": pick.confidence_label,
-        }
-        for pick in picks
-    ]
+    picks = evaluate_slate(game_date, write_log=False)
+    rows: list[dict[str, Any]] = []
+    for pick in picks:
+        confidence_score, confidence_label = confidence_from_edge_and_prob(
+            pick.edge_pct, pick.model_prob
+        )
+        rows.append(
+            {
+                "awayTeam": pick.away_name,
+                "homeTeam": pick.home_name,
+                "play": pick.play,
+                "book": pick.book,
+                "edgePct": round(pick.edge_pct, 2),
+                "sizingPct": round(pick.quarter_kelly_pct, 2),
+                "americanOdds": pick.american_odds,
+                "modelWinProb": round(pick.model_prob, 4),
+                "confidenceScore": confidence_score,
+                "confidenceLabel": confidence_label,
+                "confidenceTier": pick.confidence_tier,
+                "evPerUnit": round(pick.ev_per_unit, 4) if pick.ev_per_unit is not None else None,
+                "predHomeRuns": round(pick.pred_home_runs, 2),
+                "predAwayRuns": round(pick.pred_away_runs, 2),
+            }
+        )
+    return rows
 
 
 def serialize_slate(props_path: Path, game_date: date) -> list[dict[str, Any]]:
@@ -222,6 +251,15 @@ def serialize_slate(props_path: Path, game_date: date) -> list[dict[str, Any]]:
     return games
 
 
+def _parse_warnings(value: object) -> list[str]:
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return []
+    if isinstance(value, list):
+        return [str(item) for item in value if item]
+    text = str(value).strip()
+    return [text] if text else []
+
+
 def _row_to_prop_pick(row: pd.Series, *, player_key: str) -> dict[str, Any]:
     probability_pct = row.get("probability_pct")
     model_prob = None
@@ -242,6 +280,18 @@ def _row_to_prop_pick(row: pd.Series, *, player_key: str) -> dict[str, Any]:
         "edgePct": float(row["edge_pct"]) if pd.notna(row.get("edge_pct")) else 0.0,
         "modelProb": model_prob,
         "modelValue": float(model_value) if pd.notna(model_value) else None,
+        "evPerUnit": float(row["ev_per_unit"]) if pd.notna(row.get("ev_per_unit")) else None,
+        "fractionalKellyPct": float(row["fractional_kelly_pct"])
+        if pd.notna(row.get("fractional_kelly_pct"))
+        else None,
+        "confidenceTier": str(row.get("confidence_tier"))
+        if pd.notna(row.get("confidence_tier"))
+        else None,
+        "confidenceScore": int(row["confidence_score"])
+        if pd.notna(row.get("confidence_score"))
+        else None,
+        "dataWarnings": _parse_warnings(row.get("data_warnings")),
+        "verdict": str(row.get("verdict")) if pd.notna(row.get("verdict")) else None,
     }
 
 
@@ -274,30 +324,36 @@ def serialize_prop_picks(props_path: Path, game_date: date) -> dict[str, list[di
 
 
 def read_performance_stats(predictor_path: Path) -> dict[str, Any]:
+    defaults: dict[str, Any] = {
+        "accuracy": "N/A",
+        "roi": "N/A",
+        "netProfit": "N/A",
+        "brierScore": "N/A",
+        "gamesScored": 0,
+        "betsPlaced": 0,
+    }
     csv_path = predictor_path / "system_performance_log.csv"
     if not csv_path.exists():
+        return defaults
+
+    try:
+        df = pd.read_csv(csv_path)
+        if df.empty:
+            print(f"  Warning: performance log is empty: {csv_path}")
+            return defaults
+
+        row = df.iloc[-1]
         return {
-            "accuracy": "N/A",
-            "roi": "N/A",
-            "netProfit": "N/A",
-            "brierScore": "N/A",
-            "gamesScored": 0,
-            "betsPlaced": 0,
+            "accuracy": str(row["Accuracy"]),
+            "roi": str(row["ROI"]),
+            "netProfit": str(row["Net_Profit"]),
+            "brierScore": str(row["Brier_Score"]),
+            "gamesScored": int(row["Games_Scored"]),
+            "betsPlaced": int(row["Bets_Placed"]),
         }
-
-    df = pd.read_csv(csv_path)
-    if df.empty:
-        raise RuntimeError(f"Performance log is empty: {csv_path}")
-
-    row = df.iloc[-1]
-    return {
-        "accuracy": str(row["Accuracy"]),
-        "roi": str(row["ROI"]),
-        "netProfit": str(row["Net_Profit"]),
-        "brierScore": str(row["Brier_Score"]),
-        "gamesScored": int(row["Games_Scored"]),
-        "betsPlaced": int(row["Bets_Placed"]),
-    }
+    except Exception as exc:
+        print(f"  Warning: could not read performance stats: {exc}")
+        return defaults
 
 
 def _run_props_subprocess(game_date: date) -> dict[str, list[dict[str, Any]]] | None:
@@ -381,14 +437,18 @@ def export_daily_picks(
             print(f"  Warning: props export failed: {exc}")
             traceback.print_exc()
 
-    performance = read_performance_stats(predictor_path) if predictor_path.exists() else {
-        "accuracy": "N/A",
-        "roi": "N/A",
-        "netProfit": "N/A",
-        "brierScore": "N/A",
-        "gamesScored": 0,
-        "betsPlaced": 0,
-    }
+    performance = (
+        read_performance_stats(predictor_path)
+        if predictor_path.exists()
+        else {
+            "accuracy": "N/A",
+            "roi": "N/A",
+            "netProfit": "N/A",
+            "brierScore": "N/A",
+            "gamesScored": 0,
+            "betsPlaced": 0,
+        }
+    )
 
     schedule_games = _fetch_schedule_game_count(props_path, game_date) if props_path.exists() else 0
     if schedule_games and not slate:
@@ -443,6 +503,8 @@ def export_daily_picks(
 
 def export_props_only(game_date: date, output_path: Path) -> None:
     _, props_path = resolve_paths()
+    if not props_path.exists():
+        raise FileNotFoundError(f"Props path not found: {props_path}")
     prop_picks = serialize_prop_picks(props_path, game_date)
     output_path.write_text(json.dumps(prop_picks, indent=2), encoding="utf-8")
 

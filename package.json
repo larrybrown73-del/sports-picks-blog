@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "sync-picks": "python scripts/export_daily_picks.py --skip-props",
+    "sync-picks-full": "python scripts/export_daily_picks.py",
     "grade-picks": "python scripts/grade_picks.py"
   },
   "dependencies": {

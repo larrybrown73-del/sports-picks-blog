@@ -1,3 +1,5 @@
+import { AboutModel } from "@/components/AboutModel";
+
 export default function AboutPage() {
   return (
     <div className="space-y-8">
@@ -9,6 +11,8 @@ export default function AboutPage() {
           Picks are synced each morning via a Python export script — no manual curation.
         </p>
       </section>
+
+      <AboutModel />
 
       <section className="space-y-4 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6">
         <h2 className="text-xl font-semibold text-white">Moneyline Model</h2>

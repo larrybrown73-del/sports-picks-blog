@@ -2,6 +2,7 @@ import type { MoneylinePick } from "@/lib/types";
 
 type ConfidenceLabel = NonNullable<MoneylinePick["confidenceLabel"]>;
 
+// Label thresholds match baseball-predictor/market/calculations.py (confidence_label_from_score).
 export function confidenceFromEdge(edgePct: number, modelWinProb = 0.52): {
   score: number;
   label: ConfidenceLabel;

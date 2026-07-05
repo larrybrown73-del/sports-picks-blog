@@ -1,6 +1,6 @@
 import type { MoneylinePick } from "@/lib/types";
 import { confidenceLabelClass, resolveConfidence } from "@/lib/confidence";
-import { formatAmericanOdds } from "@/lib/formatters";
+import { formatAmericanOdds, formatEdgePct } from "@/lib/formatters";
 
 interface PickCardProps {
   pick: MoneylinePick;
@@ -17,7 +17,7 @@ export function PickCard({ pick, rank }: PickCardProps) {
           #{rank} Value Pick
         </span>
         <span className="text-sm font-semibold text-[var(--accent)]">
-          +{pick.edgePct.toFixed(1)}% edge
+          {formatEdgePct(pick.edgePct)} edge
         </span>
       </div>
       <p className="text-lg font-semibold text-white">
@@ -26,7 +26,12 @@ export function PickCard({ pick, rank }: PickCardProps) {
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
         <div className="rounded-lg bg-black/20 px-3 py-2">
           <p className="text-[var(--muted)]">Play</p>
-          <p className="font-medium text-white">{pick.play}</p>
+          <p className="font-medium text-white">
+            {pick.play}
+            {pick.book ? (
+              <span className="ml-1 text-xs font-normal text-[var(--muted)]">@ {pick.book}</span>
+            ) : null}
+          </p>
         </div>
         <div className="rounded-lg bg-black/20 px-3 py-2">
           <p className="text-[var(--muted)]">Odds</p>
@@ -39,11 +44,27 @@ export function PickCard({ pick, rank }: PickCardProps) {
         <div className="rounded-lg bg-black/20 px-3 py-2">
           <p className="text-[var(--muted)]">Confidence</p>
           <p className={`font-medium ${confidenceLabelClass(confidence.label)}`}>
-            {confidence.label}{" "}
+            {pick.confidenceTier ?? confidence.label}{" "}
             <span className="text-white/70">({confidence.score})</span>
           </p>
         </div>
       </div>
+      {(pick.evPerUnit != null || pick.confidenceTier || pick.predHomeRuns != null) && (
+        <p className="mt-3 text-xs text-[var(--muted)]">
+          {pick.evPerUnit != null && (
+            <span>EV {pick.evPerUnit >= 0 ? "+" : ""}{pick.evPerUnit.toFixed(3)} / unit</span>
+          )}
+          {pick.evPerUnit != null && (pick.confidenceTier || pick.predHomeRuns != null) && " · "}
+          {pick.confidenceTier && <span>{pick.confidenceTier}</span>}
+          {pick.confidenceTier && pick.predHomeRuns != null && " · "}
+          {pick.predHomeRuns != null && pick.predAwayRuns != null && (
+            <span>
+              Proj {pick.awayTeam.split(" ").pop()} {pick.predAwayRuns} – {pick.homeTeam.split(" ").pop()}{" "}
+              {pick.predHomeRuns}
+            </span>
+          )}
+        </p>
+      )}
     </article>
   );
 }

@@ -1,4 +1,5 @@
 import { formatMarketLabel } from "@/lib/utils";
+import { formatEdgePct } from "@/lib/formatters";
 import type { PropPick } from "@/lib/types";
 
 interface PropPickTableProps {
@@ -30,6 +31,9 @@ export function PropPickTable({
                 <th className="px-5 py-3 font-medium">Play</th>
                 <th className="px-5 py-3 font-medium">Model Prob</th>
                 <th className="px-5 py-3 font-medium">Edge</th>
+                <th className="px-5 py-3 font-medium">EV</th>
+                <th className="px-5 py-3 font-medium">Tier</th>
+                <th className="px-5 py-3 font-medium">Kelly</th>
               </tr>
             </thead>
             <tbody>
@@ -48,8 +52,20 @@ export function PropPickTable({
                     {pick.modelProb != null ? `${(pick.modelProb * 100).toFixed(1)}%` : "—"}
                   </td>
                   <td className="px-5 py-3 font-semibold text-[var(--accent)]">
-                    {pick.edgePct > 0 ? "+" : ""}
-                    {pick.edgePct.toFixed(1)}%
+                    {formatEdgePct(pick.edgePct)}
+                  </td>
+                  <td className="px-5 py-3">
+                    {pick.evPerUnit != null
+                      ? `${pick.evPerUnit >= 0 ? "+" : ""}${pick.evPerUnit.toFixed(3)}`
+                      : "—"}
+                  </td>
+                  <td className="px-5 py-3 text-[var(--muted)]">
+                    {pick.confidenceTier ?? "—"}
+                  </td>
+                  <td className="px-5 py-3">
+                    {pick.fractionalKellyPct != null
+                      ? `${pick.fractionalKellyPct.toFixed(2)}%`
+                      : "—"}
                   </td>
                 </tr>
               ))}

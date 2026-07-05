@@ -32,6 +32,10 @@ export function formatSignedPercent(value: string | number): string {
   return trimmed;
 }
 
+export function formatEdgePct(value: number): string {
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+}
+
 export function formatAmericanOdds(value: number | undefined | null): string {
   if (value == null || value === 0) {
     return "—";

@@ -14,11 +14,28 @@ Configure paths in `.env.local` if your Python projects live elsewhere.
 
 ## Sync picks (local only)
 
-Exports today's slate from `baseball-predictor` and `baseball-props-model` into `data/picks/`:
+Exports slate and moneyline picks from `baseball-predictor` and `baseball-props-model` into `data/picks/`:
+
+| Command | What it exports | Typical runtime |
+|---|---|---|
+| `npm run sync-picks` | Slate + live moneylines (no props) | ~5–15 min |
+| `npm run sync-picks-full` | Slate + moneylines + live props | ~15–25 min |
 
 ```powershell
+# Fast daily sync (moneylines + slate only)
 npm run sync-picks
+
+# Full export including player props (slow — live API + Statcast)
+npm run sync-picks-full
 ```
+
+Props-only retry (when full export timed out but moneylines already wrote):
+
+```powershell
+python scripts/export_daily_picks.py --props-only 2026-07-05 data/picks/.props-temp-2026-07-05.json
+```
+
+Then merge into the dated JSON manually or re-run `sync-picks-full`.
 
 Or with the predictor venv directly:
 
@@ -30,9 +47,10 @@ Optional date override:
 
 ```powershell
 python scripts/export_daily_picks.py 2026-06-30
+python scripts/export_daily_picks.py 2026-06-30 --skip-props
 ```
 
-**Requirements:** Python venvs for both projects with dependencies installed. Live props need API keys in `baseball-props-model/.env`.
+**Requirements:** Python venvs for both projects with dependencies installed. Live props need API keys in `baseball-props-model/.env` and `baseball-predictor/.env`. Override props timeout via `PROPS_EXPORT_TIMEOUT_SECONDS` in `.env.local` (default 1800s).
 
 ## Run locally
 
@@ -60,7 +78,7 @@ Each morning on your PC:
 ```powershell
 cd C:\Users\Mamas\sports-picks-blog
 
-# 1. Export fresh picks (includes slate, meta, and auto-grades yesterday)
+# 1. Export fresh picks (slate + moneylines; add sync-picks-full for props)
 npm run sync-picks
 
 # 2. Or grade yesterday manually after games finish
