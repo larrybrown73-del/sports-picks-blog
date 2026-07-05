@@ -21,7 +21,12 @@ export function getPickDates(): string[] {
 
   return fs
     .readdirSync(PICKS_DIR)
-    .filter((file) => file.endsWith(".json") && file !== "latest.json")
+    .filter(
+      (file) =>
+        file.endsWith(".json") &&
+        file !== "latest.json" &&
+        !file.startsWith(".props-temp"),
+    )
     .map((file) => file.replace(".json", ""))
     .sort()
     .reverse();
@@ -51,18 +56,18 @@ export function getAllPerformanceSnapshots(): PerformanceSnapshot[] {
   return dates
     .map((date) => {
       const picks = getPicksByDate(date);
-      if (!picks) {
+      if (!picks?.performance) {
         return null;
       }
 
       return {
-        date: picks.date,
+        date: picks.date ?? date,
         generatedAt: picks.generatedAt,
         performance: picks.performance,
       };
     })
     .filter((snapshot): snapshot is PerformanceSnapshot => snapshot !== null)
-    .sort((a, b) => a.date.localeCompare(b.date));
+    .sort((a, b) => (a.date ?? "").localeCompare(b.date ?? ""));
 }
 
 export { formatGeneratedAt, formatMarketLabel, parsePercent } from "./utils";
