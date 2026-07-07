@@ -13,7 +13,7 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PICKS_DIR = PROJECT_ROOT / "data" / "picks"
 RESULTS_DIR = PROJECT_ROOT / "data" / "results"
-DEFAULT_PREDICTOR_PATH = Path(r"D:\Juniors Files\baseball-predictor")
+DEFAULT_PREDICTOR_PATH = PROJECT_ROOT / "engines" / "mlb_engine" / "predictor"
 UNIT_STAKE = 100.0
 
 

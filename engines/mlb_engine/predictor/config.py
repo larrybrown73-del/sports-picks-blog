@@ -1,0 +1,34 @@
+"""Central configuration for baseball-predictor slate evaluation and backtests."""
+
+from __future__ import annotations
+
+# Backtest / value-pick thresholds
+EDGE_THRESHOLD = 0.03
+QUARTER_KELLY = 0.25
+FRACTIONAL_KELLY = QUARTER_KELLY
+MAX_BET_PCT = 5.0
+TIER1_MIN_EDGE_PCT = 5.0
+TIER2_MIN_EDGE_PCT = 3.0
+TIER3_MIN_EDGE_PCT = 0.5
+MIN_PLAYABLE_EV = 0.0
+DEFAULT_SAMPLE_SIZE = 600
+DEFAULT_PREDICTION_SEASONS = [2024, 2025, 2026]
+DEFAULT_ROLLING_WINDOW = 10
+MOCK_MONEYLINE_VIG = 1.05
+
+# Weather / park run environment (post-model adjustment)
+WEATHER_HOT_TEMP_F = 85
+WEATHER_COLD_TEMP_F = 55
+RUN_ENV_BOOST_MULTIPLIER = 1.06
+RUN_ENV_REDUCE_MULTIPLIER = 0.94
+RUN_ENV_NEUTRAL_MULTIPLIER = 1.0
+
+# Bullpen fatigue (post-model win-probability adjustment)
+BULLPEN_LOOKBACK_DAYS = 3
+BULLPEN_FATIGUE_WINDOW_HOURS = 48
+BULLPEN_FATIGUE_PITCH_THRESHOLD = 35
+BULLPEN_FATIGUE_WIN_PROB_PENALTY = 0.03
+BULLPEN_MIN_RELIEF_APPEARANCES = 1
+
+# Optional per-game evaluation log
+SLATE_EVALUATION_LOG = "slate_evaluation_log.csv"

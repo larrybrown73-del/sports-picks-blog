@@ -12,9 +12,28 @@ copy .env.local.example .env.local
 
 Configure paths in `.env.local` if your Python projects live elsewhere.
 
+## GitHub Actions (ISR sync)
+
+Workflow: `.github/workflows/daily-isr-sync.yml`
+
+| Schedule (UTC) | Local (EDT) | Action |
+|---|---|---|
+| `0 12 * * *` | 8:00 AM | Moneyline + slate sync, commit/push, sleep until T-20 first pitch → ISR revalidate |
+| `0 16 * * *` | 12:00 PM | Full sync including props, commit/push |
+
+**Repository secrets required:**
+
+| Secret | Purpose |
+|---|---|
+| `THE_ODDS_API_KEY` | Live odds + props ingest |
+| `REVALIDATION_SECRET` | Protects `/api/revalidate` (set same value in Vercel env) |
+| `SITE_URL` | Production URL, e.g. `https://your-app.vercel.app` |
+
+**Vercel env:** add `REVALIDATION_SECRET` matching the GitHub secret.
+
 ## Sync picks (local only)
 
-Exports slate and moneyline picks from `baseball-predictor` and `baseball-props-model` into `data/picks/`:
+Exports slate and moneyline picks from the internal MLB engine (`engines/mlb_engine/`) into `data/picks/`:
 
 | Command | What it exports | Typical runtime |
 |---|---|---|
@@ -40,7 +59,7 @@ Then merge into the dated JSON manually or re-run `sync-picks-full`.
 Or with the predictor venv directly:
 
 ```powershell
-& "D:\Juniors Files\baseball-predictor\.venv\Scripts\python.exe" scripts/export_daily_picks.py --skip-props
+& ".\engines\mlb_engine\predictor\.venv\Scripts\python.exe" scripts/export_daily_picks.py --skip-props
 ```
 
 Optional date override:
@@ -50,7 +69,7 @@ python scripts/export_daily_picks.py 2026-06-30
 python scripts/export_daily_picks.py 2026-06-30 --skip-props
 ```
 
-**Requirements:** Python venvs for both projects with dependencies installed. Live props need API keys in `baseball-props-model/.env` and `baseball-predictor/.env`. Override props timeout via `PROPS_EXPORT_TIMEOUT_SECONDS` in `.env.local` (default 1800s).
+**Requirements:** Python venvs under `engines/mlb_engine/predictor` and `engines/mlb_engine/props` with dependencies installed. Live props need API keys in each engine's `.env`. Override props timeout via `PROPS_EXPORT_TIMEOUT_SECONDS` in `.env.local` (default 1800s).
 
 ## Run locally
 
@@ -104,6 +123,8 @@ Friends see updated picks after the Vercel deployment finishes.
 ## Project structure
 
 - `data/picks/` — JSON exports (one file per date + `latest.json`)
+- `engines/mlb_engine/` — MLB predictor + props models (internal)
+- `engines/wnba_engine/` — WNBA models (placeholder)
 - `scripts/export_daily_picks.py` — bridge to Python pick systems
 - `lib/` — types and file readers
 - `components/` — UI components

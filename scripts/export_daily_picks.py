@@ -18,8 +18,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PICKS_DIR = PROJECT_ROOT / "data" / "picks"
 RESULTS_DIR = PROJECT_ROOT / "data" / "results"
 
-DEFAULT_PREDICTOR_PATH = Path(r"D:\Juniors Files\baseball-predictor")
-DEFAULT_PROPS_PATH = Path(r"D:\Juniors Files\baseball-props-model")
+MLB_ENGINE_ROOT = PROJECT_ROOT / "engines" / "mlb_engine"
+DEFAULT_PREDICTOR_PATH = MLB_ENGINE_ROOT / "predictor"
+DEFAULT_PROPS_PATH = MLB_ENGINE_ROOT / "props"
 
 PROPS_TIMEOUT_SECONDS = int(os.environ.get("PROPS_EXPORT_TIMEOUT_SECONDS", "1800"))
 
@@ -41,16 +42,22 @@ def load_env_file(path: Path) -> dict[str, str]:
 
 def resolve_paths() -> tuple[Path, Path]:
     env = load_env_file(PROJECT_ROOT / ".env.local")
-    predictor_path = Path(
+    predictor_raw = (
         os.environ.get("BASEBALL_PREDICTOR_PATH")
         or env.get("BASEBALL_PREDICTOR_PATH")
-        or DEFAULT_PREDICTOR_PATH
+        or str(DEFAULT_PREDICTOR_PATH)
     )
-    props_path = Path(
+    props_raw = (
         os.environ.get("BASEBALL_PROPS_PATH")
         or env.get("BASEBALL_PROPS_PATH")
-        or DEFAULT_PROPS_PATH
+        or str(DEFAULT_PROPS_PATH)
     )
+    predictor_path = Path(predictor_raw)
+    props_path = Path(props_raw)
+    if not predictor_path.is_absolute():
+        predictor_path = (PROJECT_ROOT / predictor_path).resolve()
+    if not props_path.is_absolute():
+        props_path = (PROJECT_ROOT / props_path).resolve()
     return predictor_path, props_path
 
 

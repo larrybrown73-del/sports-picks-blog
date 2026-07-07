@@ -1,0 +1,3 @@
+# Combined CI dependencies for predictor + props export pipeline
+-r predictor/requirements.txt
+-r props/requirements.txt

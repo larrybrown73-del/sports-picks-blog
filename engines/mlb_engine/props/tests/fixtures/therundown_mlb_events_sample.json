@@ -1,0 +1,142 @@
+{
+  "events": [
+    {
+      "event_id": "9876543210123456",
+      "event_date": "2026-06-28T23:05:00Z",
+      "teams": [
+        {"name": "Boston Red Sox"},
+        {"name": "New York Yankees"}
+      ],
+      "markets": [
+        {
+          "market_id": 3,
+          "name": "Total",
+          "participants": [
+            {
+              "name": "Over",
+              "type": "TYPE_OVER",
+              "lines": [
+                {
+                  "value": "8.5",
+                  "prices": {
+                    "19": {"price": -110, "is_main_line": true},
+                    "23": {"price": -108, "is_main_line": true}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Under",
+              "type": "TYPE_UNDER",
+              "lines": [
+                {
+                  "value": "8.5",
+                  "prices": {
+                    "19": {"price": -110, "is_main_line": true}
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "market_id": 2,
+          "name": "Point Spread",
+          "participants": [
+            {
+              "name": "New York Yankees",
+              "type": "TYPE_TEAM",
+              "lines": [
+                {
+                  "value": "-1.5",
+                  "prices": {
+                    "19": {"price": -110, "is_main_line": true}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Boston Red Sox",
+              "type": "TYPE_TEAM",
+              "lines": [
+                {
+                  "value": "1.5",
+                  "prices": {
+                    "19": {"price": -110, "is_main_line": true}
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "market_id": 501,
+          "name": "Player Total Bases",
+          "participants": [
+            {
+              "name": "Aaron Judge Over",
+              "type": "TYPE_OVER",
+              "lines": [
+                {
+                  "value": "1.5",
+                  "prices": {
+                    "19": {"price": -115, "is_main_line": true},
+                    "23": {"price": -120, "is_main_line": true}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Aaron Judge Under",
+              "type": "TYPE_UNDER",
+              "lines": [
+                {
+                  "value": "1.5",
+                  "prices": {
+                    "19": {"price": -105, "is_main_line": true}
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "market_id": 502,
+          "name": "Pitcher Outs Recorded",
+          "participants": [
+            {
+              "name": "Carlos Rodon Over",
+              "type": "TYPE_OVER",
+              "lines": [
+                {
+                  "value": "15.5",
+                  "prices": {
+                    "19": {"price": 100, "is_main_line": true}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Carlos Rodon Under",
+              "type": "TYPE_UNDER",
+              "lines": [
+                {
+                  "value": "15.5",
+                  "prices": {
+                    "19": {"price": -120, "is_main_line": true}
+                  }
+                },
+                {
+                  "value": "0.0001",
+                  "prices": {
+                    "23": {"price": 0.0001, "is_main_line": true}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
