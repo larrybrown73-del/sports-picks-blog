@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-06",
+  "generatedAt": "2026-07-07T12:28:08Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-06",
+      "matchup": "Philadelphia Phillies @ Kansas City Royals",
+      "pick": "Kansas City Royals",
+      "americanOdds": 184,
+      "result": "Win",
+      "profitLoss": 184.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-06",
+      "matchup": "Colorado Rockies @ Los Angeles Dodgers",
+      "pick": "Colorado Rockies",
+      "americanOdds": 188,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-06",
+      "matchup": "New York Mets @ Atlanta Braves",
+      "pick": "New York Mets",
+      "americanOdds": 112,
+      "result": "Win",
+      "profitLoss": 112.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 1,
+    "pending": 0,
+    "netProfitLoss": 196.0
+  }
+}
