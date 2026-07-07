@@ -10,9 +10,6 @@ on:
     - cron: "0 20 * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 concurrency:
   group: daily-isr-sync
   cancel-in-progress: false
@@ -20,6 +17,8 @@ concurrency:
 jobs:
   sync-and-revalidate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     timeout-minutes: 360
     steps:
       - name: Checkout Monorepo Code

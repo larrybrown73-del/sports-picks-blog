@@ -33,7 +33,7 @@ def project_batter_pa(
     (normalized so a full lineup scales with team implied runs)
     """
     df = lineups.merge(games[["game_id", "home_team_id", "away_team_id"]], on="game_id")
-    vegas = vegas_totals.set_index("game_id")
+    vegas = vegas_totals.drop_duplicates(subset=["game_id"], keep="first").set_index("game_id")
 
     def _team_implied(row: pd.Series) -> float:
         game_id = row["game_id"]
@@ -45,6 +45,8 @@ def project_batter_pa(
             )
             return LEAGUE_AVG_IMPLIED_RUNS
         game = vegas.loc[game_id]
+        if isinstance(game, pd.DataFrame):
+            game = game.iloc[0]
         if row["team_id"] == row["home_team_id"]:
             return float(game["home_implied_runs"])
         return float(game["away_implied_runs"])
