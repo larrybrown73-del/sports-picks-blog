@@ -6,6 +6,8 @@ on:
     - cron: "0 12 * * *"
     # 12:00 PM EDT — midday full refresh before first pitch
     - cron: "0 16 * * *"
+    # 4:00 PM EDT — evening slate odds refresh + ISR revalidate
+    - cron: "0 20 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,7 +44,7 @@ jobs:
         run: python engines/mlb_engine/scripts/export_daily_picks.py --skip-props
 
       - name: Execute Full Slate Sync
-        if: github.event.schedule == '0 16 * * *' || github.event_name == 'workflow_dispatch'
+        if: github.event.schedule == '0 16 * * *' || github.event.schedule == '0 20 * * *' || github.event_name == 'workflow_dispatch'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
           BASEBALL_PREDICTOR_PATH: engines/mlb_engine/predictor
@@ -68,3 +70,10 @@ jobs:
           REVALIDATION_SECRET: ${{ secrets.REVALIDATION_SECRET }}
           SITE_URL: ${{ secrets.SITE_URL }}
         run: python engines/mlb_engine/utils/schedule_first_pitch_hook.py
+
+      - name: Revalidate Site Cache (evening slate)
+        if: github.event.schedule == '0 20 * * *'
+        env:
+          REVALIDATION_SECRET: ${{ secrets.REVALIDATION_SECRET }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: python engines/mlb_engine/utils/revalidate_site.py

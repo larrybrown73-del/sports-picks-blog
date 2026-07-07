@@ -20,6 +20,7 @@ Workflow: `.github/workflows/daily-isr-sync.yml`
 |---|---|---|
 | `0 12 * * *` | 8:00 AM | Moneyline + slate sync, commit/push, sleep until T-20 first pitch → ISR revalidate |
 | `0 16 * * *` | 12:00 PM | Full sync including props, commit/push |
+| `0 20 * * *` | 4:00 PM | Full sync including props, commit/push, immediate ISR revalidate |
 
 **Repository secrets required:**
 
