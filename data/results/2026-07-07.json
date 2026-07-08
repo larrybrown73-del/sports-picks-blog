@@ -1,0 +1,76 @@
+{
+  "date": "2026-07-07",
+  "generatedAt": "2026-07-08T12:32:17Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-07",
+      "matchup": "Kansas City Royals @ New York Mets",
+      "pick": "Kansas City Royals",
+      "americanOdds": 400,
+      "result": "Win",
+      "profitLoss": 400.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Atlanta Braves @ Pittsburgh Pirates",
+      "pick": "Atlanta Braves",
+      "americanOdds": 350,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Seattle Mariners @ Miami Marlins",
+      "pick": "Seattle Mariners",
+      "americanOdds": 375,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Colorado Rockies @ Los Angeles Dodgers",
+      "pick": "Colorado Rockies",
+      "americanOdds": 244,
+      "result": "Win",
+      "profitLoss": 244.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Los Angeles Angels @ Texas Rangers",
+      "pick": "Los Angeles Angels",
+      "americanOdds": 140,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Philadelphia Phillies @ Cincinnati Reds",
+      "pick": "Cincinnati Reds",
+      "americanOdds": 110,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-07",
+      "matchup": "Cleveland Guardians @ Minnesota Twins",
+      "pick": "Minnesota Twins",
+      "americanOdds": -110,
+      "result": "Win",
+      "profitLoss": 90.91,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 3,
+    "losses": 4,
+    "pending": 0,
+    "netProfitLoss": 334.91
+  }
+}

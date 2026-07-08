@@ -60,7 +60,8 @@ jobs:
             echo "No pick changes to publish."
           else
             git commit -m "ci: sync daily MLB picks $(date -u +%F)"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
 
       - name: Evaluate And Schedule Next First-Pitch Window
