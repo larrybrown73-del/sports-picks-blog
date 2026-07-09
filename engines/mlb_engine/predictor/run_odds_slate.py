@@ -17,7 +17,8 @@ from backtest import (
     _memoize_obp_lookups,
     load_frozen_models,
 )
-from config import DEFAULT_ROLLING_WINDOW
+from config import DEFAULT_ROLLING_WINDOW, MAX_ODDS_CAP, MIN_PROBABILITY_FLOOR
+from momentum import apply_team_streak_bonus
 from market.calculations import compute_wager_metrics
 from slate_evaluation import append_slate_evaluation_log, evaluate_game
 
@@ -134,6 +135,14 @@ def _ev_pct(model_prob: float, american_odds: int, stake: float = 100.0) -> floa
     return ev / stake * 100
 
 
+def _passes_moneyline_guardrails(model_prob: float, american_odds: int) -> bool:
+    if model_prob < MIN_PROBABILITY_FLOOR:
+        return False
+    if american_odds > MAX_ODDS_CAP:
+        return False
+    return True
+
+
 def evaluate_slate(
     game_date: date | None = None,
     *,
@@ -177,14 +186,23 @@ def evaluate_slate(
         home_key = _normalize_team_name(home_name)
         away_key = _normalize_team_name(away_name)
 
+        home_prob = apply_team_streak_bonus(
+            evaluated.home_prob, int(game["home_id"]), game_date
+        )
+        away_prob = apply_team_streak_bonus(
+            evaluated.away_prob, int(game["away_id"]), game_date
+        )
+
         candidates: list[SlatePick] = []
         for team_name, key, prob in (
-            (home_name, home_key, evaluated.home_prob),
-            (away_name, away_key, evaluated.away_prob),
+            (home_name, home_key, home_prob),
+            (away_name, away_key, away_prob),
         ):
             if key not in best_prices:
                 continue
             american_odds, book = best_prices[key]
+            if not _passes_moneyline_guardrails(prob, american_odds):
+                continue
             metrics = compute_wager_metrics(prob, american_odds)
             market_prob = metrics.implied_prob or 0.0
             edge = (metrics.edge_pct or 0.0) / 100.0
@@ -216,7 +234,11 @@ def evaluate_slate(
             continue
 
         best = max(candidates, key=lambda row: row.edge_pct)
-        if best.edge_pct > EDGE_THRESHOLD * 100 and best.quarter_kelly_pct > 0:
+        if (
+            best.edge_pct > EDGE_THRESHOLD * 100
+            and best.quarter_kelly_pct > 0
+            and _passes_moneyline_guardrails(best.model_prob, best.american_odds)
+        ):
             picks.append(best)
             log_rows.append(
                 {

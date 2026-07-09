@@ -17,9 +17,13 @@ from baseball_props.config import (
     HITS_CONTACT_BONUS_MULTIPLIER,
     HITS_CONTACT_K_PCT_MAX,
     HITS_LINEUP_SLOT_PENALTY,
+    HITS_MAX_ODDS_CAP,
+    HITS_MIN_PROBABILITY_FLOOR,
     HITS_PROP_PRIMARY_LINE,
     HITS_PROP_TARGET_LINES,
     HITS_WEATHER_BONUS_MULTIPLIER,
+    PLAYER_HIT_STREAK_BONUS,
+    RECENT_CONTACT_BONUS,
 )
 
 
@@ -122,6 +126,89 @@ def test_bullpen_fatigue_bonus_from_status() -> None:
             contact_profile={"k_pct": 0.22, "contact_pct": 0.80, "babip": 0.29, "pa": 30.0},
         )
     assert result.adjustments.get("bullpen_bonus") == HITS_BULLPEN_FATIGUE_BONUS
+
+
+def test_hits_probability_floor_drops_longshot() -> None:
+    ctx = _base_context()
+    with patch(
+        "baseball_props.analysis.guardrails.apply_hits_momentum_multipliers",
+        side_effect=lambda proj, *_args, **_kwargs: proj,
+    ), patch(
+        "baseball_props.analysis.guardrails._resolve_bullpen_fatigued",
+        return_value=(False, 0.0),
+    ), patch(
+        "baseball_props.analysis.guardrails.prob_over_continuous",
+        return_value=0.50,
+    ), patch(
+        "baseball_props.analysis.guardrails.best_side_edge",
+        return_value=("Over", 0.50, 5.0),
+    ):
+        result = evaluate_hits_prop(
+            "592450",
+            "P101",
+            ctx,
+            proj_hits=1.5,
+            market_line=1.5,
+            over_odds=-110,
+            under_odds=-110,
+            contact_profile={"k_pct": 0.22, "contact_pct": 0.70, "babip": 0.25, "pa": 30.0},
+        )
+    assert result.verdict == "Pass"
+    assert any("55% floor" in warning for warning in result.warnings)
+
+
+def test_hits_odds_cap_drops_plus_money_ladder() -> None:
+    ctx = _base_context()
+    with patch(
+        "baseball_props.analysis.guardrails.apply_hits_momentum_multipliers",
+        side_effect=lambda proj, *_args, **_kwargs: proj,
+    ), patch(
+        "baseball_props.analysis.guardrails._resolve_bullpen_fatigued",
+        return_value=(False, 0.0),
+    ), patch(
+        "baseball_props.analysis.guardrails.prob_over_continuous",
+        return_value=0.65,
+    ), patch(
+        "baseball_props.analysis.guardrails.best_side_edge",
+        return_value=("Over", 0.65, 8.0),
+    ):
+        result = evaluate_hits_prop(
+            "592450",
+            "P101",
+            ctx,
+            proj_hits=2.0,
+            market_line=1.5,
+            over_odds=HITS_MAX_ODDS_CAP + 25,
+            under_odds=-180,
+            contact_profile={"k_pct": 0.22, "contact_pct": 0.70, "babip": 0.25, "pa": 30.0},
+        )
+    assert result.verdict == "Pass"
+    assert any("exceed +130" in warning for warning in result.warnings)
+
+
+def test_hit_streak_and_recent_contact_momentum() -> None:
+    ctx = _base_context()
+    with patch(
+        "baseball_props.data.statcast_feed.consecutive_hit_games",
+        return_value=4,
+    ), patch(
+        "baseball_props.data.statcast_feed.compute_contact_profile",
+        return_value={"contact_pct": 0.84, "k_pct": 0.10, "babip": 0.31, "pa": 12.0},
+    ):
+        result = evaluate_hits_prop(
+            "592450",
+            "P101",
+            ctx,
+            proj_hits=1.6,
+            market_line=1.5,
+            over_odds=-110,
+            under_odds=-110,
+            contact_profile={"k_pct": 0.12, "contact_pct": 0.85, "babip": 0.32, "pa": 30.0},
+        )
+    assert result.adjustments.get("hit_streak_bonus") == PLAYER_HIT_STREAK_BONUS
+    assert result.adjustments.get("recent_contact_bonus") == RECENT_CONTACT_BONUS
+    assert result.adjusted_prob_over is not None
+    assert result.adjusted_prob_over >= HITS_MIN_PROBABILITY_FLOOR
 
 
 def test_edge_sheet_uses_hits_market() -> None:

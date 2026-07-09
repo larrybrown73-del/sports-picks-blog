@@ -105,6 +105,17 @@ HITS_PARK_HIT_BONUS_THRESHOLD: float = 1.03
 HITS_BULLPEN_FATIGUE_BONUS: float = 0.04
 HITS_MIN_ADJUSTED_EDGE_PCT: float = 3.0
 
+# Hits prop defensive caps (export filter)
+HITS_MIN_PROBABILITY_FLOOR: float = 0.55
+HITS_MAX_ODDS_CAP: int = 130
+
+# Player momentum (hot hand)
+HITS_STREAK_MIN_GAMES: int = 4
+PLAYER_HIT_STREAK_BONUS: float = 1.05
+HITS_RECENT_CONTACT_GAMES: int = 5
+HITS_RECENT_CONTACT_PCT_MIN: float = 0.82
+RECENT_CONTACT_BONUS: float = 1.04
+
 # Over 1.5 TB prop filter thresholds (deprecated — use HITS_PROP_*)
 TB_PROP_TARGET_LINE: float = 1.5
 TB_FILTER_TARGET_LINE: float = TB_PROP_TARGET_LINE  # backward-compatible alias

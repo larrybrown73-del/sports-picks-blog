@@ -26,7 +26,9 @@ from baseball_props.config import (
     HITS_CONTACT_ROLLING_GAMES,
     HITS_LINEUP_SLOT_PENALTY,
     HITS_LINEUP_TOP_SLOT,
+    HITS_MAX_ODDS_CAP,
     HITS_MIN_ADJUSTED_EDGE_PCT,
+    HITS_MIN_PROBABILITY_FLOOR,
     HITS_PARK_HIT_BONUS_THRESHOLD,
     HITS_PROP_TARGET_LINES,
     HITS_WEATHER_BONUS_MULTIPLIER,
@@ -35,7 +37,10 @@ from baseball_props.config import (
 )
 from baseball_props.data.data_health import safe_feature_slice
 from baseball_props.data.mlb_live import fetch_active_roster_hitters
-from baseball_props.data.statcast_feed import compute_contact_profile
+from baseball_props.data.statcast_feed import (
+    apply_hits_momentum_multipliers,
+    compute_contact_profile,
+)
 from baseball_props.environment.factors import compute_environment_multiplier
 from baseball_props.logging_utils import get_logger
 
@@ -347,6 +352,13 @@ def evaluate_hits_prop(
     if not env_bonus_applied and env_mult > 1.0:
         adjusted_proj *= min(env_mult, HITS_WEATHER_BONUS_MULTIPLIER)
 
+    adjusted_proj = apply_hits_momentum_multipliers(
+        adjusted_proj,
+        player_id,
+        adjustments,
+        warnings,
+    )
+
     fatigued, bullpen_bonus = _resolve_bullpen_fatigued(game_context)
     if fatigued:
         adjustments["bullpen_bonus"] = bullpen_bonus
@@ -374,6 +386,18 @@ def evaluate_hits_prop(
             warnings.append(f"Model prefers {rec} at {market_line}")
         elif _is_valid_number(edge_pct):
             warnings.append(f"Edge {edge_pct:.1f}% below {HITS_MIN_ADJUSTED_EDGE_PCT}% threshold")
+    elif model_prob_over < HITS_MIN_PROBABILITY_FLOOR:
+        verdict = "Pass"
+        recommendation = "Pass (probability floor)"
+        warnings.append(
+            f"Model Over prob {model_prob_over:.1%} below {HITS_MIN_PROBABILITY_FLOOR:.0%} floor"
+        )
+    elif over_odds is not None and _is_valid_number(over_odds) and float(over_odds) > HITS_MAX_ODDS_CAP:
+        verdict = "Pass"
+        recommendation = "Pass (odds cap)"
+        warnings.append(
+            f"Over odds +{int(float(over_odds))} exceed +{HITS_MAX_ODDS_CAP} cap"
+        )
 
     return HitsPropEvaluation(
         verdict=verdict,

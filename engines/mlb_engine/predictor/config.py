@@ -32,3 +32,11 @@ BULLPEN_MIN_RELIEF_APPEARANCES = 1
 
 # Optional per-game evaluation log
 SLATE_EVALUATION_LOG = "slate_evaluation_log.csv"
+
+# Moneyline defensive guardrails
+MIN_PROBABILITY_FLOOR: float = 0.40
+MAX_ODDS_CAP: int = 160
+
+# Team momentum (hot hand)
+TEAM_STREAK_MIN_WINS: int = 3
+TEAM_STREAK_BONUS: float = 1.03

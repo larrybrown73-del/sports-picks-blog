@@ -344,6 +344,91 @@ def compute_contact_profile(
     return _contact_profile_from_statcast_frame(recent_full if not recent_full.empty else recent_pa)
 
 
+def consecutive_hit_games(
+    player_id: str,
+    *,
+    statcast_frame: pd.DataFrame | None = None,
+) -> int:
+    """
+    Count consecutive games (most recent backward) with at least one hit.
+    """
+    pid = str(player_id).strip()
+    if not pid.isdigit():
+        return 0
+
+    sc = statcast_frame if statcast_frame is not None else _fetch_statcast_season_frame(pid)
+    if sc.empty or "game_date" not in sc.columns:
+        return 0
+
+    pa_frame = _statcast_pa_frame(sc)
+    if pa_frame.empty:
+        return 0
+
+    events = pa_frame.get("events")
+    if events is None:
+        return 0
+
+    hit_events = {"single", "double", "triple", "home_run"}
+    hits_by_game = (
+        pa_frame.assign(_hit=events.astype(str).isin(hit_events))
+        .groupby("game_date", sort=True)["_hit"]
+        .any()
+    )
+    if hits_by_game.empty:
+        return 0
+
+    streak = 0
+    for had_hit in reversed(hits_by_game.tolist()):
+        if had_hit:
+            streak += 1
+        else:
+            break
+    return streak
+
+
+def apply_hits_momentum_multipliers(
+    adjusted_proj: float,
+    player_id: str,
+    adjustments: dict[str, float],
+    warnings: list[str],
+) -> float:
+    """Apply hot-hand projection boosts before probability / EV evaluation."""
+    from baseball_props.config import (
+        HITS_RECENT_CONTACT_GAMES,
+        HITS_RECENT_CONTACT_PCT_MIN,
+        HITS_STREAK_MIN_GAMES,
+        PLAYER_HIT_STREAK_BONUS,
+        RECENT_CONTACT_BONUS,
+    )
+
+    proj = float(adjusted_proj)
+
+    hit_streak = consecutive_hit_games(player_id)
+    adjustments["hit_streak_games"] = float(hit_streak)
+    if hit_streak >= HITS_STREAK_MIN_GAMES:
+        proj *= PLAYER_HIT_STREAK_BONUS
+        adjustments["hit_streak_bonus"] = PLAYER_HIT_STREAK_BONUS
+
+    recent_contact = compute_contact_profile(
+        player_id,
+        games=HITS_RECENT_CONTACT_GAMES,
+    )
+    if recent_contact:
+        recent_pct = recent_contact.get("contact_pct")
+        adjustments["recent_contact_pct"] = (
+            float(recent_pct) if recent_pct is not None else float("nan")
+        )
+        if recent_pct is not None and recent_pct > HITS_RECENT_CONTACT_PCT_MIN:
+            proj *= RECENT_CONTACT_BONUS
+            adjustments["recent_contact_bonus"] = RECENT_CONTACT_BONUS
+    else:
+        warnings.append(
+            "Missing-Data Warning: recent_contact_profile — momentum spike skipped"
+        )
+
+    return proj
+
+
 def rolling_xbh_rate_last_n_games(
     player_id: str,
     n: int | None = None,
