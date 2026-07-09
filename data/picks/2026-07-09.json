@@ -1,9 +1,9 @@
 {
   "date": "2026-07-09",
-  "generatedAt": "2026-07-09T14:33:53Z",
+  "generatedAt": "2026-07-09T18:32:56Z",
   "meta": {
     "slateGames": 13,
-    "valuePicks": 8,
+    "valuePicks": 2,
     "propsAvailable": true,
     "scheduleGames": 13
   },
@@ -199,8 +199,8 @@
         },
         {
           "slot": 7,
-          "name": "Mark Vientos",
-          "playerId": "668901"
+          "name": "Tyrone Taylor",
+          "playerId": "621438"
         },
         {
           "slot": 8,
@@ -220,7 +220,7 @@
       "homeTeam": "Tampa Bay Rays",
       "awayAbbrev": "NYY",
       "homeAbbrev": "TB",
-      "awayPitcher": null,
+      "awayPitcher": "Paul Blackburn",
       "homePitcher": "Drew Rasmussen",
       "awayLineup": [
         {
@@ -338,18 +338,18 @@
         },
         {
           "slot": 3,
-          "name": "Michael Busch",
-          "playerId": "683737"
-        },
-        {
-          "slot": 4,
           "name": "Seiya Suzuki",
           "playerId": "673548"
         },
         {
+          "slot": 4,
+          "name": "Carson Kelly",
+          "playerId": "608348"
+        },
+        {
           "slot": 5,
-          "name": "Ian Happ",
-          "playerId": "664023"
+          "name": "Michael Busch",
+          "playerId": "683737"
         },
         {
           "slot": 6,
@@ -358,35 +358,35 @@
         },
         {
           "slot": 7,
-          "name": "Justin Dean",
-          "playerId": "681909"
+          "name": "Ian Happ",
+          "playerId": "664023"
         },
         {
           "slot": 8,
-          "name": "Carson Kelly",
-          "playerId": "608348"
+          "name": "Dansby Swanson",
+          "playerId": "621020"
         },
         {
           "slot": 9,
-          "name": "Dansby Swanson",
-          "playerId": "621020"
+          "name": "Miguel Amaya",
+          "playerId": "665804"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Gunnar Henderson",
-          "playerId": "683002"
-        },
-        {
-          "slot": 2,
           "name": "Adley Rutschman",
           "playerId": "668939"
         },
         {
-          "slot": 3,
+          "slot": 2,
           "name": "Taylor Ward",
           "playerId": "621493"
+        },
+        {
+          "slot": 3,
+          "name": "Gunnar Henderson",
+          "playerId": "683002"
         },
         {
           "slot": 4,
@@ -395,18 +395,18 @@
         },
         {
           "slot": 5,
-          "name": "Samuel Basallo",
-          "playerId": "694212"
+          "name": "Tyler O'Neill",
+          "playerId": "641933"
         },
         {
           "slot": 6,
-          "name": "Leody Taveras",
-          "playerId": "665750"
+          "name": "Coby Mayo",
+          "playerId": "691723"
         },
         {
           "slot": 7,
-          "name": "Tyler O'Neill",
-          "playerId": "641933"
+          "name": "Samuel Basallo",
+          "playerId": "694212"
         },
         {
           "slot": 8,
@@ -415,8 +415,8 @@
         },
         {
           "slot": 9,
-          "name": "Jackson Holliday",
-          "playerId": "702616"
+          "name": "Leody Taveras",
+          "playerId": "665750"
         }
       ]
     },
@@ -431,55 +431,55 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Steven Kwan",
-          "playerId": "680757"
-        },
-        {
-          "slot": 2,
-          "name": "Chase DeLauter",
-          "playerId": "800050"
-        },
-        {
-          "slot": 3,
-          "name": "Brayan Rocchio",
-          "playerId": "677587"
-        },
-        {
-          "slot": 4,
-          "name": "Rhys Hoskins",
-          "playerId": "656555"
-        },
-        {
-          "slot": 5,
           "name": "Travis Bazzana",
           "playerId": "683953"
         },
         {
-          "slot": 6,
-          "name": "Daniel Schneemann",
-          "playerId": "682177"
+          "slot": 2,
+          "name": "Brayan Rocchio",
+          "playerId": "677587"
         },
         {
-          "slot": 7,
+          "slot": 3,
+          "name": "Chase DeLauter",
+          "playerId": "800050"
+        },
+        {
+          "slot": 4,
           "name": "Kyle Manzardo",
           "playerId": "700932"
         },
         {
+          "slot": 5,
+          "name": "Kahlil Watson",
+          "playerId": "696135"
+        },
+        {
+          "slot": 6,
+          "name": "Gabriel Arias",
+          "playerId": "672356"
+        },
+        {
+          "slot": 7,
+          "name": "Daniel Schneemann",
+          "playerId": "682177"
+        },
+        {
           "slot": 8,
-          "name": "Austin Hedges",
-          "playerId": "595978"
+          "name": "Patrick Bailey",
+          "playerId": "672275"
         },
         {
           "slot": 9,
-          "name": "Kahlil Watson",
-          "playerId": "696135"
+          "name": "Steven Kwan",
+          "playerId": "680757"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Austin Martin",
-          "playerId": "668885"
+          "name": "Trevor Larnach",
+          "playerId": "663616"
         },
         {
           "slot": 2,
@@ -503,8 +503,8 @@
         },
         {
           "slot": 6,
-          "name": "Alex Jackson",
-          "playerId": "656577"
+          "name": "Alan Roden",
+          "playerId": "702176"
         },
         {
           "slot": 7,
@@ -513,13 +513,13 @@
         },
         {
           "slot": 8,
-          "name": "Alan Roden",
-          "playerId": "702176"
+          "name": "Tristan Gray",
+          "playerId": "656484"
         },
         {
           "slot": 9,
-          "name": "Ryan Kreidler",
-          "playerId": "668952"
+          "name": "Alex Jackson",
+          "playerId": "656577"
         }
       ]
     },
@@ -534,8 +534,8 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Andruw Monasterio",
-          "playerId": "655316"
+          "name": "Anthony Seigler",
+          "playerId": "678011"
         },
         {
           "slot": 2,
@@ -554,35 +554,35 @@
         },
         {
           "slot": 5,
-          "name": "Masataka Yoshida",
-          "playerId": "807799"
-        },
-        {
-          "slot": 6,
           "name": "Caleb Durbin",
           "playerId": "702332"
         },
         {
+          "slot": 6,
+          "name": "Andruw Monasterio",
+          "playerId": "655316"
+        },
+        {
           "slot": 7,
-          "name": "Jarren Duran",
-          "playerId": "680776"
+          "name": "Nate Eaton",
+          "playerId": "681987"
         },
         {
           "slot": 8,
-          "name": "Carlos Narv\u00e1ez",
-          "playerId": "665966"
+          "name": "Brett Harris",
+          "playerId": "695391"
         },
         {
           "slot": 9,
-          "name": "Tsung-Che Cheng",
-          "playerId": "691907"
+          "name": "Connor Wong",
+          "playerId": "657136"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Miguel Vargas",
-          "playerId": "678246"
+          "name": "Chase Meidroth",
+          "playerId": "805367"
         },
         {
           "slot": 2,
@@ -591,38 +591,38 @@
         },
         {
           "slot": 3,
+          "name": "Miguel Vargas",
+          "playerId": "678246"
+        },
+        {
+          "slot": 4,
           "name": "Colson Montgomery",
           "playerId": "695657"
         },
         {
-          "slot": 4,
-          "name": "Chase Meidroth",
-          "playerId": "805367"
-        },
-        {
           "slot": 5,
-          "name": "Sam Antonacci",
-          "playerId": "803011"
-        },
-        {
-          "slot": 6,
-          "name": "Braden Montgomery",
-          "playerId": "695731"
-        },
-        {
-          "slot": 7,
           "name": "Junior Perez",
           "playerId": "678577"
         },
         {
+          "slot": 6,
+          "name": "Sam Antonacci",
+          "playerId": "803011"
+        },
+        {
+          "slot": 7,
+          "name": "Braden Montgomery",
+          "playerId": "695731"
+        },
+        {
           "slot": 8,
-          "name": "Kyle Teel",
-          "playerId": "691019"
+          "name": "Luisangel Acu\u00f1a",
+          "playerId": "682668"
         },
         {
           "slot": 9,
-          "name": "Tristan Peters",
-          "playerId": "671976"
+          "name": "Drew Romo",
+          "playerId": "691011"
         }
       ]
     },
@@ -1354,128 +1354,32 @@
       "homeTeam": "Cincinnati Reds",
       "play": "Cincinnati Reds",
       "book": "FanDuel",
-      "edgePct": 23.94,
+      "edgePct": 20.18,
       "sizingPct": 5.0,
       "americanOdds": 138,
-      "modelWinProb": 0.6596,
-      "confidenceScore": 100,
+      "modelWinProb": 0.622,
+      "confidenceScore": 90,
       "confidenceLabel": "Elite",
       "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 1.2293,
-      "predHomeRuns": 5.35,
-      "predAwayRuns": 2.88
-    },
-    {
-      "awayTeam": "Chicago Cubs",
-      "homeTeam": "Baltimore Orioles",
-      "play": "Chicago Cubs",
-      "book": "FanDuel",
-      "edgePct": 14.5,
-      "sizingPct": 5.0,
-      "americanOdds": 110,
-      "modelWinProb": 0.6212,
-      "confidenceScore": 68,
-      "confidenceLabel": "Medium",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.9256,
-      "predHomeRuns": 5.03,
-      "predAwayRuns": 7.09
-    },
-    {
-      "awayTeam": "New York Yankees",
-      "homeTeam": "Tampa Bay Rays",
-      "play": "New York Yankees",
-      "book": "BetMGM",
-      "edgePct": 12.62,
-      "sizingPct": 5.0,
-      "americanOdds": 135,
-      "modelWinProb": 0.5517,
-      "confidenceScore": 55,
-      "confidenceLabel": "Medium",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.8483,
-      "predHomeRuns": 4.81,
-      "predAwayRuns": 5.92
-    },
-    {
-      "awayTeam": "Kansas City Royals",
-      "homeTeam": "New York Mets",
-      "play": "Kansas City Royals",
-      "book": "BetMGM",
-      "edgePct": 8.51,
-      "sizingPct": 3.93,
-      "americanOdds": 118,
-      "modelWinProb": 0.5438,
-      "confidenceScore": 38,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.7293,
-      "predHomeRuns": 5.1,
-      "predAwayRuns": 6.01
-    },
-    {
-      "awayTeam": "Atlanta Braves",
-      "homeTeam": "Pittsburgh Pirates",
-      "play": "Pittsburgh Pirates",
-      "book": "FanDuel",
-      "edgePct": 8.48,
-      "sizingPct": 4.28,
-      "americanOdds": -102,
-      "modelWinProb": 0.5897,
-      "confidenceScore": 41,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.7575,
-      "predHomeRuns": 5.46,
-      "predAwayRuns": 4.08
-    },
-    {
-      "awayTeam": "Colorado Rockies",
-      "homeTeam": "San Francisco Giants",
-      "play": "Colorado Rockies",
-      "book": "FanDuel",
-      "edgePct": 5.1,
-      "sizingPct": 2.37,
-      "americanOdds": 116,
-      "modelWinProb": 0.5139,
-      "confidenceScore": 22,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.624,
-      "predHomeRuns": 3.97,
-      "predAwayRuns": 4.18
+      "evPerUnit": 1.1024,
+      "predHomeRuns": 5.33,
+      "predAwayRuns": 3.34
     },
     {
       "awayTeam": "Cleveland Guardians",
       "homeTeam": "Minnesota Twins",
       "play": "Minnesota Twins",
-      "book": "FanDuel",
-      "edgePct": 3.5,
-      "sizingPct": 1.67,
-      "americanOdds": 110,
-      "modelWinProb": 0.5112,
-      "confidenceScore": 15,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.5846,
-      "predHomeRuns": 4.57,
-      "predAwayRuns": 4.92
-    },
-    {
-      "awayTeam": "Arizona Diamondbacks",
-      "homeTeam": "San Diego Padres",
-      "play": "Arizona Diamondbacks",
-      "book": "FanDuel",
-      "edgePct": 3.25,
-      "sizingPct": 1.57,
-      "americanOdds": 108,
-      "modelWinProb": 0.5133,
-      "confidenceScore": 14,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.5809,
-      "predHomeRuns": 4.74,
-      "predAwayRuns": 4.7
+      "book": "DraftKings",
+      "edgePct": 19.59,
+      "sizingPct": 5.0,
+      "americanOdds": 141,
+      "modelWinProb": 0.6109,
+      "confidenceScore": 87,
+      "confidenceLabel": "Elite",
+      "confidenceTier": "Tier-1 High Conviction",
+      "evPerUnit": 1.0831,
+      "predHomeRuns": 4.86,
+      "predAwayRuns": 3.59
     }
   ],
   "propPicks": {
