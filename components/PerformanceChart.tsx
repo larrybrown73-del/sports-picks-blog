@@ -59,7 +59,7 @@ export function PerformanceChart({ snapshots }: PerformanceChartProps) {
           <rect x="0" y="0" width="640" height="220" fill="transparent" />
           <polyline
             fill="none"
-            stroke="#22c55e"
+            stroke="#FFB347"
             strokeWidth="3"
             points={roiPoints}
           />

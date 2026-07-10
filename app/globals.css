@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 :root {
   --background: #0a0f14;
@@ -6,9 +7,15 @@
   --muted: #8b9aab;
   --card: #121a22;
   --card-border: #1e2a36;
-  --accent: #22c55e;
-  --accent-muted: #166534;
+  --accent: #ffb347;
+  --accent-muted: #e79523;
   --danger: #ef4444;
+}
+
+@theme {
+  --color-peach: #ffb347;
+  --color-peach-light: #ffcc99;
+  --color-peach-dark: #e79523;
 }
 
 body {
