@@ -1,9 +1,9 @@
 {
   "date": "2026-07-10",
-  "generatedAt": "2026-07-10T15:06:05Z",
+  "generatedAt": "2026-07-10T18:10:57Z",
   "meta": {
     "slateGames": 15,
-    "valuePicks": 7,
+    "valuePicks": 0,
     "propsAvailable": true,
     "scheduleGames": 15
   },
@@ -925,13 +925,13 @@
         },
         {
           "slot": 8,
-          "name": "Jacob Gonzalez",
-          "playerId": "694378"
+          "name": "Kyle Teel",
+          "playerId": "691019"
         },
         {
           "slot": 9,
-          "name": "Kyle Teel",
-          "playerId": "691019"
+          "name": "Drew Romo",
+          "playerId": "691011"
         }
       ]
     },
@@ -1554,120 +1554,7 @@
       ]
     }
   ],
-  "moneylinePicks": [
-    {
-      "awayTeam": "Chicago Cubs",
-      "homeTeam": "Cincinnati Reds",
-      "play": "Chicago Cubs",
-      "book": "FanDuel",
-      "edgePct": 27.18,
-      "sizingPct": 5.0,
-      "americanOdds": -110,
-      "modelWinProb": 0.7956,
-      "confidenceScore": 100,
-      "confidenceLabel": "Elite",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 1.3144,
-      "predHomeRuns": 4.32,
-      "predAwayRuns": 16.82
-    },
-    {
-      "awayTeam": "Boston Red Sox",
-      "homeTeam": "New York Mets",
-      "play": "Boston Red Sox",
-      "book": "BetMGM",
-      "edgePct": 13.88,
-      "sizingPct": 5.0,
-      "americanOdds": 115,
-      "modelWinProb": 0.6039,
-      "confidenceScore": 64,
-      "confidenceLabel": "Medium",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.9022,
-      "predHomeRuns": 3.0,
-      "predAwayRuns": 4.25
-    },
-    {
-      "awayTeam": "Toronto Blue Jays",
-      "homeTeam": "San Diego Padres",
-      "play": "San Diego Padres",
-      "book": "DraftKings",
-      "edgePct": 8.0,
-      "sizingPct": 4.3,
-      "americanOdds": -115,
-      "modelWinProb": 0.6149,
-      "confidenceScore": 41,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.7645,
-      "predHomeRuns": 8.49,
-      "predAwayRuns": 5.32
-    },
-    {
-      "awayTeam": "Seattle Mariners",
-      "homeTeam": "Tampa Bay Rays",
-      "play": "Tampa Bay Rays",
-      "book": "DraftKings",
-      "edgePct": 5.11,
-      "sizingPct": 2.75,
-      "americanOdds": -115,
-      "modelWinProb": 0.586,
-      "confidenceScore": 27,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.6814,
-      "predHomeRuns": 5.0,
-      "predAwayRuns": 3.53
-    },
-    {
-      "awayTeam": "Los Angeles Angels",
-      "homeTeam": "Minnesota Twins",
-      "play": "Minnesota Twins",
-      "book": "FanDuel",
-      "edgePct": 5.1,
-      "sizingPct": 2.93,
-      "americanOdds": -130,
-      "modelWinProb": 0.6162,
-      "confidenceScore": 30,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.7065,
-      "predHomeRuns": 7.21,
-      "predAwayRuns": 4.49
-    },
-    {
-      "awayTeam": "Houston Astros",
-      "homeTeam": "Texas Rangers",
-      "play": "Texas Rangers",
-      "book": "DraftKings",
-      "edgePct": 4.94,
-      "sizingPct": 2.27,
-      "americanOdds": 119,
-      "modelWinProb": 0.506,
-      "confidenceScore": 20,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.6143,
-      "predHomeRuns": 4.28,
-      "predAwayRuns": 4.18
-    },
-    {
-      "awayTeam": "Cleveland Guardians",
-      "homeTeam": "Miami Marlins",
-      "play": "Cleveland Guardians",
-      "book": "FanDuel",
-      "edgePct": 3.36,
-      "sizingPct": 1.66,
-      "americanOdds": 102,
-      "modelWinProb": 0.5286,
-      "confidenceScore": 16,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.5965,
-      "predHomeRuns": 3.94,
-      "predAwayRuns": 4.42
-    }
-  ],
+  "moneylinePicks": [],
   "propPicks": {
     "conviction": [
       {
