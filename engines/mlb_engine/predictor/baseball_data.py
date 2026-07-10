@@ -94,13 +94,22 @@ def _season_range(season: int) -> tuple[str, str]:
 
 
 def get_starting_pitchers(game_pk: int) -> dict[str, str]:
-    """Fetch starting pitchers for both teams using an MLB game_pk.
+    """Fetch starting pitcher names for both teams."""
+    info = get_starting_pitcher_info(game_pk)
+    return {
+        "home_pitcher": info["home_pitcher_name"],
+        "away_pitcher": info["away_pitcher_name"],
+    }
 
-    Checks the live boxscore first, where the first listed pitcher is the game
-    starter, then falls back to hydrated schedule probable pitchers for
-    pre-game matchups.
-    """
-    pitchers = {"home_pitcher": "Unknown", "away_pitcher": "Unknown"}
+
+def get_starting_pitcher_info(game_pk: int) -> dict[str, str | int | None]:
+    """Fetch starting pitcher names and MLBAM ids for both teams."""
+    info: dict[str, str | int | None] = {
+        "home_pitcher_id": None,
+        "away_pitcher_id": None,
+        "home_pitcher_name": "Unknown",
+        "away_pitcher_name": "Unknown",
+    }
 
     try:
         boxscore_url = f"https://statsapi.mlb.com/api/v1/game/{game_pk}/boxscore"
@@ -115,7 +124,7 @@ def get_starting_pitchers(game_pk: int) -> dict[str, str]:
                 pitcher_ids = team_info.get("pitchers", [])
 
                 if pitcher_ids:
-                    first_pitcher_id = pitcher_ids[0]
+                    first_pitcher_id = int(pitcher_ids[0])
                     player_name = (
                         team_info.get("players", {})
                         .get(f"ID{first_pitcher_id}", {})
@@ -123,9 +132,10 @@ def get_starting_pitchers(game_pk: int) -> dict[str, str]:
                         .get("fullName")
                     )
                     if player_name:
-                        pitchers[f"{side}_pitcher"] = player_name
+                        info[f"{side}_pitcher_id"] = first_pitcher_id
+                        info[f"{side}_pitcher_name"] = player_name
 
-        if pitchers["home_pitcher"] == "Unknown" and pitchers["away_pitcher"] == "Unknown":
+        if info["home_pitcher_name"] == "Unknown" and info["away_pitcher_name"] == "Unknown":
             schedule_url = (
                 "https://statsapi.mlb.com/api/v1/schedule"
                 f"?sportId=1&gamePk={game_pk}&hydrate=probablePitcher"
@@ -140,21 +150,18 @@ def get_starting_pitchers(game_pk: int) -> dict[str, str]:
                     if games:
                         game_info = games[0]
                         teams = game_info.get("teams", {})
-                        pitchers["home_pitcher"] = (
-                            teams.get("home", {})
-                            .get("probablePitcher", {})
-                            .get("fullName", "Unknown")
-                        )
-                        pitchers["away_pitcher"] = (
-                            teams.get("away", {})
-                            .get("probablePitcher", {})
-                            .get("fullName", "Unknown")
-                        )
+                        for side in ("home", "away"):
+                            probable = teams.get(side, {}).get("probablePitcher") or {}
+                            name = probable.get("fullName", "Unknown")
+                            pitcher_id = probable.get("id")
+                            info[f"{side}_pitcher_name"] = name
+                            if pitcher_id is not None:
+                                info[f"{side}_pitcher_id"] = int(pitcher_id)
 
     except requests.RequestException:
-        return pitchers
+        return info
 
-    return pitchers
+    return info
 
 
 def _is_retriable_schedule_error(exc: BaseException) -> bool:

@@ -16,16 +16,24 @@ from baseball_props.analysis.edge_sheets import (
     best_side_edge,
     prob_over_continuous,
 )
+from baseball_props.analysis.hitter_discipline import (
+    apply_hitter_discipline_to_projection,
+    fetch_batter_discipline_profile,
+    is_elite_discipline,
+    is_erratic_swinger,
+    lineup_slot_prob_scalar,
+)
+from baseball_props.analysis.pitcher_batter_matchup import apply_pitcher_hitter_matchup
 from baseball_props.config import (
     EDGE_HITS_SIGMA,
+    DISCIPLINE_BONUS,
+    ERRATIC_SWINGER_PENALTY,
     HITS_BABIP_FLOOR,
     HITS_BULLPEN_FATIGUE_BONUS,
     HITS_CONTACT_BONUS_MULTIPLIER,
     HITS_CONTACT_K_PCT_MAX,
     HITS_CONTACT_PCT_FLOOR,
     HITS_CONTACT_ROLLING_GAMES,
-    HITS_LINEUP_SLOT_PENALTY,
-    HITS_LINEUP_TOP_SLOT,
     HITS_MAX_ODDS_CAP,
     HITS_MIN_ADJUSTED_EDGE_PCT,
     HITS_MIN_PROBABILITY_FLOOR,
@@ -118,6 +126,15 @@ def _is_wind_out(wind_dir: str | None) -> bool:
 
 def _is_hits_target_line(market_line: float) -> bool:
     return any(abs(float(market_line) - float(target)) < 1e-6 for target in HITS_PROP_TARGET_LINES)
+
+
+def _batting_mlb_team_id(game_context: GameContext) -> int | None:
+    batting = str(game_context.batting_team_id) if game_context.batting_team_id else None
+    if batting and game_context.home_team_id and batting == str(game_context.home_team_id):
+        return game_context.home_mlb_team_id
+    if batting and game_context.away_team_id and batting == str(game_context.away_team_id):
+        return game_context.away_mlb_team_id
+    return None
 
 
 def _resolve_bullpen_fatigued(game_context: GameContext) -> tuple[bool, float]:
@@ -230,7 +247,7 @@ def evaluate_hits_prop(
     contact_profile: dict[str, float] | None = None,
 ) -> HitsPropEvaluation:
     """Apply Over 0.5 / Over 1.5 hits checklist guardrails on top of base projection."""
-    del opponent_pitcher_id, prop_lines  # reserved for future SP-specific filters
+    del prop_lines  # reserved for future alt-line filters
 
     if not _is_valid_number(proj_hits) or not _is_valid_number(market_line):
         return HitsPropEvaluation(
@@ -284,12 +301,16 @@ def evaluate_hits_prop(
     _verify_roster_membership(player_id, game_context.batting_team_id, warnings)
 
     lineup_slot = game_context.lineup_slot
-    if lineup_slot is None or lineup_slot > HITS_LINEUP_TOP_SLOT:
-        warnings.append(
-            f"Lineup slot {lineup_slot} outside top {HITS_LINEUP_TOP_SLOT}; applying penalty"
-        )
-        prob_multiplier *= HITS_LINEUP_SLOT_PENALTY
-        adjustments["lineup_penalty"] = HITS_LINEUP_SLOT_PENALTY
+    slot_scalar, slot_tag = lineup_slot_prob_scalar(lineup_slot)
+    if slot_tag:
+        prob_multiplier *= slot_scalar
+        adjustments[slot_tag] = slot_scalar
+        if slot_tag == "bottom_order_penalty":
+            warnings.append(
+                f"Lineup slot {lineup_slot} in bottom order; applying {slot_scalar:.2f}x penalty"
+            )
+        elif slot_tag == "premium_slot":
+            adjustments["premium_slot_bonus"] = slot_scalar
 
     profile = contact_profile
     if profile is None:
@@ -351,6 +372,30 @@ def evaluate_hits_prop(
 
     if not env_bonus_applied and env_mult > 1.0:
         adjusted_proj *= min(env_mult, HITS_WEATHER_BONUS_MULTIPLIER)
+
+    discipline = fetch_batter_discipline_profile(
+        player_id, season=game_context.game_date.year
+    )
+    adjusted_proj = apply_hitter_discipline_to_projection(
+        adjusted_proj, discipline, adjustments
+    )
+    if is_elite_discipline(discipline):
+        prob_multiplier *= DISCIPLINE_BONUS
+        adjustments["discipline_prob_bonus"] = DISCIPLINE_BONUS
+    if is_erratic_swinger(discipline):
+        prob_multiplier *= ERRATIC_SWINGER_PENALTY
+        adjustments["erratic_prob_penalty"] = ERRATIC_SWINGER_PENALTY
+
+    adjusted_proj, prob_multiplier = apply_pitcher_hitter_matchup(
+        adjusted_proj,
+        prob_multiplier,
+        opponent_pitcher_id=opponent_pitcher_id,
+        discipline=discipline,
+        batting_mlb_team_id=_batting_mlb_team_id(game_context),
+        season=game_context.game_date.year,
+        adjustments=adjustments,
+        warnings=warnings,
+    )
 
     adjusted_proj = apply_hits_momentum_multipliers(
         adjusted_proj,

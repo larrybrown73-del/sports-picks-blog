@@ -12,9 +12,10 @@ import pandas as pd
 
 import baseball_data
 import model
-from bullpen_fatigue import BullpenStatus, apply_bullpen_penalty, compute_bullpen_fatigue
+from bullpen_fatigue import BullpenStatus, apply_bullpen_penalty, apply_bullpen_to_runs, compute_bullpen_fatigue
 from config import DEFAULT_ROLLING_WINDOW, SLATE_EVALUATION_LOG
 from game_conditions import GameConditions, apply_run_environment, fetch_game_conditions
+from pitcher_matchup import apply_pitcher_matchup_adjustments
 
 
 @dataclass
@@ -28,6 +29,8 @@ class EvaluatedGame:
     conditions: GameConditions
     fatigue: BullpenStatus
     travel_tags: list[str] = field(default_factory=list)
+    pitcher_matchup_tags: list[str] = field(default_factory=list)
+    bullpen_tags: list[str] = field(default_factory=list)
     umpire_modifier: float = 1.0
 
     @property
@@ -62,12 +65,18 @@ def evaluate_game(
         venue_id=game.get("venue_id"),
     )
     home_runs, away_runs, _ = model.predict_matchup(models, features)
-    home_prob, away_prob = model.implied_win_probabilities(home_runs, away_runs)
 
-    home_runs, away_runs = apply_run_environment(
-        home_runs, away_runs, conditions.run_env_multiplier
+    matchup = apply_pitcher_matchup_adjustments(
+        home_runs,
+        away_runs,
+        game_id=int(game["game_id"]),
+        home_id=int(game["home_id"]),
+        away_id=int(game["away_id"]),
+        season=game_date.year,
+        game_date=game_date,
     )
-    home_prob, away_prob = model.implied_win_probabilities(home_runs, away_runs)
+    home_runs = matchup.home_runs
+    away_runs = matchup.away_runs
 
     as_of = datetime.combine(game_date, datetime.min.time())
     fatigue = compute_bullpen_fatigue(
@@ -75,7 +84,14 @@ def evaluate_game(
         game["away_id"],
         as_of,
         game_id=game.get("game_id"),
+        season=game_date.year,
     )
+    home_runs, away_runs, bullpen_tags = apply_bullpen_to_runs(home_runs, away_runs, fatigue)
+
+    home_runs, away_runs = apply_run_environment(
+        home_runs, away_runs, conditions.run_env_multiplier
+    )
+    home_prob, away_prob = model.implied_win_probabilities(home_runs, away_runs)
     home_prob, away_prob = apply_bullpen_penalty(home_prob, away_prob, fatigue)
 
     return EvaluatedGame(
@@ -88,6 +104,8 @@ def evaluate_game(
         conditions=conditions,
         fatigue=fatigue,
         travel_tags=[],
+        pitcher_matchup_tags=matchup.tags,
+        bullpen_tags=bullpen_tags,
         umpire_modifier=1.0,
     )
 

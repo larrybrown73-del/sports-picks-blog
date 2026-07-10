@@ -4,6 +4,9 @@ from datetime import date
 from unittest.mock import patch
 
 import pandas as pd
+import pytest
+
+from baseball_props.analysis.hitter_discipline import BatterDisciplineProfile
 
 from baseball_props.analysis.edge_sheets import (
     PASS_NO_DATA,
@@ -25,6 +28,18 @@ from baseball_props.config import (
     PLAYER_HIT_STREAK_BONUS,
     RECENT_CONTACT_BONUS,
 )
+
+
+@pytest.fixture(autouse=True)
+def _neutral_batter_discipline(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        "baseball_props.analysis.guardrails.fetch_batter_discipline_profile",
+        lambda player_id, season: BatterDisciplineProfile(player_id, k_pct=20.0, bb_pct=8.0),
+    )
+    monkeypatch.setattr(
+        "baseball_props.analysis.guardrails.apply_pitcher_hitter_matchup",
+        lambda adjusted_proj, prob_multiplier, **kwargs: (adjusted_proj, prob_multiplier),
+    )
 
 
 def _base_context(**overrides: object) -> GameContext:
@@ -53,8 +68,8 @@ def test_hits_target_lines_include_half_and_one_half() -> None:
     assert HITS_PROP_PRIMARY_LINE == 1.5
 
 
-def test_lineup_slot_penalty_for_bottom_order() -> None:
-    ctx = _base_context(lineup_slot=7)
+def test_bottom_order_penalty_for_slots_eight_nine() -> None:
+    ctx = _base_context(lineup_slot=9)
     result = evaluate_hits_prop(
         "592450",
         "P101",
@@ -66,8 +81,23 @@ def test_lineup_slot_penalty_for_bottom_order() -> None:
         contact_profile={"k_pct": 0.22, "contact_pct": 0.80, "babip": 0.29, "pa": 20.0},
     )
     assert result.verdict == "Play"
-    assert any("Lineup slot 7" in warning for warning in result.warnings)
-    assert result.adjustments.get("lineup_penalty") == HITS_LINEUP_SLOT_PENALTY
+    assert result.adjustments.get("bottom_order_penalty") == HITS_LINEUP_SLOT_PENALTY
+
+
+def test_middle_order_slot_is_neutral() -> None:
+    ctx = _base_context(lineup_slot=7)
+    result = evaluate_hits_prop(
+        "592450",
+        "P101",
+        ctx,
+        proj_hits=1.8,
+        market_line=1.5,
+        over_odds=-110,
+        under_odds=-110,
+        contact_profile={"k_pct": 0.22, "contact_pct": 0.80, "babip": 0.29, "pa": 20.0},
+    )
+    assert "bottom_order_penalty" not in result.adjustments
+    assert "premium_slot_bonus" not in result.adjustments
 
 
 def test_contact_hitter_receives_bonus_not_pass() -> None:
