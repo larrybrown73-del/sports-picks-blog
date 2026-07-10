@@ -108,3 +108,14 @@ POOR_DEFENSE_PENALTY: float = 1.12
 ELITE_DEFENSE_TOP_N: int = 5
 POOR_DEFENSE_BOTTOM_N: int = 5
 DEFENSE_OAA_MIN_ATTEMPTS: int = 100
+
+# Starting pitcher baseline injection (pre-secondary modifiers)
+LEAGUE_AVG_ERA: float = 4.20
+LEAGUE_AVG_WHIP: float = 1.25
+LEAGUE_AVG_RUNS: float = 4.50
+SP_BASELINE_RF_WEIGHT: float = 0.25
+SECONDARY_MODIFIER_MAX_PCT: float = 0.08
+
+# Hard pitching mismatch veto (moneyline auto-drop)
+PITCHING_MISMATCH_OUR_ERA_MIN: float = 5.00
+PITCHING_MISMATCH_OPP_ERA_MAX: float = 4.00

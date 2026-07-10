@@ -21,6 +21,7 @@ from config import DEFAULT_ROLLING_WINDOW, MAX_ODDS_CAP, MIN_PROBABILITY_FLOOR
 from momentum import apply_team_streak_bonus
 from market.calculations import compute_wager_metrics
 from slate_evaluation import append_slate_evaluation_log, evaluate_game
+from starter_baseline import fetch_starter_eras, pitching_mismatch_veto
 
 THE_ODDS_API_URL = "https://api.the-odds-api.com/v4/sports/baseball_mlb/odds"
 SPORTSBOOK_KEYS = "draftkings,fanduel,betmgm"
@@ -193,12 +194,25 @@ def evaluate_slate(
             evaluated.away_prob, int(game["away_id"]), game_date
         )
 
+        home_sp_era, away_sp_era = fetch_starter_eras(
+            int(game["game_id"]), season=game_date.year
+        )
+
         candidates: list[SlatePick] = []
-        for team_name, key, prob in (
-            (home_name, home_key, home_prob),
-            (away_name, away_key, away_prob),
+        for team_name, key, prob, backing_home in (
+            (home_name, home_key, home_prob, True),
+            (away_name, away_key, away_prob, False),
         ):
             if key not in best_prices:
+                continue
+            our_era = home_sp_era if backing_home else away_sp_era
+            opp_era = away_sp_era if backing_home else home_sp_era
+            if pitching_mismatch_veto(our_sp_era=our_era, opponent_sp_era=opp_era):
+                print(
+                    f"  Pitching mismatch veto: {team_name} "
+                    f"(our ERA {our_era}, opp ERA {opp_era})",
+                    flush=True,
+                )
                 continue
             american_odds, book = best_prices[key]
             if not _passes_moneyline_guardrails(prob, american_odds):

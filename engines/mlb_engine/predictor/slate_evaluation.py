@@ -13,9 +13,10 @@ import pandas as pd
 import baseball_data
 import model
 from bullpen_fatigue import BullpenStatus, apply_bullpen_penalty, apply_bullpen_to_runs, compute_bullpen_fatigue
-from config import DEFAULT_ROLLING_WINDOW, SLATE_EVALUATION_LOG
+from config import DEFAULT_ROLLING_WINDOW, SECONDARY_MODIFIER_MAX_PCT, SLATE_EVALUATION_LOG
 from game_conditions import GameConditions, apply_run_environment, fetch_game_conditions
 from pitcher_matchup import apply_pitcher_matchup_adjustments
+from starter_baseline import apply_starter_baseline_injection, clamp_secondary_run_adjustments
 
 
 @dataclass
@@ -65,6 +66,19 @@ def evaluate_game(
         venue_id=game.get("venue_id"),
     )
     home_runs, away_runs, _ = model.predict_matchup(models, features)
+    rf_home_runs, rf_away_runs = home_runs, away_runs
+
+    baseline = apply_starter_baseline_injection(
+        rf_home_runs,
+        rf_away_runs,
+        game_id=int(game["game_id"]),
+        season=game_date.year,
+    )
+    home_runs = baseline.home_runs
+    away_runs = baseline.away_runs
+    baseline_home_runs = home_runs
+    baseline_away_runs = away_runs
+    evaluation_tags: list[str] = list(baseline.tags)
 
     matchup = apply_pitcher_matchup_adjustments(
         home_runs,
@@ -91,6 +105,16 @@ def evaluate_game(
     home_runs, away_runs = apply_run_environment(
         home_runs, away_runs, conditions.run_env_multiplier
     )
+
+    home_runs, away_runs, cap_tags = clamp_secondary_run_adjustments(
+        baseline_home_runs,
+        baseline_away_runs,
+        home_runs,
+        away_runs,
+        cap=SECONDARY_MODIFIER_MAX_PCT,
+    )
+    evaluation_tags.extend(cap_tags)
+
     home_prob, away_prob = model.implied_win_probabilities(home_runs, away_runs)
     home_prob, away_prob = apply_bullpen_penalty(home_prob, away_prob, fatigue)
 
@@ -104,7 +128,7 @@ def evaluate_game(
         conditions=conditions,
         fatigue=fatigue,
         travel_tags=[],
-        pitcher_matchup_tags=matchup.tags,
+        pitcher_matchup_tags=[*evaluation_tags, *matchup.tags],
         bullpen_tags=bullpen_tags,
         umpire_modifier=1.0,
     )
