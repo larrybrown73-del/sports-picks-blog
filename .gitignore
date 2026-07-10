@@ -44,4 +44,7 @@ engines/**/cache/
 engines/**/data/cache/
 engines/**/exports/
 engines/**/output/
+engines/**/logs/
 *.pyc
+.vercel
+.env*

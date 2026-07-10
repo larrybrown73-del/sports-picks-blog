@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Today's Picks" },
+  { href: "/", label: "MLB Picks" },
+  { href: "/wnba", label: "WNBA Picks" },
   { href: "/performance", label: "Performance" },
   { href: "/about", label: "About" },
 ];
