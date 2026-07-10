@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-09",
+  "generatedAt": "2026-07-10T13:13:40Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-09",
+      "matchup": "Philadelphia Phillies @ Cincinnati Reds",
+      "pick": "Cincinnati Reds",
+      "americanOdds": 105,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-09",
+      "matchup": "Milwaukee Brewers @ St. Louis Cardinals",
+      "pick": "Milwaukee Brewers",
+      "americanOdds": 132,
+      "result": "Win",
+      "profitLoss": 132.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-09",
+      "matchup": "Athletics @ Detroit Tigers",
+      "pick": "Athletics",
+      "americanOdds": 128,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": -68.0
+  }
+}
