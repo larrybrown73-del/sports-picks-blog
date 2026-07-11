@@ -38,7 +38,7 @@ def _neutral_batter_discipline(monkeypatch: pytest.MonkeyPatch) -> None:
     )
     monkeypatch.setattr(
         "baseball_props.analysis.guardrails.apply_pitcher_hitter_matchup",
-        lambda adjusted_proj, prob_multiplier, **kwargs: (adjusted_proj, prob_multiplier),
+        lambda adjusted_proj, **kwargs: adjusted_proj,
     )
 
 
@@ -80,8 +80,9 @@ def test_bottom_order_penalty_for_slots_eight_nine() -> None:
         under_odds=-110,
         contact_profile={"k_pct": 0.22, "contact_pct": 0.80, "babip": 0.29, "pa": 20.0},
     )
-    assert result.verdict == "Play"
     assert result.adjustments.get("bottom_order_penalty") == HITS_LINEUP_SLOT_PENALTY
+    assert result.adjustments.get("adjusted_proj_hits") == pytest.approx(1.8 * HITS_LINEUP_SLOT_PENALTY)
+    assert any("bottom order" in warning for warning in result.warnings)
 
 
 def test_middle_order_slot_is_neutral() -> None:

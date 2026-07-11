@@ -15,19 +15,16 @@ from baseball_props.analysis.edge_sheets import (
     _is_valid_number,
     best_side_edge,
     prob_over_continuous,
+    scaled_prop_sigma,
 )
 from baseball_props.analysis.hitter_discipline import (
     apply_hitter_discipline_to_projection,
     fetch_batter_discipline_profile,
-    is_elite_discipline,
-    is_erratic_swinger,
     lineup_slot_prob_scalar,
 )
 from baseball_props.analysis.pitcher_batter_matchup import apply_pitcher_hitter_matchup
 from baseball_props.config import (
     EDGE_HITS_SIGMA,
-    DISCIPLINE_BONUS,
-    ERRATIC_SWINGER_PENALTY,
     HITS_BABIP_FLOOR,
     HITS_BULLPEN_FATIGUE_BONUS,
     HITS_CONTACT_BONUS_MULTIPLIER,
@@ -261,9 +258,8 @@ def evaluate_hits_prop(
 
     warnings: list[str] = []
     adjustments: dict[str, float] = {}
-    adjusted_proj = float(proj_hits)
-    prob_multiplier = 1.0
-    bullpen_bonus = 0.0
+    base_proj = float(proj_hits)
+    adjusted_proj = base_proj
     verdict: Literal["Play", "Pass"] = "Play"
     recommendation = "Over"
 
@@ -303,7 +299,7 @@ def evaluate_hits_prop(
     lineup_slot = game_context.lineup_slot
     slot_scalar, slot_tag = lineup_slot_prob_scalar(lineup_slot)
     if slot_tag:
-        prob_multiplier *= slot_scalar
+        adjusted_proj *= slot_scalar
         adjustments[slot_tag] = slot_scalar
         if slot_tag == "bottom_order_penalty":
             warnings.append(
@@ -322,7 +318,8 @@ def evaluate_hits_prop(
             empty_check=lambda value: not value,
         )
     contact_multiplier = _apply_contact_bonus(profile, adjustments, warnings)
-    prob_multiplier *= contact_multiplier
+    if contact_multiplier != 1.0:
+        adjusted_proj *= contact_multiplier
 
     temp_f = game_context.temp_f
     wind_mph = game_context.wind_mph
@@ -379,16 +376,9 @@ def evaluate_hits_prop(
     adjusted_proj = apply_hitter_discipline_to_projection(
         adjusted_proj, discipline, adjustments
     )
-    if is_elite_discipline(discipline):
-        prob_multiplier *= DISCIPLINE_BONUS
-        adjustments["discipline_prob_bonus"] = DISCIPLINE_BONUS
-    if is_erratic_swinger(discipline):
-        prob_multiplier *= ERRATIC_SWINGER_PENALTY
-        adjustments["erratic_prob_penalty"] = ERRATIC_SWINGER_PENALTY
 
-    adjusted_proj, prob_multiplier = apply_pitcher_hitter_matchup(
+    adjusted_proj = apply_pitcher_hitter_matchup(
         adjusted_proj,
-        prob_multiplier,
         opponent_pitcher_id=opponent_pitcher_id,
         discipline=discipline,
         batting_mlb_team_id=_batting_mlb_team_id(game_context),
@@ -404,11 +394,16 @@ def evaluate_hits_prop(
         warnings,
     )
 
-    fatigued, bullpen_bonus = _resolve_bullpen_fatigued(game_context)
+    fatigued, bullpen_scalar = _resolve_bullpen_fatigued(game_context)
     if fatigued:
-        adjustments["bullpen_bonus"] = bullpen_bonus
+        adjusted_proj *= bullpen_scalar
+        adjustments["bullpen_bonus"] = bullpen_scalar
 
-    model_prob_over = prob_over_continuous(adjusted_proj, EDGE_HITS_SIGMA, market_line)
+    adjusted_sigma = scaled_prop_sigma(EDGE_HITS_SIGMA, base_proj, adjusted_proj)
+    adjustments["adjusted_proj_hits"] = adjusted_proj
+    adjustments["adjusted_sigma"] = adjusted_sigma
+
+    model_prob_over = prob_over_continuous(adjusted_proj, adjusted_sigma, market_line)
     if model_prob_over is None:
         return HitsPropEvaluation(
             verdict="Pass",
@@ -419,7 +414,6 @@ def evaluate_hits_prop(
             warnings=warnings,
             adjustments=adjustments,
         )
-    model_prob_over = min(0.99, model_prob_over * prob_multiplier + bullpen_bonus)
     adjustments["adjusted_prob_over"] = model_prob_over
 
     rec, prob_side, edge_pct = best_side_edge(model_prob_over, over_odds, under_odds)

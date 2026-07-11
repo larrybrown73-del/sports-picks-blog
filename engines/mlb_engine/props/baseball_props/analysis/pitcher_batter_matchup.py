@@ -50,7 +50,6 @@ def _load_predictor_pitcher_matchup():
 
 def apply_pitcher_hitter_matchup(
     adjusted_proj: float,
-    prob_multiplier: float,
     *,
     opponent_pitcher_id: str | None,
     discipline: BatterDisciplineProfile,
@@ -58,34 +57,32 @@ def apply_pitcher_hitter_matchup(
     season: int,
     adjustments: dict[str, float],
     warnings: list[str],
-) -> tuple[float, float]:
+) -> float:
     """
-    Layer opposing SP stability and style matchups on hitter discipline.
+    Layer opposing SP stability and style matchups onto the projected mean.
 
-    Pitcher guardrails run first; patient-eye and hero-swing profiles then
-    compound with ground-ball and velo-dominance styles before edge export.
+    All scalars adjust Expected Hits / Expected Outs before CDF conversion.
     """
     if not opponent_pitcher_id:
-        return adjusted_proj, prob_multiplier
+        return adjusted_proj
 
     bridge = _load_predictor_pitcher_matchup()
     if bridge is None:
         warnings.append(
             "Missing-Data Warning: predictor_pitcher_matchup — skipping SP style interaction"
         )
-        return adjusted_proj, prob_multiplier
+        return adjusted_proj
 
     try:
         pitcher_id = int(opponent_pitcher_id)
     except (TypeError, ValueError):
-        return adjusted_proj, prob_multiplier
+        return adjusted_proj
 
     pitcher = bridge["fetch_pitcher_season_profile"](pitcher_id, season=season)
     if pitcher is None:
-        return adjusted_proj, prob_multiplier
+        return adjusted_proj
 
     proj = float(adjusted_proj)
-    prob = float(prob_multiplier)
 
     stability_scalar, stability_tag = bridge["pitcher_runs_allowed_scalar"](pitcher)
     if stability_tag:
@@ -95,7 +92,6 @@ def apply_pitcher_hitter_matchup(
     if bridge["is_ground_ball_pitcher"](pitcher) and is_elite_discipline(discipline):
         patient_scalar = float(bridge["PATIENT_LINEUP_ADVANTAGE"])
         proj *= patient_scalar
-        prob *= patient_scalar
         adjustments["gb_pitcher_discipline_synergy"] = patient_scalar
 
     if bridge["is_power_pitcher"](pitcher):
@@ -111,6 +107,5 @@ def apply_pitcher_hitter_matchup(
             adjustments["velo_team_struggle_synergy"] = velo_scalar
         if velo_triggered:
             proj *= velo_scalar
-            prob *= velo_scalar
 
-    return proj, prob
+    return proj

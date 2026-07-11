@@ -10,6 +10,8 @@ from baseball_props.analysis.edge_sheet_health import EdgeSheetHealthReport
 from baseball_props.analysis.prop_matching import filter_plausible_market_lines, match_name
 from baseball_props.config import (
     LEAGUE_PITCHES_PER_OUT,
+    MAX_PROP_PROB,
+    MIN_PROP_PROB,
     TB_PER_WOBA_PA,
 )
 from baseball_props.analysis.market_metrics import MARKET_METRIC_COLUMNS
@@ -87,6 +89,25 @@ def american_to_implied(odds: float) -> float:
     return (-odds) / (-odds + 100.0)
 
 
+def scaled_prop_sigma(base_sigma: float, base_mu: float, adjusted_mu: float) -> float:
+    """Scale projection sigma with the mean so modifiers do not collapse variance."""
+    if not _is_valid_number(base_sigma) or float(base_sigma) <= 0:
+        return float(base_sigma) if _is_valid_number(base_sigma) else 0.0
+    if not _is_valid_number(base_mu) or float(base_mu) <= 0:
+        return float(base_sigma)
+    if not _is_valid_number(adjusted_mu):
+        return float(base_sigma)
+    ratio = float(adjusted_mu) / float(base_mu)
+    return max(1e-6, float(base_sigma) * ratio)
+
+
+def clamp_prop_probability(prob: float | None) -> float | None:
+    """Hard-cap model prop probabilities to [MIN_PROP_PROB, MAX_PROP_PROB]."""
+    if not _is_valid_number(prob):
+        return None
+    return min(MAX_PROP_PROB, max(MIN_PROP_PROB, float(prob)))
+
+
 def prob_over_continuous(mu: float, sigma: float, line: float) -> float | None:
     """P(stat > line) under Normal(mu, sigma). Returns None when inputs are invalid."""
     if not _is_valid_number(mu) or not _is_valid_number(line) or not _is_valid_number(sigma):
@@ -95,9 +116,10 @@ def prob_over_continuous(mu: float, sigma: float, line: float) -> float | None:
     line_f = float(line)
     sigma_f = float(sigma)
     if sigma_f <= 0:
-        return 1.0 if mu_f > line_f else 0.0 if mu_f < line_f else 0.5
+        raw = 1.0 if mu_f > line_f else 0.0 if mu_f < line_f else 0.5
+        return clamp_prop_probability(raw)
     z = (line_f - mu_f) / (sigma_f * math.sqrt(2.0))
-    return 0.5 * (1.0 - math.erf(z))
+    return clamp_prop_probability(0.5 * (1.0 - math.erf(z)))
 
 
 def _format_odds_pair(over_odds: float | None, under_odds: float | None) -> str:

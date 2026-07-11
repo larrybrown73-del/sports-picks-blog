@@ -17,6 +17,7 @@ from config import DEFAULT_ROLLING_WINDOW, SECONDARY_MODIFIER_MAX_PCT, SLATE_EVA
 from game_conditions import GameConditions, apply_run_environment, fetch_game_conditions
 from pitcher_matchup import apply_pitcher_matchup_adjustments
 from starter_baseline import apply_starter_baseline_injection, clamp_secondary_run_adjustments
+from tough_out import break_push_bonus
 
 
 @dataclass
@@ -117,6 +118,18 @@ def evaluate_game(
 
     home_prob, away_prob = model.implied_win_probabilities(home_runs, away_runs)
     home_prob, away_prob = apply_bullpen_penalty(home_prob, away_prob, fatigue)
+    home_prob = break_push_bonus(
+        home_prob,
+        team_id=int(game["home_id"]),
+        game_date=game_date,
+        season=game_date.year,
+    )
+    away_prob = break_push_bonus(
+        away_prob,
+        team_id=int(game["away_id"]),
+        game_date=game_date,
+        season=game_date.year,
+    )
 
     return EvaluatedGame(
         away_name=game["away_name"],

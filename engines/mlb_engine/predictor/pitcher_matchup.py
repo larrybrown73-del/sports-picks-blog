@@ -32,6 +32,7 @@ from config import (
 from data_health import safe_feature_fetch
 from hitter_discipline import apply_lineup_discipline_to_runs, fetch_game_lineup
 from starter_rest_hierarchy import apply_starter_context_to_runs
+from tough_out import apply_tough_out_run_scalars
 
 logger = logging.getLogger(__name__)
 
@@ -437,11 +438,26 @@ def _apply_offense_adjustments(
     label: str,
     defending_team_id: int | None = None,
     game_date: date | None = None,
+    is_home_offense: bool = False,
 ) -> tuple[float, list[str]]:
     tags: list[str] = []
     runs = offense_runs
 
     if pitcher is None:
+        # Vacation / look-ahead can still apply without a known opposing starter.
+        if game_date is not None:
+            runs, tough_tags = apply_tough_out_run_scalars(
+                runs,
+                offense_team_id=offense.team_id,
+                pitcher_id=None,
+                pitcher_era=None,
+                is_home_offense=is_home_offense,
+                game_date=game_date,
+                season=season,
+                label=label,
+                opponent_team_id=defending_team_id,
+            )
+            tags.extend(tough_tags)
         return runs, tags
 
     if defending_team_id is not None and game_date is not None:
@@ -467,6 +483,20 @@ def _apply_offense_adjustments(
     if is_ground_ball_pitcher(pitcher) and is_patient_lineup(offense):
         runs *= PATIENT_LINEUP_ADVANTAGE
         tags.append(f"{label}:patient_lineup:{PATIENT_LINEUP_ADVANTAGE:.2f}")
+
+    if game_date is not None:
+        runs, tough_tags = apply_tough_out_run_scalars(
+            runs,
+            offense_team_id=offense.team_id,
+            pitcher_id=pitcher.pitcher_id,
+            pitcher_era=pitcher.season_era,
+            is_home_offense=is_home_offense,
+            game_date=game_date,
+            season=season,
+            label=label,
+            opponent_team_id=defending_team_id,
+        )
+        tags.extend(tough_tags)
 
     return runs, tags
 
@@ -525,6 +555,7 @@ def apply_pitcher_matchup_adjustments(
         label=home_pitcher.pitcher_name if home_pitcher else "home_sp",
         defending_team_id=home_id,
         game_date=game_date,
+        is_home_offense=False,
     )
     home_runs, home_tags = _apply_offense_adjustments(
         home_runs,
@@ -534,6 +565,7 @@ def apply_pitcher_matchup_adjustments(
         label=away_pitcher.pitcher_name if away_pitcher else "away_sp",
         defending_team_id=away_id,
         game_date=game_date,
+        is_home_offense=True,
     )
     tags.extend(away_tags)
     tags.extend(home_tags)

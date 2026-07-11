@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { ModelNotes } from "@/components/ModelNotes";
-import { PerformanceStatsBar } from "@/components/PerformanceStatsBar";
 import { PropPickTable } from "@/components/PropPickTable";
 import { PickCard } from "@/components/PickCard";
 import { SlateBoard } from "@/components/SlateBoard";
@@ -53,13 +51,6 @@ export default function HomePage() {
             View full slate archive →
           </Link>
         )}
-      </section>
-
-      <ModelNotes />
-
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-white">System Performance</h2>
-        <PerformanceStatsBar stats={picks.performance} />
       </section>
 
       <YesterdayResultsTable todayDate={picks.date} />

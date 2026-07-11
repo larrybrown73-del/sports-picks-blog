@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-10",
+  "generatedAt": "2026-07-11T14:27:14Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-10",
+      "matchup": "Chicago Cubs @ Cincinnati Reds",
+      "pick": "Chicago Cubs",
+      "americanOdds": -110,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-10",
+      "matchup": "Boston Red Sox @ New York Mets",
+      "pick": "Boston Red Sox",
+      "americanOdds": 129,
+      "result": "Win",
+      "profitLoss": 129.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-10",
+      "matchup": "Toronto Blue Jays @ San Diego Padres",
+      "pick": "San Diego Padres",
+      "americanOdds": -118,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-10",
+      "matchup": "Houston Astros @ Texas Rangers",
+      "pick": "Texas Rangers",
+      "americanOdds": 119,
+      "result": "Win",
+      "profitLoss": 119.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-10",
+      "matchup": "Seattle Mariners @ Tampa Bay Rays",
+      "pick": "Tampa Bay Rays",
+      "americanOdds": -116,
+      "result": "Win",
+      "profitLoss": 86.21,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-10",
+      "matchup": "Cleveland Guardians @ Miami Marlins",
+      "pick": "Cleveland Guardians",
+      "americanOdds": 102,
+      "result": "Win",
+      "profitLoss": 102.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 4,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": 236.21
+  }
+}

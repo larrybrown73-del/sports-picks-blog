@@ -119,3 +119,39 @@ SECONDARY_MODIFIER_MAX_PCT: float = 0.08
 # Hard pitching mismatch veto (moneyline auto-drop)
 PITCHING_MISMATCH_OUR_ERA_MIN: float = 5.00
 PITCHING_MISMATCH_OPP_ERA_MAX: float = 4.00
+
+# Tough Out / gritty contact lineups vs innings eaters
+GRITTY_OFFENSE_SCALAR: float = 1.04
+TOUGH_OUT_CONTACT_TOP_N: int = 10
+TOUGH_OUT_WHIFF_TOP_N: int = 10
+TOUGH_OUT_SLG_EXCLUDE_TOP_N: int = 8
+TOUGH_OUT_SLG_EXCLUDE_BOTTOM_N: int = 8
+TOUGH_OUT_MIN_PA: int = 1500
+
+# Season-long look-ahead trap (elite club vs bottom feeder before a tough series)
+LOOK_AHEAD_TRAP_PENALTY: float = 0.94
+LOOK_AHEAD_TOP_WIN_PCT_N: int = 7
+LOOK_AHEAD_BOTTOM_OPP_N: int = 10
+LOOK_AHEAD_NEXT_TOP_N: int = 10
+LOOK_AHEAD_SCHEDULE_HORIZON_DAYS: int = 14
+
+# Innings Eater luck flag (ERA vs FIP regression)
+LUCK_REGRESSION_PENALTY: float = 1.15
+LUCK_ERA_FIP_GAP: float = 0.75
+INNINGS_EATER_ERA_MIN: float = 3.40
+INNINGS_EATER_ERA_MAX: float = 4.80
+FIP_CONSTANT: float = 3.10
+INNINGS_EATER_MIN_IP: float = 40.0
+
+# Pre-All-Star Break motivation (getaway weekend)
+PRE_ALL_STAR_WINDOW_DAYS: int = 4
+BREAK_PUSH_BONUS: float = 1.05
+VACATION_MODE_PENALTY: float = 0.90
+BREAK_PUSH_WIN_PCT_MIN: float = 0.500
+VACATION_MODE_WIN_PCT_MAX: float = 0.420
+# First day of the All-Star Break (no regular-season games)
+ALL_STAR_BREAK_START: dict[int, str] = {
+    2024: "2024-07-15",
+    2025: "2025-07-14",
+    2026: "2026-07-13",
+}

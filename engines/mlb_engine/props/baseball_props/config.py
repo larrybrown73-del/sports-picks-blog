@@ -89,6 +89,10 @@ EDGE_TB_SIGMA: float = 0.55
 EDGE_HITS_SIGMA: float = 0.42
 EDGE_OUTS_SIGMA: float = 1.75
 
+# Absolute probability ceiling/floor (prevents variance-collapse certainties)
+MAX_PROP_PROB: float = 0.78
+MIN_PROP_PROB: float = 0.22
+
 # Hits prop guardrail thresholds (Over 0.5 / Over 1.5 from market aggregator)
 HITS_PROP_TARGET_LINES: tuple[float, ...] = (0.5, 1.5)
 HITS_PROP_PRIMARY_LINE: float = 1.5
@@ -113,7 +117,8 @@ HITS_LINEUP_SLOT_PENALTY: float = BOTTOM_ORDER_PENALTY
 HITS_WEATHER_TEMP_BOOST_F: float = 75.0
 HITS_WEATHER_BONUS_MULTIPLIER: float = 1.05
 HITS_PARK_HIT_BONUS_THRESHOLD: float = 1.03
-HITS_BULLPEN_FATIGUE_BONUS: float = 0.04
+# Mean-side bullpen fatigue scalar (applied to projected hits, not probability)
+HITS_BULLPEN_FATIGUE_BONUS: float = 1.04
 HITS_MIN_ADJUSTED_EDGE_PCT: float = 3.0
 
 # Hits prop defensive caps (export filter)
