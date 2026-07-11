@@ -1,9 +1,9 @@
 {
   "date": "2026-07-11",
-  "generatedAt": "2026-07-11T14:27:07Z",
+  "generatedAt": "2026-07-11T15:46:04Z",
   "meta": {
     "slateGames": 16,
-    "valuePicks": 10,
+    "valuePicks": 8,
     "propsAvailable": false,
     "scheduleGames": 16
   },
@@ -230,13 +230,13 @@
         },
         {
           "slot": 2,
-          "name": "Nolan Schanuel",
-          "playerId": "694384"
+          "name": "Mike Trout",
+          "playerId": "545361"
         },
         {
           "slot": 3,
-          "name": "Denzer Guzman",
-          "playerId": "694203"
+          "name": "Nolan Schanuel",
+          "playerId": "694384"
         },
         {
           "slot": 4,
@@ -245,8 +245,8 @@
         },
         {
           "slot": 5,
-          "name": "Josh Lowe",
-          "playerId": "666139"
+          "name": "Vaughn Grissom",
+          "playerId": "687093"
         },
         {
           "slot": 6,
@@ -255,18 +255,18 @@
         },
         {
           "slot": 7,
-          "name": "Oswald Peraza",
-          "playerId": "672724"
+          "name": "Wade Meckler",
+          "playerId": "685133"
         },
         {
           "slot": 8,
-          "name": "Jose Siri",
-          "playerId": "642350"
+          "name": "Denzer Guzman",
+          "playerId": "694203"
         },
         {
           "slot": 9,
-          "name": "Tyler Heineman",
-          "playerId": "623168"
+          "name": "Logan O'Hoppe",
+          "playerId": "681351"
         }
       ],
       "homeLineup": [
@@ -277,18 +277,18 @@
         },
         {
           "slot": 2,
-          "name": "Ryan Jeffers",
-          "playerId": "680777"
+          "name": "Brooks Lee",
+          "playerId": "686797"
         },
         {
           "slot": 3,
-          "name": "Kody Clemens",
-          "playerId": "665019"
+          "name": "Josh Bell",
+          "playerId": "605137"
         },
         {
           "slot": 4,
-          "name": "Josh Bell",
-          "playerId": "605137"
+          "name": "Kody Clemens",
+          "playerId": "665019"
         },
         {
           "slot": 5,
@@ -297,18 +297,18 @@
         },
         {
           "slot": 6,
-          "name": "Brooks Lee",
-          "playerId": "686797"
+          "name": "Victor Caratini",
+          "playerId": "605170"
         },
         {
           "slot": 7,
-          "name": "Austin Martin",
-          "playerId": "668885"
+          "name": "Alan Roden",
+          "playerId": "702176"
         },
         {
           "slot": 8,
-          "name": "Victor Caratini",
-          "playerId": "605170"
+          "name": "Tristan Gray",
+          "playerId": "656484"
         },
         {
           "slot": 9,
@@ -328,18 +328,18 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Lawrence Butler",
-          "playerId": "671732"
+          "name": "Jacob Wilson",
+          "playerId": "805779"
         },
         {
           "slot": 2,
-          "name": "Carlos Cortes",
-          "playerId": "666126"
+          "name": "Tyler Soderstrom",
+          "playerId": "691016"
         },
         {
           "slot": 3,
-          "name": "Colby Thomas",
-          "playerId": "687515"
+          "name": "Shea Langeliers",
+          "playerId": "669127"
         },
         {
           "slot": 4,
@@ -348,40 +348,40 @@
         },
         {
           "slot": 5,
-          "name": "Alika Williams",
-          "playerId": "675961"
-        },
-        {
-          "slot": 6,
-          "name": "Joey Meneses",
-          "playerId": "608841"
-        },
-        {
-          "slot": 7,
           "name": "Joshua Kuroda-Grauer",
           "playerId": "811965"
         },
         {
+          "slot": 6,
+          "name": "Lawrence Butler",
+          "playerId": "671732"
+        },
+        {
+          "slot": 7,
+          "name": "Carlos Cortes",
+          "playerId": "666126"
+        },
+        {
           "slot": 8,
-          "name": "Henry Bolte",
-          "playerId": "703607"
+          "name": "Jeff McNeil",
+          "playerId": "643446"
         },
         {
           "slot": 9,
-          "name": "Jeff McNeil",
-          "playerId": "643446"
+          "name": "Henry Bolte",
+          "playerId": "703607"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Sam Antonacci",
-          "playerId": "803011"
+          "name": "Randal Grichuk",
+          "playerId": "545341"
         },
         {
           "slot": 2,
-          "name": "Junior Perez",
-          "playerId": "678577"
+          "name": "Munetaka Murakami",
+          "playerId": "808959"
         },
         {
           "slot": 3,
@@ -395,28 +395,28 @@
         },
         {
           "slot": 5,
-          "name": "Braden Montgomery",
-          "playerId": "695731"
-        },
-        {
-          "slot": 6,
           "name": "Chase Meidroth",
           "playerId": "805367"
         },
         {
+          "slot": 6,
+          "name": "Braden Montgomery",
+          "playerId": "695731"
+        },
+        {
           "slot": 7,
-          "name": "Andrew Benintendi",
-          "playerId": "643217"
+          "name": "Luisangel Acu\u00f1a",
+          "playerId": "682668"
         },
         {
           "slot": 8,
-          "name": "Kyle Teel",
-          "playerId": "691019"
+          "name": "Junior Perez",
+          "playerId": "678577"
         },
         {
           "slot": 9,
-          "name": "Tristan Peters",
-          "playerId": "671976"
+          "name": "Drew Romo",
+          "playerId": "691011"
         }
       ]
     },
@@ -1663,160 +1663,128 @@
       "homeTeam": "New York Mets",
       "play": "Boston Red Sox",
       "book": "FanDuel",
-      "edgePct": 13.45,
+      "edgePct": 14.24,
       "sizingPct": 5.0,
       "americanOdds": 134,
-      "modelWinProb": 0.5619,
-      "confidenceScore": 59,
+      "modelWinProb": 0.5697,
+      "confidenceScore": 63,
       "confidenceLabel": "Medium",
       "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.8767,
-      "predHomeRuns": 4.65,
-      "predAwayRuns": 5.58
+      "evPerUnit": 0.9029,
+      "predHomeRuns": 4.55,
+      "predAwayRuns": 5.64
     },
     {
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Pittsburgh Pirates",
       "play": "Milwaukee Brewers",
       "book": "FanDuel",
-      "edgePct": 11.88,
+      "edgePct": 11.77,
       "sizingPct": 5.0,
-      "americanOdds": -104,
-      "modelWinProb": 0.6286,
-      "confidenceScore": 58,
+      "americanOdds": -102,
+      "modelWinProb": 0.6227,
+      "confidenceScore": 57,
       "confidenceLabel": "Medium",
       "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.8617,
-      "predHomeRuns": 3.87,
-      "predAwayRuns": 5.77
-    },
-    {
-      "awayTeam": "Philadelphia Phillies",
-      "homeTeam": "Detroit Tigers",
-      "play": "Detroit Tigers",
-      "book": "FanDuel",
-      "edgePct": 7.25,
-      "sizingPct": 3.32,
-      "americanOdds": 120,
-      "modelWinProb": 0.5271,
-      "confidenceScore": 31,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.6867,
-      "predHomeRuns": 3.32,
-      "predAwayRuns": 3.17
+      "evPerUnit": 0.8559,
+      "predHomeRuns": 3.94,
+      "predAwayRuns": 5.74
     },
     {
       "awayTeam": "Atlanta Braves",
       "homeTeam": "St. Louis Cardinals",
       "play": "Atlanta Braves",
       "book": "FanDuel",
-      "edgePct": 6.31,
-      "sizingPct": 3.41,
-      "americanOdds": -116,
-      "modelWinProb": 0.6001,
-      "confidenceScore": 33,
+      "edgePct": 9.57,
+      "sizingPct": 4.88,
+      "americanOdds": -104,
+      "modelWinProb": 0.6055,
+      "confidenceScore": 47,
       "confidenceLabel": "Low",
       "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.7176,
-      "predHomeRuns": 4.03,
-      "predAwayRuns": 5.38
+      "evPerUnit": 0.7933,
+      "predHomeRuns": 3.99,
+      "predAwayRuns": 5.44
+    },
+    {
+      "awayTeam": "Philadelphia Phillies",
+      "homeTeam": "Detroit Tigers",
+      "play": "Detroit Tigers",
+      "book": "FanDuel",
+      "edgePct": 6.74,
+      "sizingPct": 3.09,
+      "americanOdds": 120,
+      "modelWinProb": 0.522,
+      "confidenceScore": 29,
+      "confidenceLabel": "Low",
+      "confidenceTier": "Tier-1 High Conviction",
+      "evPerUnit": 0.6703,
+      "predHomeRuns": 3.34,
+      "predAwayRuns": 3.25
     },
     {
       "awayTeam": "Athletics",
       "homeTeam": "Chicago White Sox",
       "play": "Chicago White Sox",
       "book": "FanDuel",
-      "edgePct": 5.26,
-      "sizingPct": 2.74,
-      "americanOdds": -108,
-      "modelWinProb": 0.5719,
-      "confidenceScore": 27,
+      "edgePct": 4.1,
+      "sizingPct": 2.17,
+      "americanOdds": -112,
+      "modelWinProb": 0.5693,
+      "confidenceScore": 22,
       "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.6733,
-      "predHomeRuns": 5.08,
-      "predAwayRuns": 3.8
+      "confidenceTier": "Tier-2 Standard",
+      "evPerUnit": 0.6469,
+      "predHomeRuns": 5.11,
+      "predAwayRuns": 3.87
     },
     {
-      "awayTeam": "Toronto Blue Jays",
-      "homeTeam": "San Diego Padres",
-      "play": "Toronto Blue Jays",
+      "awayTeam": "Chicago Cubs",
+      "homeTeam": "Cincinnati Reds",
+      "play": "Chicago Cubs",
       "book": "FanDuel",
-      "edgePct": 5.13,
-      "sizingPct": 2.62,
+      "edgePct": 3.5,
+      "sizingPct": 1.78,
       "americanOdds": -104,
-      "modelWinProb": 0.5611,
-      "confidenceScore": 25,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-1 High Conviction",
-      "evPerUnit": 0.6618,
-      "predHomeRuns": 3.86,
-      "predAwayRuns": 4.62
-    },
-    {
-      "awayTeam": "Cleveland Guardians",
-      "homeTeam": "Miami Marlins",
-      "play": "Cleveland Guardians",
-      "book": "FanDuel",
-      "edgePct": 4.35,
-      "sizingPct": 1.92,
-      "americanOdds": 130,
-      "modelWinProb": 0.4783,
-      "confidenceScore": 16,
+      "modelWinProb": 0.5448,
+      "confidenceScore": 18,
       "confidenceLabel": "Low",
       "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.5783,
-      "predHomeRuns": 4.64,
-      "predAwayRuns": 4.25
-    },
-    {
-      "awayTeam": "Los Angeles Angels",
-      "homeTeam": "Minnesota Twins",
-      "play": "Minnesota Twins",
-      "book": "DraftKings",
-      "edgePct": 3.67,
-      "sizingPct": 2.52,
-      "americanOdds": -175,
-      "modelWinProb": 0.6731,
-      "confidenceScore": 29,
-      "confidenceLabel": "Low",
-      "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.7307,
-      "predHomeRuns": 6.88,
-      "predAwayRuns": 3.34
+      "evPerUnit": 0.6134,
+      "predHomeRuns": 4.65,
+      "predAwayRuns": 5.56
     },
     {
       "awayTeam": "Houston Astros",
       "homeTeam": "Texas Rangers",
       "play": "Houston Astros",
       "book": "FanDuel",
-      "edgePct": 3.45,
-      "sizingPct": 1.72,
+      "edgePct": 3.3,
+      "sizingPct": 1.65,
       "americanOdds": 100,
-      "modelWinProb": 0.5345,
-      "confidenceScore": 17,
+      "modelWinProb": 0.533,
+      "confidenceScore": 16,
       "confidenceLabel": "Low",
       "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.6035,
-      "predHomeRuns": 3.84,
+      "evPerUnit": 0.5989,
+      "predHomeRuns": 3.86,
       "predAwayRuns": 4.4
     },
     {
-      "awayTeam": "Seattle Mariners",
-      "homeTeam": "Tampa Bay Rays",
-      "play": "Seattle Mariners",
-      "book": "DraftKings",
-      "edgePct": 3.3,
-      "sizingPct": 1.69,
-      "americanOdds": -105,
-      "modelWinProb": 0.5452,
-      "confidenceScore": 17,
+      "awayTeam": "Los Angeles Angels",
+      "homeTeam": "Minnesota Twins",
+      "play": "Minnesota Twins",
+      "book": "FanDuel",
+      "edgePct": 3.02,
+      "sizingPct": 2.11,
+      "americanOdds": -180,
+      "modelWinProb": 0.6731,
+      "confidenceScore": 26,
       "confidenceLabel": "Low",
       "confidenceTier": "Tier-2 Standard",
-      "evPerUnit": 0.6097,
-      "predHomeRuns": 3.38,
-      "predAwayRuns": 4.05
+      "evPerUnit": 0.72,
+      "predHomeRuns": 6.88,
+      "predAwayRuns": 3.34
     }
   ],
   "propPicks": {
