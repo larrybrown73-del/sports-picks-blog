@@ -1,51 +1,24 @@
 {
   "date": "2026-07-11",
-  "generatedAt": "2026-07-12T12:57:56Z",
+  "generatedAt": "2026-07-12T15:47:59Z",
   "unitStake": 100.0,
   "picks": [
     {
       "date": "2026-07-11",
-      "matchup": "Boston Red Sox @ New York Mets",
-      "pick": "Boston Red Sox",
-      "americanOdds": 134,
+      "matchup": "Los Angeles Angels @ Minnesota Twins",
+      "pick": "Minnesota Twins",
+      "americanOdds": -132,
       "result": "Win",
-      "profitLoss": 134.0,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
-      "matchup": "Milwaukee Brewers @ Pittsburgh Pirates",
-      "pick": "Milwaukee Brewers",
-      "americanOdds": -104,
-      "result": "Loss",
-      "profitLoss": -100.0,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
-      "matchup": "Philadelphia Phillies @ Detroit Tigers",
-      "pick": "Detroit Tigers",
-      "americanOdds": 120,
-      "result": "Loss",
-      "profitLoss": -100.0,
+      "profitLoss": 75.76,
       "stake": 100.0
     },
     {
       "date": "2026-07-11",
       "matchup": "Atlanta Braves @ St. Louis Cardinals",
       "pick": "Atlanta Braves",
-      "americanOdds": -116,
+      "americanOdds": -104,
       "result": "Loss",
       "profitLoss": -100.0,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
-      "matchup": "Athletics @ Chicago White Sox",
-      "pick": "Chicago White Sox",
-      "americanOdds": -108,
-      "result": "Win",
-      "profitLoss": 92.59,
       "stake": 100.0
     },
     {
@@ -59,45 +32,18 @@
     },
     {
       "date": "2026-07-11",
-      "matchup": "Cleveland Guardians @ Miami Marlins",
-      "pick": "Cleveland Guardians",
-      "americanOdds": 130,
-      "result": "Win",
-      "profitLoss": 130.0,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
-      "matchup": "Los Angeles Angels @ Minnesota Twins",
-      "pick": "Minnesota Twins",
-      "americanOdds": -175,
-      "result": "Win",
-      "profitLoss": 57.14,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
       "matchup": "Houston Astros @ Texas Rangers",
       "pick": "Houston Astros",
-      "americanOdds": 100,
+      "americanOdds": 102,
       "result": "Win",
-      "profitLoss": 100.0,
-      "stake": 100.0
-    },
-    {
-      "date": "2026-07-11",
-      "matchup": "Seattle Mariners @ Tampa Bay Rays",
-      "pick": "Seattle Mariners",
-      "americanOdds": -105,
-      "result": "Loss",
-      "profitLoss": -100.0,
+      "profitLoss": 102.0,
       "stake": 100.0
     }
   ],
   "summary": {
-    "wins": 5,
-    "losses": 5,
+    "wins": 2,
+    "losses": 2,
     "pending": 0,
-    "netProfitLoss": 13.74
+    "netProfitLoss": -22.24
   }
 }
