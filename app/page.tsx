@@ -56,6 +56,14 @@ export default function HomePage() {
       <YesterdayResultsTable todayDate={picks.date} />
 
       <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-white">
+          Lineup &amp; Slate Details
+          {slate.length > 0 && (
+            <span className="ml-2 text-base font-normal text-[var(--muted)]">
+              ({slate.length} games)
+            </span>
+          )}
+        </h2>
         <h2 className="text-xl font-semibold text-white">Today&apos;s Slate &amp; Lineups</h2>
         {slateMissing ? (
           <p className="rounded-xl border border-amber-900/40 bg-amber-950/20 px-5 py-4 text-sm text-amber-200">
