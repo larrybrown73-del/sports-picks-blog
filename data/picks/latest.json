@@ -1,6 +1,6 @@
 {
   "date": "2026-07-16",
-  "generatedAt": "2026-07-16T22:53:23Z",
+  "generatedAt": "2026-07-16T23:17:05Z",
   "meta": {
     "slateGames": 1,
     "valuePicks": 0,
@@ -116,31 +116,14 @@
   "propPicks": {
     "conviction": [
       {
-        "player": "Brett Baty",
+        "player": "Francisco Lindor",
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 30.3,
-        "modelProb": 0.768,
-        "modelValue": 0.933,
-        "evPerUnit": 1.4192,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "A.J. Ewing",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 29.2,
+        "edgePct": 33.1,
         "modelProb": 0.78,
-        "modelValue": 1.226,
-        "evPerUnit": 1.379,
+        "modelValue": 0.842,
+        "evPerUnit": 1.5116,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -150,14 +133,14 @@
         "verdict": null
       },
       {
-        "player": "Juan Soto",
+        "player": "A.J. Ewing",
         "market": "batter_hits",
-        "line": 1.5,
+        "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 29.2,
+        "edgePct": 30.4,
         "modelProb": 0.78,
-        "modelValue": 1.768,
-        "evPerUnit": 1.379,
+        "modelValue": 0.994,
+        "evPerUnit": 1.418,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -171,10 +154,10 @@
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
-        "modelValue": 0.982,
-        "evPerUnit": 1.3029,
+        "edgePct": 27.3,
+        "modelProb": 0.773,
+        "modelValue": 0.764,
+        "evPerUnit": 1.319,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -184,48 +167,14 @@
         "verdict": null
       },
       {
-        "player": "Jared Young",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
-        "modelValue": 1.007,
-        "evPerUnit": 1.3029,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Jorge Polanco",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 24.5,
-        "modelProb": 0.78,
-        "modelValue": 0.963,
-        "evPerUnit": 1.2383,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Aaron Nola",
+        "player": "Christian Scott",
         "market": "pitcher_outs",
-        "line": 16.5,
+        "line": 17.5,
         "recommendation": "Under",
-        "edgePct": 19.7,
+        "edgePct": 26.8,
         "modelProb": 0.78,
-        "modelValue": 13.66,
-        "evPerUnit": 1.1171,
+        "modelValue": 11.76,
+        "evPerUnit": 1.3029,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -233,72 +182,38 @@
         "verdict": null
       },
       {
-        "player": "Francisco Lindor",
+        "player": "Brett Baty",
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 19.7,
-        "modelProb": 0.78,
-        "modelValue": 0.991,
-        "evPerUnit": 1.1171,
+        "edgePct": 14.0,
+        "modelProb": 0.594,
+        "modelValue": 0.725,
+        "evPerUnit": 0.9008,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
+        "confidenceScore": 64,
         "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Bryce Harper",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 18.0,
-        "modelProb": 0.78,
-        "modelValue": 0.995,
-        "evPerUnit": 1.08,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 94,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Kyle Schwarber",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 14.3,
-        "modelProb": 0.678,
-        "modelValue": 0.652,
-        "evPerUnit": 0.9456,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 71,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
         ],
         "verdict": null
       }
     ],
     "batterEdges": [
       {
-        "player": "Brett Baty",
+        "player": "Francisco Lindor",
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 30.3,
-        "modelProb": 0.768,
+        "edgePct": 33.1,
+        "modelProb": 0.78,
         "modelValue": null,
-        "evPerUnit": 1.4192,
+        "evPerUnit": 1.5116,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
         "dataWarnings": [
-          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
+          "Umpire Dan Iassogna run modifier 0.98"
         ],
         "verdict": "Play"
       },
@@ -307,27 +222,10 @@
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 29.2,
+        "edgePct": 30.4,
         "modelProb": 0.78,
         "modelValue": null,
-        "evPerUnit": 1.379,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Juan Soto",
-        "market": "batter_hits",
-        "line": 1.5,
-        "recommendation": "Over",
-        "edgePct": 29.2,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.379,
+        "evPerUnit": 1.418,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -341,10 +239,10 @@
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
+        "edgePct": 27.3,
+        "modelProb": 0.773,
         "modelValue": null,
-        "evPerUnit": 1.3029,
+        "evPerUnit": 1.319,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
@@ -354,169 +252,33 @@
         "verdict": "Play"
       },
       {
-        "player": "Jared Young",
+        "player": "Brett Baty",
         "market": "batter_hits",
         "line": 0.5,
         "recommendation": "Over",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
+        "edgePct": 14.0,
+        "modelProb": 0.594,
         "modelValue": null,
-        "evPerUnit": 1.3029,
+        "evPerUnit": 0.9008,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
+        "confidenceScore": 64,
         "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Jorge Polanco",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 24.5,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.2383,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Francisco Lindor",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 19.7,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.1171,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Bryce Harper",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 18.0,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.08,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 94,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Kyle Schwarber",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 14.3,
-        "modelProb": 0.678,
-        "modelValue": null,
-        "evPerUnit": 0.9456,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 71,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Alec Bohm",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 14.3,
-        "modelProb": 0.689,
-        "modelValue": null,
-        "evPerUnit": 0.9522,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 72,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Bryson Stott",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 12.2,
-        "modelProb": 0.663,
-        "modelValue": null,
-        "evPerUnit": 0.8879,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 62,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Brandon Marsh",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 9.7,
-        "modelProb": 0.705,
-        "modelValue": null,
-        "evPerUnit": 0.8648,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 55,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Trea Turner",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 8.1,
-        "modelProb": 0.685,
-        "modelValue": null,
-        "evPerUnit": 0.8207,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 47,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
         ],
         "verdict": "Play"
       }
     ],
     "pitcherEdges": [
       {
-        "player": "Aaron Nola",
+        "player": "Christian Scott",
         "market": "pitcher_outs",
-        "line": 16.5,
+        "line": 17.5,
         "recommendation": "Under",
-        "edgePct": 19.7,
+        "edgePct": 26.8,
         "modelProb": 0.78,
-        "modelValue": 13.66,
-        "evPerUnit": 1.1171,
+        "modelValue": 11.76,
+        "evPerUnit": 1.3029,
         "fractionalKellyPct": 2.0,
         "confidenceTier": "Tier-1 High Conviction",
         "confidenceScore": 100,
