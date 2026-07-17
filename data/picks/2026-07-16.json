@@ -1,10 +1,10 @@
 {
   "date": "2026-07-16",
-  "generatedAt": "2026-07-16T23:17:05Z",
+  "generatedAt": "2026-07-16T21:55:41Z",
   "meta": {
     "slateGames": 1,
-    "valuePicks": 0,
-    "propsAvailable": true,
+    "valuePicks": 1,
+    "propsAvailable": false,
     "scheduleGames": 1
   },
   "slate": [
@@ -112,180 +112,40 @@
       ]
     }
   ],
-  "moneylinePicks": [],
+  "moneylinePicks": [
+    {
+      "matchup": "New York Mets @ Philadelphia Phillies",
+      "homeTeam": "Philadelphia Phillies",
+      "awayTeam": "New York Mets",
+      "pick": "New York Mets",
+      "sportsbook": "FanDuel",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Away",
+      "confidence": 29,
+      "confidenceLabel": "Low",
+      "edge": 6.3,
+      "closingLineValue": 0.0,
+      "expectedValue": 67.6,
+      "winProbability": 0.544284,
+      "edgeDecimal": 0.063484,
+      "openingLine": 108,
+      "closingLine": 108,
+      "impliedProbability": 0.4808,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "Cloudy",
+      "temperature": 94,
+      "umpire": "Dan Iassogna",
+      "startingPitcher": "Christian Scott",
+      "opposingPitcher": "Aaron Nola"
+    }
+  ],
   "propPicks": {
-    "conviction": [
-      {
-        "player": "Francisco Lindor",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 33.1,
-        "modelProb": 0.78,
-        "modelValue": 0.842,
-        "evPerUnit": 1.5116,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "A.J. Ewing",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 30.4,
-        "modelProb": 0.78,
-        "modelValue": 0.994,
-        "evPerUnit": 1.418,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Bo Bichette",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 27.3,
-        "modelProb": 0.773,
-        "modelValue": 0.764,
-        "evPerUnit": 1.319,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      },
-      {
-        "player": "Christian Scott",
-        "market": "pitcher_outs",
-        "line": 17.5,
-        "recommendation": "Under",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
-        "modelValue": 11.76,
-        "evPerUnit": 1.3029,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [],
-        "verdict": null
-      },
-      {
-        "player": "Brett Baty",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 14.0,
-        "modelProb": 0.594,
-        "modelValue": 0.725,
-        "evPerUnit": 0.9008,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 64,
-        "dataWarnings": [
-          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": null
-      }
-    ],
-    "batterEdges": [
-      {
-        "player": "Francisco Lindor",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 33.1,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.5116,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "A.J. Ewing",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 30.4,
-        "modelProb": 0.78,
-        "modelValue": null,
-        "evPerUnit": 1.418,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Bo Bichette",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 27.3,
-        "modelProb": 0.773,
-        "modelValue": null,
-        "evPerUnit": 1.319,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [
-          "Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      },
-      {
-        "player": "Brett Baty",
-        "market": "batter_hits",
-        "line": 0.5,
-        "recommendation": "Over",
-        "edgePct": 14.0,
-        "modelProb": 0.594,
-        "modelValue": null,
-        "evPerUnit": 0.9008,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 64,
-        "dataWarnings": [
-          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty; Umpire Dan Iassogna run modifier 0.98"
-        ],
-        "verdict": "Play"
-      }
-    ],
-    "pitcherEdges": [
-      {
-        "player": "Christian Scott",
-        "market": "pitcher_outs",
-        "line": 17.5,
-        "recommendation": "Under",
-        "edgePct": 26.8,
-        "modelProb": 0.78,
-        "modelValue": 11.76,
-        "evPerUnit": 1.3029,
-        "fractionalKellyPct": 2.0,
-        "confidenceTier": "Tier-1 High Conviction",
-        "confidenceScore": 100,
-        "dataWarnings": [],
-        "verdict": null
-      }
-    ]
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
   },
   "performance": {
     "accuracy": "N/A",

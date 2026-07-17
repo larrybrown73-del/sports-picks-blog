@@ -43,6 +43,38 @@ DEFAULT_TIME_DECAY_XI = 0.0018
 # region rather than trying to hand-tune a tight prior.
 DEFAULT_RHO_BOUNDS = (-0.4, 0.4)
 
+# Attack/defense live in log-space. Without hard bounds, a few blowouts
+# against weak sides can push a team's log-attack past ~2 (lambda ~ e^2 ~
+# 7+ against league-average defense), which then floods Over markets with
+# absurd true probabilities. +-2.0 keeps every pairwise lambda under e^4 ~
+# 55 even in the worst mutual extreme -- and MAX_EXPECTED_GOALS below still
+# clamps the projection path; this bound is what keeps MLE from *fitting*
+# those extremes in the first place.
+DEFAULT_ATTACK_DEFENSE_BOUNDS = (-2.0, 2.0)
+
+# Home advantage is typically ~0.2-0.4 in log space for top leagues; +-1.0
+# is already a generous envelope (e^1 ~ 2.7x home boost) without letting it
+# become a free escape hatch for unbounded scoring rates.
+DEFAULT_HOME_ADVANTAGE_BOUNDS = (-1.0, 1.0)
+
+# Ridge weight on attack + defense log-ratings inside the NLL. Penalizes
+# the squared magnitude of every team's attack/defense so a handful of
+# historical thrashings can't buy an exponentially inflated rating. Tuned
+# small enough that relative ordering on synthetic data still recovers
+# (see test_fit_dixon_coles_recovers_relative_team_strength_from_synthetic_data)
+# but large enough to pull tournament-history outliers back toward zero.
+DEFAULT_L2_REGULARIZATION = 0.25
+
+# Hard ceiling on projected expected goals (lambda / mu) for ANY single
+# team in a matchup, applied in expected_goals() / scoreline_matrix()
+# BEFORE the Poisson PMF is evaluated. Real soccer almost never clears
+# 3.5 xG for one side in a competitive match; anything above that is a
+# model pathology (usually from unbounded MLE on sparse national-team
+# history), not a bettable signal -- clamping here stops Over 2.5/3.5
+# true probs from exploding even if a stale cache still holds wild
+# ratings.
+MAX_EXPECTED_GOALS = 3.5
+
 # Truncating the scoreline grid at 10 goals per side: Poisson(lambda<=4)
 # assigns effectively zero mass beyond this in real soccer scoring ranges,
 # and the matrix is renormalized to sum to 1 after truncation regardless.
@@ -92,6 +124,10 @@ class TeamRatings:
         back to a log-rating of 0.0, i.e. league-average attack/defense --
         a deliberate, documented "no information" prior, not a guess about
         that specific team's actual strength.
+
+        Each side's lambda is hard-capped at MAX_EXPECTED_GOALS before it
+        leaves this method: the Poisson grid downstream must never see an
+        8+ xG "projection" that is really just an unbounded MLE artifact.
         """
 
         log_attack_home = self.attack.get(home_team_id, 0.0)
@@ -101,7 +137,10 @@ class TeamRatings:
 
         lambda_home = math.exp(log_attack_home + log_defense_away + self.home_advantage)
         lambda_away = math.exp(log_attack_away + log_defense_home)
-        return lambda_home, lambda_away
+        return (
+            min(float(lambda_home), MAX_EXPECTED_GOALS),
+            min(float(lambda_away), MAX_EXPECTED_GOALS),
+        )
 
 
 def fit_dixon_coles(
@@ -110,6 +149,9 @@ def fit_dixon_coles(
     time_decay_xi: float = DEFAULT_TIME_DECAY_XI,
     as_of: datetime | None = None,
     rho_bounds: tuple[float, float] = DEFAULT_RHO_BOUNDS,
+    attack_defense_bounds: tuple[float, float] = DEFAULT_ATTACK_DEFENSE_BOUNDS,
+    home_advantage_bounds: tuple[float, float] = DEFAULT_HOME_ADVANTAGE_BOUNDS,
+    l2_regularization: float = DEFAULT_L2_REGULARIZATION,
 ) -> TeamRatings:
     """
     Maximum-likelihood fit of Dixon-Coles attack/defense/home-advantage/rho
@@ -123,6 +165,19 @@ def fit_dixon_coles(
     chosen because it keeps lambda positive automatically (no positivity
     constraints needed in the optimizer) and makes the additive
     scale-invariance explicit.
+
+    Three stabilizers keep tournament / sparse-national-team history from
+    producing hallucinated 8+ xG projections:
+
+    1. L2 (Ridge) penalty on every attack/defense log-rating inside the NLL
+       -- extreme magnitudes cost the optimizer even when they fit a few
+       historical blowouts well.
+    2. Hard box constraints on attack/defense (`attack_defense_bounds`,
+       default +-2.0) and home advantage (`home_advantage_bounds`) passed
+       to scipy.optimize.minimize (L-BFGS-B).
+    3. A separate MAX_EXPECTED_GOALS clamp on `TeamRatings.expected_goals`
+       / `scoreline_matrix` so the Poisson grid never sees an uncapped
+       lambda even if a caller bypasses a fresh fit.
     """
 
     match_list = list(matches)
@@ -150,8 +205,19 @@ def fit_dixon_coles(
     x0 = np.zeros(2 * n_teams + 2)
 
     def unpack(params: np.ndarray) -> tuple[np.ndarray, np.ndarray, float, float]:
+        # Mean-center attack and defense every evaluation. Without this the
+        # log-linear model is additively scale-invariant (add c to every
+        # attack and subtract c from every defense -- same lambdas), so L2
+        # "toward zero" is meaningless and the whole league's attack can
+        # drift positive together, which is exactly how a World-Cup history
+        # fit ended up projecting 3.5+ xG for mid-tier sides. Centering
+        # removes that gauge freedom so Ridge actually shrinks *relative*
+        # strength outliers and home_advantage carries the league scoring
+        # baseline.
         attack = params[:n_teams]
         defense = params[n_teams : 2 * n_teams]
+        attack = attack - np.mean(attack)
+        defense = defense - np.mean(defense)
         home_advantage = params[2 * n_teams]
         rho = params[2 * n_teams + 1]
         return attack, defense, home_advantage, rho
@@ -174,9 +240,26 @@ def fit_dixon_coles(
         log_pmf_away = away_goals * log_lambda_away - lambda_away - gammaln(away_goals + 1.0)
 
         log_likelihood = weights * (np.log(tau_safe) + log_pmf_home + log_pmf_away)
-        return float(-np.sum(log_likelihood))
+        nll = float(-np.sum(log_likelihood))
 
-    bounds = [(None, None)] * (2 * n_teams + 1) + [rho_bounds]
+        # Ridge / L2: penalize squared attack + defense magnitudes so the
+        # MLE cannot buy an arbitrarily large rating off a few thrashings
+        # of weak opponents. Home advantage and rho are already box-
+        # constrained and are NOT included here -- regularizing them would
+        # bias the league-wide home-field baseline toward zero for no gain
+        # on the blowout pathology this term is meant to fix.
+        if l2_regularization > 0.0:
+            nll += float(l2_regularization) * float(np.sum(attack * attack) + np.sum(defense * defense))
+        return nll
+
+    lo, hi = attack_defense_bounds
+    ha_lo, ha_hi = home_advantage_bounds
+    bounds = (
+        [(lo, hi)] * n_teams  # attack
+        + [(lo, hi)] * n_teams  # defense
+        + [(ha_lo, ha_hi)]  # home advantage
+        + [rho_bounds]
+    )
     fit = minimize(negative_log_likelihood, x0, method="L-BFGS-B", bounds=bounds, options={"maxiter": 500})
 
     attack, defense, home_advantage, rho = unpack(fit.x)
@@ -255,7 +338,15 @@ def scoreline_matrix(
     1X2 probabilities and its Over/Under 2.5 probability come from literally
     the same underlying distribution, not independently calibrated
     sub-models that could silently contradict one another.
+
+    Both lambdas are clamped to MAX_EXPECTED_GOALS before the Poisson PMF
+    is evaluated -- same ceiling as TeamRatings.expected_goals -- so a
+    direct caller that bypasses expected_goals still cannot feed an 8+
+    xG hallucination into the scoreline grid.
     """
+
+    lambda_home = min(float(lambda_home), MAX_EXPECTED_GOALS)
+    lambda_away = min(float(lambda_away), MAX_EXPECTED_GOALS)
 
     goal_range = np.arange(max_goals + 1)
     home_pmf = poisson.pmf(goal_range, lambda_home)

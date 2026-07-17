@@ -16,7 +16,9 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PICKS_DIR = PROJECT_ROOT / "data" / "picks"
+POWERBI_PICKS_DIR = PICKS_DIR / "powerbi"
 RESULTS_DIR = PROJECT_ROOT / "data" / "results"
+UNIT_STAKE = 100.0
 
 MLB_ENGINE_ROOT = PROJECT_ROOT / "engines" / "mlb_engine"
 DEFAULT_PREDICTOR_PATH = MLB_ENGINE_ROOT / "predictor"
@@ -153,36 +155,123 @@ def _run_grade_yesterday(game_date: date) -> None:
         print(f"  Warning: could not grade yesterday's picks: {exc}")
 
 
+def _load_graded_result_lookup(game_date: date) -> dict[tuple[str, str], dict[str, Any]]:
+    path = RESULTS_DIR / f"{game_date.isoformat()}.json"
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+    lookup: dict[tuple[str, str], dict[str, Any]] = {}
+    for row in payload.get("picks") or []:
+        matchup = str(row.get("matchup") or "")
+        if " @ " not in matchup:
+            continue
+        away, home = matchup.split(" @ ", 1)
+        lookup[(away.strip(), home.strip())] = row
+    return lookup
+
+
+def _american_to_implied(american_odds: int) -> float:
+    odds = int(american_odds)
+    if odds == 0:
+        return 0.5
+    if odds > 0:
+        return 100.0 / (odds + 100.0)
+    return abs(odds) / (abs(odds) + 100.0)
+
+
+def _confidence_score(edge_pct: float, model_prob: float) -> int:
+    return min(100, max(0, round(edge_pct * 4.0 + (model_prob - 0.50) * 80)))
+
+
+def _confidence_label(score: int) -> str:
+    if score >= 85:
+        return "Elite"
+    if score >= 70:
+        return "High"
+    if score >= 50:
+        return "Medium"
+    return "Low"
+
+
+def serialize_power_bi_pick(pick: Any, graded: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Map a SlatePick to the flat Power BI pick schema (numeric types preserved)."""
+    win_probability = float(pick.model_prob)
+    implied_probability = float(pick.market_prob)
+    edge_pct = float(pick.edge_pct)
+    edge_decimal = win_probability - implied_probability
+    opening_line = int(pick.american_odds)
+    closing_line = opening_line
+    opening_implied = _american_to_implied(opening_line)
+    closing_implied = _american_to_implied(closing_line)
+    confidence_score = _confidence_score(edge_pct, win_probability)
+    ev_pct = getattr(pick, "ev_pct", None)
+    if ev_pct is None and getattr(pick, "ev_per_unit", None) is not None:
+        ev_pct = float(pick.ev_per_unit) * 100.0
+    expected_value = round(float(ev_pct or 0.0), 1)
+    result = "Pending"
+    profit_loss = 0.0
+    if graded:
+        graded_result = str(graded.get("result") or "Pending")
+        if graded_result in {"Win", "Loss", "Pending"}:
+            result = graded_result
+        elif graded_result:
+            result = graded_result
+        try:
+            profit_loss = float(graded.get("profitLoss") or 0.0)
+        except (TypeError, ValueError):
+            profit_loss = 0.0
+
+    units_won = 0.0
+    if result in {"Win", "Loss"}:
+        units_won = round(profit_loss / UNIT_STAKE, 2)
+
+    home_away = "Home" if pick.play == pick.home_name else "Away"
+
+    return {
+        "matchup": f"{pick.away_name} @ {pick.home_name}",
+        "homeTeam": pick.home_name,
+        "awayTeam": pick.away_name,
+        "pick": pick.play,
+        "sportsbook": pick.book or "",
+        "betType": "Moneyline",
+        "league": "MLB",
+        "homeAway": home_away,
+        "confidence": confidence_score,
+        "confidenceLabel": _confidence_label(confidence_score),
+        "edge": round(edge_pct, 1),
+        "closingLineValue": round(closing_implied - opening_implied, 2),
+        "expectedValue": expected_value,
+        "winProbability": round(win_probability, 6),
+        "edgeDecimal": round(edge_decimal, 6),
+        "openingLine": opening_line,
+        "closingLine": closing_line,
+        "impliedProbability": round(implied_probability, 6),
+        "result": result,
+        "profitLoss": float(round(profit_loss, 2)),
+        "unitsWon": units_won,
+        "weather": getattr(pick, "weather", "") or "",
+        "temperature": int(getattr(pick, "temperature_f", 0) or 0),
+        "umpire": getattr(pick, "umpire", "") or "",
+        "startingPitcher": getattr(pick, "starting_pitcher", "") or "",
+        "opposingPitcher": getattr(pick, "opposing_pitcher", "") or "",
+    }
+
+
 def serialize_moneyline_picks(predictor_path: Path, game_date: date) -> list[dict[str, Any]]:
     add_to_syspath(predictor_path)
     load_predictor_env(predictor_path)
-    from market.calculations import confidence_from_edge_and_prob
     from run_odds_slate import evaluate_slate
 
     picks = evaluate_slate(game_date, write_log=False)
+    graded_lookup = _load_graded_result_lookup(game_date)
     rows: list[dict[str, Any]] = []
     for pick in picks:
-        confidence_score, confidence_label = confidence_from_edge_and_prob(
-            pick.edge_pct, pick.model_prob
-        )
-        rows.append(
-            {
-                "awayTeam": pick.away_name,
-                "homeTeam": pick.home_name,
-                "play": pick.play,
-                "book": pick.book,
-                "edgePct": round(pick.edge_pct, 2),
-                "sizingPct": round(pick.quarter_kelly_pct, 2),
-                "americanOdds": pick.american_odds,
-                "modelWinProb": round(pick.model_prob, 4),
-                "confidenceScore": confidence_score,
-                "confidenceLabel": confidence_label,
-                "confidenceTier": pick.confidence_tier,
-                "evPerUnit": round(pick.ev_per_unit, 4) if pick.ev_per_unit is not None else None,
-                "predHomeRuns": round(pick.pred_home_runs, 2),
-                "predAwayRuns": round(pick.pred_away_runs, 2),
-            }
-        )
+        graded = graded_lookup.get((pick.away_name, pick.home_name))
+        rows.append(serialize_power_bi_pick(pick, graded))
     return rows
 
 
@@ -501,8 +590,17 @@ def export_daily_picks(
     dated_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     latest_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
+    POWERBI_PICKS_DIR.mkdir(parents=True, exist_ok=True)
+    powerbi_rows = list(payload.get("moneylinePicks") or [])
+    powerbi_dated = POWERBI_PICKS_DIR / f"{game_date.isoformat()}.json"
+    powerbi_latest = POWERBI_PICKS_DIR / "latest.json"
+    powerbi_dated.write_text(json.dumps(powerbi_rows, indent=2), encoding="utf-8")
+    powerbi_latest.write_text(json.dumps(powerbi_rows, indent=2), encoding="utf-8")
+
     print(f"Wrote {dated_path}")
     print(f"Wrote {latest_path}")
+    print(f"Wrote {powerbi_dated} ({len(powerbi_rows)} Power BI rows)")
+    print(f"Wrote {powerbi_latest}")
 
     _run_grade_yesterday(game_date)
     return dated_path

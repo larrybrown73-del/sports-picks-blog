@@ -55,6 +55,12 @@ class SlatePick:
     temperature: str
     wind: str
     bullpen_status: str
+    game_id: int = 0
+    temperature_f: int = 0
+    weather: str = ""
+    umpire: str = ""
+    starting_pitcher: str = ""
+    opposing_pitcher: str = ""
 
 
 def _normalize_team_name(team_name: str) -> str:
@@ -136,6 +142,22 @@ def _ev_pct(model_prob: float, american_odds: int, stake: float = 100.0) -> floa
     return ev / stake * 100
 
 
+def _clean_pitcher_name(name: object) -> str:
+    text = str(name or "").strip()
+    if not text or text.lower() == "unknown":
+        return ""
+    return text
+
+
+def _power_bi_confidence(edge_pct: float) -> str:
+    """Map edge percentage to Low / Medium / High for Power BI."""
+    if edge_pct >= 5.0:
+        return "High"
+    if edge_pct >= 3.0:
+        return "Medium"
+    return "Low"
+
+
 def _passes_moneyline_guardrails(model_prob: float, american_odds: int) -> bool:
     if model_prob < MIN_PROBABILITY_FLOOR:
         return False
@@ -197,6 +219,18 @@ def evaluate_slate(
         home_sp_era, away_sp_era = fetch_starter_eras(
             int(game["game_id"]), season=game_date.year
         )
+        pitcher_meta = baseball_data.get_starting_pitcher_info(int(game["game_id"]))
+        home_pitcher = _clean_pitcher_name(pitcher_meta.get("home_pitcher_name"))
+        away_pitcher = _clean_pitcher_name(pitcher_meta.get("away_pitcher_name"))
+        umpire = str(pitcher_meta.get("umpire") or "").strip()
+        temperature_f = (
+            int(evaluated.conditions.temperature_f)
+            if evaluated.conditions.temperature_f is not None
+            else 0
+        )
+        weather = evaluated.conditions.weather_status or (
+            evaluated.wind if evaluated.wind and evaluated.wind != "Unknown" else ""
+        )
 
         candidates: list[SlatePick] = []
         for team_name, key, prob, backing_home in (
@@ -222,6 +256,8 @@ def evaluate_slate(
             edge = (metrics.edge_pct or 0.0) / 100.0
             ev_per_unit = metrics.ev_per_unit or 0.0
             qk = metrics.fractional_kelly_pct or 0.0
+            starting_pitcher = home_pitcher if backing_home else away_pitcher
+            opposing_pitcher = away_pitcher if backing_home else home_pitcher
             candidates.append(
                 SlatePick(
                     away_name=away_name,
@@ -241,6 +277,12 @@ def evaluate_slate(
                     temperature=evaluated.temperature,
                     wind=evaluated.wind,
                     bullpen_status=evaluated.bullpen_status,
+                    game_id=int(game["game_id"]),
+                    temperature_f=temperature_f,
+                    weather=weather,
+                    umpire=umpire,
+                    starting_pitcher=starting_pitcher,
+                    opposing_pitcher=opposing_pitcher,
                 )
             )
 

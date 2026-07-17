@@ -142,9 +142,14 @@ def grade_picks(game_date: date | None = None) -> Path | None:
     for pick in moneyline_picks:
         away = pick["awayTeam"]
         home = pick["homeTeam"]
-        play = pick["play"]
-        american_odds = int(pick.get("americanOdds") or 0)
-        matchup = f"{away} @ {home}"
+        play = str(pick.get("pick") or pick.get("play") or "")
+        american_odds = int(
+            pick.get("closingLine")
+            or pick.get("openingLine")
+            or pick.get("americanOdds")
+            or 0
+        )
+        matchup = str(pick.get("matchup") or f"{away} @ {home}")
 
         game_result = final_scores.get((away, home))
         if game_result is None:

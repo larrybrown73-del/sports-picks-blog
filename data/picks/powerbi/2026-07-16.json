@@ -1,0 +1,30 @@
+[
+  {
+    "matchup": "New York Mets @ Philadelphia Phillies",
+    "homeTeam": "Philadelphia Phillies",
+    "awayTeam": "New York Mets",
+    "pick": "New York Mets",
+    "sportsbook": "FanDuel",
+    "betType": "Moneyline",
+    "league": "MLB",
+    "homeAway": "Away",
+    "confidence": 29,
+    "confidenceLabel": "Low",
+    "edge": 6.3,
+    "closingLineValue": 0.0,
+    "expectedValue": 67.6,
+    "winProbability": 0.544284,
+    "edgeDecimal": 0.063484,
+    "openingLine": 108,
+    "closingLine": 108,
+    "impliedProbability": 0.4808,
+    "result": "Pending",
+    "profitLoss": 0.0,
+    "unitsWon": 0.0,
+    "weather": "Cloudy",
+    "temperature": 94,
+    "umpire": "Dan Iassogna",
+    "startingPitcher": "Christian Scott",
+    "opposingPitcher": "Aaron Nola"
+  }
+]

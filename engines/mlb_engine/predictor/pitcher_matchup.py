@@ -439,12 +439,13 @@ def _apply_offense_adjustments(
     defending_team_id: int | None = None,
     game_date: date | None = None,
     is_home_offense: bool = False,
+    lineup: list | None = None,
 ) -> tuple[float, list[str]]:
     tags: list[str] = []
     runs = offense_runs
 
     if pitcher is None:
-        # Vacation / look-ahead can still apply without a known opposing starter.
+        # Vacation / look-ahead / missing-star can still apply without a known SP.
         if game_date is not None:
             runs, tough_tags = apply_tough_out_run_scalars(
                 runs,
@@ -456,6 +457,7 @@ def _apply_offense_adjustments(
                 season=season,
                 label=label,
                 opponent_team_id=defending_team_id,
+                lineup=lineup,
             )
             tags.extend(tough_tags)
         return runs, tags
@@ -495,6 +497,7 @@ def _apply_offense_adjustments(
             season=season,
             label=label,
             opponent_team_id=defending_team_id,
+            lineup=lineup,
         )
         tags.extend(tough_tags)
 
@@ -546,6 +549,7 @@ def apply_pitcher_matchup_adjustments(
 
     away_offense = fetch_team_offense_profile(away_id, season=season)
     home_offense = fetch_team_offense_profile(home_id, season=season)
+    away_lineup, home_lineup = fetch_game_lineup(game_id)
 
     away_runs, away_tags = _apply_offense_adjustments(
         away_runs,
@@ -556,6 +560,7 @@ def apply_pitcher_matchup_adjustments(
         defending_team_id=home_id,
         game_date=game_date,
         is_home_offense=False,
+        lineup=away_lineup,
     )
     home_runs, home_tags = _apply_offense_adjustments(
         home_runs,
@@ -566,11 +571,11 @@ def apply_pitcher_matchup_adjustments(
         defending_team_id=away_id,
         game_date=game_date,
         is_home_offense=True,
+        lineup=home_lineup,
     )
     tags.extend(away_tags)
     tags.extend(home_tags)
 
-    away_lineup, home_lineup = fetch_game_lineup(game_id)
     away_runs, away_hitter_tags = apply_lineup_discipline_to_runs(
         away_runs,
         away_lineup,

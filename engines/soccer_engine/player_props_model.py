@@ -45,6 +45,31 @@ from team_strength import TeamRatings
 # probability of playing the way a NOT_IN_SQUAD player is.
 SUBSTITUTE_BASELINE_MINUTES = 20.0
 
+# Position variance scales for counting-stat props. Defenders get compressed
+# volume; strikers keep full rate. Applied inside _lambda_for_stat so every
+# player-prop probability sees the same role weighting.
+POSITION_VARIANCE_SCALE: dict[str, float] = {
+    "ST": 1.00,
+    "F": 1.00,
+    "CF": 1.00,
+    "WG": 0.95,
+    "W": 0.95,
+    "CAM": 0.90,
+    "AM": 0.90,
+    "M": 0.85,
+    "CM": 0.85,
+    "DM": 0.70,
+    "CDM": 0.70,
+    "WB": 0.75,
+    "FB": 0.70,
+    "LB": 0.70,
+    "RB": 0.70,
+    "CB": 0.55,
+    "D": 0.55,
+    "GK": 0.15,
+    "G": 0.15,
+}
+
 # Maps a TheStatsAPI player-prop market_type to the raw season counting-stat
 # field it's measuring. "first_goalscorer" is intentionally absent: modeling
 # WHO scores first requires a race-to-first-goal calculation across every
@@ -73,6 +98,7 @@ class PlayerRateProfile:
     shots_per_90: float
     shots_on_target_per_90: float
     appearances: int
+    position: str | None = None
 
 
 def build_player_rate_profile(stats: PlayerSeasonStats) -> PlayerRateProfile | None:
@@ -99,6 +125,7 @@ def build_player_rate_profile(stats: PlayerSeasonStats) -> PlayerRateProfile | N
         shots_per_90=stats.total_shots * per_90_factor,
         shots_on_target_per_90=stats.shots_on_target * per_90_factor,
         appearances=stats.appearances,
+        position=stats.position,
     )
 
 
@@ -146,6 +173,34 @@ def expected_minutes_factor(profile: PlayerRateProfile, *, lineup_status: str | 
     return min(1.0, profile.minutes_per_appearance / 90.0)
 
 
+def normalize_position(raw: str | None) -> str | None:
+    if not raw:
+        return None
+    token = str(raw).strip().upper()
+    aliases = {
+        "FORWARD": "ST",
+        "STRIKER": "ST",
+        "ATTACKER": "ST",
+        "MIDFIELDER": "M",
+        "DEFENDER": "D",
+        "GOALKEEPER": "GK",
+        "WINGER": "WG",
+    }
+    return aliases.get(token, token)
+
+
+def position_variance_scale(position: str | None) -> float:
+    key = normalize_position(position)
+    if not key:
+        return 1.0
+    if key in POSITION_VARIANCE_SCALE:
+        return POSITION_VARIANCE_SCALE[key]
+    for prefix, scale in POSITION_VARIANCE_SCALE.items():
+        if key.startswith(prefix):
+            return scale
+    return 1.0
+
+
 def _lambda_for_stat(
     profile: PlayerRateProfile,
     stat_field: str,
@@ -162,7 +217,8 @@ def _lambda_for_stat(
     if stat_field not in per_90_by_field:
         raise KeyError(f"Unknown player-prop stat field: {stat_field!r}")
     minutes_factor = expected_minutes_factor(profile, lineup_status=lineup_status)
-    return per_90_by_field[stat_field] * minutes_factor * opponent_adjustment
+    role_scale = position_variance_scale(profile.position)
+    return per_90_by_field[stat_field] * minutes_factor * opponent_adjustment * role_scale
 
 
 def player_prop_probability(

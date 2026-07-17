@@ -85,7 +85,7 @@ EARLY_PROPS_SYNC_MINUTE = 30
 LINEUP_LEAD_TIME_MINUTES = 60
 LINEUP_RETRY_MINUTES = 5
 LINEUP_MAX_RETRIES = 10  # ~50 minutes of retrying a late-announced lineup before giving up
-MIN_CONFIDENCE_SCORE_FOR_ALERT = 90
+MIN_CONFIDENCE_SCORE_FOR_ALERT = 70
 
 # One flag per UTC calendar day (same "today" run_morning_pull/
 # run_early_props_sync themselves use to fetch the schedule) recording

@@ -33,6 +33,7 @@ class GameConditions:
     run_env_multiplier: float
     display_temp: str
     display_wind: str
+    weather_status: str = ""
 
 
 def _safe_int(value: object) -> int | None:
@@ -85,6 +86,7 @@ def _neutral_conditions() -> GameConditions:
         run_env_multiplier=RUN_ENV_NEUTRAL_MULTIPLIER,
         display_temp="Unknown",
         display_wind="Unknown",
+        weather_status="",
     )
 
 
@@ -96,6 +98,7 @@ def fetch_game_conditions(game_id: int) -> GameConditions:
         weather = payload.get("gameData", {}).get("weather") or {}
         temp_f = _safe_int(weather.get("temp"))
         wind_raw = str(weather.get("wind") or "").strip()
+        weather_status = str(weather.get("condition") or "").strip()
         wind_speed, wind_direction = _parse_wind(wind_raw)
         multiplier = _compute_run_env_multiplier(temp_f, wind_direction)
         display_temp = f"{temp_f}F" if temp_f is not None else "Unknown"
@@ -108,6 +111,7 @@ def fetch_game_conditions(game_id: int) -> GameConditions:
             run_env_multiplier=multiplier,
             display_temp=display_temp,
             display_wind=display_wind,
+            weather_status=weather_status,
         )
 
     return safe_feature_fetch(

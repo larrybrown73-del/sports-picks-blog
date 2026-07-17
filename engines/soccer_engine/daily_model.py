@@ -34,6 +34,17 @@ from historical_data import (
 )
 from player_props_model import build_player_rate_profile
 from projection_model import SoccerProjectionModel
+from royal_validators import (  # noqa: F401 -- re-exported for Royal Picks callers
+    FORM_CONFLICT_SCORE_PENALTY,
+    FORM_DEVIATION_THRESHOLD,
+    HIT_RATE_FLOOR,
+    build_downside_analysis,
+    enrich_results_with_situational_validators,
+    estimated_hit_rate,
+    form_deviation_ratio,
+    normalize_position,
+    position_variance_scale,
+)
 from team_strength import SoccerModelDataError, fit_dixon_coles
 
 # Long enough for Dixon-Coles' own exponential time-decay weighting (see

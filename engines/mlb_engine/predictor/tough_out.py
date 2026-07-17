@@ -6,8 +6,9 @@ import logging
 from dataclasses import dataclass
 from datetime import date, timedelta
 from functools import lru_cache
-from typing import Any
+from typing import Any, Sequence
 
+import requests
 import statsapi
 
 from config import (
@@ -15,11 +16,15 @@ from config import (
     BREAK_PUSH_BONUS,
     BREAK_PUSH_WIN_PCT_MIN,
     CONTACT_STARTER_K_BB_PCT,
+    ELITE_FIREPOWER_L14_WRC_PLUS_MIN,
+    ELITE_FIREPOWER_VETO_ACTIVE,
+    ENABLE_LINEUP_INJURY_CHECK,
     FIP_CONSTANT,
     GRITTY_OFFENSE_SCALAR,
     INNINGS_EATER_ERA_MAX,
     INNINGS_EATER_ERA_MIN,
     INNINGS_EATER_MIN_IP,
+    LEAGUE_AVG_OPS_FOR_WRC,
     LOOK_AHEAD_BOTTOM_OPP_N,
     LOOK_AHEAD_NEXT_TOP_N,
     LOOK_AHEAD_SCHEDULE_HORIZON_DAYS,
@@ -27,7 +32,13 @@ from config import (
     LOOK_AHEAD_TRAP_PENALTY,
     LUCK_ERA_FIP_GAP,
     LUCK_REGRESSION_PENALTY,
+    MISSING_STAR_BAT_PENALTY,
     PRE_ALL_STAR_WINDOW_DAYS,
+    SLUMP_VETO_ACTIVE,
+    SLUMP_VETO_L10_WIN_PCT_MAX,
+    SLUMP_VETO_LOOKBACK_GAMES,
+    STAR_POWER_BAT_TOP_N,
+    STAR_POWER_MIN_PA,
     TOUGH_OUT_CONTACT_TOP_N,
     TOUGH_OUT_MIN_PA,
     TOUGH_OUT_SLG_EXCLUDE_BOTTOM_N,
@@ -474,6 +485,7 @@ def look_ahead_trap_scalar(
     Haircut a Top-7 club's runs when facing a Bottom-10 feeder before a tough series.
 
     Next series is "tough" if it is vs a Top-10 win% club or a division rival.
+    Elite opponent L14 firepower (wRC+ proxy > threshold) nullifies the penalty.
     """
     top, bottom, next_top = win_pct_rank_sets(season)
     if int(team_id) not in top or int(opponent_id) not in bottom:
@@ -493,7 +505,123 @@ def look_ahead_trap_scalar(
     )
     if not tough_next:
         return 1.0, None
+
+    if ELITE_FIREPOWER_VETO_ACTIVE:
+        # Tampa Bay fix: opponent too explosive to look past.
+        opp_wrc = team_l14_wrc_plus_as_of(
+            opponent_id, game_date=game_date, season=season
+        )
+        if opp_wrc is not None and opp_wrc > ELITE_FIREPOWER_L14_WRC_PLUS_MIN:
+            return 1.0, "elite_firepower_veto"
+
     return LOOK_AHEAD_TRAP_PENALTY, "look_ahead_trap"
+
+
+@lru_cache(maxsize=128)
+def team_l14_wrc_plus(team_id: int, as_of_iso: str, season: int) -> float | None:
+    """
+    Approximate last-14-calendar-day team wRC+ from OPS vs league OPS.
+
+    True FanGraphs wRC+ is unavailable here; OPS-scaled index is used as the veto gate.
+    """
+
+    def _fetch() -> float | None:
+        import requests
+
+        as_of = date.fromisoformat(as_of_iso)
+        end = as_of - timedelta(days=1)
+        start = end - timedelta(days=13)
+        try:
+            response = requests.get(
+                f"https://statsapi.mlb.com/api/v1/teams/{int(team_id)}/stats",
+                params={
+                    "stats": "byDateRange",
+                    "group": "hitting",
+                    "season": season,
+                    "startDate": start.isoformat(),
+                    "endDate": end.isoformat(),
+                    "sportIds": 1,
+                },
+                timeout=20,
+            )
+            response.raise_for_status()
+            payload = response.json()
+        except Exception as exc:
+            logger.debug("L14 hitting fetch failed for %s: %s", team_id, exc)
+            return None
+
+        splits = (payload.get("stats") or [{}])[0].get("splits") or []
+        if not splits:
+            return None
+        ops = _safe_float((splits[0].get("stat") or {}).get("ops"))
+        if ops is None or LEAGUE_AVG_OPS_FOR_WRC <= 0:
+            return None
+        return 100.0 * ops / LEAGUE_AVG_OPS_FOR_WRC
+
+    return safe_feature_fetch(
+        f"team_l14_wrc_{team_id}_{as_of_iso}_{season}",
+        _fetch,
+        fallback=None,
+    )
+
+
+def team_l14_wrc_plus_as_of(
+    team_id: int, *, game_date: date, season: int
+) -> float | None:
+    return team_l14_wrc_plus(int(team_id), game_date.isoformat(), season)
+
+
+@lru_cache(maxsize=128)
+def team_l10_win_pct(team_id: int, as_of_iso: str) -> float | None:
+    """Win percentage over the last N completed regular-season games before as_of."""
+
+    def _fetch() -> float | None:
+        as_of = date.fromisoformat(as_of_iso)
+        start = (as_of - timedelta(days=45)).strftime("%m/%d/%Y")
+        end = (as_of - timedelta(days=1)).strftime("%m/%d/%Y")
+        try:
+            games = statsapi.schedule(
+                start_date=start,
+                end_date=end,
+                team=team_id,
+                sportId=1,
+            )
+        except Exception as exc:
+            logger.debug("L10 schedule fetch failed for %s: %s", team_id, exc)
+            return None
+
+        results: list[str] = []
+        for game in sorted(games, key=lambda row: str(row.get("game_date", ""))):
+            if game.get("game_type") != "R":
+                continue
+            if str(game.get("status", "")) != "Final":
+                continue
+            home_id = game.get("home_id")
+            away_id = game.get("away_id")
+            home_score = game.get("home_score")
+            away_score = game.get("away_score")
+            if home_score is None or away_score is None:
+                continue
+            if int(team_id) == int(home_id):
+                results.append(
+                    "W" if home_score > away_score else "L" if home_score < away_score else "T"
+                )
+            elif int(team_id) == int(away_id):
+                results.append(
+                    "W" if away_score > home_score else "L" if away_score < home_score else "T"
+                )
+
+        recent = [r for r in results[-SLUMP_VETO_LOOKBACK_GAMES:] if r in ("W", "L")]
+        if len(recent) < max(5, SLUMP_VETO_LOOKBACK_GAMES // 2):
+            return None
+        wins = sum(1 for r in recent if r == "W")
+        return wins / len(recent)
+
+    return safe_feature_fetch(
+        f"team_l10_win_pct_{team_id}_{as_of_iso}",
+        _fetch,
+        fallback=None,
+    )
 
 
 @lru_cache(maxsize=64)
@@ -536,7 +664,203 @@ def break_push_bonus(
     win_pct = team_win_pct(team_id, season)
     if win_pct is None or win_pct <= BREAK_PUSH_WIN_PCT_MIN:
         return prob
+    if SLUMP_VETO_ACTIVE:
+        l10 = team_l10_win_pct(int(team_id), game_date.isoformat())
+        if l10 is not None and l10 < SLUMP_VETO_L10_WIN_PCT_MAX:
+            return prob
     return min(prob * BREAK_PUSH_BONUS, 0.99)
+
+
+def _safe_int(value: object) -> int | None:
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+@lru_cache(maxsize=64)
+def team_top_hr_batter_ids(team_id: int, season: int) -> tuple[int, ...]:
+    """Team's top power bats by season home runs (default top 3)."""
+
+    def _fetch() -> tuple[int, ...]:
+        try:
+            response = requests.get(
+                "https://statsapi.mlb.com/api/v1/stats",
+                params={
+                    "stats": "season",
+                    "group": "hitting",
+                    "season": season,
+                    "sportIds": 1,
+                    "teamId": team_id,
+                    "playerPool": "all",
+                    "limit": 40,
+                    "order": "desc",
+                    "sortStat": "homeRuns",
+                },
+                timeout=20,
+            )
+            response.raise_for_status()
+            payload = response.json()
+        except Exception as exc:
+            logger.debug("Top-HR batting fetch failed for %s: %s", team_id, exc)
+            return tuple()
+
+        stars: list[int] = []
+        splits = (payload.get("stats") or [{}])[0].get("splits") or []
+        for split in splits:
+            player = split.get("player") or {}
+            player_id = _safe_int(player.get("id"))
+            stat = split.get("stat") or {}
+            pa = _safe_float(stat.get("plateAppearances")) or 0.0
+            hr = _safe_float(stat.get("homeRuns")) or 0.0
+            if player_id is None or hr <= 0:
+                continue
+            if pa < STAR_POWER_MIN_PA:
+                continue
+            stars.append(player_id)
+            if len(stars) >= STAR_POWER_BAT_TOP_N:
+                break
+        return tuple(stars)
+
+    return safe_feature_fetch(
+        f"team_top_hr_{team_id}_{season}",
+        _fetch,
+        fallback=tuple(),
+    )
+
+
+def _lineup_player_ids(lineup: Sequence[Any] | None) -> set[int]:
+    ids: set[int] = set()
+    for batter in lineup or []:
+        player_id = getattr(batter, "player_id", None)
+        if player_id is None and isinstance(batter, dict):
+            player_id = batter.get("player_id")
+        parsed = _safe_int(player_id)
+        if parsed is not None:
+            ids.add(parsed)
+    return ids
+
+
+def missing_star_bat_lineup_scalar(
+    *,
+    team_id: int,
+    season: int,
+    lineup: Sequence[Any] | None,
+    label: str,
+) -> tuple[float, list[str]]:
+    """
+    Haircut offense when top-HR bats are absent from today's starting 9.
+
+    Gate: ENABLE_LINEUP_INJURY_CHECK. Requires a posted lineup (>= 8 batters).
+    """
+    if not ENABLE_LINEUP_INJURY_CHECK:
+        return 1.0, []
+
+    lineup_ids = _lineup_player_ids(lineup)
+    if len(lineup_ids) < 8:
+        return 1.0, []
+
+    stars = team_top_hr_batter_ids(int(team_id), season)
+    if not stars:
+        return 1.0, []
+
+    missing = [star_id for star_id in stars if star_id not in lineup_ids]
+    if not missing:
+        return 1.0, []
+
+    scalar = 1.0
+    tags: list[str] = []
+    for star_id in missing:
+        scalar *= MISSING_STAR_BAT_PENALTY
+        tags.append(f"{label}:missing_star_bat:{star_id}:{MISSING_STAR_BAT_PENALTY:.2f}")
+    tags.append(f"{label}:missing_star_bat_scalar:{scalar:.3f}")
+    return scalar, tags
+
+
+def _missing_top_hr_count(
+    team_id: int, *, season: int, lineup: Sequence[Any] | None
+) -> int:
+    lineup_ids = _lineup_player_ids(lineup)
+    if len(lineup_ids) < 8:
+        return 0
+    stars = team_top_hr_batter_ids(int(team_id), season)
+    return sum(1 for star_id in stars if star_id not in lineup_ids)
+
+
+def build_system_guardrail_context(
+    team_id: int,
+    opponent_id: int | None,
+    *,
+    game_date: date,
+    season: int,
+    lineup: Sequence[Any] | None = None,
+    opponent_lineup: Sequence[Any] | None = None,
+) -> dict[int, dict[str, Any]]:
+    """Assemble per-team context used by apply_system_guardrails."""
+
+    def _team_bucket(
+        tid: int, *, team_lineup: Sequence[Any] | None
+    ) -> dict[str, Any]:
+        l10 = team_l10_win_pct(int(tid), game_date.isoformat())
+        l14 = team_l14_wrc_plus_as_of(tid, game_date=game_date, season=season)
+        return {
+            "missing_top_hr_count": _missing_top_hr_count(
+                tid, season=season, lineup=team_lineup
+            ),
+            "l10_win_pct": 1.0 if l10 is None else float(l10),
+            "l14_wrcplus": 100.0 if l14 is None else float(l14),
+            "break_push_bonus_active": True,
+            "look_ahead_trap_active": True,
+        }
+
+    context: dict[int, dict[str, Any]] = {
+        int(team_id): _team_bucket(int(team_id), team_lineup=lineup),
+    }
+    if opponent_id is not None:
+        context[int(opponent_id)] = _team_bucket(
+            int(opponent_id), team_lineup=opponent_lineup
+        )
+    return context
+
+
+def apply_system_guardrails(
+    team_id: int,
+    opponent_id: int | None,
+    current_run_projection: float,
+    context_data: dict[int, dict[str, Any]],
+) -> float:
+    """
+    Apply real-time overrides for injuries, slumps, and opponent firepower
+    so the engine does not back hollowed-out or cold rosters.
+    """
+    final_projection = current_run_projection
+    team_key = int(team_id)
+    team_ctx = context_data.setdefault(team_key, {})
+
+    # 1. Injury Guardrail (The Oakland Fix)
+    if ENABLE_LINEUP_INJURY_CHECK:
+        missing_stars = int(team_ctx.get("missing_top_hr_count", 0) or 0)
+        if missing_stars > 0:
+            for _ in range(missing_stars):
+                final_projection *= MISSING_STAR_BAT_PENALTY
+
+    # 2. Cold Streak Veto (The Atlanta Fix)
+    if SLUMP_VETO_ACTIVE:
+        l10_win_pct = float(team_ctx.get("l10_win_pct", 1.0) or 1.0)
+        if l10_win_pct < SLUMP_VETO_L10_WIN_PCT_MAX:
+            team_ctx["break_push_bonus_active"] = False
+
+    # 3. Firepower Veto (The Tampa Bay Fix)
+    if ELITE_FIREPOWER_VETO_ACTIVE and opponent_id is not None:
+        opp_ctx = context_data.get(int(opponent_id), {})
+        opp_l14_wrc = float(opp_ctx.get("l14_wrcplus", 100) or 100)
+        if opp_l14_wrc > ELITE_FIREPOWER_L14_WRC_PLUS_MIN:
+            # Opponent is too explosive; kill look-ahead trap on the favorite.
+            team_ctx["look_ahead_trap_active"] = False
+
+    return final_projection
 
 
 def apply_tough_out_run_scalars(
@@ -550,10 +874,31 @@ def apply_tough_out_run_scalars(
     season: int,
     label: str,
     opponent_team_id: int | None = None,
+    lineup: Sequence[Any] | None = None,
 ) -> tuple[float, list[str]]:
-    """Stack Tough Out, luck-regression, vacation-mode, and look-ahead run multipliers."""
+    """Stack Tough Out, luck, vacation, look-ahead, and system guardrail multipliers."""
     tags: list[str] = []
     runs = offense_runs
+
+    context = build_system_guardrail_context(
+        offense_team_id,
+        opponent_team_id,
+        game_date=game_date,
+        season=season,
+        lineup=lineup,
+    )
+    before = runs
+    runs = apply_system_guardrails(
+        offense_team_id,
+        opponent_team_id,
+        runs,
+        context,
+    )
+    if abs(runs - before) > 1e-9:
+        missing = int(context.get(int(offense_team_id), {}).get("missing_top_hr_count", 0))
+        tags.append(
+            f"{label}:missing_star_bat_scalar:{(MISSING_STAR_BAT_PENALTY ** missing):.3f}"
+        )
 
     eater: InningsEaterProfile | None = None
     if pitcher_id is not None:
@@ -585,7 +930,10 @@ def apply_tough_out_run_scalars(
         runs *= vac_scalar
         tags.append(f"{label}:{vac_tag}:{vac_scalar:.2f}")
 
-    if opponent_team_id is not None:
+    look_ahead_allowed = bool(
+        context.get(int(offense_team_id), {}).get("look_ahead_trap_active", True)
+    )
+    if opponent_team_id is not None and look_ahead_allowed:
         trap_scalar, trap_tag = look_ahead_trap_scalar(
             team_id=offense_team_id,
             opponent_id=opponent_team_id,
@@ -595,5 +943,7 @@ def apply_tough_out_run_scalars(
         if trap_tag:
             runs *= trap_scalar
             tags.append(f"{label}:{trap_tag}:{trap_scalar:.2f}")
+    elif opponent_team_id is not None and not look_ahead_allowed:
+        tags.append(f"{label}:elite_firepower_veto:1.00")
 
     return runs, tags

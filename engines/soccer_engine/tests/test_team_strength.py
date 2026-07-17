@@ -9,7 +9,9 @@ from scipy.stats import poisson as scipy_poisson
 
 from historical_data import MatchResult
 from team_strength import (
+    MAX_EXPECTED_GOALS,
     SoccerModelDataError,
+    TeamRatings,
     asian_handicap_probabilities,
     btts_probability,
     fit_dixon_coles,
@@ -157,3 +159,63 @@ def test_fit_dixon_coles_recovers_relative_team_strength_from_synthetic_data() -
 
     # Every team appeared as both home and away in every repeat.
     assert ratings.matches_played["A"] == 2 * 3 * 10
+
+    # Guardrails: fitted attack/defense must stay inside the MLE box bounds.
+    for team_id in team_ids:
+        assert -2.0 <= ratings.attack[team_id] <= 2.0
+        assert -2.0 <= ratings.defense[team_id] <= 2.0
+    lambda_home_cap, lambda_away_cap = ratings.expected_goals("A", "D")
+    assert lambda_home_cap <= MAX_EXPECTED_GOALS
+    assert lambda_away_cap <= MAX_EXPECTED_GOALS
+
+
+def test_expected_goals_clamps_to_max_expected_goals() -> None:
+    """Even pathological ratings must not project > MAX_EXPECTED_GOALS per side."""
+
+    ratings = TeamRatings(
+        attack={"tm_strong": 5.0, "tm_weak": -5.0},
+        defense={"tm_strong": -5.0, "tm_weak": 5.0},
+        home_advantage=1.0,
+        rho=-0.05,
+        league_avg_home_goals=1.5,
+        league_avg_away_goals=1.2,
+    )
+    lambda_home, lambda_away = ratings.expected_goals("tm_strong", "tm_weak")
+    assert lambda_home == MAX_EXPECTED_GOALS
+    assert lambda_away <= MAX_EXPECTED_GOALS
+
+
+def test_scoreline_matrix_clamps_lambda_before_poisson() -> None:
+    matrix = scoreline_matrix(8.0, 7.0, rho=0.0, max_goals=15)
+    # Direct proof of the clamp: the home=8 / away=0 cell must match
+    # Poisson(MAX_EXPECTED_GOALS) x Poisson(MAX_EXPECTED_GOALS), not the
+    # uncapped Poisson(8) x Poisson(7) inputs the caller passed in.
+    expected = scipy_poisson.pmf(8, MAX_EXPECTED_GOALS) * scipy_poisson.pmf(0, MAX_EXPECTED_GOALS)
+    assert abs(matrix[8, 0] - expected) < 1e-6
+    assert math.isclose(matrix.sum(), 1.0, rel_tol=1e-9)
+
+
+def test_fit_dixon_coles_l2_pulls_blowout_ratings_toward_zero() -> None:
+    """
+    A slate where one side routinely scores 8+ against a punching bag must
+    produce a smaller attack+defense L2 norm once Ridge is on -- the ridge
+    term has to shrink parameter magnitudes relative to an unregularized fit.
+    Absolute per-team attack can move with the model's scale invariance, so
+    we compare the full parameter L2 norm, not a single team's rating.
+    """
+
+    rng = np.random.default_rng(7)
+    team_ids = ["Bully", "Bag", "PeerA", "PeerB"]
+    log_attack_true = {"Bully": 1.8, "Bag": -1.5, "PeerA": 0.0, "PeerB": 0.0}
+    log_defense_true = {"Bully": -1.2, "Bag": 1.5, "PeerA": 0.0, "PeerB": 0.0}
+    matches = _simulate_matches(rng, team_ids, log_attack_true, log_defense_true, 0.2, repeats=8)
+
+    unreg = fit_dixon_coles(matches, l2_regularization=0.0)
+    ridge = fit_dixon_coles(matches, l2_regularization=1.0)
+
+    def param_l2(ratings: TeamRatings) -> float:
+        return sum(v * v for v in ratings.attack.values()) + sum(v * v for v in ratings.defense.values())
+
+    assert param_l2(ridge) < param_l2(unreg)
+    lh, la = ridge.expected_goals("Bully", "Bag")
+    assert lh <= MAX_EXPECTED_GOALS and la <= MAX_EXPECTED_GOALS

@@ -120,6 +120,27 @@ SECONDARY_MODIFIER_MAX_PCT: float = 0.08
 PITCHING_MISMATCH_OUR_ERA_MIN: float = 5.00
 PITCHING_MISMATCH_OPP_ERA_MAX: float = 4.00
 
+# ==========================================
+# INJURY, SLUMP, & FIREPOWER GUARDRAILS
+# ==========================================
+ENABLE_LINEUP_INJURY_CHECK: bool = True
+MISSING_STAR_BAT_PENALTY: float = 0.92  # 8% haircut to run projection per star missing
+SLUMP_VETO_ACTIVE: bool = True  # Strips motivation bonus if team is cold (L10 < .500)
+ELITE_FIREPOWER_VETO_ACTIVE: bool = True  # Blocks trap penalties if opponent L14 wRC+ > 115
+
+# Lineup integrity helpers (missing star power bats)
+STAR_POWER_BAT_TOP_N: int = 3
+STAR_POWER_MIN_PA: float = 150.0
+STAR_POWER_MIN_HR: float = 8.0
+
+# Firepower veto threshold (elite recent offense ignores look-ahead trap)
+ELITE_FIREPOWER_L14_WRC_PLUS_MIN: float = 115.0
+LEAGUE_AVG_OPS_FOR_WRC: float = 0.720
+
+# Cold-streak veto helpers
+SLUMP_VETO_L10_WIN_PCT_MAX: float = 0.500
+SLUMP_VETO_LOOKBACK_GAMES: int = 10
+
 # Tough Out / gritty contact lineups vs innings eaters
 GRITTY_OFFENSE_SCALAR: float = 1.04
 TOUGH_OUT_CONTACT_TOP_N: int = 10

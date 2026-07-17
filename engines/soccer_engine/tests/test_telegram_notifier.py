@@ -123,8 +123,11 @@ def test_format_ev_board_message_filters_by_confidence_and_sorts_descending() ->
     # Sanity-check the fixture actually produces a high/low split before
     # relying on it below (avoids a silently-vacuous assertion if the
     # underlying confidence formula ever changes).
-    assert high_result.confidence_score > 50
-    assert low_result.confidence_score <= 50
+    # Inclusive threshold: a leg that scores exactly the cutoff must still
+    # appear. Previously this was a strict `>` which silently dropped
+    # anything that landed on the boundary.
+    assert high_result.confidence_score >= 50
+    assert low_result.confidence_score < 50
 
     message = format_ev_board_message([high_result, low_result], title="Test Board", min_confidence_score=50)
 
@@ -134,9 +137,9 @@ def test_format_ev_board_message_filters_by_confidence_and_sorts_descending() ->
 
 
 def test_format_ev_board_message_empty_results_says_no_bets() -> None:
-    message = format_ev_board_message([], title="Empty Board", min_confidence_score=90)
+    message = format_ev_board_message([], title="Empty Board", min_confidence_score=70)
     assert "Empty Board" in message
-    assert "No bets scored above 90" in message
+    assert "No bets scored at or above 70" in message
 
 
 def test_format_ev_board_message_escapes_html_special_characters() -> None:

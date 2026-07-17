@@ -14,7 +14,15 @@ import os
 from html import escape as _escape_html
 from typing import Any, Sequence
 
-from ev_engine_core import DEFAULT_ENV_FILE, EVResult, MarketLeg, decimal_to_american, load_env_file
+from ev_engine_core import (
+    DEFAULT_ENV_FILE,
+    EVResult,
+    MarketLeg,
+    TIER_ROYAL,
+    decimal_to_american,
+    load_env_file,
+    royal_approval_checklist,
+)
 
 TELEGRAM_API_BASE = "https://api.telegram.org"
 TELEGRAM_BOT_TOKEN_ENV_VAR = "TELEGRAM_BOT_TOKEN"
@@ -25,7 +33,7 @@ TELEGRAM_CHAT_ID_ENV_VAR = "TELEGRAM_CHAT_ID"
 # message over the real limit.
 MAX_MESSAGE_LENGTH = 3500
 
-DEFAULT_MIN_CONFIDENCE_SCORE = 90
+DEFAULT_MIN_CONFIDENCE_SCORE = 70
 
 
 class TelegramConfigError(RuntimeError):
@@ -231,47 +239,72 @@ def format_ev_board_message(
     min_confidence_score: int = DEFAULT_MIN_CONFIDENCE_SCORE,
 ) -> str:
     """
-    Renders EVResult rows with `confidence_score > min_confidence_score` as
-    an HTML-formatted, mobile-scannable message, highest AI Score first:
-
-        \u26bd <b>[Match or Team Name]</b>
-        \U0001F525 <b>[Bet Selection]</b> (<i>[Market Name]</i>)
-        \U0001F4B0 <b>Odds:</b> [American Odds] ([Implied Prob]% Implied)
-        \U0001F4C8 <b>True Prob:</b> [True Prob]%
-        \u26a1 <b>Edge (EV):</b> +[EV]%
-        \U0001F3AF <b>AI Score:</b> [Score]/100
-
-    The match-context and bet-selection lines are built from structured leg
-    fields, not string concatenation of leg.selection -- see
-    `_match_context_line`/`_bet_selection_line` for why that distinction
-    matters (it's what stops a team/player's name from being printed twice).
+    Royal Picks alert card. Renders EVResult rows with
+    `confidence_score >= min_confidence_score` as HTML, highest AI Score
+    first. Crown (👑) only appears when `royal_approval_checklist` passes
+    every gate (EV+, form, hit-rate, lineup, contradiction clear, no
+    market divergence, score>=95, true_prob>=55%).
     """
 
     top_bets = sorted(
-        (r for r in results if r.confidence_score > min_confidence_score),
-        key=lambda r: r.confidence_score,
+        (r for r in results if r.confidence_score >= min_confidence_score),
+        key=lambda r: (r.confidence_score, r.ev_per_unit),
         reverse=True,
     )
 
     lines = [f"<b>{_escape_html(title)}</b>"]
     if not top_bets:
-        lines.append(f"No bets scored above {min_confidence_score} today.")
+        lines.append(f"No bets scored at or above {min_confidence_score} today.")
         return "\n".join(lines)
 
     for result in top_bets:
-        leg = result.leg
-        american_odds = decimal_to_american(result.decimal_odds)
         lines.append("")
-        lines.append(f"\u26bd <b>{_escape_html(_match_context_line(leg))}</b>")
-        lines.append(
-            f"\U0001F525 <b>{_escape_html(_bet_selection_line(leg))}</b> "
-            f"(<i>{_escape_html(_market_label(leg.market_type))}</i>)"
-        )
-        lines.append(
-            f"\U0001F4B0 <b>Odds:</b> {american_odds:+d} ({result.implied_probability * 100:.1f}% Implied)"
-        )
-        lines.append(f"\U0001F4C8 <b>True Prob:</b> {result.true_probability * 100:.1f}%")
-        lines.append(f"\u26a1 <b>Edge (EV):</b> {result.ev_per_unit * 100:+.1f}%")
-        lines.append(f"\U0001F3AF <b>AI Score:</b> {result.confidence_score}/100")
+        lines.extend(_format_royal_card(result))
 
     return "\n".join(lines)
+
+
+def _format_royal_card(result: EVResult) -> list[str]:
+    leg = result.leg
+    american_odds = decimal_to_american(result.decimal_odds)
+    approved = result.royal_approved or royal_approval_checklist(result)
+    # Crown designation is gated -- never show 👑 unless the checklist passes.
+    if approved and result.tier == TIER_ROYAL:
+        tier_title = TIER_ROYAL
+    elif result.tier == TIER_ROYAL and not approved:
+        tier_title = "🔥 Strong Play"
+    else:
+        tier_title = result.tier or "🎰 Lottery Ticket"
+
+    gate_bits = [
+        "EV+" if result.positive_ev else "EV-",
+        "Form OK" if result.form_validated else "Form FLAG",
+        "HitRate OK" if result.hit_rate_ok else "HitRate FLAG",
+        "XI OK" if result.lineup_confirmed else "XI pending",
+        "Corr OK" if result.contradiction_clear else "Corr FLAG",
+    ]
+    if result.market_divergence:
+        gate_bits.append("Mkt DIVERGE")
+    gates_line = " · ".join(gate_bits)
+
+    downside = result.downside_analysis or {}
+    why_wrong = (
+        downside.get("main_dependency_risk")
+        or downside.get("tactical_failure_point")
+        or downside.get("price_vs_likelihood")
+        or "No adversarial note generated."
+    )
+
+    return [
+        f"{_escape_html(tier_title)}  <b>{_escape_html(_match_context_line(leg))}</b>",
+        (
+            f"\U0001F525 <b>{_escape_html(_bet_selection_line(leg))}</b> "
+            f"(<i>{_escape_html(_market_label(leg.market_type))}</i>)"
+        ),
+        f"\U0001F4B0 <b>Odds:</b> {american_odds:+d} ({result.implied_probability * 100:.1f}% Implied)",
+        f"\U0001F4C8 <b>True Prob:</b> {result.true_probability * 100:.1f}%",
+        f"\u26a1 <b>Edge (EV):</b> {result.ev_per_unit * 100:+.1f}%",
+        f"\U0001F3AF <b>AI Score:</b> {result.confidence_score}/100",
+        f"<i>Gates:</i> {_escape_html(gates_line)}",
+        f"\u2753 <b>Why Am I Wrong?</b> {_escape_html(why_wrong)}",
+    ]

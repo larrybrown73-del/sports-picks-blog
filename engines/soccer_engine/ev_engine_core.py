@@ -158,6 +158,15 @@ class EVResult:
     sample_size: int | None = None
     volatility: float | None = None
     warnings: list[str] = field(default_factory=list)
+    # Royal Picks tier label (👑 / Strong Play / Value Angle / Lottery Ticket).
+    tier: str = ""
+    form_validated: bool = True
+    hit_rate_ok: bool = True
+    lineup_confirmed: bool = False
+    contradiction_clear: bool = True
+    market_divergence: bool = False
+    royal_approved: bool = False
+    downside_analysis: dict[str, str] = field(default_factory=dict)
 
     def to_record(self) -> dict[str, Any]:
         return {
@@ -180,6 +189,14 @@ class EVResult:
             "ev_per_unit": round(self.ev_per_unit, 4),
             "positive_ev": self.positive_ev,
             "confidence_score": self.confidence_score,
+            "tier": self.tier,
+            "royal_approved": self.royal_approved,
+            "form_validated": self.form_validated,
+            "hit_rate_ok": self.hit_rate_ok,
+            "lineup_confirmed": self.lineup_confirmed,
+            "contradiction_clear": self.contradiction_clear,
+            "market_divergence": self.market_divergence,
+            "downside_analysis": self.downside_analysis,
             "sample_size": self.sample_size,
             "volatility": self.volatility,
             "warnings": "; ".join(self.warnings),
@@ -715,7 +732,11 @@ def flatten_thestatsapi_match_odds(
                     odds_format="decimal",
                     side=side,
                     team=side_labels.get(side) if side in {"home", "away"} else None,
-                    metadata={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                    metadata=_odds_metadata(
+                        prices,
+                        live=live,
+                        base={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                    ),
                 )
             )
 
@@ -733,7 +754,11 @@ def flatten_thestatsapi_match_odds(
                     odds=price,
                     odds_format="decimal",
                     side=side,
-                    metadata={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                    metadata=_odds_metadata(
+                        prices,
+                        live=live,
+                        base={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                    ),
                 )
             )
 
@@ -755,7 +780,11 @@ def flatten_thestatsapi_match_odds(
                             odds_format="decimal",
                             line=line,
                             side=side,
-                            metadata={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                            metadata=_odds_metadata(
+                                prices,
+                                live=live,
+                                base={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                            ),
                         )
                     )
 
@@ -777,7 +806,11 @@ def flatten_thestatsapi_match_odds(
                         line=_parse_line_key(line_key),
                         side=side,
                         team=team_label if side in {"home", "away"} else None,
-                        metadata={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                        metadata=_odds_metadata(
+                            prices,
+                            live=live,
+                            base={"home_team": home_team, "away_team": away_team, "live": live, **team_id_metadata},
+                        ),
                     )
                 )
 
@@ -960,6 +993,7 @@ def evaluate_leg(
         volatility=volatility,
         warnings=warnings,
     )
+    tier = assign_pick_tier(score, true_prob)
 
     return EVResult(
         leg=leg,
@@ -977,6 +1011,8 @@ def evaluate_leg(
         sample_size=sample_size,
         volatility=volatility,
         warnings=warnings,
+        tier=tier,
+        lineup_confirmed=not any("no confirmed lineup" in w.lower() for w in warnings),
     )
 
 
@@ -1042,6 +1078,20 @@ def rank_ev_board(
     if max_per_game is not None:
         results = _limit_per_game(results, max_per_game)
 
+    # Situational validators (form / hit-rate / downside) -- imported lazily
+    # so ev_engine_core stays free of circular imports with daily_model.
+    try:
+        from royal_validators import enrich_results_with_situational_validators
+
+        profiles = None
+        provider_profiles = getattr(probability_provider, "_player_profiles", None)
+        if isinstance(provider_profiles, dict):
+            profiles = provider_profiles
+        results = enrich_results_with_situational_validators(results, profiles=profiles)
+    except Exception:
+        logger.exception("Situational validators failed; continuing with raw board.")
+
+    results = apply_royal_board_gates(results)
     return results
 
 
@@ -1100,8 +1150,27 @@ def build_match_ev_board(
 
 
 # ---------------------------------------------------------------------------
-# AI confidence score (1-100)
+# AI confidence score (1-100) + Royal Picks tiering / board gates
 # ---------------------------------------------------------------------------
+
+# Hard floor: longshots with true_prob below this can never score above 94,
+# regardless of how inflated the EV looks. Stops +1600 lottery tickets from
+# printing as "locks" purely because edge_points dominate the raw formula.
+ROYAL_TRUE_PROB_FLOOR = 0.55
+ROYAL_MAX_SCORE_BELOW_FLOOR = 94
+
+# Contradiction engine caps both sides of a tactical conflict at Value Angle.
+VALUE_ANGLE_SCORE_CAP = 89
+
+TIER_ROYAL = "👑"
+TIER_STRONG = "🔥 Strong Play"
+TIER_VALUE = "📊 Value Angle"
+TIER_LOTTERY = "🎰 Lottery Ticket"
+
+# Line movement: current implied vs opening implied. If the book steamed
+# against our Over (opening shorter than current on the Under side / Over
+# lengthened), flag Market Divergence. Threshold is absolute implied-prob pts.
+MARKET_DIVERGENCE_IMPLIED_MOVE = 0.04
 
 
 def confidence_score(
@@ -1112,9 +1181,13 @@ def confidence_score(
     sample_size: int | None,
     volatility: float,
     warnings: list[str] | None = None,
+    true_prob_floor: float = ROYAL_TRUE_PROB_FLOOR,
+    max_score_below_floor: int = ROYAL_MAX_SCORE_BELOW_FLOOR,
 ) -> int:
     """
-    Score 1-100, emphasizing model-vs-market edge while penalizing unstable inputs.
+    Score 1-100, emphasizing model-vs-market edge while penalizing unstable
+    inputs -- then applying the Royal true-prob clamp so raw EV cannot mint
+    a 95+ score on a sub-floor probability longshot.
     """
 
     edge_points = max(0.0, edge) * 500.0
@@ -1136,7 +1209,200 @@ def confidence_score(
     volatility_penalty = max(0.0, volatility - 0.20) * 45.0
     warning_penalty = min(12.0, 4.0 * len(warnings or []))
     score = round(base - sample_penalty - volatility_penalty - warning_penalty)
-    return min(100, max(1, score))
+    score = min(100, max(1, score))
+
+    # Prop clamp: true_prob below the Royal floor can never print 95+.
+    if true_probability < true_prob_floor:
+        score = min(score, max_score_below_floor)
+
+    return score
+
+
+def assign_pick_tier(confidence_score_value: int, true_probability: float) -> str:
+    """
+    Official Picks tiering. Crown requires BOTH score >= 95 AND true_prob
+    >= floor -- the clamp above already blocks score 95+ below the floor,
+    but the dual check here is the explicit contract for display/approval.
+    """
+
+    if confidence_score_value >= 95 and true_probability >= ROYAL_TRUE_PROB_FLOOR:
+        return TIER_ROYAL
+    if confidence_score_value >= 90:
+        return TIER_STRONG
+    if confidence_score_value >= 80:
+        return TIER_VALUE
+    return TIER_LOTTERY
+
+
+def royal_approval_checklist(result: EVResult) -> bool:
+    """
+    Strict boolean gate for the 👑 designation. Every flag must be True --
+    a missing lineup or a contradiction clears the crown even at score 100.
+    """
+
+    return bool(
+        result.positive_ev
+        and result.form_validated
+        and result.hit_rate_ok
+        and result.lineup_confirmed
+        and result.contradiction_clear
+        and not result.market_divergence
+        and result.confidence_score >= 95
+        and result.true_probability >= ROYAL_TRUE_PROB_FLOOR
+    )
+
+
+def apply_royal_board_gates(results: Iterable[EVResult]) -> list[EVResult]:
+    """
+    Post-grade board pass: correlation contradiction engine + line-movement
+    watchdog, then assign tiers and Royal approval flags.
+
+    Contradiction rule: if a match has a positive-EV Match Result ML AND a
+    positive-EV Over totals play, but also a focal midfielder Under 0.5 SOT
+    for that same side, both the Under prop and the team Over/ML are capped
+    at Value Angle until manually vetted.
+    """
+
+    from dataclasses import replace
+
+    board = list(results)
+    by_game: dict[str, list[EVResult]] = {}
+    for result in board:
+        by_game.setdefault(result.leg.game_id, []).append(result)
+
+    contradiction_keys: set[tuple[str, str]] = set()  # (game_id, selection key)
+    for game_id, game_results in by_game.items():
+        has_ml = any(
+            r.positive_ev and r.leg.market_type == "match_odds" and r.leg.side in {"home", "away"}
+            for r in game_results
+        )
+        has_over = any(
+            r.positive_ev and r.leg.market_type == "total_goals" and (r.leg.side or "").lower() == "over"
+            for r in game_results
+        )
+        if not (has_ml and has_over):
+            continue
+        for r in game_results:
+            if not _is_focal_under_sot(r):
+                continue
+            contradiction_keys.add((game_id, r.leg.selection))
+            # Also flag the team Over + ML legs on this match.
+            for peer in game_results:
+                if peer.leg.market_type in {"match_odds", "total_goals"} and peer.positive_ev:
+                    contradiction_keys.add((game_id, peer.leg.selection))
+
+    gated: list[EVResult] = []
+    for result in board:
+        warnings = list(result.warnings)
+        score = result.confidence_score
+        contradiction_clear = True
+        market_divergence = _detect_market_divergence(result)
+
+        if (result.leg.game_id, result.leg.selection) in contradiction_keys:
+            contradiction_clear = False
+            score = min(score, VALUE_ANGLE_SCORE_CAP)
+            warnings.append("tactical contradiction: team ML/Over vs focal Under SOT")
+
+        if market_divergence:
+            warnings.append("market divergence: book steamed against this side vs opening")
+            # Divergence does not auto-cap score -- it blocks Royal approval
+            # and surfaces for manual review via the flag.
+
+        downside = dict(result.downside_analysis)
+        try:
+            from royal_validators import build_downside_analysis
+
+            downside = build_downside_analysis(
+                result,
+                form_conflict=not result.form_validated,
+                market_divergence=market_divergence or result.market_divergence,
+                contradiction=not contradiction_clear,
+            )
+        except Exception:
+            if not downside and result.true_probability < ROYAL_TRUE_PROB_FLOOR and result.ev_per_unit > 0.5:
+                downside = {
+                    "main_dependency_risk": "High EV driven by a longshot price, not a high raw probability.",
+                    "tactical_failure_point": "Any match-script compression (low block / foul game) kills longshot Overs first.",
+                    "price_vs_likelihood": "Price vs likelihood mismatch -- edge may be book misprice OR model error.",
+                }
+
+        tier = assign_pick_tier(score, result.true_probability)
+        provisional = replace(
+            result,
+            confidence_score=score,
+            warnings=warnings,
+            contradiction_clear=contradiction_clear,
+            market_divergence=market_divergence or result.market_divergence,
+            downside_analysis=downside or result.downside_analysis,
+            tier=tier,
+        )
+        # Crown display requires the full checklist -- otherwise downgrade
+        # the displayed tier off 👑 even if the raw score cleared 95.
+        approved = royal_approval_checklist(provisional)
+        if provisional.tier == TIER_ROYAL and not approved:
+            tier = TIER_STRONG if score >= 90 else assign_pick_tier(score, result.true_probability)
+            provisional = replace(provisional, tier=tier, royal_approved=False)
+        else:
+            provisional = replace(provisional, royal_approved=approved)
+        gated.append(provisional)
+
+    gated.sort(key=lambda r: (r.confidence_score, r.ev_per_unit, r.edge), reverse=True)
+    return gated
+
+
+def _is_focal_under_sot(result: EVResult) -> bool:
+    leg = result.leg
+    if not result.positive_ev:
+        return False
+    market = (leg.market_type or "").lower()
+    side = (leg.side or "").lower()
+    is_sot = "shots_on_target" in market or "sot" in market or side == "player_shots_on_target"
+    if not is_sot:
+        return False
+    if side not in {"under", "u"} and "under" not in (leg.selection or "").lower():
+        return False
+    if leg.line is None or float(leg.line) > 0.5:
+        return False
+    return True
+
+
+def _detect_market_divergence(result: EVResult) -> bool:
+    """
+    Compare opening vs current decimal odds stashed on leg.metadata by the
+    flattener. Divergence = book moved against our side by more than
+    MARKET_DIVERGENCE_IMPLIED_MOVE in implied probability.
+    """
+
+    meta = result.leg.metadata or {}
+    opening = meta.get("opening_odds")
+    current = meta.get("current_odds", result.decimal_odds)
+    if opening is None or current is None:
+        return False
+    try:
+        opening_dec = float(opening)
+        current_dec = float(current)
+    except (TypeError, ValueError):
+        return False
+    if opening_dec <= 1.0 or current_dec <= 1.0:
+        return False
+
+    opening_imp = 1.0 / opening_dec
+    current_imp = 1.0 / current_dec
+    side = (result.leg.side or "").lower()
+    selection = (result.leg.selection or "").lower()
+    is_over = side == "over" or " over" in f" {selection}"
+    is_under = side == "under" or " under" in f" {selection}"
+
+    # Over play: divergence if implied fell (price lengthened = market cooler on Over).
+    if is_over and (opening_imp - current_imp) >= MARKET_DIVERGENCE_IMPLIED_MOVE:
+        return True
+    # Under play: divergence if implied fell on the Under (market hotter on Over).
+    if is_under and (opening_imp - current_imp) >= MARKET_DIVERGENCE_IMPLIED_MOVE:
+        return True
+    # ML / other: any adverse move of the same magnitude.
+    if not is_over and not is_under and (opening_imp - current_imp) >= MARKET_DIVERGENCE_IMPLIED_MOVE:
+        return True
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -1272,6 +1538,26 @@ def _thestatsapi_price(prices: Any, *, live: bool) -> float | None:
     else:
         value = prices.get("last_seen", prices.get("opening", prices.get("live")))
     return _maybe_float(value)
+
+
+def _thestatsapi_opening_and_current(prices: Any, *, live: bool) -> tuple[float | None, float | None]:
+    """Return (opening, current) decimals for the line-movement watchdog."""
+
+    if not isinstance(prices, dict):
+        return None, None
+    opening = _maybe_float(prices.get("opening"))
+    current = _thestatsapi_price(prices, live=live)
+    return opening, current
+
+
+def _odds_metadata(prices: Any, *, live: bool, base: dict[str, Any] | None = None) -> dict[str, Any]:
+    meta = dict(base or {})
+    opening, current = _thestatsapi_opening_and_current(prices, live=live)
+    if opening is not None:
+        meta["opening_odds"] = opening
+    if current is not None:
+        meta["current_odds"] = current
+    return meta
 
 
 def _parse_line_key(value: Any) -> float | None:

@@ -1,18 +1,40 @@
 export interface MoneylinePick {
-  awayTeam: string;
+  matchup: string;
   homeTeam: string;
-  play: string;
+  awayTeam: string;
+  pick: string;
+  sportsbook: string;
+  betType: string;
+  league: string;
+  homeAway: "Home" | "Away" | string;
+  confidence: number;
+  confidenceLabel?: "Low" | "Medium" | "High" | "Elite" | string;
+  edge: number;
+  closingLineValue: number;
+  expectedValue: number;
+  winProbability: number;
+  edgeDecimal?: number;
+  openingLine: number;
+  closingLine: number;
+  impliedProbability: number;
+  result: "Win" | "Loss" | "Pending" | string;
+  profitLoss: number;
+  unitsWon: number;
+  weather: string;
+  temperature: number;
+  umpire: string;
+  startingPitcher: string;
+  opposingPitcher: string;
+  /** @deprecated legacy export fields — kept optional for older dated JSON */
+  play?: string;
   book?: string;
-  edgePct: number;
-  sizingPct: number;
+  edgePct?: number;
+  sizingPct?: number;
   americanOdds?: number;
   modelWinProb?: number;
-  confidenceScore?: number;
   confidenceLabel?: "Low" | "Medium" | "High" | "Elite";
+  confidenceScore?: number;
   confidenceTier?: string;
-  evPerUnit?: number;
-  predHomeRuns?: number;
-  predAwayRuns?: number;
 }
 
 export interface PropPick {

@@ -22,6 +22,9 @@ MIN_PRIOR_GAMES = 5
 DATA_CACHE_VERSION = "basic_shell_v1"
 CACHE_DIR = Path(__file__).resolve().parent / "cache"
 F5_CACHE_FILE = CACHE_DIR / "f5_linescore_cache.json"
+# Repo-root static baselines for completed seasons (avoid live Stats API for old data).
+REPO_ROOT = Path(__file__).resolve().parents[3]
+SCHEDULE_BASELINES_DIR = REPO_ROOT / "data" / "baselines"
 
 FEATURE_COLUMNS = [
     "home_avg_runs_scored",
@@ -102,13 +105,36 @@ def get_starting_pitchers(game_pk: int) -> dict[str, str]:
     }
 
 
+def _parse_home_plate_umpire(payload: dict) -> str:
+    """Return home-plate umpire full name from a boxscore/live-feed payload."""
+    officials = payload.get("officials")
+    if not officials:
+        game_data = payload.get("gameData") or {}
+        officials = game_data.get("officials")
+    if not isinstance(officials, list):
+        return ""
+
+    for entry in officials:
+        if not isinstance(entry, dict):
+            continue
+        official_type = str(entry.get("officialType", "")).strip().lower()
+        if official_type not in {"home plate", "home_plate", "homeplate"}:
+            continue
+        official = entry.get("official") or {}
+        name = official.get("fullName") or official.get("name")
+        if name and str(name).strip():
+            return str(name).strip()
+    return ""
+
+
 def get_starting_pitcher_info(game_pk: int) -> dict[str, str | int | None]:
-    """Fetch starting pitcher names and MLBAM ids for both teams."""
+    """Fetch starting pitcher names/ids and home-plate umpire for a game."""
     info: dict[str, str | int | None] = {
         "home_pitcher_id": None,
         "away_pitcher_id": None,
         "home_pitcher_name": "Unknown",
         "away_pitcher_name": "Unknown",
+        "umpire": "",
     }
 
     try:
@@ -118,6 +144,7 @@ def get_starting_pitcher_info(game_pk: int) -> dict[str, str | int | None]:
         if response.status_code == 200:
             data = response.json()
             teams_data = data.get("teams", {})
+            info["umpire"] = _parse_home_plate_umpire(data)
 
             for side in ["home", "away"]:
                 team_info = teams_data.get(side, {})
@@ -169,9 +196,60 @@ def _is_retriable_schedule_error(exc: BaseException) -> bool:
     if isinstance(exc, requests.exceptions.Timeout):
         return True
     if isinstance(exc, requests.exceptions.HTTPError) and exc.response is not None:
-        return exc.response.status_code in {429, 503, 504}
+        return exc.response.status_code in {429, 502, 503, 504}
     message = str(exc).lower()
-    return "503" in message or "504" in message or "timeout" in message or "timed out" in message
+    return (
+        "502" in message
+        or "503" in message
+        or "504" in message
+        or "timeout" in message
+        or "timed out" in message
+        or "bad gateway" in message
+    )
+
+
+def schedule_baseline_path(season: int) -> Path:
+    """Return path to the static schedule baseline for a completed season."""
+    return SCHEDULE_BASELINES_DIR / f"mlb_schedule_{season}.json"
+
+
+def _load_schedule_baseline(season: int) -> list[dict] | None:
+    """Load local static JSON for a past season; return None if missing/invalid."""
+    path = schedule_baseline_path(season)
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Failed to read schedule baseline %s: %s", path, exc)
+        return None
+
+    if isinstance(payload, list):
+        games = payload
+    elif isinstance(payload, dict):
+        games = payload.get("games") or payload.get("schedule") or []
+    else:
+        games = []
+
+    if not isinstance(games, list) or not games:
+        logger.warning("Schedule baseline %s is empty or invalid", path)
+        return None
+
+    logger.info("Loaded %s schedule games from baseline %s", len(games), path.name)
+    return games
+
+
+def _save_schedule_baseline(season: int, games: list[dict]) -> None:
+    """Persist raw Stats API schedule rows for a completed season."""
+    if not games or season >= date.today().year:
+        return
+    try:
+        SCHEDULE_BASELINES_DIR.mkdir(parents=True, exist_ok=True)
+        path = schedule_baseline_path(season)
+        path.write_text(json.dumps(games, indent=2), encoding="utf-8")
+        logger.info("Wrote schedule baseline %s (%s games)", path, len(games))
+    except OSError as exc:
+        logger.warning("Could not write schedule baseline for %s: %s", season, exc)
 
 
 def _fetch_schedule_range(start_date: str, end_date: str) -> list[dict]:
@@ -206,39 +284,59 @@ def _fetch_schedule_range(start_date: str, end_date: str) -> list[dict]:
     ) from last_exc
 
 
+def _fetch_schedule_chunked(start_dt: date, end_dt: date) -> list[dict]:
+    """Fetch a date range in month-sized chunks to avoid large Stats API payloads."""
+    games: list[dict] = []
+    chunk_start = start_dt
+    while chunk_start <= end_dt:
+        if chunk_start.month == 12:
+            next_month = date(chunk_start.year + 1, 1, 1)
+        else:
+            next_month = date(chunk_start.year, chunk_start.month + 1, 1)
+        chunk_end = min(end_dt, next_month - timedelta(days=1))
+        games.extend(
+            _fetch_schedule_range(
+                chunk_start.strftime("%m/%d/%Y"),
+                chunk_end.strftime("%m/%d/%Y"),
+            )
+        )
+        chunk_start = next_month
+    return games
+
+
+def _load_or_fetch_season_schedule(season: int) -> list[dict]:
+    """Prefer local baseline JSON for completed seasons; otherwise hit Stats API."""
+    start_date, end_date = _season_range(season)
+    if season >= date.today().year:
+        end_date = min(
+            datetime.strptime(end_date, "%m/%d/%Y").date(),
+            date.today(),
+        ).strftime("%m/%d/%Y")
+
+    start_dt = datetime.strptime(start_date, "%m/%d/%Y").date()
+    end_dt = datetime.strptime(end_date, "%m/%d/%Y").date()
+
+    # Fall back to local static JSON instead of hitting the live API for old data.
+    if season < date.today().year:
+        cached = _load_schedule_baseline(season)
+        if cached is not None:
+            return cached
+
+    games = _fetch_schedule_chunked(start_dt, end_dt)
+
+    # Only query the live MLB API if the local baseline cache is missing;
+    # persist successful completed-season fetches for next run.
+    if season < date.today().year and games:
+        _save_schedule_baseline(season, games)
+    return games
+
+
 def fetch_season_games(seasons: list[int]) -> pd.DataFrame:
     """Fetch completed regular-season MLB games for the given seasons."""
     rows: list[dict] = []
 
     for season in seasons:
-        start_date, end_date = _season_range(season)
-        if season >= date.today().year:
-            end_date = min(
-                datetime.strptime(end_date, "%m/%d/%Y").date(),
-                date.today(),
-            ).strftime("%m/%d/%Y")
-
-        start_dt = datetime.strptime(start_date, "%m/%d/%Y").date()
-        end_dt = datetime.strptime(end_date, "%m/%d/%Y").date()
-        if season >= date.today().year:
-            games: list[dict] = []
-            chunk_start = start_dt
-            while chunk_start <= end_dt:
-                if chunk_start.month == 12:
-                    next_month = date(chunk_start.year + 1, 1, 1)
-                else:
-                    next_month = date(chunk_start.year, chunk_start.month + 1, 1)
-                chunk_end = min(end_dt, next_month - timedelta(days=1))
-                games.extend(
-                    _fetch_schedule_range(
-                        chunk_start.strftime("%m/%d/%Y"),
-                        chunk_end.strftime("%m/%d/%Y"),
-                    )
-                )
-                chunk_start = next_month
-        else:
-            games = _fetch_schedule_range(start_date, end_date)
-
+        games = _load_or_fetch_season_schedule(season)
         if not games:
             continue
 
