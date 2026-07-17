@@ -1,9 +1,9 @@
 {
   "date": "2026-07-17",
-  "generatedAt": "2026-07-17T13:58:38Z",
+  "generatedAt": "2026-07-17T16:48:34Z",
   "meta": {
     "slateGames": 15,
-    "valuePicks": 6,
+    "valuePicks": 5,
     "propsAvailable": false,
     "scheduleGames": 15
   },
@@ -34,33 +34,33 @@
         },
         {
           "slot": 4,
-          "name": "Cedric Mullins",
-          "playerId": "656775"
+          "name": "Ryan Vilade",
+          "playerId": "668723"
         },
         {
           "slot": 5,
+          "name": "Jonny DeLuca",
+          "playerId": "676356"
+        },
+        {
+          "slot": 6,
           "name": "Chandler Simpson",
           "playerId": "802415"
         },
         {
-          "slot": 6,
-          "name": "Victor Mesa Jr.",
-          "playerId": "683748"
+          "slot": 7,
+          "name": "Ben Williamson",
+          "playerId": "810938"
         },
         {
-          "slot": 7,
+          "slot": 8,
           "name": "Taylor Walls",
           "playerId": "670764"
         },
         {
-          "slot": 8,
-          "name": "Richie Palacios",
-          "playerId": "680700"
-        },
-        {
           "slot": 9,
-          "name": "Hunter Feduccia",
-          "playerId": "676439"
+          "name": "Nick Fortes",
+          "playerId": "663743"
         }
       ],
       "homeLineup": [
@@ -81,18 +81,18 @@
         },
         {
           "slot": 4,
-          "name": "Tsung-Che Cheng",
-          "playerId": "691907"
-        },
-        {
-          "slot": 5,
           "name": "Caleb Durbin",
           "playerId": "702332"
         },
         {
+          "slot": 5,
+          "name": "Masataka Yoshida",
+          "playerId": "807799"
+        },
+        {
           "slot": 6,
-          "name": "Andruw Monasterio",
-          "playerId": "655316"
+          "name": "Romy Gonzalez",
+          "playerId": "663853"
         },
         {
           "slot": 7,
@@ -101,13 +101,13 @@
         },
         {
           "slot": 8,
-          "name": "Masataka Yoshida",
-          "playerId": "807799"
+          "name": "Carlos Narv\u00e1ez",
+          "playerId": "665966"
         },
         {
           "slot": 9,
-          "name": "Connor Wong",
-          "playerId": "657136"
+          "name": "Tsung-Che Cheng",
+          "playerId": "691907"
         }
       ]
     },
@@ -1089,8 +1089,8 @@
         },
         {
           "slot": 9,
-          "name": "Ivan Johnson",
-          "playerId": "671155"
+          "name": "Dane Myers",
+          "playerId": "667472"
         }
       ],
       "homeLineup": [
@@ -1353,7 +1353,7 @@
       "homeTeam": "Arizona Diamondbacks",
       "awayAbbrev": "STL",
       "homeAbbrev": "AZ",
-      "awayPitcher": null,
+      "awayPitcher": "Michael McGreevy",
       "homePitcher": "Merrill Kelly",
       "awayLineup": [
         {
@@ -1556,52 +1556,24 @@
   ],
   "moneylinePicks": [
     {
-      "matchup": "Detroit Tigers @ Los Angeles Angels",
-      "homeTeam": "Los Angeles Angels",
-      "awayTeam": "Detroit Tigers",
-      "pick": "Detroit Tigers",
-      "sportsbook": "FanDuel",
-      "betType": "Moneyline",
-      "league": "MLB",
-      "homeAway": "Away",
-      "confidence": 36,
-      "confidenceLabel": "Low",
-      "edge": 7.1,
-      "closingLineValue": 0.0,
-      "expectedValue": 72.7,
-      "winProbability": 0.590249,
-      "edgeDecimal": 0.071049,
-      "openingLine": -108,
-      "closingLine": -108,
-      "impliedProbability": 0.5192,
-      "result": "Pending",
-      "profitLoss": 0.0,
-      "unitsWon": 0.0,
-      "weather": "",
-      "temperature": 0,
-      "umpire": "",
-      "startingPitcher": "Troy Melton",
-      "opposingPitcher": "Reid Detmers"
-    },
-    {
       "matchup": "Minnesota Twins @ Chicago Cubs",
       "homeTeam": "Chicago Cubs",
       "awayTeam": "Minnesota Twins",
       "pick": "Minnesota Twins",
-      "sportsbook": "FanDuel",
+      "sportsbook": "BetMGM",
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Away",
-      "confidence": 28,
+      "confidence": 30,
       "confidenceLabel": "Low",
-      "edge": 6.6,
+      "edge": 7.2,
       "closingLineValue": 0.0,
-      "expectedValue": 66.6,
-      "winProbability": 0.520769,
-      "edgeDecimal": 0.066269,
-      "openingLine": 120,
-      "closingLine": 120,
-      "impliedProbability": 0.4545,
+      "expectedValue": 67.9,
+      "winProbability": 0.516671,
+      "edgeDecimal": 0.072271,
+      "openingLine": 125,
+      "closingLine": 125,
+      "impliedProbability": 0.4444,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
@@ -1612,6 +1584,34 @@
       "opposingPitcher": "Colin Rea"
     },
     {
+      "matchup": "Detroit Tigers @ Los Angeles Angels",
+      "homeTeam": "Los Angeles Angels",
+      "awayTeam": "Detroit Tigers",
+      "pick": "Detroit Tigers",
+      "sportsbook": "FanDuel",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Away",
+      "confidence": 34,
+      "confidenceLabel": "Low",
+      "edge": 6.6,
+      "closingLineValue": 0.0,
+      "expectedValue": 71.6,
+      "winProbability": 0.589887,
+      "edgeDecimal": 0.066087,
+      "openingLine": -110,
+      "closingLine": -110,
+      "impliedProbability": 0.5238,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "Troy Melton",
+      "opposingPitcher": "Reid Detmers"
+    },
+    {
       "matchup": "Los Angeles Dodgers @ New York Yankees",
       "homeTeam": "New York Yankees",
       "awayTeam": "Los Angeles Dodgers",
@@ -1620,13 +1620,13 @@
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Home",
-      "confidence": 31,
+      "confidence": 33,
       "confidenceLabel": "Low",
-      "edge": 6.1,
+      "edge": 6.6,
       "closingLineValue": 0.0,
-      "expectedValue": 69.8,
-      "winProbability": 0.580143,
-      "edgeDecimal": 0.060943,
+      "expectedValue": 71.1,
+      "winProbability": 0.584882,
+      "edgeDecimal": 0.065682,
       "openingLine": -108,
       "closingLine": -108,
       "impliedProbability": 0.5192,
@@ -1640,60 +1640,32 @@
       "opposingPitcher": "Roki Sasaki"
     },
     {
-      "matchup": "Chicago White Sox @ Toronto Blue Jays",
-      "homeTeam": "Toronto Blue Jays",
-      "awayTeam": "Chicago White Sox",
-      "pick": "Chicago White Sox",
-      "sportsbook": "BetMGM",
-      "betType": "Moneyline",
-      "league": "MLB",
-      "homeAway": "Away",
-      "confidence": 15,
-      "confidenceLabel": "Low",
-      "edge": 3.7,
-      "closingLineValue": 0.0,
-      "expectedValue": 58.2,
-      "winProbability": 0.5021,
-      "edgeDecimal": 0.037,
-      "openingLine": 115,
-      "closingLine": 115,
-      "impliedProbability": 0.4651,
-      "result": "Pending",
-      "profitLoss": 0.0,
-      "unitsWon": 0.0,
-      "weather": "",
-      "temperature": 0,
-      "umpire": "",
-      "startingPitcher": "Anthony Kay",
-      "opposingPitcher": "Spencer Miles"
-    },
-    {
-      "matchup": "San Diego Padres @ Kansas City Royals",
-      "homeTeam": "Kansas City Royals",
-      "awayTeam": "San Diego Padres",
-      "pick": "San Diego Padres",
+      "matchup": "Washington Nationals @ Athletics",
+      "homeTeam": "Athletics",
+      "awayTeam": "Washington Nationals",
+      "pick": "Athletics",
       "sportsbook": "FanDuel",
       "betType": "Moneyline",
       "league": "MLB",
-      "homeAway": "Away",
-      "confidence": 20,
+      "homeAway": "Home",
+      "confidence": 16,
       "confidenceLabel": "Low",
-      "edge": 3.7,
+      "edge": 4.0,
       "closingLineValue": 0.0,
-      "expectedValue": 63.5,
-      "winProbability": 0.565219,
-      "edgeDecimal": 0.036919,
-      "openingLine": -112,
-      "closingLine": -112,
-      "impliedProbability": 0.5283,
+      "expectedValue": 59.0,
+      "winProbability": 0.502998,
+      "edgeDecimal": 0.039998,
+      "openingLine": 116,
+      "closingLine": 116,
+      "impliedProbability": 0.463,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
       "weather": "",
       "temperature": 0,
       "umpire": "",
-      "startingPitcher": "Michael King",
-      "opposingPitcher": "Seth Lugo"
+      "startingPitcher": "Gage Jump",
+      "opposingPitcher": "Cade Cavalli"
     },
     {
       "matchup": "Cincinnati Reds @ Colorado Rockies",
@@ -1708,9 +1680,9 @@
       "confidenceLabel": "Low",
       "edge": 3.4,
       "closingLineValue": 0.0,
-      "expectedValue": 63.1,
-      "winProbability": 0.568395,
-      "edgeDecimal": 0.033495,
+      "expectedValue": 63.2,
+      "winProbability": 0.568667,
+      "edgeDecimal": 0.033767,
       "openingLine": -115,
       "closingLine": -115,
       "impliedProbability": 0.5349,
