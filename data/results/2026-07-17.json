@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-17",
+  "generatedAt": "2026-07-18T15:39:28Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-17",
+      "matchup": "St. Louis Cardinals @ Arizona Diamondbacks",
+      "pick": "St. Louis Cardinals",
+      "americanOdds": -104,
+      "result": "Win",
+      "profitLoss": 96.15,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "matchup": "Detroit Tigers @ Los Angeles Angels",
+      "pick": "Detroit Tigers",
+      "americanOdds": -106,
+      "result": "Win",
+      "profitLoss": 94.34,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "matchup": "Los Angeles Dodgers @ New York Yankees",
+      "pick": "New York Yankees",
+      "americanOdds": -104,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "matchup": "Minnesota Twins @ Chicago Cubs",
+      "pick": "Minnesota Twins",
+      "americanOdds": 130,
+      "result": "Win",
+      "profitLoss": 130.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "matchup": "Tampa Bay Rays @ Boston Red Sox",
+      "pick": "Boston Red Sox",
+      "americanOdds": -126,
+      "result": "Win",
+      "profitLoss": 79.37,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-17",
+      "matchup": "Cincinnati Reds @ Colorado Rockies",
+      "pick": "Colorado Rockies",
+      "americanOdds": -112,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 4,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": 199.86
+  }
+}
