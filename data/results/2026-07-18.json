@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-18",
+  "generatedAt": "2026-07-19T15:45:25Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-18",
+      "matchup": "Minnesota Twins @ Chicago Cubs",
+      "pick": "Minnesota Twins",
+      "americanOdds": 145,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-18",
+      "matchup": "Baltimore Orioles @ Houston Astros",
+      "pick": "Baltimore Orioles",
+      "americanOdds": 135,
+      "result": "Win",
+      "profitLoss": 135.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-18",
+      "matchup": "Chicago White Sox @ Toronto Blue Jays",
+      "pick": "Chicago White Sox",
+      "americanOdds": -115,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-18",
+      "matchup": "San Francisco Giants @ Seattle Mariners",
+      "pick": "San Francisco Giants",
+      "americanOdds": 135,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-18",
+      "matchup": "Cincinnati Reds @ Colorado Rockies",
+      "pick": "Colorado Rockies",
+      "americanOdds": 120,
+      "result": "Win",
+      "profitLoss": 120.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 3,
+    "pending": 0,
+    "netProfitLoss": -45.0
+  }
+}
