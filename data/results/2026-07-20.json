@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-20",
+  "generatedAt": "2026-07-21T17:09:37Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-20",
+      "matchup": "Cincinnati Reds @ Seattle Mariners",
+      "pick": "Cincinnati Reds",
+      "americanOdds": 125,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-20",
+      "matchup": "New York Mets @ Milwaukee Brewers",
+      "pick": "Milwaukee Brewers",
+      "americanOdds": -210,
+      "result": "Win",
+      "profitLoss": 47.62,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-20",
+      "matchup": "Baltimore Orioles @ Boston Red Sox",
+      "pick": "Boston Red Sox",
+      "americanOdds": -132,
+      "result": "Win",
+      "profitLoss": 75.76,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-20",
+      "matchup": "San Diego Padres @ Atlanta Braves",
+      "pick": "San Diego Padres",
+      "americanOdds": 145,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": -76.62
+  }
+}
