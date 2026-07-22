@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-22T17:12:08Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-21",
+      "matchup": "Cincinnati Reds @ Seattle Mariners",
+      "pick": "Cincinnati Reds",
+      "americanOdds": 100,
+      "result": "Win",
+      "profitLoss": 100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-21",
+      "matchup": "New York Mets @ Milwaukee Brewers",
+      "pick": "New York Mets",
+      "americanOdds": 117,
+      "result": "Win",
+      "profitLoss": 117.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-21",
+      "matchup": "Detroit Tigers @ Chicago Cubs",
+      "pick": "Detroit Tigers",
+      "americanOdds": 102,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-21",
+      "matchup": "Tampa Bay Rays @ Toronto Blue Jays",
+      "pick": "Tampa Bay Rays",
+      "americanOdds": 114,
+      "result": "Win",
+      "profitLoss": 114.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-21",
+      "matchup": "Miami Marlins @ Houston Astros",
+      "pick": "Miami Marlins",
+      "americanOdds": 108,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-21",
+      "matchup": "St. Louis Cardinals @ Los Angeles Angels",
+      "pick": "Los Angeles Angels",
+      "americanOdds": -109,
+      "result": "Win",
+      "profitLoss": 91.74,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 4,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": 222.74
+  }
+}
