@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-22",
+  "generatedAt": "2026-07-23T17:08:10Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-22",
+      "matchup": "Los Angeles Dodgers @ Philadelphia Phillies",
+      "pick": "Los Angeles Dodgers",
+      "americanOdds": 130,
+      "result": "Win",
+      "profitLoss": 130.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-22",
+      "matchup": "Detroit Tigers @ Chicago Cubs",
+      "pick": "Detroit Tigers",
+      "americanOdds": 106,
+      "result": "Win",
+      "profitLoss": 106.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-22",
+      "matchup": "Chicago White Sox @ Texas Rangers",
+      "pick": "Texas Rangers",
+      "americanOdds": 104,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 1,
+    "pending": 0,
+    "netProfitLoss": 136.0
+  }
+}
