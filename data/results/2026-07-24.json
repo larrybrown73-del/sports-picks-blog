@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-24",
+  "generatedAt": "2026-07-25T15:58:27Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-24",
+      "matchup": "Los Angeles Dodgers @ New York Mets",
+      "pick": "Los Angeles Dodgers",
+      "americanOdds": 145,
+      "result": "Win",
+      "profitLoss": 145.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-24",
+      "matchup": "Seattle Mariners @ Texas Rangers",
+      "pick": "Seattle Mariners",
+      "americanOdds": -114,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-24",
+      "matchup": "Athletics @ Minnesota Twins",
+      "pick": "Athletics",
+      "americanOdds": 122,
+      "result": "Win",
+      "profitLoss": 122.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 1,
+    "pending": 0,
+    "netProfitLoss": 167.0
+  }
+}
