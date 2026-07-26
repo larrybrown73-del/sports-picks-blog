@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-25",
+  "generatedAt": "2026-07-26T16:01:59Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-25",
+      "matchup": "Kansas City Royals @ Detroit Tigers",
+      "pick": "Kansas City Royals",
+      "americanOdds": 154,
+      "result": "Win",
+      "profitLoss": 154.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-25",
+      "matchup": "Cleveland Guardians @ Tampa Bay Rays",
+      "pick": "Tampa Bay Rays",
+      "americanOdds": -120,
+      "result": "Win",
+      "profitLoss": 83.33,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-25",
+      "matchup": "Los Angeles Dodgers @ New York Mets",
+      "pick": "New York Mets",
+      "americanOdds": 135,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 1,
+    "pending": 0,
+    "netProfitLoss": 137.33
+  }
+}
