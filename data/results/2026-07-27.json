@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-27",
+  "generatedAt": "2026-07-28T17:24:42Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-27",
+      "matchup": "Toronto Blue Jays @ Washington Nationals",
+      "pick": "Washington Nationals",
+      "americanOdds": -109,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-27",
+      "matchup": "Houston Astros @ Los Angeles Angels",
+      "pick": "Los Angeles Angels",
+      "americanOdds": -110,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 0,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": -200.0
+  }
+}
