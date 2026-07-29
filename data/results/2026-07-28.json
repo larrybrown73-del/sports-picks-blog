@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-28",
+  "generatedAt": "2026-07-29T17:03:30Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-28",
+      "matchup": "Cleveland Guardians @ Cincinnati Reds",
+      "pick": "Cleveland Guardians",
+      "americanOdds": 110,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-28",
+      "matchup": "Kansas City Royals @ Minnesota Twins",
+      "pick": "Kansas City Royals",
+      "americanOdds": 153,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-28",
+      "matchup": "Cleveland Guardians @ Cincinnati Reds",
+      "pick": "Cincinnati Reds",
+      "americanOdds": -136,
+      "result": "Win",
+      "profitLoss": 73.53,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-28",
+      "matchup": "Atlanta Braves @ New York Mets",
+      "pick": "Atlanta Braves",
+      "americanOdds": -110,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-28",
+      "matchup": "Chicago Cubs @ St. Louis Cardinals",
+      "pick": "St. Louis Cardinals",
+      "americanOdds": -104,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 3,
+    "pending": 1,
+    "netProfitLoss": -226.47
+  }
+}
