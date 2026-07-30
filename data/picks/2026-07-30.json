@@ -1,10 +1,10 @@
 {
   "date": "2026-07-30",
-  "generatedAt": "2026-07-30T17:17:38Z",
+  "generatedAt": "2026-07-30T20:55:55Z",
   "meta": {
     "slateGames": 10,
-    "valuePicks": 2,
-    "propsAvailable": false,
+    "valuePicks": 3,
+    "propsAvailable": true,
     "scheduleGames": 10
   },
   "slate": [
@@ -54,8 +54,8 @@
         },
         {
           "slot": 8,
-          "name": "Austin Wynns",
-          "playerId": "642851"
+          "name": "Evan Carter",
+          "playerId": "694497"
         },
         {
           "slot": 9,
@@ -127,8 +127,8 @@
         },
         {
           "slot": 2,
-          "name": "John Rave",
-          "playerId": "670231"
+          "name": "Lane Thomas",
+          "playerId": "657041"
         },
         {
           "slot": 3,
@@ -169,8 +169,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Austin Martin",
-          "playerId": "668885"
+          "name": "Victor Caratini",
+          "playerId": "605170"
         },
         {
           "slot": 2,
@@ -184,8 +184,8 @@
         },
         {
           "slot": 4,
-          "name": "Josh Bell",
-          "playerId": "605137"
+          "name": "Alan Roden",
+          "playerId": "702176"
         },
         {
           "slot": 5,
@@ -209,8 +209,8 @@
         },
         {
           "slot": 9,
-          "name": "Ryan Kreidler",
-          "playerId": "668952"
+          "name": "Trevor Larnach",
+          "playerId": "663616"
         }
       ]
     },
@@ -245,8 +245,8 @@
         },
         {
           "slot": 5,
-          "name": "Spencer Jones",
-          "playerId": "682987"
+          "name": "Max Schuemann",
+          "playerId": "680474"
         },
         {
           "slot": 6,
@@ -265,8 +265,8 @@
         },
         {
           "slot": 9,
-          "name": "Austin Wells",
-          "playerId": "669224"
+          "name": "Ali S\u00e1nchez",
+          "playerId": "645305"
         }
       ],
       "homeLineup": [
@@ -287,8 +287,8 @@
         },
         {
           "slot": 4,
-          "name": "Randal Grichuk",
-          "playerId": "545341"
+          "name": "Sam Antonacci",
+          "playerId": "803011"
         },
         {
           "slot": 5,
@@ -297,8 +297,8 @@
         },
         {
           "slot": 6,
-          "name": "Everson Pereira",
-          "playerId": "677592"
+          "name": "Tristan Peters",
+          "playerId": "671976"
         },
         {
           "slot": 7,
@@ -358,8 +358,8 @@
         },
         {
           "slot": 7,
-          "name": "Michael Conforto",
-          "playerId": "624424"
+          "name": "Justin Dean",
+          "playerId": "681909"
         },
         {
           "slot": 8,
@@ -390,8 +390,8 @@
         },
         {
           "slot": 4,
-          "name": "Iv\u00e1n Herrera",
-          "playerId": "671056"
+          "name": "Pedro Pag\u00e9s",
+          "playerId": "686780"
         },
         {
           "slot": 5,
@@ -415,8 +415,8 @@
         },
         {
           "slot": 9,
-          "name": "Nathan Church",
-          "playerId": "701675"
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "playerId": "665877"
         }
       ]
     },
@@ -534,95 +534,95 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Otto Lopez",
-          "playerId": "672640"
-        },
-        {
-          "slot": 2,
-          "name": "Heriberto Hern\u00e1ndez",
-          "playerId": "681715"
-        },
-        {
-          "slot": 3,
           "name": "Liam Hicks",
           "playerId": "689414"
         },
         {
-          "slot": 4,
+          "slot": 2,
           "name": "Xavier Edwards",
           "playerId": "669364"
         },
         {
-          "slot": 5,
-          "name": "Javier Sanoja",
-          "playerId": "691594"
+          "slot": 3,
+          "name": "Otto Lopez",
+          "playerId": "672640"
         },
         {
-          "slot": 6,
+          "slot": 4,
           "name": "Kyle Stowers",
           "playerId": "669065"
         },
         {
+          "slot": 5,
+          "name": "Heriberto Hern\u00e1ndez",
+          "playerId": "681715"
+        },
+        {
+          "slot": 6,
+          "name": "Griffin Conine",
+          "playerId": "665052"
+        },
+        {
           "slot": 7,
-          "name": "Esteury Ruiz",
-          "playerId": "665923"
+          "name": "Jakob Marsee",
+          "playerId": "805300"
         },
         {
           "slot": 8,
-          "name": "Joe Mack",
-          "playerId": "691788"
+          "name": "Graham Pauley",
+          "playerId": "688363"
         },
         {
           "slot": 9,
-          "name": "Jakob Marsee",
-          "playerId": "805300"
+          "name": "Joe Mack",
+          "playerId": "691788"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
+          "name": "A.J. Ewing",
+          "playerId": "805999"
+        },
+        {
+          "slot": 2,
           "name": "Francisco Lindor",
           "playerId": "596019"
         },
         {
-          "slot": 2,
+          "slot": 3,
           "name": "Bo Bichette",
           "playerId": "666182"
         },
         {
-          "slot": 3,
-          "name": "Luis Robert Jr.",
-          "playerId": "673357"
-        },
-        {
           "slot": 4,
-          "name": "Francisco Alvarez",
-          "playerId": "682626"
-        },
-        {
-          "slot": 5,
-          "name": "Tyrone Taylor",
-          "playerId": "621438"
-        },
-        {
-          "slot": 6,
-          "name": "Marcus Semien",
-          "playerId": "543760"
-        },
-        {
-          "slot": 7,
           "name": "Carson Benge",
           "playerId": "701807"
         },
         {
+          "slot": 5,
+          "name": "Luis Robert Jr.",
+          "playerId": "673357"
+        },
+        {
+          "slot": 6,
+          "name": "Brett Baty",
+          "playerId": "683146"
+        },
+        {
+          "slot": 7,
+          "name": "Marcus Semien",
+          "playerId": "543760"
+        },
+        {
           "slot": 8,
-          "name": "Eric Wagaman",
-          "playerId": "676572"
+          "name": "Jorge Polanco",
+          "playerId": "593871"
         },
         {
           "slot": 9,
-          "name": "Luis Torrens",
-          "playerId": "620443"
+          "name": "Francisco Alvarez",
+          "playerId": "682626"
         }
       ]
     },
@@ -647,8 +647,8 @@
         },
         {
           "slot": 3,
-          "name": "Jos\u00e9 Tena",
-          "playerId": "677588"
+          "name": "Dylan Crews",
+          "playerId": "686611"
         },
         {
           "slot": 4,
@@ -657,18 +657,18 @@
         },
         {
           "slot": 5,
-          "name": "Harry Ford",
-          "playerId": "695670"
-        },
-        {
-          "slot": 6,
           "name": "Daylen Lile",
           "playerId": "695734"
         },
         {
+          "slot": 6,
+          "name": "Keibert Ruiz",
+          "playerId": "660688"
+        },
+        {
           "slot": 7,
-          "name": "Jacob Young",
-          "playerId": "696285"
+          "name": "Jos\u00e9 Tena",
+          "playerId": "677588"
         },
         {
           "slot": 8,
@@ -714,13 +714,13 @@
         },
         {
           "slot": 7,
-          "name": "Eli White",
-          "playerId": "642201"
+          "name": "Dominic Smith",
+          "playerId": "642086"
         },
         {
           "slot": 8,
-          "name": "Austin Riley",
-          "playerId": "663586"
+          "name": "Mike Yastrzemski",
+          "playerId": "573262"
         },
         {
           "slot": 9,
@@ -1041,66 +1041,1417 @@
   ],
   "moneylinePicks": [
     {
-      "matchup": "New York Yankees @ Chicago White Sox",
-      "homeTeam": "Chicago White Sox",
-      "awayTeam": "New York Yankees",
-      "pick": "Chicago White Sox",
-      "sportsbook": "DraftKings",
-      "betType": "Moneyline",
-      "league": "MLB",
-      "homeAway": "Home",
-      "confidence": 20,
-      "confidenceLabel": "Low",
-      "edge": 3.7,
-      "closingLineValue": 0.0,
-      "expectedValue": 63.1,
-      "winProbability": 0.560599,
-      "edgeDecimal": 0.036799,
-      "openingLine": -110,
-      "closingLine": -110,
-      "impliedProbability": 0.5238,
-      "result": "Pending",
-      "profitLoss": 0.0,
-      "unitsWon": 0.0,
-      "weather": "Partly Cloudy",
-      "temperature": 79,
-      "umpire": "Alex MacKay",
-      "startingPitcher": "Sean Burke",
-      "opposingPitcher": "Ryan Weathers"
-    },
-    {
-      "matchup": "Kansas City Royals @ Minnesota Twins",
-      "homeTeam": "Minnesota Twins",
-      "awayTeam": "Kansas City Royals",
-      "pick": "Kansas City Royals",
-      "sportsbook": "FanDuel",
+      "matchup": "Seattle Mariners @ Los Angeles Dodgers",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayTeam": "Seattle Mariners",
+      "pick": "Seattle Mariners",
+      "sportsbook": "BetMGM",
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Away",
-      "confidence": 12,
+      "confidence": 40,
       "confidenceLabel": "Low",
-      "edge": 3.2,
+      "edge": 9.6,
       "closingLineValue": 0.0,
-      "expectedValue": 56.4,
-      "winProbability": 0.495068,
-      "edgeDecimal": 0.032068,
-      "openingLine": 116,
-      "closingLine": 116,
-      "impliedProbability": 0.463,
+      "expectedValue": 74.7,
+      "winProbability": 0.521357,
+      "edgeDecimal": 0.095857,
+      "openingLine": 135,
+      "closingLine": 135,
+      "impliedProbability": 0.4255,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "Bryan Woo",
+      "opposingPitcher": "Roki Sasaki"
+    },
+    {
+      "matchup": "Chicago Cubs @ St. Louis Cardinals",
+      "homeTeam": "St. Louis Cardinals",
+      "awayTeam": "Chicago Cubs",
+      "pick": "Chicago Cubs",
+      "sportsbook": "DraftKings",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Away",
+      "confidence": 30,
+      "confidenceLabel": "Low",
+      "edge": 8.1,
+      "closingLineValue": 0.0,
+      "expectedValue": 68.0,
+      "winProbability": 0.472003,
+      "edgeDecimal": 0.081403,
+      "openingLine": 156,
+      "closingLine": 156,
+      "impliedProbability": 0.3906,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
       "weather": "Partly Cloudy",
-      "temperature": 84,
-      "umpire": "Nick Mahrley",
-      "startingPitcher": "Noah Cameron",
-      "opposingPitcher": "Bailey Ober"
+      "temperature": 85,
+      "umpire": "Tyler Jones",
+      "startingPitcher": "Javier Assad",
+      "opposingPitcher": "Andre Pallante"
+    },
+    {
+      "matchup": "San Francisco Giants @ San Diego Padres",
+      "homeTeam": "San Diego Padres",
+      "awayTeam": "San Francisco Giants",
+      "pick": "San Francisco Giants",
+      "sportsbook": "BetMGM",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Away",
+      "confidence": 31,
+      "confidenceLabel": "Low",
+      "edge": 7.8,
+      "closingLineValue": 0.0,
+      "expectedValue": 68.5,
+      "winProbability": 0.503115,
+      "edgeDecimal": 0.077615,
+      "openingLine": 135,
+      "closingLine": 135,
+      "impliedProbability": 0.4255,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "",
+      "opposingPitcher": "JP Sears"
     }
   ],
   "propPicks": {
-    "conviction": [],
-    "batterEdges": [],
-    "pitcherEdges": []
+    "conviction": [
+      {
+        "player": "Nolan McLean",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Under",
+        "edgePct": 33.3,
+        "modelProb": 0.746,
+        "modelValue": 16.34,
+        "evPerUnit": 1.5513,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Grant Holmes",
+        "market": "pitcher_outs",
+        "line": 15.0,
+        "recommendation": "Over",
+        "edgePct": 32.9,
+        "modelProb": 0.482,
+        "modelValue": 14.92,
+        "evPerUnit": 2.6418,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Jake Cronenworth",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.6,
+        "modelProb": 0.78,
+        "modelValue": 1.24,
+        "evPerUnit": 1.21,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Francisco Alvarez",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.2,
+        "modelProb": 0.78,
+        "modelValue": 0.906,
+        "evPerUnit": 1.2046,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": null
+      },
+      {
+        "player": "Cal Raleigh",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.1,
+        "modelProb": 0.78,
+        "modelValue": 0.759,
+        "evPerUnit": 1.1993,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Brett Baty",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 22.3,
+        "modelProb": 0.78,
+        "modelValue": 0.897,
+        "evPerUnit": 1.179,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Jorge Polanco",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 21.0,
+        "modelProb": 0.743,
+        "modelValue": 0.869,
+        "evPerUnit": 1.1378,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": null
+      },
+      {
+        "player": "Mike Yastrzemski",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 20.9,
+        "modelProb": 0.78,
+        "modelValue": 1.363,
+        "evPerUnit": 1.1465,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": null
+      },
+      {
+        "player": "J.P. Crawford",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 20.2,
+        "modelProb": 0.78,
+        "modelValue": 0.865,
+        "evPerUnit": 1.1293,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": null
+      },
+      {
+        "player": "Roki Sasaki",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Under",
+        "edgePct": 19.3,
+        "modelProb": 0.78,
+        "modelValue": 14.44,
+        "evPerUnit": 1.1093,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      }
+    ],
+    "batterEdges": [
+      {
+        "player": "Jake Cronenworth",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.6,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.21,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Francisco Alvarez",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.2046,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Cal Raleigh",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 23.1,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.1993,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Brett Baty",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 22.3,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.179,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jorge Polanco",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 21.0,
+        "modelProb": 0.743,
+        "modelValue": null,
+        "evPerUnit": 1.1378,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Mike Yastrzemski",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 20.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.1465,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "J.P. Crawford",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 20.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.1293,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Luke Raley",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 18.6,
+        "modelProb": 0.744,
+        "modelValue": null,
+        "evPerUnit": 1.0785,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 94,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Dane Myers",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 18.5,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0906,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 96,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Marcus Semien",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 18.4,
+        "modelProb": 0.744,
+        "modelValue": null,
+        "evPerUnit": 1.0693,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 93,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jorbit Vivas",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 18.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0835,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 95,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Luis Robert Jr.",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 18.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0835,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 95,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Willy Adames",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 17.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0766,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 94,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Carson Benge",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 17.1,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.06,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 91,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Marcell Ozuna",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 16.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0568,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 90,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Daniel Susac",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 16.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0356,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 86,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Freddy Fermin",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 15.7,
+        "modelProb": 0.757,
+        "modelValue": null,
+        "evPerUnit": 1.0187,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 83,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Kyle Tucker",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 15.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0243,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 83,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "A.J. Ewing",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 15.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0188,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 82,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Max Muncy",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 14.3,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 1.0032,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 80,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Griffin Conine",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 14.3,
+        "modelProb": 0.7,
+        "modelValue": null,
+        "evPerUnit": 0.9556,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 73,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "JJ Bleday",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9958,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 78,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Francisco Lindor",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.7,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9933,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 77,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Bryce Eldridge",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.6,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9909,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 77,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Graham Pauley",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.4,
+        "modelProb": 0.586,
+        "modelValue": null,
+        "evPerUnit": 0.8811,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 60,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Dominic Canzone",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9839,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 75,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Henry Bolte",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9839,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 75,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Dominic Smith",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 13.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9794,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 74,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Noelvi Marte",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 12.4,
+        "modelProb": 0.732,
+        "modelValue": null,
+        "evPerUnit": 0.9363,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 68,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Mookie Betts",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 12.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9621,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 70,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Xander Bogaerts",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 12.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9621,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 70,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Josh Naylor",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.958,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 70,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Liam Hicks",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.958,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 70,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Randy Arozarena",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.7,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9559,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 69,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Christian Koss",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.7,
+        "modelProb": 0.716,
+        "modelValue": null,
+        "evPerUnit": 0.9093,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 64,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jackson Merrill",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.6,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9539,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 69,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jeff McNeil",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.6,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9539,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 69,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Cole Young",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.4,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.952,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 68,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Ty France",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.3,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.95,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 68,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jonah Heim",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 11.3,
+        "modelProb": 0.77,
+        "modelValue": null,
+        "evPerUnit": 0.941,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 67,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Tommy Edman",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 10.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9405,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 66,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Donovan Walton",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 10.8,
+        "modelProb": 0.756,
+        "modelValue": null,
+        "evPerUnit": 0.9229,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 64,
+        "dataWarnings": [
+          "Lineup slot 9 in bottom order; applying 0.80x penalty; Lineup slot 9 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Dylan Crews",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 10.4,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.935,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 64,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Carlos Cortes",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 10.4,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9332,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 64,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Andy Pages",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 9.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9262,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 62,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Esmerlyn Valdez",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 9.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9262,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 62,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Lawrence Butler",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 9.9,
+        "modelProb": 0.689,
+        "modelValue": null,
+        "evPerUnit": 0.8565,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 55,
+        "dataWarnings": [
+          "Lineup slot 8 in bottom order; applying 0.80x penalty; Lineup slot 8 in bottom order; applying 0.80x penalty"
+        ],
+        "verdict": "Play"
+      },
+      {
+        "player": "Andruw Monasterio",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 9.7,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9211,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 61,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Manny Machado",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 9.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9098,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 58,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jung Hoo Lee",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9082,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 58,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Keibert Ruiz",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9082,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 58,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Jarren Duran",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.7,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9051,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 57,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Tyler Soderstrom",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.6,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9036,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 57,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "James Wood",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.4,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.9006,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 56,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Bo Bichette",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.3,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8991,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 56,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Elly De La Cruz",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8977,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 55,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Ozzie Albies",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.2,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8962,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 55,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Ryan O'Hearn",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.1,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8962,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 55,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Heliot Ramos",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 8.0,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8948,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 54,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Daylen Lile",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 7.8,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8905,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 54,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Fernando Tatis Jr.",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 7.5,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8877,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 52,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Sal Stewart",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 7.5,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8877,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 52,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Tommy White",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 7.5,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8864,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 52,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Brandon Lowe",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 7.1,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8797,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 51,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Matt Olson",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 6.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8771,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 50,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Freddie Freeman",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 6.1,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8647,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 47,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Tyler Stephenson",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 6.0,
+        "modelProb": 0.703,
+        "modelValue": null,
+        "evPerUnit": 0.7966,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 40,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "CJ Abrams",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 5.9,
+        "modelProb": 0.78,
+        "modelValue": null,
+        "evPerUnit": 0.8623,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 46,
+        "dataWarnings": [],
+        "verdict": "Play"
+      },
+      {
+        "player": "Xavier Edwards",
+        "market": "batter_hits",
+        "line": 0.5,
+        "recommendation": "Over",
+        "edgePct": 4.0,
+        "modelProb": 0.723,
+        "modelValue": null,
+        "evPerUnit": 0.7807,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-2 Moderate",
+        "confidenceScore": 34,
+        "dataWarnings": [],
+        "verdict": "Play"
+      }
+    ],
+    "pitcherEdges": [
+      {
+        "player": "Nolan McLean",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Under",
+        "edgePct": 33.3,
+        "modelProb": 0.746,
+        "modelValue": 16.34,
+        "evPerUnit": 1.5513,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Grant Holmes",
+        "market": "pitcher_outs",
+        "line": 15.0,
+        "recommendation": "Over",
+        "edgePct": 32.9,
+        "modelProb": 0.482,
+        "modelValue": 14.92,
+        "evPerUnit": 2.6418,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Roki Sasaki",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Under",
+        "edgePct": 19.3,
+        "modelProb": 0.78,
+        "modelValue": 14.44,
+        "evPerUnit": 1.1093,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 100,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Rhett Lowder",
+        "market": "pitcher_outs",
+        "line": 15.5,
+        "recommendation": "Under",
+        "edgePct": 18.3,
+        "modelProb": 0.764,
+        "modelValue": 14.24,
+        "evPerUnit": 1.0776,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 94,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Sonny Gray",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Over",
+        "edgePct": 5.1,
+        "modelProb": 0.682,
+        "modelValue": 18.33,
+        "evPerUnit": 0.7628,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-1 High Conviction",
+        "confidenceScore": 35,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Jake Irvin",
+        "market": "pitcher_outs",
+        "line": 12.5,
+        "recommendation": "Under",
+        "edgePct": 4.4,
+        "modelProb": 0.568,
+        "modelValue": 12.2,
+        "evPerUnit": 0.6524,
+        "fractionalKellyPct": 2.0,
+        "confidenceTier": "Tier-2 Moderate",
+        "confidenceScore": 23,
+        "dataWarnings": [],
+        "verdict": null
+      },
+      {
+        "player": "Bryan Woo",
+        "market": "pitcher_outs",
+        "line": 17.5,
+        "recommendation": "Over",
+        "edgePct": 3.4,
+        "modelProb": 0.599,
+        "modelValue": 17.94,
+        "evPerUnit": 0.6588,
+        "fractionalKellyPct": 1.94,
+        "confidenceTier": "Tier-2 Moderate",
+        "confidenceScore": 22,
+        "dataWarnings": [],
+        "verdict": null
+      }
+    ]
   },
   "performance": {
     "accuracy": "N/A",
