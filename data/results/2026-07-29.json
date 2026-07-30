@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-29",
+  "generatedAt": "2026-07-30T17:17:39Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-29",
+      "matchup": "Seattle Mariners @ Los Angeles Dodgers",
+      "pick": "Seattle Mariners",
+      "americanOdds": 150,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-29",
+      "matchup": "Atlanta Braves @ New York Mets",
+      "pick": "New York Mets",
+      "americanOdds": 142,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-29",
+      "matchup": "Cleveland Guardians @ Cincinnati Reds",
+      "pick": "Cincinnati Reds",
+      "americanOdds": 116,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 0,
+    "losses": 3,
+    "pending": 0,
+    "netProfitLoss": -300.0
+  }
+}
