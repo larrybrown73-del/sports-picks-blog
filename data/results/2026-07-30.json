@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-30",
+  "generatedAt": "2026-07-31T17:19:57Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-30",
+      "matchup": "San Francisco Giants @ San Diego Padres",
+      "pick": "San Francisco Giants",
+      "americanOdds": 145,
+      "result": "Win",
+      "profitLoss": 145.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-30",
+      "matchup": "Seattle Mariners @ Los Angeles Dodgers",
+      "pick": "Seattle Mariners",
+      "americanOdds": 129,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-30",
+      "matchup": "Pittsburgh Pirates @ Cincinnati Reds",
+      "pick": "Pittsburgh Pirates",
+      "americanOdds": -107,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 2,
+    "pending": 0,
+    "netProfitLoss": -55.0
+  }
+}
