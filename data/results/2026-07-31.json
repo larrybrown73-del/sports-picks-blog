@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-31",
+  "generatedAt": "2026-08-01T13:34:59Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-07-31",
+      "matchup": "Miami Marlins @ New York Mets",
+      "pick": "Miami Marlins",
+      "americanOdds": 105,
+      "result": "Win",
+      "profitLoss": 105.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-31",
+      "matchup": "New York Yankees @ Chicago Cubs",
+      "pick": "Chicago Cubs",
+      "americanOdds": 114,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-31",
+      "matchup": "Texas Rangers @ Houston Astros",
+      "pick": "Texas Rangers",
+      "americanOdds": 112,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-31",
+      "matchup": "Kansas City Royals @ Colorado Rockies",
+      "pick": "Kansas City Royals",
+      "americanOdds": -106,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-07-31",
+      "matchup": "Boston Red Sox @ Los Angeles Dodgers",
+      "pick": "Boston Red Sox",
+      "americanOdds": 120,
+      "result": "Win",
+      "profitLoss": 120.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 3,
+    "pending": 0,
+    "netProfitLoss": -75.0
+  }
+}
