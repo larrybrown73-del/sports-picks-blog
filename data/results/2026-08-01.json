@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-01",
+  "generatedAt": "2026-08-02T13:32:59Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-08-01",
+      "matchup": "New York Yankees @ Chicago Cubs",
+      "pick": "New York Yankees",
+      "americanOdds": 102,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-01",
+      "matchup": "Kansas City Royals @ Colorado Rockies",
+      "pick": "Kansas City Royals",
+      "americanOdds": 106,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-01",
+      "matchup": "San Francisco Giants @ San Diego Padres",
+      "pick": "San Francisco Giants",
+      "americanOdds": 134,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-01",
+      "matchup": "Miami Marlins @ New York Mets",
+      "pick": "New York Mets",
+      "americanOdds": 105,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-01",
+      "matchup": "Boston Red Sox @ Los Angeles Dodgers",
+      "pick": "Boston Red Sox",
+      "americanOdds": 148,
+      "result": "Win",
+      "profitLoss": 148.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-01",
+      "matchup": "Milwaukee Brewers @ Los Angeles Angels",
+      "pick": "Los Angeles Angels",
+      "americanOdds": 129,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 5,
+    "pending": 0,
+    "netProfitLoss": -352.0
+  }
+}
