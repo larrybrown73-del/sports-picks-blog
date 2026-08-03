@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-02",
+  "generatedAt": "2026-08-03T14:48:06Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-08-02",
+      "matchup": "Boston Red Sox @ Los Angeles Dodgers",
+      "pick": "Boston Red Sox",
+      "americanOdds": 158,
+      "result": "Win",
+      "profitLoss": 158.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 0,
+    "pending": 0,
+    "netProfitLoss": 158.0
+  }
+}
