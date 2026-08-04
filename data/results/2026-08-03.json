@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-03",
+  "generatedAt": "2026-08-04T14:23:42Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-08-03",
+      "matchup": "Washington Nationals @ Philadelphia Phillies",
+      "pick": "Washington Nationals",
+      "americanOdds": 136,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-03",
+      "matchup": "Pittsburgh Pirates @ Milwaukee Brewers",
+      "pick": "Pittsburgh Pirates",
+      "americanOdds": 130,
+      "result": "Win",
+      "profitLoss": 130.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-03",
+      "matchup": "Toronto Blue Jays @ Houston Astros",
+      "pick": "Toronto Blue Jays",
+      "americanOdds": 118,
+      "result": "Win",
+      "profitLoss": 118.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-03",
+      "matchup": "San Francisco Giants @ Texas Rangers",
+      "pick": "San Francisco Giants",
+      "americanOdds": 110,
+      "result": "Win",
+      "profitLoss": 110.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-03",
+      "matchup": "Tampa Bay Rays @ Colorado Rockies",
+      "pick": "Colorado Rockies",
+      "americanOdds": 158,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-03",
+      "matchup": "San Diego Padres @ Arizona Diamondbacks",
+      "pick": "San Diego Padres",
+      "americanOdds": 102,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 3,
+    "losses": 3,
+    "pending": 0,
+    "netProfitLoss": 58.0
+  }
+}
