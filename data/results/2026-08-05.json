@@ -1,0 +1,76 @@
+{
+  "date": "2026-08-05",
+  "generatedAt": "2026-08-06T14:22:16Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-08-05",
+      "matchup": "St. Louis Cardinals @ New York Yankees",
+      "pick": "St. Louis Cardinals",
+      "americanOdds": 148,
+      "result": "Win",
+      "profitLoss": 148.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "San Diego Padres @ Arizona Diamondbacks",
+      "pick": "San Diego Padres",
+      "americanOdds": -122,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "Detroit Tigers @ Seattle Mariners",
+      "pick": "Detroit Tigers",
+      "americanOdds": 134,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "Los Angeles Angels @ Baltimore Orioles",
+      "pick": "Los Angeles Angels",
+      "americanOdds": 120,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "Athletics @ Cincinnati Reds",
+      "pick": "Athletics",
+      "americanOdds": 151,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "Minnesota Twins @ Kansas City Royals",
+      "pick": "Kansas City Royals",
+      "americanOdds": -108,
+      "result": "Win",
+      "profitLoss": 92.59,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-05",
+      "matchup": "Miami Marlins @ Atlanta Braves",
+      "pick": "Miami Marlins",
+      "americanOdds": 116,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 2,
+    "losses": 5,
+    "pending": 0,
+    "netProfitLoss": -259.41
+  }
+}
