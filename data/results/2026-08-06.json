@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-06",
+  "generatedAt": "2026-08-07T01:04:28Z",
+  "unitStake": 100.0,
+  "picks": [
+    {
+      "date": "2026-08-06",
+      "matchup": "Athletics @ Cincinnati Reds",
+      "pick": "Athletics",
+      "americanOdds": 159,
+      "result": "Loss",
+      "profitLoss": -100.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-06",
+      "matchup": "Miami Marlins @ Atlanta Braves",
+      "pick": "Miami Marlins",
+      "americanOdds": 131,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "stake": 100.0
+    },
+    {
+      "date": "2026-08-06",
+      "matchup": "Toronto Blue Jays @ Chicago Cubs",
+      "pick": "Chicago Cubs",
+      "americanOdds": 104,
+      "result": "Win",
+      "profitLoss": 104.0,
+      "stake": 100.0
+    }
+  ],
+  "summary": {
+    "wins": 1,
+    "losses": 1,
+    "pending": 1,
+    "netProfitLoss": 4.0
+  }
+}
