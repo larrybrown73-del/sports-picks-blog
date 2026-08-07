@@ -1,9 +1,9 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T01:04:27Z",
+  "generatedAt": "2026-08-07T13:20:14Z",
   "meta": {
     "slateGames": 15,
-    "valuePicks": 5,
+    "valuePicks": 7,
     "propsAvailable": true,
     "scheduleGames": 15
   },
@@ -348,18 +348,18 @@
         },
         {
           "slot": 5,
-          "name": "Ozzie Albies",
-          "playerId": "645277"
-        },
-        {
-          "slot": 6,
           "name": "Mauricio Dub\u00f3n",
           "playerId": "643289"
         },
         {
+          "slot": 6,
+          "name": "Lane Thomas",
+          "playerId": "657041"
+        },
+        {
           "slot": 7,
-          "name": "Mike Yastrzemski",
-          "playerId": "573262"
+          "name": "Ozzie Albies",
+          "playerId": "645277"
         },
         {
           "slot": 8,
@@ -368,8 +368,8 @@
         },
         {
           "slot": 9,
-          "name": "Sean Murphy",
-          "playerId": "669221"
+          "name": "Jim Jarvis",
+          "playerId": "805347"
         }
       ],
       "homeLineup": [
@@ -493,8 +493,8 @@
         },
         {
           "slot": 4,
-          "name": "Anthony Seigler",
-          "playerId": "678011"
+          "name": "Caleb Durbin",
+          "playerId": "702332"
         },
         {
           "slot": 5,
@@ -503,8 +503,8 @@
         },
         {
           "slot": 6,
-          "name": "Caleb Durbin",
-          "playerId": "702332"
+          "name": "Andruw Monasterio",
+          "playerId": "655316"
         },
         {
           "slot": 7,
@@ -513,13 +513,13 @@
         },
         {
           "slot": 8,
-          "name": "Andruw Monasterio",
-          "playerId": "655316"
+          "name": "Anthony Seigler",
+          "playerId": "678011"
         },
         {
           "slot": 9,
-          "name": "Connor Wong",
-          "playerId": "657136"
+          "name": "Jake Rogers",
+          "playerId": "668670"
         }
       ]
     },
@@ -581,48 +581,48 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Xavier Edwards",
-          "playerId": "669364"
-        },
-        {
-          "slot": 2,
-          "name": "Kyle Stowers",
-          "playerId": "669065"
-        },
-        {
-          "slot": 3,
           "name": "Otto Lopez",
           "playerId": "672640"
         },
         {
-          "slot": 4,
-          "name": "Griffin Conine",
-          "playerId": "665052"
-        },
-        {
-          "slot": 5,
+          "slot": 2,
           "name": "Heriberto Hern\u00e1ndez",
           "playerId": "681715"
         },
         {
-          "slot": 6,
-          "name": "Owen Caissie",
-          "playerId": "683357"
-        },
-        {
-          "slot": 7,
+          "slot": 3,
           "name": "Jakob Marsee",
           "playerId": "805300"
         },
         {
+          "slot": 4,
+          "name": "Xavier Edwards",
+          "playerId": "669364"
+        },
+        {
+          "slot": 5,
+          "name": "Leo Jim\u00e9nez",
+          "playerId": "677870"
+        },
+        {
+          "slot": 6,
+          "name": "Kyle Stowers",
+          "playerId": "669065"
+        },
+        {
+          "slot": 7,
+          "name": "Javier Sanoja",
+          "playerId": "691594"
+        },
+        {
           "slot": 8,
-          "name": "Agust\u00edn Ram\u00edrez",
-          "playerId": "682663"
+          "name": "Griffin Conine",
+          "playerId": "665052"
         },
         {
           "slot": 9,
-          "name": "Javier Sanoja",
-          "playerId": "691594"
+          "name": "Brian Navarreto",
+          "playerId": "640459"
         }
       ]
     },
@@ -684,8 +684,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Sam Antonacci",
-          "playerId": "803011"
+          "name": "Chase Meidroth",
+          "playerId": "805367"
         },
         {
           "slot": 2,
@@ -699,33 +699,33 @@
         },
         {
           "slot": 4,
+          "name": "Andrew Benintendi",
+          "playerId": "643217"
+        },
+        {
+          "slot": 5,
           "name": "Colson Montgomery",
           "playerId": "695657"
         },
         {
-          "slot": 5,
-          "name": "Randal Grichuk",
-          "playerId": "545341"
+          "slot": 6,
+          "name": "Drew Romo",
+          "playerId": "691011"
         },
         {
-          "slot": 6,
+          "slot": 7,
+          "name": "Tristan Peters",
+          "playerId": "671976"
+        },
+        {
+          "slot": 8,
           "name": "Braden Montgomery",
           "playerId": "695731"
         },
         {
-          "slot": 7,
-          "name": "Brenton Doyle",
-          "playerId": "686668"
-        },
-        {
-          "slot": 8,
-          "name": "Chase Meidroth",
-          "playerId": "805367"
-        },
-        {
           "slot": 9,
-          "name": "Joey Bart",
-          "playerId": "663698"
+          "name": "Sam Antonacci",
+          "playerId": "803011"
         }
       ]
     },
@@ -735,7 +735,7 @@
       "homeTeam": "Milwaukee Brewers",
       "awayAbbrev": "MIN",
       "homeAbbrev": "MIL",
-      "awayPitcher": null,
+      "awayPitcher": "Zebby Matthews",
       "homePitcher": "Shane Drohan",
       "awayLineup": [
         {
@@ -745,18 +745,18 @@
         },
         {
           "slot": 2,
+          "name": "Luke Keaschall",
+          "playerId": "807712"
+        },
+        {
+          "slot": 3,
           "name": "Ryan Jeffers",
           "playerId": "680777"
         },
         {
-          "slot": 3,
-          "name": "Josh Bell",
-          "playerId": "605137"
-        },
-        {
           "slot": 4,
-          "name": "Kody Clemens",
-          "playerId": "665019"
+          "name": "Alex Jackson",
+          "playerId": "656577"
         },
         {
           "slot": 5,
@@ -765,18 +765,18 @@
         },
         {
           "slot": 6,
-          "name": "Victor Caratini",
-          "playerId": "605170"
-        },
-        {
-          "slot": 7,
           "name": "Brooks Lee",
           "playerId": "686797"
         },
         {
+          "slot": 7,
+          "name": "Alan Roden",
+          "playerId": "702176"
+        },
+        {
           "slot": 8,
-          "name": "Trevor Larnach",
-          "playerId": "663616"
+          "name": "Victor Caratini",
+          "playerId": "605170"
         },
         {
           "slot": 9,
@@ -839,7 +839,7 @@
       "awayAbbrev": "CHC",
       "homeAbbrev": "KC",
       "awayPitcher": null,
-      "homePitcher": null,
+      "homePitcher": "Daniel Lynch IV",
       "awayLineup": [
         {
           "slot": 1,
@@ -905,8 +905,8 @@
         },
         {
           "slot": 4,
-          "name": "Salvador Perez",
-          "playerId": "521692"
+          "name": "Tyler Tolbert",
+          "playerId": "686475"
         },
         {
           "slot": 5,
@@ -925,8 +925,8 @@
         },
         {
           "slot": 8,
-          "name": "John Rave",
-          "playerId": "670231"
+          "name": "Josh Rojas",
+          "playerId": "668942"
         },
         {
           "slot": 9,
@@ -1199,43 +1199,43 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Lars Nootbaar",
-          "playerId": "663457"
-        },
-        {
-          "slot": 2,
-          "name": "Jorge Barrosa",
-          "playerId": "678489"
-        },
-        {
-          "slot": 3,
           "name": "Geraldo Perdomo",
           "playerId": "672695"
         },
         {
-          "slot": 4,
+          "slot": 2,
+          "name": "Corbin Carroll",
+          "playerId": "682998"
+        },
+        {
+          "slot": 3,
           "name": "Gabriel Moreno",
           "playerId": "672515"
         },
         {
+          "slot": 4,
+          "name": "Ketel Marte",
+          "playerId": "606466"
+        },
+        {
           "slot": 5,
-          "name": "Tim Tawa",
-          "playerId": "694374"
+          "name": "Lars Nootbaar",
+          "playerId": "663457"
         },
         {
           "slot": 6,
-          "name": "Ildemaro Vargas",
-          "playerId": "545121"
+          "name": "Nolan Arenado",
+          "playerId": "571448"
         },
         {
           "slot": 7,
-          "name": "James McCann",
-          "playerId": "543510"
+          "name": "Max Kepler",
+          "playerId": "596146"
         },
         {
           "slot": 8,
-          "name": "Tyler Locklear",
-          "playerId": "682988"
+          "name": "Tim Tawa",
+          "playerId": "694374"
         },
         {
           "slot": 9,
@@ -1307,13 +1307,13 @@
         },
         {
           "slot": 2,
-          "name": "Gavin Sheets",
-          "playerId": "657757"
+          "name": "Jase Bowen",
+          "playerId": "687749"
         },
         {
           "slot": 3,
-          "name": "Sung-Mun Song",
-          "playerId": "823550"
+          "name": "Manny Machado",
+          "playerId": "592518"
         },
         {
           "slot": 4,
@@ -1327,23 +1327,23 @@
         },
         {
           "slot": 6,
-          "name": "Gage Workman",
-          "playerId": "669398"
+          "name": "Xander Bogaerts",
+          "playerId": "593428"
         },
         {
           "slot": 7,
-          "name": "Luis Campusano",
-          "playerId": "669134"
+          "name": "Gavin Sheets",
+          "playerId": "657757"
         },
         {
           "slot": 8,
-          "name": "Jake Cronenworth",
-          "playerId": "630105"
+          "name": "Freddy Fermin",
+          "playerId": "666023"
         },
         {
           "slot": 9,
-          "name": "Jase Bowen",
-          "playerId": "687749"
+          "name": "Jake Cronenworth",
+          "playerId": "630105"
         }
       ]
     },
@@ -1556,6 +1556,34 @@
   ],
   "moneylinePicks": [
     {
+      "matchup": "Chicago Cubs @ Kansas City Royals",
+      "homeTeam": "Kansas City Royals",
+      "awayTeam": "Chicago Cubs",
+      "pick": "Kansas City Royals",
+      "sportsbook": "DraftKings",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Home",
+      "confidence": 82,
+      "confidenceLabel": "High",
+      "edge": 18.7,
+      "closingLineValue": 0.0,
+      "expectedValue": 105.5,
+      "winProbability": 0.583907,
+      "edgeDecimal": 0.187107,
+      "openingLine": 152,
+      "closingLine": 152,
+      "impliedProbability": 0.3968,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "Daniel Lynch IV",
+      "opposingPitcher": ""
+    },
+    {
       "matchup": "Houston Astros @ San Diego Padres",
       "homeTeam": "San Diego Padres",
       "awayTeam": "Houston Astros",
@@ -1564,13 +1592,13 @@
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Home",
-      "confidence": 47,
+      "confidence": 49,
       "confidenceLabel": "Low",
-      "edge": 9.0,
+      "edge": 9.5,
       "closingLineValue": 0.0,
-      "expectedValue": 80.1,
-      "winProbability": 0.635757,
-      "edgeDecimal": 0.090257,
+      "expectedValue": 81.4,
+      "winProbability": 0.640315,
+      "edgeDecimal": 0.094815,
       "openingLine": -120,
       "closingLine": -120,
       "impliedProbability": 0.5455,
@@ -1584,88 +1612,88 @@
       "opposingPitcher": "Ronel Blanco"
     },
     {
-      "matchup": "Los Angeles Angels @ Miami Marlins",
-      "homeTeam": "Miami Marlins",
-      "awayTeam": "Los Angeles Angels",
-      "pick": "Miami Marlins",
-      "sportsbook": "FanDuel",
-      "betType": "Moneyline",
-      "league": "MLB",
-      "homeAway": "Home",
-      "confidence": 50,
-      "confidenceLabel": "Medium",
-      "edge": 8.5,
-      "closingLineValue": 0.0,
-      "expectedValue": 84.2,
-      "winProbability": 0.703763,
-      "edgeDecimal": 0.085463,
-      "openingLine": -162,
-      "closingLine": -162,
-      "impliedProbability": 0.6183,
-      "result": "Pending",
-      "profitLoss": 0.0,
-      "unitsWon": 0.0,
-      "weather": "",
-      "temperature": 0,
-      "umpire": "",
-      "startingPitcher": "Tyler Phillips",
-      "opposingPitcher": "George Klassen"
-    },
-    {
-      "matchup": "Cleveland Guardians @ Chicago White Sox",
-      "homeTeam": "Chicago White Sox",
-      "awayTeam": "Cleveland Guardians",
-      "pick": "Cleveland Guardians",
+      "matchup": "Baltimore Orioles @ Texas Rangers",
+      "homeTeam": "Texas Rangers",
+      "awayTeam": "Baltimore Orioles",
+      "pick": "Baltimore Orioles",
       "sportsbook": "DraftKings",
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Away",
-      "confidence": 35,
+      "confidence": 38,
       "confidenceLabel": "Low",
-      "edge": 6.6,
+      "edge": 9.2,
       "closingLineValue": 0.0,
-      "expectedValue": 73.5,
-      "winProbability": 0.61519,
-      "edgeDecimal": 0.06569,
-      "openingLine": -122,
-      "closingLine": -122,
-      "impliedProbability": 0.5495,
+      "expectedValue": 73.1,
+      "winProbability": 0.513648,
+      "edgeDecimal": 0.091748,
+      "openingLine": 137,
+      "closingLine": 137,
+      "impliedProbability": 0.4219,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
       "weather": "",
       "temperature": 0,
       "umpire": "",
-      "startingPitcher": "Parker Messick",
-      "opposingPitcher": "Noah Schultz"
+      "startingPitcher": "Shane Baz",
+      "opposingPitcher": "Nathan Eovaldi"
     },
     {
-      "matchup": "Tampa Bay Rays @ Seattle Mariners",
-      "homeTeam": "Seattle Mariners",
-      "awayTeam": "Tampa Bay Rays",
-      "pick": "Tampa Bay Rays",
-      "sportsbook": "FanDuel",
+      "matchup": "Los Angeles Dodgers @ Arizona Diamondbacks",
+      "homeTeam": "Arizona Diamondbacks",
+      "awayTeam": "Los Angeles Dodgers",
+      "pick": "Arizona Diamondbacks",
+      "sportsbook": "DraftKings",
       "betType": "Moneyline",
       "league": "MLB",
-      "homeAway": "Away",
-      "confidence": 23,
+      "homeAway": "Home",
+      "confidence": 19,
       "confidenceLabel": "Low",
-      "edge": 4.8,
+      "edge": 5.7,
       "closingLineValue": 0.0,
-      "expectedValue": 64.7,
-      "winProbability": 0.552662,
-      "edgeDecimal": 0.047662,
-      "openingLine": -102,
-      "closingLine": -102,
-      "impliedProbability": 0.505,
+      "expectedValue": 59.8,
+      "winProbability": 0.452542,
+      "edgeDecimal": 0.057242,
+      "openingLine": 153,
+      "closingLine": 153,
+      "impliedProbability": 0.3953,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
       "weather": "",
       "temperature": 0,
       "umpire": "",
-      "startingPitcher": "Drew Rasmussen",
-      "opposingPitcher": "Logan Gilbert"
+      "startingPitcher": "Merrill Kelly",
+      "opposingPitcher": "Roki Sasaki"
+    },
+    {
+      "matchup": "Cincinnati Reds @ Washington Nationals",
+      "homeTeam": "Washington Nationals",
+      "awayTeam": "Cincinnati Reds",
+      "pick": "Washington Nationals",
+      "sportsbook": "DraftKings",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Home",
+      "confidence": 28,
+      "confidenceLabel": "Low",
+      "edge": 5.4,
+      "closingLineValue": 0.0,
+      "expectedValue": 68.1,
+      "winProbability": 0.577809,
+      "edgeDecimal": 0.054009,
+      "openingLine": -110,
+      "closingLine": -110,
+      "impliedProbability": 0.5238,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "Cade Cavalli",
+      "opposingPitcher": ""
     },
     {
       "matchup": "New York Mets @ Pittsburgh Pirates",
@@ -1676,16 +1704,16 @@
       "betType": "Moneyline",
       "league": "MLB",
       "homeAway": "Away",
-      "confidence": 13,
+      "confidence": 22,
       "confidenceLabel": "Low",
-      "edge": 3.5,
+      "edge": 5.4,
       "closingLineValue": 0.0,
-      "expectedValue": 56.5,
-      "winProbability": 0.48912,
-      "edgeDecimal": 0.03462,
-      "openingLine": 120,
-      "closingLine": 120,
-      "impliedProbability": 0.4545,
+      "expectedValue": 62.3,
+      "winProbability": 0.504109,
+      "edgeDecimal": 0.053609,
+      "openingLine": 122,
+      "closingLine": 122,
+      "impliedProbability": 0.4505,
       "result": "Pending",
       "profitLoss": 0.0,
       "unitsWon": 0.0,
@@ -1694,6 +1722,34 @@
       "umpire": "",
       "startingPitcher": "Zac Thornton",
       "opposingPitcher": "Carmen Mlodzinski"
+    },
+    {
+      "matchup": "Cleveland Guardians @ Chicago White Sox",
+      "homeTeam": "Chicago White Sox",
+      "awayTeam": "Cleveland Guardians",
+      "pick": "Cleveland Guardians",
+      "sportsbook": "FanDuel",
+      "betType": "Moneyline",
+      "league": "MLB",
+      "homeAway": "Away",
+      "confidence": 23,
+      "confidenceLabel": "Low",
+      "edge": 3.5,
+      "closingLineValue": 0.0,
+      "expectedValue": 67.2,
+      "winProbability": 0.611219,
+      "edgeDecimal": 0.034919,
+      "openingLine": -136,
+      "closingLine": -136,
+      "impliedProbability": 0.5763,
+      "result": "Pending",
+      "profitLoss": 0.0,
+      "unitsWon": 0.0,
+      "weather": "",
+      "temperature": 0,
+      "umpire": "",
+      "startingPitcher": "Parker Messick",
+      "opposingPitcher": "Noah Schultz"
     }
   ],
   "propPicks": {
