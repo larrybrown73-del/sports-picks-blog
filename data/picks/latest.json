@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-14T13:09:38Z",
+  "generatedAt": "2026-08-14T18:04:09Z",
   "meta": {
     "slateGames": 14,
     "valuePicks": 0,
@@ -49,18 +49,18 @@
         },
         {
           "slot": 7,
-          "name": "Blaze Jordan",
-          "playerId": "691458"
+          "name": "Bryan Torres",
+          "playerId": "663494"
         },
         {
           "slot": 8,
-          "name": "Everson Pereira",
-          "playerId": "677592"
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "playerId": "665877"
         },
         {
           "slot": 9,
-          "name": "Jimmy Crooks",
-          "playerId": "699625"
+          "name": "C\u00e9sar Prieto",
+          "playerId": "693409"
         }
       ],
       "homeLineup": [
@@ -71,43 +71,43 @@
         },
         {
           "slot": 2,
-          "name": "Tyrone Taylor",
-          "playerId": "621438"
+          "name": "Seiya Suzuki",
+          "playerId": "673548"
         },
         {
           "slot": 3,
-          "name": "James Triantos",
-          "playerId": "701649"
-        },
-        {
-          "slot": 4,
           "name": "Alex Bregman",
           "playerId": "608324"
         },
         {
+          "slot": 4,
+          "name": "Michael Busch",
+          "playerId": "683737"
+        },
+        {
           "slot": 5,
+          "name": "Nico Hoerner",
+          "playerId": "663538"
+        },
+        {
+          "slot": 6,
+          "name": "Carson Kelly",
+          "playerId": "608348"
+        },
+        {
+          "slot": 7,
           "name": "Ian Happ",
           "playerId": "664023"
         },
         {
-          "slot": 6,
-          "name": "Pedro Ram\u00edrez",
-          "playerId": "699393"
-        },
-        {
-          "slot": 7,
-          "name": "Dansby Swanson",
-          "playerId": "621020"
-        },
-        {
           "slot": 8,
-          "name": "Michael Conforto",
-          "playerId": "624424"
+          "name": "Tyrone Taylor",
+          "playerId": "621438"
         },
         {
           "slot": 9,
-          "name": "Miguel Amaya",
-          "playerId": "665804"
+          "name": "Dansby Swanson",
+          "playerId": "621020"
         }
       ]
     },
@@ -632,7 +632,7 @@
       "homeTeam": "Tampa Bay Rays",
       "awayAbbrev": "BAL",
       "homeAbbrev": "TB",
-      "awayPitcher": null,
+      "awayPitcher": "Chris Bassitt",
       "homePitcher": "Steven Matz",
       "awayLineup": [
         {
@@ -736,7 +736,7 @@
       "awayAbbrev": "AZ",
       "homeAbbrev": "ATL",
       "awayPitcher": "Brandon Pfaadt",
-      "homePitcher": null,
+      "homePitcher": "Chris Sale",
       "awayLineup": [
         {
           "slot": 1,
