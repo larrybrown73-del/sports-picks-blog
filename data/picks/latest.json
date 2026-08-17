@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T12:46:50Z",
+  "generatedAt": "2026-08-17T17:23:09Z",
   "meta": {
     "slateGames": 11,
     "valuePicks": 0,
@@ -14,13 +14,13 @@
       "homeTeam": "Cincinnati Reds",
       "awayAbbrev": "STL",
       "homeAbbrev": "CIN",
-      "awayPitcher": null,
-      "homePitcher": null,
+      "awayPitcher": "Quinn Mathews",
+      "homePitcher": "Kent Emanuel",
       "awayLineup": [
         {
           "slot": 1,
-          "name": "JJ Wetherholt",
-          "playerId": "802139"
+          "name": "Joshua B\u00e1ez",
+          "playerId": "695491"
         },
         {
           "slot": 2,
@@ -29,38 +29,38 @@
         },
         {
           "slot": 3,
-          "name": "Alec Burleson",
-          "playerId": "676475"
-        },
-        {
-          "slot": 4,
           "name": "Jordan Walker",
           "playerId": "691023"
         },
         {
+          "slot": 4,
+          "name": "Alec Burleson",
+          "playerId": "676475"
+        },
+        {
           "slot": 5,
-          "name": "Everson Pereira",
-          "playerId": "677592"
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "playerId": "665877"
         },
         {
           "slot": 6,
-          "name": "Nathan Church",
-          "playerId": "701675"
-        },
-        {
-          "slot": 7,
           "name": "Masyn Winn",
           "playerId": "691026"
         },
         {
+          "slot": 7,
+          "name": "Blaze Jordan",
+          "playerId": "691458"
+        },
+        {
           "slot": 8,
-          "name": "Jimmy Crooks",
-          "playerId": "699625"
+          "name": "Everson Pereira",
+          "playerId": "677592"
         },
         {
           "slot": 9,
-          "name": "Blaze Jordan",
-          "playerId": "691458"
+          "name": "Pedro Pag\u00e9s",
+          "playerId": "686780"
         }
       ],
       "homeLineup": [
@@ -76,8 +76,8 @@
         },
         {
           "slot": 3,
-          "name": "JJ Bleday",
-          "playerId": "668709"
+          "name": "Tyler Stephenson",
+          "playerId": "663886"
         },
         {
           "slot": 4,
@@ -86,28 +86,28 @@
         },
         {
           "slot": 5,
+          "name": "Dane Myers",
+          "playerId": "667472"
+        },
+        {
+          "slot": 6,
           "name": "Michael Toglia",
           "playerId": "669911"
         },
         {
-          "slot": 6,
+          "slot": 7,
           "name": "Matt McLain",
           "playerId": "680574"
         },
         {
-          "slot": 7,
+          "slot": 8,
           "name": "Noelvi Marte",
           "playerId": "682622"
         },
         {
-          "slot": 8,
-          "name": "TJ Friedl",
-          "playerId": "670770"
-        },
-        {
           "slot": 9,
-          "name": "Tyler Stephenson",
-          "playerId": "663886"
+          "name": "Ke'Bryan Hayes",
+          "playerId": "663647"
         }
       ]
     },
@@ -117,7 +117,7 @@
       "homeTeam": "Cincinnati Reds",
       "awayAbbrev": "STL",
       "homeAbbrev": "CIN",
-      "awayPitcher": null,
+      "awayPitcher": "Andre Pallante",
       "homePitcher": "Rhett Lowder",
       "awayLineup": [
         {
@@ -530,7 +530,7 @@
       "awayAbbrev": "AZ",
       "homeAbbrev": "BOS",
       "awayPitcher": "Mitch Bratt",
-      "homePitcher": null,
+      "homePitcher": "Alec Gamboa",
       "awayLineup": [
         {
           "slot": 1,
