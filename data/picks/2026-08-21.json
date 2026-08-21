@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-21T12:50:54Z",
+  "generatedAt": "2026-08-21T16:20:56Z",
   "meta": {
     "slateGames": 15,
     "valuePicks": 0,
@@ -220,7 +220,7 @@
       "homeTeam": "New York Yankees",
       "awayAbbrev": "TOR",
       "homeAbbrev": "NYY",
-      "awayPitcher": null,
+      "awayPitcher": "Mason Fluharty",
       "homePitcher": "Cam Schlittler",
       "awayLineup": [
         {
