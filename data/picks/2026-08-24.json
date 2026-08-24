@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generatedAt": "2026-08-24T12:53:29Z",
+  "generatedAt": "2026-08-24T16:23:21Z",
   "meta": {
     "slateGames": 10,
     "valuePicks": 0,
@@ -324,7 +324,7 @@
       "awayAbbrev": "TEX",
       "homeAbbrev": "CWS",
       "awayPitcher": "Kumar Rocker",
-      "homePitcher": null,
+      "homePitcher": "Jos\u00e9 Urquidy",
       "awayLineup": [
         {
           "slot": 1,
