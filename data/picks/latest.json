@@ -1,6 +1,6 @@
 {
   "date": "2026-09-02",
-  "generatedAt": "2026-09-02T19:03:36Z",
+  "generatedAt": "2026-09-02T22:16:48Z",
   "meta": {
     "slateGames": 15,
     "valuePicks": 0,
@@ -66,8 +66,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "H\u00e9ctor Rodr\u00edguez",
-          "playerId": "699302"
+          "name": "TJ Friedl",
+          "playerId": "670770"
         },
         {
           "slot": 2,
@@ -142,8 +142,8 @@
         },
         {
           "slot": 5,
-          "name": "Michael Harris II",
-          "playerId": "671739"
+          "name": "Brewer Hicklen",
+          "playerId": "676551"
         },
         {
           "slot": 6,
@@ -169,8 +169,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "James Wood",
-          "playerId": "695578"
+          "name": "Jacob Young",
+          "playerId": "696285"
         },
         {
           "slot": 2,
@@ -277,18 +277,18 @@
         },
         {
           "slot": 2,
-          "name": "Corey Seager",
-          "playerId": "608369"
+          "name": "Nicky Lopez",
+          "playerId": "670032"
         },
         {
           "slot": 3,
-          "name": "Wyatt Langford",
-          "playerId": "694671"
+          "name": "Cam Cauley",
+          "playerId": "695508"
         },
         {
           "slot": 4,
-          "name": "Brandon Nimmo",
-          "playerId": "607043"
+          "name": "Evan Carter",
+          "playerId": "694497"
         },
         {
           "slot": 5,
@@ -353,8 +353,8 @@
         },
         {
           "slot": 6,
-          "name": "Coby Mayo",
-          "playerId": "691723"
+          "name": "Christian Encarnacion-Strand",
+          "playerId": "687952"
         },
         {
           "slot": 7,
@@ -400,8 +400,8 @@
         },
         {
           "slot": 6,
-          "name": "Jordan Beck",
-          "playerId": "687597"
+          "name": "Zac Veen",
+          "playerId": "691728"
         },
         {
           "slot": 7,
@@ -410,13 +410,13 @@
         },
         {
           "slot": 8,
-          "name": "Ryan Ritter",
-          "playerId": "690022"
+          "name": "Nick Frasso",
+          "playerId": "693308"
         },
         {
           "slot": 9,
-          "name": "Ezequiel Tovar",
-          "playerId": "678662"
+          "name": "Mickey Moniak",
+          "playerId": "666160"
         }
       ]
     },
@@ -441,8 +441,8 @@
         },
         {
           "slot": 3,
-          "name": "Bryce Harper",
-          "playerId": "547180"
+          "name": "Derek Hill",
+          "playerId": "656537"
         },
         {
           "slot": 4,
@@ -478,8 +478,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Lars Nootbaar",
-          "playerId": "663457"
+          "name": "Jorge Barrosa",
+          "playerId": "678489"
         },
         {
           "slot": 2,
@@ -637,8 +637,8 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Turner Hill",
-          "playerId": "806367"
+          "name": "Drew Gilbert",
+          "playerId": "687551"
         },
         {
           "slot": 2,
@@ -652,8 +652,8 @@
         },
         {
           "slot": 4,
-          "name": "Jonah Cox",
-          "playerId": "813841"
+          "name": "Turner Hill",
+          "playerId": "806367"
         },
         {
           "slot": 5,
@@ -662,18 +662,18 @@
         },
         {
           "slot": 6,
-          "name": "Osleivis Basabe",
-          "playerId": "678545"
+          "name": "Drew Cavanaugh",
+          "playerId": "701852"
         },
         {
           "slot": 7,
-          "name": "Andrew Knizner",
-          "playerId": "668800"
+          "name": "Nate Furman",
+          "playerId": "801501"
         },
         {
           "slot": 8,
-          "name": "Nate Furman",
-          "playerId": "801501"
+          "name": "Shay Whitcomb",
+          "playerId": "694376"
         },
         {
           "slot": 9,
@@ -709,23 +709,23 @@
         },
         {
           "slot": 6,
+          "name": "Esmerlyn Valdez",
+          "playerId": "699013"
+        },
+        {
+          "slot": 7,
           "name": "Rafael Flores Jr.",
           "playerId": "804668"
         },
         {
-          "slot": 7,
-          "name": "Nick Yorke",
-          "playerId": "694377"
-        },
-        {
           "slot": 8,
-          "name": "Jared Triolo",
-          "playerId": "669707"
+          "name": "Jake Mangum",
+          "playerId": "663968"
         },
         {
           "slot": 9,
-          "name": "Jake Mangum",
-          "playerId": "663968"
+          "name": "Jared Triolo",
+          "playerId": "669707"
         }
       ]
     },
@@ -770,18 +770,18 @@
         },
         {
           "slot": 7,
-          "name": "Francisco Alvarez",
-          "playerId": "682626"
-        },
-        {
-          "slot": 8,
           "name": "A.J. Ewing",
           "playerId": "805999"
         },
         {
+          "slot": 8,
+          "name": "Brett Baty",
+          "playerId": "683146"
+        },
+        {
           "slot": 9,
-          "name": "Mark Vientos",
-          "playerId": "668901"
+          "name": "Luis Torrens",
+          "playerId": "620443"
         }
       ],
       "homeLineup": [
@@ -792,8 +792,8 @@
         },
         {
           "slot": 2,
-          "name": "Ryan Vilade",
-          "playerId": "668723"
+          "name": "Jonathan Aranda",
+          "playerId": "666018"
         },
         {
           "slot": 3,
@@ -802,28 +802,28 @@
         },
         {
           "slot": 4,
-          "name": "Jonny DeLuca",
-          "playerId": "676356"
+          "name": "Liam Hicks",
+          "playerId": "689414"
         },
         {
           "slot": 5,
-          "name": "Jorge Mateo",
-          "playerId": "622761"
-        },
-        {
-          "slot": 6,
           "name": "Chandler Simpson",
           "playerId": "802415"
         },
         {
+          "slot": 6,
+          "name": "Victor Mesa Jr.",
+          "playerId": "683748"
+        },
+        {
           "slot": 7,
-          "name": "Nick Fortes",
-          "playerId": "663743"
+          "name": "Cedric Mullins",
+          "playerId": "656775"
         },
         {
           "slot": 8,
-          "name": "Victor Mesa Jr.",
-          "playerId": "683748"
+          "name": "Richie Palacios",
+          "playerId": "680700"
         },
         {
           "slot": 9,
@@ -848,8 +848,8 @@
         },
         {
           "slot": 2,
-          "name": "Alejandro Kirk",
-          "playerId": "672386"
+          "name": "George Springer",
+          "playerId": "543807"
         },
         {
           "slot": 3,
@@ -858,33 +858,33 @@
         },
         {
           "slot": 4,
-          "name": "George Springer",
-          "playerId": "543807"
+          "name": "Alejandro Kirk",
+          "playerId": "672386"
         },
         {
           "slot": 5,
-          "name": "Nathan Lukes",
-          "playerId": "664770"
-        },
-        {
-          "slot": 6,
           "name": "Kazuma Okamoto",
           "playerId": "672960"
         },
         {
-          "slot": 7,
-          "name": "Andr\u00e9s Gim\u00e9nez",
-          "playerId": "665926"
+          "slot": 6,
+          "name": "Nathan Lukes",
+          "playerId": "664770"
         },
         {
-          "slot": 8,
+          "slot": 7,
           "name": "Ernie Clement",
           "playerId": "676391"
         },
         {
+          "slot": 8,
+          "name": "Andr\u00e9s Gim\u00e9nez",
+          "playerId": "665926"
+        },
+        {
           "slot": 9,
-          "name": "Jes\u00fas S\u00e1nchez",
-          "playerId": "660821"
+          "name": "Myles Straw",
+          "playerId": "664702"
         }
       ],
       "homeLineup": [
@@ -905,8 +905,8 @@
         },
         {
           "slot": 4,
-          "name": "Petey Halpin",
-          "playerId": "690984"
+          "name": "Jo Adell",
+          "playerId": "666176"
         },
         {
           "slot": 5,
@@ -920,8 +920,8 @@
         },
         {
           "slot": 7,
-          "name": "Angel Genao",
-          "playerId": "694197"
+          "name": "Travis Bazzana",
+          "playerId": "683953"
         },
         {
           "slot": 8,
@@ -930,8 +930,8 @@
         },
         {
           "slot": 9,
-          "name": "Brayan Rocchio",
-          "playerId": "677587"
+          "name": "Angel Genao",
+          "playerId": "694197"
         }
       ]
     },
@@ -946,38 +946,38 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Brett Callahan",
-          "playerId": "814430"
+          "name": "Kevin McGonigle",
+          "playerId": "805808"
         },
         {
           "slot": 2,
-          "name": "Ben Malgeri",
-          "playerId": "701162"
-        },
-        {
-          "slot": 3,
-          "name": "Dillon Dingler",
-          "playerId": "693307"
-        },
-        {
-          "slot": 4,
           "name": "Hao-Yu Lee",
           "playerId": "701678"
         },
         {
+          "slot": 3,
+          "name": "Colt Keith",
+          "playerId": "690993"
+        },
+        {
+          "slot": 4,
+          "name": "Riley Greene",
+          "playerId": "682985"
+        },
+        {
           "slot": 5,
-          "name": "Spencer Torkelson",
-          "playerId": "679529"
+          "name": "Eduardo Valencia",
+          "playerId": "680664"
         },
         {
           "slot": 6,
-          "name": "Max Clark",
-          "playerId": "703601"
+          "name": "Brett Callahan",
+          "playerId": "814430"
         },
         {
           "slot": 7,
-          "name": "Javier B\u00e1ez",
-          "playerId": "595879"
+          "name": "Max Clark",
+          "playerId": "703601"
         },
         {
           "slot": 8,
@@ -986,8 +986,8 @@
         },
         {
           "slot": 9,
-          "name": "Colt Keith",
-          "playerId": "690993"
+          "name": "Zach McKinstry",
+          "playerId": "656716"
         }
       ],
       "homeLineup": [
@@ -998,18 +998,18 @@
         },
         {
           "slot": 2,
-          "name": "Ryan Kreidler",
-          "playerId": "668952"
+          "name": "Brooks Lee",
+          "playerId": "686797"
         },
         {
           "slot": 3,
-          "name": "Ben Ross",
-          "playerId": "805346"
+          "name": "Kody Clemens",
+          "playerId": "665019"
         },
         {
           "slot": 4,
-          "name": "Alex Jackson",
-          "playerId": "656577"
+          "name": "Ryan Jeffers",
+          "playerId": "680777"
         },
         {
           "slot": 5,
@@ -1018,8 +1018,8 @@
         },
         {
           "slot": 6,
-          "name": "Gabriel Gonzalez",
-          "playerId": "694224"
+          "name": "Trevor Larnach",
+          "playerId": "663616"
         },
         {
           "slot": 7,
@@ -1049,48 +1049,48 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Kyle Stowers",
-          "playerId": "669065"
-        },
-        {
-          "slot": 2,
-          "name": "Griffin Conine",
-          "playerId": "665052"
-        },
-        {
-          "slot": 3,
           "name": "Heriberto Hern\u00e1ndez",
           "playerId": "681715"
         },
         {
+          "slot": 2,
+          "name": "Otto Lopez",
+          "playerId": "672640"
+        },
+        {
+          "slot": 3,
+          "name": "Kyle Stowers",
+          "playerId": "669065"
+        },
+        {
           "slot": 4,
+          "name": "Agust\u00edn Ram\u00edrez",
+          "playerId": "682663"
+        },
+        {
+          "slot": 5,
+          "name": "Javier Sanoja",
+          "playerId": "691594"
+        },
+        {
+          "slot": 6,
           "name": "Jakob Marsee",
           "playerId": "805300"
         },
         {
-          "slot": 5,
-          "name": "Owen Caissie",
-          "playerId": "683357"
+          "slot": 7,
+          "name": "Esteury Ruiz",
+          "playerId": "665923"
         },
         {
-          "slot": 6,
+          "slot": 8,
           "name": "Jared Serna",
           "playerId": "691858"
         },
         {
-          "slot": 7,
-          "name": "Brian Navarreto",
-          "playerId": "640459"
-        },
-        {
-          "slot": 8,
-          "name": "Graham Pauley",
-          "playerId": "688363"
-        },
-        {
           "slot": 9,
-          "name": "Javier Sanoja",
-          "playerId": "691594"
+          "name": "Joe Mack",
+          "playerId": "691788"
         }
       ],
       "homeLineup": [
@@ -1126,13 +1126,13 @@
         },
         {
           "slot": 7,
-          "name": "Josh Rojas",
-          "playerId": "668942"
+          "name": "Michael Massey",
+          "playerId": "686681"
         },
         {
           "slot": 8,
-          "name": "Isaac Collins",
-          "playerId": "686555"
+          "name": "John Rave",
+          "playerId": "670231"
         },
         {
           "slot": 9,
@@ -1162,28 +1162,28 @@
         },
         {
           "slot": 3,
+          "name": "Andrew Vaughn",
+          "playerId": "683734"
+        },
+        {
+          "slot": 4,
           "name": "William Contreras",
           "playerId": "661388"
         },
         {
-          "slot": 4,
+          "slot": 5,
           "name": "Jake Bauers",
           "playerId": "641343"
         },
         {
-          "slot": 5,
-          "name": "Sal Frelick",
-          "playerId": "686217"
-        },
-        {
           "slot": 6,
-          "name": "Christian Yelich",
-          "playerId": "592885"
+          "name": "Luis Lara",
+          "playerId": "800325"
         },
         {
           "slot": 7,
-          "name": "Luis Lara",
-          "playerId": "800325"
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
         },
         {
           "slot": 8,
@@ -1214,8 +1214,8 @@
         },
         {
           "slot": 4,
-          "name": "Ian Happ",
-          "playerId": "664023"
+          "name": "Michael Busch",
+          "playerId": "683737"
         },
         {
           "slot": 5,
@@ -1224,23 +1224,23 @@
         },
         {
           "slot": 6,
-          "name": "Michael Busch",
-          "playerId": "683737"
+          "name": "Ian Happ",
+          "playerId": "664023"
         },
         {
           "slot": 7,
-          "name": "Carson Kelly",
-          "playerId": "608348"
+          "name": "Matt Shaw",
+          "playerId": "807713"
         },
         {
           "slot": 8,
-          "name": "BJ Murray Jr.",
-          "playerId": "681230"
+          "name": "Tyrone Taylor",
+          "playerId": "621438"
         },
         {
           "slot": 9,
-          "name": "Matt Shaw",
-          "playerId": "807713"
+          "name": "Miguel Amaya",
+          "playerId": "665804"
         }
       ]
     },
@@ -1275,23 +1275,23 @@
         },
         {
           "slot": 5,
+          "name": "Braden Montgomery",
+          "playerId": "695731"
+        },
+        {
+          "slot": 6,
           "name": "Colson Montgomery",
           "playerId": "695657"
         },
         {
-          "slot": 6,
-          "name": "Brenton Doyle",
-          "playerId": "686668"
-        },
-        {
           "slot": 7,
-          "name": "Tristan Peters",
-          "playerId": "671976"
+          "name": "Chase Meidroth",
+          "playerId": "805367"
         },
         {
           "slot": 8,
-          "name": "Chase Meidroth",
-          "playerId": "805367"
+          "name": "Tristan Peters",
+          "playerId": "671976"
         },
         {
           "slot": 9,
@@ -1322,28 +1322,28 @@
         },
         {
           "slot": 5,
-          "name": "Nelson Vel\u00e1zquez",
-          "playerId": "676369"
+          "name": "Daulton Varsho",
+          "playerId": "662139"
         },
         {
           "slot": 6,
-          "name": "Christian Walker",
-          "playerId": "572233"
-        },
-        {
-          "slot": 7,
-          "name": "Yainer Diaz",
-          "playerId": "673237"
-        },
-        {
-          "slot": 8,
           "name": "Taylor Trammell",
           "playerId": "666211"
         },
         {
-          "slot": 9,
+          "slot": 7,
           "name": "Cam Smith",
           "playerId": "701358"
+        },
+        {
+          "slot": 8,
+          "name": "LaMonte Wade Jr.",
+          "playerId": "664774"
+        },
+        {
+          "slot": 9,
+          "name": "Christian V\u00e1zquez",
+          "playerId": "543877"
         }
       ]
     },
