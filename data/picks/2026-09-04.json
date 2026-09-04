@@ -1,6 +1,6 @@
 {
   "date": "2026-09-04",
-  "generatedAt": "2026-09-04T15:56:42Z",
+  "generatedAt": "2026-09-04T18:45:04Z",
   "meta": {
     "slateGames": 16,
     "valuePicks": 0,
@@ -1049,48 +1049,48 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Jorge Barrosa",
-          "playerId": "678489"
-        },
-        {
-          "slot": 2,
           "name": "Corbin Carroll",
           "playerId": "682998"
         },
         {
-          "slot": 3,
+          "slot": 2,
           "name": "Gabriel Moreno",
           "playerId": "672515"
         },
         {
-          "slot": 4,
+          "slot": 3,
           "name": "Geraldo Perdomo",
           "playerId": "672695"
         },
         {
-          "slot": 5,
+          "slot": 4,
           "name": "Nolan Arenado",
           "playerId": "571448"
         },
         {
-          "slot": 6,
+          "slot": 5,
           "name": "Tim Tawa",
           "playerId": "694374"
         },
         {
-          "slot": 7,
+          "slot": 6,
           "name": "James McCann",
           "playerId": "543510"
         },
         {
-          "slot": 8,
+          "slot": 7,
           "name": "Ildemaro Vargas",
           "playerId": "545121"
         },
         {
-          "slot": 9,
+          "slot": 8,
           "name": "Jordan Lawlar",
           "playerId": "691783"
+        },
+        {
+          "slot": 9,
+          "name": "Ketel Marte",
+          "playerId": "606466"
         }
       ],
       "homeLineup": [
