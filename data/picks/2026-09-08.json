@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "generatedAt": "2026-09-08T16:12:35Z",
+  "generatedAt": "2026-09-08T19:10:20Z",
   "meta": {
     "slateGames": 15,
     "valuePicks": 0,
@@ -152,8 +152,8 @@
         },
         {
           "slot": 7,
-          "name": "Ryan Kreidler",
-          "playerId": "668952"
+          "name": "Trevor Larnach",
+          "playerId": "663616"
         },
         {
           "slot": 8,
@@ -169,18 +169,18 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Eduardo Valencia",
-          "playerId": "680664"
-        },
-        {
-          "slot": 2,
           "name": "Kevin McGonigle",
           "playerId": "805808"
         },
         {
+          "slot": 2,
+          "name": "Gleyber Torres",
+          "playerId": "650402"
+        },
+        {
           "slot": 3,
-          "name": "Javier B\u00e1ez",
-          "playerId": "595879"
+          "name": "Colt Keith",
+          "playerId": "690993"
         },
         {
           "slot": 4,
@@ -189,28 +189,28 @@
         },
         {
           "slot": 5,
-          "name": "Dillon Dingler",
-          "playerId": "693307"
+          "name": "Eduardo Valencia",
+          "playerId": "680664"
         },
         {
           "slot": 6,
-          "name": "Ben Malgeri",
-          "playerId": "701162"
+          "name": "Brett Callahan",
+          "playerId": "814430"
         },
         {
           "slot": 7,
-          "name": "Spencer Torkelson",
-          "playerId": "679529"
-        },
-        {
-          "slot": 8,
           "name": "Max Clark",
           "playerId": "703601"
         },
         {
+          "slot": 8,
+          "name": "Hao-Yu Lee",
+          "playerId": "701678"
+        },
+        {
           "slot": 9,
-          "name": "John Peck",
-          "playerId": "807726"
+          "name": "Zach McKinstry",
+          "playerId": "656716"
         }
       ]
     },
