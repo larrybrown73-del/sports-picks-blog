@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generatedAt": "2026-09-14T22:25:42Z",
+  "generatedAt": "2026-09-14T22:53:20Z",
   "meta": {
     "slateGames": 10,
     "valuePicks": 0,
@@ -873,18 +873,18 @@
         },
         {
           "slot": 7,
+          "name": "Michael Arroyo",
+          "playerId": "703197"
+        },
+        {
+          "slot": 8,
           "name": "Cole Young",
           "playerId": "702284"
         },
         {
-          "slot": 8,
-          "name": "Brock Rodden",
-          "playerId": "801126"
-        },
-        {
           "slot": 9,
-          "name": "Jhonny Pereda",
-          "playerId": "640902"
+          "name": "Weston Wilson",
+          "playerId": "642215"
         }
       ],
       "homeLineup": [
@@ -900,8 +900,8 @@
         },
         {
           "slot": 3,
-          "name": "Wade Meckler",
-          "playerId": "685133"
+          "name": "Jose Siri",
+          "playerId": "642350"
         },
         {
           "slot": 4,
@@ -910,8 +910,8 @@
         },
         {
           "slot": 5,
-          "name": "Mois\u00e9s Ballesteros",
-          "playerId": "694208"
+          "name": "Christian Moore",
+          "playerId": "695681"
         },
         {
           "slot": 6,
@@ -920,18 +920,18 @@
         },
         {
           "slot": 7,
-          "name": "Josh Lowe",
-          "playerId": "666139"
+          "name": "Travis d'Arnaud",
+          "playerId": "518595"
         },
         {
           "slot": 8,
-          "name": "Adam Frazier",
-          "playerId": "624428"
+          "name": "Kyren Paris",
+          "playerId": "677347"
         },
         {
           "slot": 9,
-          "name": "Christian Moore",
-          "playerId": "695681"
+          "name": "Wade Meckler",
+          "playerId": "685133"
         }
       ]
     },
