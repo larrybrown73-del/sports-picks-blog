@@ -1,6 +1,6 @@
 {
   "date": "2026-09-15",
-  "generatedAt": "2026-09-15T22:23:22Z",
+  "generatedAt": "2026-09-15T22:34:37Z",
   "meta": {
     "slateGames": 15,
     "valuePicks": 0,
@@ -1260,8 +1260,8 @@
         },
         {
           "slot": 2,
-          "name": "Jase Bowen",
-          "playerId": "687749"
+          "name": "Austin Hays",
+          "playerId": "669720"
         },
         {
           "slot": 3,
@@ -1280,23 +1280,23 @@
         },
         {
           "slot": 6,
-          "name": "Luis Campusano",
-          "playerId": "669134"
-        },
-        {
-          "slot": 7,
           "name": "Xander Bogaerts",
           "playerId": "593428"
         },
         {
+          "slot": 7,
+          "name": "Luis Campusano",
+          "playerId": "669134"
+        },
+        {
           "slot": 8,
-          "name": "Jake Cronenworth",
-          "playerId": "630105"
+          "name": "Samad Taylor",
+          "playerId": "669392"
         },
         {
           "slot": 9,
-          "name": "Freddy Fermin",
-          "playerId": "666023"
+          "name": "Jake Cronenworth",
+          "playerId": "630105"
         }
       ],
       "homeLineup": [
@@ -1307,13 +1307,13 @@
         },
         {
           "slot": 2,
-          "name": "Connor Norby",
-          "playerId": "681393"
+          "name": "Adael Amador",
+          "playerId": "691182"
         },
         {
           "slot": 3,
-          "name": "Brett Sullivan",
-          "playerId": "664954"
+          "name": "Cole Carrigg",
+          "playerId": "694249"
         },
         {
           "slot": 4,
@@ -1322,28 +1322,28 @@
         },
         {
           "slot": 5,
-          "name": "Cole Carrigg",
-          "playerId": "694249"
+          "name": "Kyle Karros",
+          "playerId": "691720"
         },
         {
           "slot": 6,
-          "name": "Zac Veen",
-          "playerId": "691728"
-        },
-        {
-          "slot": 7,
           "name": "Mickey Moniak",
           "playerId": "666160"
         },
         {
+          "slot": 7,
+          "name": "Troy Johnston",
+          "playerId": "687859"
+        },
+        {
           "slot": 8,
-          "name": "Adael Amador",
-          "playerId": "691182"
+          "name": "Brett Sullivan",
+          "playerId": "664954"
         },
         {
           "slot": 9,
-          "name": "Ezequiel Tovar",
-          "playerId": "678662"
+          "name": "Zac Veen",
+          "playerId": "691728"
         }
       ]
     },
