@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generatedAt": "2026-09-16T16:21:20Z",
+  "generatedAt": "2026-09-16T19:12:26Z",
   "meta": {
     "slateGames": 15,
     "valuePicks": 0,
@@ -49,8 +49,8 @@
         },
         {
           "slot": 7,
-          "name": "Colson Montgomery",
-          "playerId": "695657"
+          "name": "Munetaka Murakami",
+          "playerId": "808959"
         },
         {
           "slot": 8,
@@ -169,8 +169,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "JJ Wetherholt",
-          "playerId": "802139"
+          "name": "Jos\u00e9 Ferm\u00edn",
+          "playerId": "665877"
         },
         {
           "slot": 2,
@@ -235,8 +235,8 @@
         },
         {
           "slot": 3,
-          "name": "Aaron Judge",
-          "playerId": "592450"
+          "name": "Heliot Ramos",
+          "playerId": "671218"
         },
         {
           "slot": 4,
@@ -431,23 +431,23 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Josue De Paula",
-          "playerId": "800543"
+          "name": "Tommy Edman",
+          "playerId": "669242"
         },
         {
           "slot": 2,
-          "name": "Freddie Freeman",
-          "playerId": "518692"
-        },
-        {
-          "slot": 3,
           "name": "Mookie Betts",
           "playerId": "605141"
         },
         {
+          "slot": 3,
+          "name": "Will Smith",
+          "playerId": "669257"
+        },
+        {
           "slot": 4,
-          "name": "Kyle Tucker",
-          "playerId": "663656"
+          "name": "Freddie Freeman",
+          "playerId": "518692"
         },
         {
           "slot": 5,
@@ -456,23 +456,23 @@
         },
         {
           "slot": 6,
-          "name": "Max Muncy",
-          "playerId": "571970"
+          "name": "Miguel Rojas",
+          "playerId": "500743"
         },
         {
           "slot": 7,
-          "name": "Tommy Edman",
-          "playerId": "669242"
+          "name": "Kyle Tucker",
+          "playerId": "663656"
         },
         {
           "slot": 8,
-          "name": "Hunter Feduccia",
-          "playerId": "676439"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         },
         {
           "slot": 9,
-          "name": "Alex Freeland",
-          "playerId": "690976"
+          "name": "Alex Call",
+          "playerId": "669743"
         }
       ],
       "homeLineup": [
@@ -493,8 +493,8 @@
         },
         {
           "slot": 4,
-          "name": "Jose Trevino",
-          "playerId": "624431"
+          "name": "Tyler Stephenson",
+          "playerId": "663886"
         },
         {
           "slot": 5,
@@ -503,23 +503,23 @@
         },
         {
           "slot": 6,
-          "name": "H\u00e9ctor Rodr\u00edguez",
-          "playerId": "699302"
-        },
-        {
-          "slot": 7,
-          "name": "Matt McLain",
-          "playerId": "680574"
-        },
-        {
-          "slot": 8,
           "name": "Juan Brito",
           "playerId": "682877"
         },
         {
+          "slot": 7,
+          "name": "JJ Bleday",
+          "playerId": "668709"
+        },
+        {
+          "slot": 8,
+          "name": "Jose Trevino",
+          "playerId": "624431"
+        },
+        {
           "slot": 9,
-          "name": "Tyler Stephenson",
-          "playerId": "663886"
+          "name": "Matt McLain",
+          "playerId": "680574"
         }
       ]
     },
@@ -839,7 +839,7 @@
       "awayAbbrev": "BAL",
       "homeAbbrev": "NYM",
       "awayPitcher": "Chris Bassitt",
-      "homePitcher": "Robert Stock",
+      "homePitcher": "Xzavion Curry",
       "awayLineup": [
         {
           "slot": 1,
