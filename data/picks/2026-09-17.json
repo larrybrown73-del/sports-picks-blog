@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generatedAt": "2026-09-17T16:28:43Z",
+  "generatedAt": "2026-09-17T19:25:21Z",
   "meta": {
     "slateGames": 9,
     "valuePicks": 0,
@@ -39,8 +39,8 @@
         },
         {
           "slot": 5,
-          "name": "Gary S\u00e1nchez",
-          "playerId": "596142"
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
         },
         {
           "slot": 6,
@@ -59,8 +59,8 @@
         },
         {
           "slot": 9,
-          "name": "David Hamilton",
-          "playerId": "666152"
+          "name": "Cooper Pratt",
+          "playerId": "806198"
         }
       ],
       "homeLineup": [
@@ -127,8 +127,8 @@
         },
         {
           "slot": 2,
-          "name": "Freddie Freeman",
-          "playerId": "518692"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         },
         {
           "slot": 3,
@@ -137,8 +137,8 @@
         },
         {
           "slot": 4,
-          "name": "Teoscar Hern\u00e1ndez",
-          "playerId": "606192"
+          "name": "Alex Call",
+          "playerId": "669743"
         },
         {
           "slot": 5,
@@ -169,8 +169,8 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Dane Myers",
-          "playerId": "667472"
+          "name": "Carlos Jorge",
+          "playerId": "699115"
         },
         {
           "slot": 2,
@@ -184,8 +184,8 @@
         },
         {
           "slot": 4,
-          "name": "Tyler Stephenson",
-          "playerId": "663886"
+          "name": "Will Banfield",
+          "playerId": "677943"
         },
         {
           "slot": 5,
@@ -292,8 +292,8 @@
         },
         {
           "slot": 5,
-          "name": "Jonny DeLuca",
-          "playerId": "676356"
+          "name": "Jake Fraley",
+          "playerId": "641584"
         },
         {
           "slot": 6,
@@ -302,8 +302,8 @@
         },
         {
           "slot": 7,
-          "name": "Ryan Vilade",
-          "playerId": "668723"
+          "name": "Cedric Mullins",
+          "playerId": "656775"
         },
         {
           "slot": 8,
@@ -427,7 +427,7 @@
       "awayAbbrev": "KC",
       "homeAbbrev": "HOU",
       "awayPitcher": "Seth Lugo",
-      "homePitcher": null,
+      "homePitcher": "Miguel Ullola",
       "awayLineup": [
         {
           "slot": 1,
@@ -508,18 +508,18 @@
         },
         {
           "slot": 7,
-          "name": "Joey Loperfido",
-          "playerId": "694388"
-        },
-        {
-          "slot": 8,
           "name": "Daulton Varsho",
           "playerId": "662139"
         },
         {
-          "slot": 9,
+          "slot": 8,
           "name": "Jorge Barrosa",
           "playerId": "678489"
+        },
+        {
+          "slot": 9,
+          "name": "Cam Smith",
+          "playerId": "701358"
         }
       ]
     },
