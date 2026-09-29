@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generatedAt": "2026-09-29T17:48:55Z",
+  "generatedAt": "2026-09-29T20:20:04Z",
   "meta": {
     "slateGames": 4,
     "valuePicks": 0,
@@ -54,8 +54,8 @@
         },
         {
           "slot": 8,
-          "name": "Edmundo Sosa",
-          "playerId": "624641"
+          "name": "Justin Crawford",
+          "playerId": "702222"
         },
         {
           "slot": 9,
@@ -106,8 +106,8 @@
         },
         {
           "slot": 9,
-          "name": "Ha-Seong Kim",
-          "playerId": "673490"
+          "name": "Brewer Hicklen",
+          "playerId": "676551"
         }
       ]
     },
@@ -225,18 +225,18 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Jarren Duran",
-          "playerId": "680776"
+          "name": "Roman Anthony",
+          "playerId": "701350"
         },
         {
           "slot": 2,
-          "name": "Connor Wong",
-          "playerId": "657136"
+          "name": "Adley Rutschman",
+          "playerId": "668939"
         },
         {
           "slot": 3,
-          "name": "Jahmai Jones",
-          "playerId": "663330"
+          "name": "Willson Contreras",
+          "playerId": "575929"
         },
         {
           "slot": 4,
@@ -245,8 +245,8 @@
         },
         {
           "slot": 5,
-          "name": "Nate Eaton",
-          "playerId": "681987"
+          "name": "Ceddanne Rafaela",
+          "playerId": "678882"
         },
         {
           "slot": 6,
@@ -255,8 +255,8 @@
         },
         {
           "slot": 7,
-          "name": "Caleb Durbin",
-          "playerId": "702332"
+          "name": "Jarren Duran",
+          "playerId": "680776"
         },
         {
           "slot": 8,
@@ -265,8 +265,8 @@
         },
         {
           "slot": 9,
-          "name": "Andruw Monasterio",
-          "playerId": "655316"
+          "name": "Caleb Durbin",
+          "playerId": "702332"
         }
       ],
       "homeLineup": [
@@ -287,8 +287,8 @@
         },
         {
           "slot": 4,
-          "name": "Amed Rosario",
-          "playerId": "642708"
+          "name": "Cody Bellinger",
+          "playerId": "641355"
         },
         {
           "slot": 5,
@@ -297,8 +297,8 @@
         },
         {
           "slot": 6,
-          "name": "Spencer Jones",
-          "playerId": "682987"
+          "name": "Amed Rosario",
+          "playerId": "642708"
         },
         {
           "slot": 7,
@@ -307,13 +307,13 @@
         },
         {
           "slot": 8,
-          "name": "Ali S\u00e1nchez",
-          "playerId": "645305"
+          "name": "Spencer Jones",
+          "playerId": "682987"
         },
         {
           "slot": 9,
-          "name": "Jos\u00e9 Caballero",
-          "playerId": "676609"
+          "name": "Austin Wells",
+          "playerId": "669224"
         }
       ]
     },
