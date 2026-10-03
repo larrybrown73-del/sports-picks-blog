@@ -1,6 +1,6 @@
 {
   "date": "2026-10-03",
-  "generatedAt": "2026-10-03T15:53:16Z",
+  "generatedAt": "2026-10-03T18:52:45Z",
   "meta": {
     "slateGames": 4,
     "valuePicks": 0,
@@ -24,8 +24,8 @@
         },
         {
           "slot": 2,
-          "name": "Randal Grichuk",
-          "playerId": "545341"
+          "name": "Tristan Peters",
+          "playerId": "671976"
         },
         {
           "slot": 3,
@@ -91,8 +91,8 @@
         },
         {
           "slot": 6,
-          "name": "David Fry",
-          "playerId": "681807"
+          "name": "Nathaniel Lowe",
+          "playerId": "663993"
         },
         {
           "slot": 7,
@@ -117,85 +117,85 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayAbbrev": "ATL",
       "homeAbbrev": "LAD",
-      "awayPitcher": null,
+      "awayPitcher": "Dylan Dodd",
       "homePitcher": "Tarik Skubal",
       "awayLineup": [
         {
           "slot": 1,
+          "name": "Drake Baldwin",
+          "playerId": "686948"
+        },
+        {
+          "slot": 2,
+          "name": "Ronald Acu\u00f1a Jr.",
+          "playerId": "660670"
+        },
+        {
+          "slot": 3,
+          "name": "Ozzie Albies",
+          "playerId": "645277"
+        },
+        {
+          "slot": 4,
+          "name": "Matt Olson",
+          "playerId": "621566"
+        },
+        {
+          "slot": 5,
+          "name": "Michael Harris II",
+          "playerId": "671739"
+        },
+        {
+          "slot": 6,
           "name": "Mauricio Dub\u00f3n",
           "playerId": "643289"
         },
         {
-          "slot": 2,
-          "name": "Dominic Smith",
-          "playerId": "642086"
-        },
-        {
-          "slot": 3,
-          "name": "Mike Yastrzemski",
-          "playerId": "573262"
-        },
-        {
-          "slot": 4,
-          "name": "Sean Murphy",
-          "playerId": "669221"
-        },
-        {
-          "slot": 5,
-          "name": "Ha-Seong Kim",
-          "playerId": "673490"
-        },
-        {
-          "slot": 6,
-          "name": "Brewer Hicklen",
-          "playerId": "676551"
-        },
-        {
           "slot": 7,
-          "name": "DaShawn Keirsey Jr.",
-          "playerId": "680577"
-        },
-        {
-          "slot": 8,
           "name": "Austin Riley",
           "playerId": "663586"
         },
         {
+          "slot": 8,
+          "name": "Sean Murphy",
+          "playerId": "669221"
+        },
+        {
           "slot": 9,
-          "name": "Drake Baldwin",
-          "playerId": "686948"
+          "name": "Ha-Seong Kim",
+          "playerId": "673490"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Dalton Rushing",
-          "playerId": "687221"
+          "name": "Mookie Betts",
+          "playerId": "605141"
         },
         {
           "slot": 2,
-          "name": "Miguel Rojas",
-          "playerId": "500743"
+          "name": "Shohei Ohtani",
+          "playerId": "660271"
         },
         {
           "slot": 3,
-          "name": "Enrique Hern\u00e1ndez",
-          "playerId": "571771"
+          "name": "Will Smith",
+          "playerId": "669257"
         },
         {
           "slot": 4,
-          "name": "Kyle Tucker",
-          "playerId": "663656"
+          "name": "Freddie Freeman",
+          "playerId": "518692"
         },
         {
           "slot": 5,
-          "name": "Alex Call",
-          "playerId": "669743"
+          "name": "Teoscar Hern\u00e1ndez",
+          "playerId": "606192"
         },
         {
           "slot": 6,
-          "name": "Max Muncy",
-          "playerId": "571970"
+          "name": "Kyle Tucker",
+          "playerId": "663656"
         },
         {
           "slot": 7,
@@ -204,8 +204,8 @@
         },
         {
           "slot": 8,
-          "name": "Hunter Feduccia",
-          "playerId": "676439"
+          "name": "Max Muncy",
+          "playerId": "571970"
         },
         {
           "slot": 9,
