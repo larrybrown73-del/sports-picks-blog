@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T17:28:24Z",
+  "meta": {
+    "slateGames": 1,
+    "valuePicks": 0,
+    "propsAvailable": false,
+    "scheduleGames": 1
+  },
+  "slate": [
+    {
+      "gameId": "849809",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "Milwaukee Brewers",
+      "awayAbbrev": "LAD",
+      "homeAbbrev": "MIL",
+      "awayPitcher": "Tarik Skubal",
+      "homePitcher": "Jacob Misiorowski",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Miguel Rojas",
+          "playerId": "500743"
+        },
+        {
+          "slot": 2,
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
+        },
+        {
+          "slot": 3,
+          "name": "Kyle Tucker",
+          "playerId": "663656"
+        },
+        {
+          "slot": 4,
+          "name": "Max Muncy",
+          "playerId": "571970"
+        },
+        {
+          "slot": 5,
+          "name": "Andy Pages",
+          "playerId": "681624"
+        },
+        {
+          "slot": 6,
+          "name": "Hunter Feduccia",
+          "playerId": "676439"
+        },
+        {
+          "slot": 7,
+          "name": "Tommy Edman",
+          "playerId": "669242"
+        },
+        {
+          "slot": 8,
+          "name": "Freddie Freeman",
+          "playerId": "518692"
+        },
+        {
+          "slot": 9,
+          "name": "Josue De Paula",
+          "playerId": "800543"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
+        },
+        {
+          "slot": 2,
+          "name": "Jake Bauers",
+          "playerId": "641343"
+        },
+        {
+          "slot": 3,
+          "name": "Jackson Chourio",
+          "playerId": "694192"
+        },
+        {
+          "slot": 4,
+          "name": "Brice Turang",
+          "playerId": "668930"
+        },
+        {
+          "slot": 5,
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
+        },
+        {
+          "slot": 6,
+          "name": "Christian Yelich",
+          "playerId": "592885"
+        },
+        {
+          "slot": 7,
+          "name": "Cooper Pratt",
+          "playerId": "806198"
+        },
+        {
+          "slot": 8,
+          "name": "Sal Frelick",
+          "playerId": "686217"
+        },
+        {
+          "slot": 9,
+          "name": "David Hamilton",
+          "playerId": "666152"
+        }
+      ]
+    }
+  ],
+  "moneylinePicks": [],
+  "propPicks": {
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "N/A",
+    "roi": "N/A",
+    "netProfit": "N/A",
+    "brierScore": "N/A",
+    "gamesScored": 0,
+    "betsPlaced": 0
+  }
+}

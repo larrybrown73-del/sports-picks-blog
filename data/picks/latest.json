@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-10",
-  "generatedAt": "2026-10-10T23:06:18Z",
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T17:28:24Z",
   "meta": {
     "slateGames": 1,
     "valuePicks": 0,
@@ -9,105 +9,105 @@
   },
   "slate": [
     {
-      "gameId": "849831",
-      "awayTeam": "Chicago White Sox",
-      "homeTeam": "Cleveland Guardians",
-      "awayAbbrev": "CWS",
-      "homeAbbrev": "CLE",
-      "awayPitcher": "Sean Burke",
-      "homePitcher": "Gavin Williams",
+      "gameId": "849809",
+      "awayTeam": "Los Angeles Dodgers",
+      "homeTeam": "Milwaukee Brewers",
+      "awayAbbrev": "LAD",
+      "homeAbbrev": "MIL",
+      "awayPitcher": "Tarik Skubal",
+      "homePitcher": "Jacob Misiorowski",
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Sam Antonacci",
-          "playerId": "803011"
+          "name": "Miguel Rojas",
+          "playerId": "500743"
         },
         {
           "slot": 2,
-          "name": "Kyle Teel",
-          "playerId": "691019"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         },
         {
           "slot": 3,
-          "name": "Miguel Vargas",
-          "playerId": "678246"
+          "name": "Kyle Tucker",
+          "playerId": "663656"
         },
         {
           "slot": 4,
-          "name": "Munetaka Murakami",
-          "playerId": "808959"
+          "name": "Max Muncy",
+          "playerId": "571970"
         },
         {
           "slot": 5,
-          "name": "Andrew Benintendi",
-          "playerId": "643217"
+          "name": "Andy Pages",
+          "playerId": "681624"
         },
         {
           "slot": 6,
-          "name": "Tristan Peters",
-          "playerId": "671976"
+          "name": "Hunter Feduccia",
+          "playerId": "676439"
         },
         {
           "slot": 7,
-          "name": "Chase Meidroth",
-          "playerId": "805367"
+          "name": "Tommy Edman",
+          "playerId": "669242"
         },
         {
           "slot": 8,
-          "name": "Colson Montgomery",
-          "playerId": "695657"
+          "name": "Freddie Freeman",
+          "playerId": "518692"
         },
         {
           "slot": 9,
-          "name": "Brenton Doyle",
-          "playerId": "686668"
+          "name": "Josue De Paula",
+          "playerId": "800543"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Steven Kwan",
-          "playerId": "680757"
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
         },
         {
           "slot": 2,
-          "name": "Jos\u00e9 Ram\u00edrez",
-          "playerId": "608070"
+          "name": "Jake Bauers",
+          "playerId": "641343"
         },
         {
           "slot": 3,
-          "name": "Chase DeLauter",
-          "playerId": "800050"
+          "name": "Jackson Chourio",
+          "playerId": "694192"
         },
         {
           "slot": 4,
-          "name": "Jo Adell",
-          "playerId": "666176"
+          "name": "Brice Turang",
+          "playerId": "668930"
         },
         {
           "slot": 5,
-          "name": "Nathaniel Lowe",
-          "playerId": "663993"
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
         },
         {
           "slot": 6,
-          "name": "Travis Bazzana",
-          "playerId": "683953"
+          "name": "Christian Yelich",
+          "playerId": "592885"
         },
         {
           "slot": 7,
-          "name": "Patrick Bailey",
-          "playerId": "672275"
+          "name": "Cooper Pratt",
+          "playerId": "806198"
         },
         {
           "slot": 8,
-          "name": "Petey Halpin",
-          "playerId": "690984"
+          "name": "Sal Frelick",
+          "playerId": "686217"
         },
         {
           "slot": 9,
-          "name": "Brayan Rocchio",
-          "playerId": "677587"
+          "name": "David Hamilton",
+          "playerId": "666152"
         }
       ]
     }
