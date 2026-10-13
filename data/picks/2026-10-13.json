@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T01:44:54Z",
+  "meta": {
+    "slateGames": 1,
+    "valuePicks": 0,
+    "propsAvailable": false,
+    "scheduleGames": 1
+  },
+  "slate": [
+    {
+      "gameId": "849813",
+      "awayTeam": "Cleveland Guardians",
+      "homeTeam": "Tampa Bay Rays",
+      "awayAbbrev": "CLE",
+      "homeAbbrev": "TB",
+      "awayPitcher": "Parker Messick",
+      "homePitcher": "Freddy Peralta",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Angel Mart\u00ednez",
+          "playerId": "682657"
+        },
+        {
+          "slot": 2,
+          "name": "Travis Bazzana",
+          "playerId": "683953"
+        },
+        {
+          "slot": 3,
+          "name": "Jo Adell",
+          "playerId": "666176"
+        },
+        {
+          "slot": 4,
+          "name": "Nathaniel Lowe",
+          "playerId": "663993"
+        },
+        {
+          "slot": 5,
+          "name": "David Fry",
+          "playerId": "681807"
+        },
+        {
+          "slot": 6,
+          "name": "Angel Genao",
+          "playerId": "694197"
+        },
+        {
+          "slot": 7,
+          "name": "Patrick Bailey",
+          "playerId": "672275"
+        },
+        {
+          "slot": 8,
+          "name": "Petey Halpin",
+          "playerId": "690984"
+        },
+        {
+          "slot": 9,
+          "name": "Austin Hedges",
+          "playerId": "595978"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Victor Mesa Jr.",
+          "playerId": "683748"
+        },
+        {
+          "slot": 2,
+          "name": "Ryan Vilade",
+          "playerId": "668723"
+        },
+        {
+          "slot": 3,
+          "name": "Ben Williamson",
+          "playerId": "810938"
+        },
+        {
+          "slot": 4,
+          "name": "Liam Hicks",
+          "playerId": "689414"
+        },
+        {
+          "slot": 5,
+          "name": "Richie Palacios",
+          "playerId": "680700"
+        },
+        {
+          "slot": 6,
+          "name": "Jonny DeLuca",
+          "playerId": "676356"
+        },
+        {
+          "slot": 7,
+          "name": "Cedric Mullins",
+          "playerId": "656775"
+        },
+        {
+          "slot": 8,
+          "name": "Nick Fortes",
+          "playerId": "663743"
+        },
+        {
+          "slot": 9,
+          "name": "Jorge Mateo",
+          "playerId": "622761"
+        }
+      ]
+    }
+  ],
+  "moneylinePicks": [],
+  "propPicks": {
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "N/A",
+    "roi": "N/A",
+    "netProfit": "N/A",
+    "brierScore": "N/A",
+    "gamesScored": 0,
+    "betsPlaced": 0
+  }
+}
