@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-13",
-  "generatedAt": "2026-10-13T23:31:28Z",
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T16:44:20Z",
   "meta": {
     "slateGames": 1,
     "valuePicks": 0,
@@ -9,105 +9,105 @@
   },
   "slate": [
     {
-      "gameId": "849813",
-      "awayTeam": "Cleveland Guardians",
-      "homeTeam": "Tampa Bay Rays",
-      "awayAbbrev": "CLE",
-      "homeAbbrev": "TB",
-      "awayPitcher": "Parker Messick",
-      "homePitcher": "Freddy Peralta",
+      "gameId": "849811",
+      "awayTeam": "Milwaukee Brewers",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayAbbrev": "MIL",
+      "homeAbbrev": "LAD",
+      "awayPitcher": "Robert Gasser",
+      "homePitcher": "Blake Snell",
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Steven Kwan",
-          "playerId": "680757"
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
         },
         {
           "slot": 2,
-          "name": "Jos\u00e9 Ram\u00edrez",
-          "playerId": "608070"
+          "name": "Jake Bauers",
+          "playerId": "641343"
         },
         {
           "slot": 3,
-          "name": "Chase DeLauter",
-          "playerId": "800050"
+          "name": "Jackson Chourio",
+          "playerId": "694192"
         },
         {
           "slot": 4,
-          "name": "Jo Adell",
-          "playerId": "666176"
+          "name": "Brice Turang",
+          "playerId": "668930"
         },
         {
           "slot": 5,
-          "name": "Nathaniel Lowe",
-          "playerId": "663993"
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
         },
         {
           "slot": 6,
-          "name": "Travis Bazzana",
-          "playerId": "683953"
+          "name": "Christian Yelich",
+          "playerId": "592885"
         },
         {
           "slot": 7,
-          "name": "Petey Halpin",
-          "playerId": "690984"
+          "name": "Cooper Pratt",
+          "playerId": "806198"
         },
         {
           "slot": 8,
-          "name": "Austin Hedges",
-          "playerId": "595978"
+          "name": "Sal Frelick",
+          "playerId": "686217"
         },
         {
           "slot": 9,
-          "name": "Brayan Rocchio",
-          "playerId": "677587"
+          "name": "David Hamilton",
+          "playerId": "666152"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Yandy D\u00edaz",
-          "playerId": "650490"
+          "name": "Miguel Rojas",
+          "playerId": "500743"
         },
         {
           "slot": 2,
-          "name": "Jonathan Aranda",
-          "playerId": "666018"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         },
         {
           "slot": 3,
-          "name": "Junior Caminero",
-          "playerId": "691406"
+          "name": "Kyle Tucker",
+          "playerId": "663656"
         },
         {
           "slot": 4,
-          "name": "Victor Mesa Jr.",
-          "playerId": "683748"
+          "name": "Max Muncy",
+          "playerId": "571970"
         },
         {
           "slot": 5,
-          "name": "Jonny DeLuca",
-          "playerId": "676356"
+          "name": "Andy Pages",
+          "playerId": "681624"
         },
         {
           "slot": 6,
-          "name": "Chandler Simpson",
-          "playerId": "802415"
+          "name": "Hunter Feduccia",
+          "playerId": "676439"
         },
         {
           "slot": 7,
-          "name": "Ben Williamson",
-          "playerId": "810938"
+          "name": "Tommy Edman",
+          "playerId": "669242"
         },
         {
           "slot": 8,
-          "name": "Liam Hicks",
-          "playerId": "689414"
+          "name": "Freddie Freeman",
+          "playerId": "518692"
         },
         {
           "slot": 9,
-          "name": "Taylor Walls",
-          "playerId": "670764"
+          "name": "Josue De Paula",
+          "playerId": "800543"
         }
       ]
     }
