@@ -1,6 +1,6 @@
 {
   "date": "2026-10-15",
-  "generatedAt": "2026-10-15T16:29:54Z",
+  "generatedAt": "2026-10-15T19:32:05Z",
   "meta": {
     "slateGames": 2,
     "valuePicks": 0,
@@ -54,8 +54,8 @@
         },
         {
           "slot": 8,
-          "name": "Richie Palacios",
-          "playerId": "680700"
+          "name": "Jorge Mateo",
+          "playerId": "622761"
         },
         {
           "slot": 9,
@@ -117,7 +117,7 @@
       "homeTeam": "Los Angeles Dodgers",
       "awayAbbrev": "MIL",
       "homeAbbrev": "LAD",
-      "awayPitcher": null,
+      "awayPitcher": "Shane Drohan",
       "homePitcher": "Tyler Glasnow",
       "awayLineup": [
         {
