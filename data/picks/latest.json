@@ -1,6 +1,6 @@
 {
   "date": "2026-10-15",
-  "generatedAt": "2026-10-15T19:32:05Z",
+  "generatedAt": "2026-10-15T22:48:01Z",
   "meta": {
     "slateGames": 2,
     "valuePicks": 0,
@@ -91,8 +91,8 @@
         },
         {
           "slot": 6,
-          "name": "Travis Bazzana",
-          "playerId": "683953"
+          "name": "Angel Genao",
+          "playerId": "694197"
         },
         {
           "slot": 7,
@@ -122,33 +122,33 @@
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Garrett Mitchell",
-          "playerId": "669003"
-        },
-        {
-          "slot": 2,
-          "name": "Jake Bauers",
-          "playerId": "641343"
-        },
-        {
-          "slot": 3,
           "name": "Jackson Chourio",
           "playerId": "694192"
         },
         {
-          "slot": 4,
+          "slot": 2,
           "name": "Brice Turang",
           "playerId": "668930"
         },
         {
+          "slot": 3,
+          "name": "William Contreras",
+          "playerId": "661388"
+        },
+        {
+          "slot": 4,
+          "name": "Jake Bauers",
+          "playerId": "641343"
+        },
+        {
           "slot": 5,
-          "name": "Gary S\u00e1nchez",
-          "playerId": "596142"
+          "name": "Christian Yelich",
+          "playerId": "592885"
         },
         {
           "slot": 6,
-          "name": "Christian Yelich",
-          "playerId": "592885"
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
         },
         {
           "slot": 7,
@@ -169,48 +169,48 @@
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Miguel Rojas",
-          "playerId": "500743"
+          "name": "Shohei Ohtani",
+          "playerId": "660271"
         },
         {
           "slot": 2,
-          "name": "Enrique Hern\u00e1ndez",
-          "playerId": "571771"
+          "name": "Mookie Betts",
+          "playerId": "605141"
         },
         {
           "slot": 3,
-          "name": "Kyle Tucker",
-          "playerId": "663656"
-        },
-        {
-          "slot": 4,
-          "name": "Max Muncy",
-          "playerId": "571970"
-        },
-        {
-          "slot": 5,
-          "name": "Andy Pages",
-          "playerId": "681624"
-        },
-        {
-          "slot": 6,
-          "name": "Hunter Feduccia",
-          "playerId": "676439"
-        },
-        {
-          "slot": 7,
-          "name": "Tommy Edman",
-          "playerId": "669242"
-        },
-        {
-          "slot": 8,
           "name": "Freddie Freeman",
           "playerId": "518692"
         },
         {
+          "slot": 4,
+          "name": "Will Smith",
+          "playerId": "669257"
+        },
+        {
+          "slot": 5,
+          "name": "Kyle Tucker",
+          "playerId": "663656"
+        },
+        {
+          "slot": 6,
+          "name": "Teoscar Hern\u00e1ndez",
+          "playerId": "606192"
+        },
+        {
+          "slot": 7,
+          "name": "Miguel Rojas",
+          "playerId": "500743"
+        },
+        {
+          "slot": 8,
+          "name": "Andy Pages",
+          "playerId": "681624"
+        },
+        {
           "slot": 9,
-          "name": "Josue De Paula",
-          "playerId": "800543"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         }
       ]
     }
