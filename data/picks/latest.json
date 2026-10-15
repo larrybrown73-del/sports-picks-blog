@@ -1,51 +1,154 @@
 {
-  "date": "2026-10-14",
-  "generatedAt": "2026-10-14T22:51:20Z",
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15T16:29:54Z",
   "meta": {
-    "slateGames": 1,
+    "slateGames": 2,
     "valuePicks": 0,
     "propsAvailable": false,
-    "scheduleGames": 1
+    "scheduleGames": 2
   },
   "slate": [
     {
-      "gameId": "849811",
+      "gameId": "849818",
+      "awayTeam": "Tampa Bay Rays",
+      "homeTeam": "Cleveland Guardians",
+      "awayAbbrev": "TB",
+      "homeAbbrev": "CLE",
+      "awayPitcher": "Griffin Jax",
+      "homePitcher": "Gavin Williams",
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Yandy D\u00edaz",
+          "playerId": "650490"
+        },
+        {
+          "slot": 2,
+          "name": "Jonathan Aranda",
+          "playerId": "666018"
+        },
+        {
+          "slot": 3,
+          "name": "Junior Caminero",
+          "playerId": "691406"
+        },
+        {
+          "slot": 4,
+          "name": "Victor Mesa Jr.",
+          "playerId": "683748"
+        },
+        {
+          "slot": 5,
+          "name": "Chandler Simpson",
+          "playerId": "802415"
+        },
+        {
+          "slot": 6,
+          "name": "Liam Hicks",
+          "playerId": "689414"
+        },
+        {
+          "slot": 7,
+          "name": "Jonny DeLuca",
+          "playerId": "676356"
+        },
+        {
+          "slot": 8,
+          "name": "Richie Palacios",
+          "playerId": "680700"
+        },
+        {
+          "slot": 9,
+          "name": "Taylor Walls",
+          "playerId": "670764"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Steven Kwan",
+          "playerId": "680757"
+        },
+        {
+          "slot": 2,
+          "name": "Jos\u00e9 Ram\u00edrez",
+          "playerId": "608070"
+        },
+        {
+          "slot": 3,
+          "name": "Chase DeLauter",
+          "playerId": "800050"
+        },
+        {
+          "slot": 4,
+          "name": "Jo Adell",
+          "playerId": "666176"
+        },
+        {
+          "slot": 5,
+          "name": "Nathaniel Lowe",
+          "playerId": "663993"
+        },
+        {
+          "slot": 6,
+          "name": "Travis Bazzana",
+          "playerId": "683953"
+        },
+        {
+          "slot": 7,
+          "name": "Patrick Bailey",
+          "playerId": "672275"
+        },
+        {
+          "slot": 8,
+          "name": "Petey Halpin",
+          "playerId": "690984"
+        },
+        {
+          "slot": 9,
+          "name": "Brayan Rocchio",
+          "playerId": "677587"
+        }
+      ]
+    },
+    {
+      "gameId": "849810",
       "awayTeam": "Milwaukee Brewers",
       "homeTeam": "Los Angeles Dodgers",
       "awayAbbrev": "MIL",
       "homeAbbrev": "LAD",
-      "awayPitcher": "Robert Gasser",
-      "homePitcher": "Blake Snell",
+      "awayPitcher": null,
+      "homePitcher": "Tyler Glasnow",
       "awayLineup": [
         {
           "slot": 1,
-          "name": "Jackson Chourio",
-          "playerId": "694192"
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
         },
         {
           "slot": 2,
-          "name": "Brice Turang",
-          "playerId": "668930"
-        },
-        {
-          "slot": 3,
-          "name": "William Contreras",
-          "playerId": "661388"
-        },
-        {
-          "slot": 4,
-          "name": "Andrew Vaughn",
-          "playerId": "683734"
-        },
-        {
-          "slot": 5,
           "name": "Jake Bauers",
           "playerId": "641343"
         },
         {
+          "slot": 3,
+          "name": "Jackson Chourio",
+          "playerId": "694192"
+        },
+        {
+          "slot": 4,
+          "name": "Brice Turang",
+          "playerId": "668930"
+        },
+        {
+          "slot": 5,
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
+        },
+        {
           "slot": 6,
-          "name": "Garrett Mitchell",
-          "playerId": "669003"
+          "name": "Christian Yelich",
+          "playerId": "592885"
         },
         {
           "slot": 7,
@@ -54,35 +157,35 @@
         },
         {
           "slot": 8,
-          "name": "Luis Lara",
-          "playerId": "800325"
+          "name": "Sal Frelick",
+          "playerId": "686217"
         },
         {
           "slot": 9,
-          "name": "Joey Ortiz",
-          "playerId": "687401"
+          "name": "David Hamilton",
+          "playerId": "666152"
         }
       ],
       "homeLineup": [
         {
           "slot": 1,
-          "name": "Mookie Betts",
-          "playerId": "605141"
+          "name": "Miguel Rojas",
+          "playerId": "500743"
         },
         {
           "slot": 2,
-          "name": "Freddie Freeman",
-          "playerId": "518692"
+          "name": "Enrique Hern\u00e1ndez",
+          "playerId": "571771"
         },
         {
           "slot": 3,
-          "name": "Teoscar Hern\u00e1ndez",
-          "playerId": "606192"
+          "name": "Kyle Tucker",
+          "playerId": "663656"
         },
         {
           "slot": 4,
-          "name": "Kyle Tucker",
-          "playerId": "663656"
+          "name": "Max Muncy",
+          "playerId": "571970"
         },
         {
           "slot": 5,
@@ -91,23 +194,23 @@
         },
         {
           "slot": 6,
-          "name": "Shohei Ohtani",
-          "playerId": "660271"
+          "name": "Hunter Feduccia",
+          "playerId": "676439"
         },
         {
           "slot": 7,
-          "name": "Will Smith",
-          "playerId": "669257"
+          "name": "Tommy Edman",
+          "playerId": "669242"
         },
         {
           "slot": 8,
-          "name": "Miguel Rojas",
-          "playerId": "500743"
+          "name": "Freddie Freeman",
+          "playerId": "518692"
         },
         {
           "slot": 9,
-          "name": "Tommy Edman",
-          "playerId": "669242"
+          "name": "Josue De Paula",
+          "playerId": "800543"
         }
       ]
     }
