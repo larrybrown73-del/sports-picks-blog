@@ -1,117 +1,13 @@
 {
-  "date": "2026-10-19",
-  "generatedAt": "2026-10-19T23:13:43Z",
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T16:29:48Z",
   "meta": {
-    "slateGames": 1,
+    "slateGames": 0,
     "valuePicks": 0,
     "propsAvailable": false,
-    "scheduleGames": 1
+    "scheduleGames": null
   },
-  "slate": [
-    {
-      "gameId": "849815",
-      "awayTeam": "Cleveland Guardians",
-      "homeTeam": "Tampa Bay Rays",
-      "awayAbbrev": "CLE",
-      "homeAbbrev": "TB",
-      "awayPitcher": "Shawn Armstrong",
-      "homePitcher": "Freddy Peralta",
-      "awayLineup": [
-        {
-          "slot": 1,
-          "name": "Steven Kwan",
-          "playerId": "680757"
-        },
-        {
-          "slot": 2,
-          "name": "Jos\u00e9 Ram\u00edrez",
-          "playerId": "608070"
-        },
-        {
-          "slot": 3,
-          "name": "Chase DeLauter",
-          "playerId": "800050"
-        },
-        {
-          "slot": 4,
-          "name": "Jo Adell",
-          "playerId": "666176"
-        },
-        {
-          "slot": 5,
-          "name": "Nathaniel Lowe",
-          "playerId": "663993"
-        },
-        {
-          "slot": 6,
-          "name": "Travis Bazzana",
-          "playerId": "683953"
-        },
-        {
-          "slot": 7,
-          "name": "Patrick Bailey",
-          "playerId": "672275"
-        },
-        {
-          "slot": 8,
-          "name": "Petey Halpin",
-          "playerId": "690984"
-        },
-        {
-          "slot": 9,
-          "name": "Brayan Rocchio",
-          "playerId": "677587"
-        }
-      ],
-      "homeLineup": [
-        {
-          "slot": 1,
-          "name": "Yandy D\u00edaz",
-          "playerId": "650490"
-        },
-        {
-          "slot": 2,
-          "name": "Jonathan Aranda",
-          "playerId": "666018"
-        },
-        {
-          "slot": 3,
-          "name": "Liam Hicks",
-          "playerId": "689414"
-        },
-        {
-          "slot": 4,
-          "name": "Junior Caminero",
-          "playerId": "691406"
-        },
-        {
-          "slot": 5,
-          "name": "Chandler Simpson",
-          "playerId": "802415"
-        },
-        {
-          "slot": 6,
-          "name": "Victor Mesa Jr.",
-          "playerId": "683748"
-        },
-        {
-          "slot": 7,
-          "name": "Jonny DeLuca",
-          "playerId": "676356"
-        },
-        {
-          "slot": 8,
-          "name": "Richie Palacios",
-          "playerId": "680700"
-        },
-        {
-          "slot": 9,
-          "name": "Taylor Walls",
-          "playerId": "670764"
-        }
-      ]
-    }
-  ],
+  "slate": [],
   "moneylinePicks": [],
   "propPicks": {
     "conviction": [],
