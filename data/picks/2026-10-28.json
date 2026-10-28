@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T18:00:12Z",
+  "meta": {
+    "slateGames": 1,
+    "valuePicks": 0,
+    "propsAvailable": false,
+    "scheduleGames": 1
+  },
+  "slate": [
+    {
+      "gameId": "849799",
+      "awayTeam": "Milwaukee Brewers",
+      "homeTeam": "Tampa Bay Rays",
+      "awayAbbrev": "MIL",
+      "homeAbbrev": "TB",
+      "awayPitcher": "Jacob Misiorowski",
+      "homePitcher": null,
+      "awayLineup": [
+        {
+          "slot": 1,
+          "name": "Gary S\u00e1nchez",
+          "playerId": "596142"
+        },
+        {
+          "slot": 2,
+          "name": "Andrew Vaughn",
+          "playerId": "683734"
+        },
+        {
+          "slot": 3,
+          "name": "Brice Turang",
+          "playerId": "668930"
+        },
+        {
+          "slot": 4,
+          "name": "David Hamilton",
+          "playerId": "666152"
+        },
+        {
+          "slot": 5,
+          "name": "Cooper Pratt",
+          "playerId": "806198"
+        },
+        {
+          "slot": 6,
+          "name": "Jackson Chourio",
+          "playerId": "694192"
+        },
+        {
+          "slot": 7,
+          "name": "Garrett Mitchell",
+          "playerId": "669003"
+        },
+        {
+          "slot": 8,
+          "name": "Luis Lara",
+          "playerId": "800325"
+        },
+        {
+          "slot": 9,
+          "name": "Christian Yelich",
+          "playerId": "592885"
+        }
+      ],
+      "homeLineup": [
+        {
+          "slot": 1,
+          "name": "Liam Hicks",
+          "playerId": "689414"
+        },
+        {
+          "slot": 2,
+          "name": "Jonathan Aranda",
+          "playerId": "666018"
+        },
+        {
+          "slot": 3,
+          "name": "Ben Williamson",
+          "playerId": "810938"
+        },
+        {
+          "slot": 4,
+          "name": "Junior Caminero",
+          "playerId": "691406"
+        },
+        {
+          "slot": 5,
+          "name": "Jorge Mateo",
+          "playerId": "622761"
+        },
+        {
+          "slot": 6,
+          "name": "Chandler Simpson",
+          "playerId": "802415"
+        },
+        {
+          "slot": 7,
+          "name": "Cedric Mullins",
+          "playerId": "656775"
+        },
+        {
+          "slot": 8,
+          "name": "Jonny DeLuca",
+          "playerId": "676356"
+        },
+        {
+          "slot": 9,
+          "name": "Yandy D\u00edaz",
+          "playerId": "650490"
+        }
+      ]
+    }
+  ],
+  "moneylinePicks": [],
+  "propPicks": {
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "N/A",
+    "roi": "N/A",
+    "netProfit": "N/A",
+    "brierScore": "N/A",
+    "gamesScored": 0,
+    "betsPlaced": 0
+  }
+}
