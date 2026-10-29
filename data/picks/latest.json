@@ -1,117 +1,13 @@
 {
-  "date": "2026-10-28",
-  "generatedAt": "2026-10-28T23:44:21Z",
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T18:09:33Z",
   "meta": {
-    "slateGames": 1,
+    "slateGames": 0,
     "valuePicks": 0,
     "propsAvailable": false,
-    "scheduleGames": 1
+    "scheduleGames": null
   },
-  "slate": [
-    {
-      "gameId": "849799",
-      "awayTeam": "Milwaukee Brewers",
-      "homeTeam": "Tampa Bay Rays",
-      "awayAbbrev": "MIL",
-      "homeAbbrev": "TB",
-      "awayPitcher": "Jacob Misiorowski",
-      "homePitcher": "Drew Rasmussen",
-      "awayLineup": [
-        {
-          "slot": 1,
-          "name": "Jackson Chourio",
-          "playerId": "694192"
-        },
-        {
-          "slot": 2,
-          "name": "Jake Bauers",
-          "playerId": "641343"
-        },
-        {
-          "slot": 3,
-          "name": "Christian Yelich",
-          "playerId": "592885"
-        },
-        {
-          "slot": 4,
-          "name": "William Contreras",
-          "playerId": "661388"
-        },
-        {
-          "slot": 5,
-          "name": "Brice Turang",
-          "playerId": "668930"
-        },
-        {
-          "slot": 6,
-          "name": "Sal Frelick",
-          "playerId": "686217"
-        },
-        {
-          "slot": 7,
-          "name": "Cooper Pratt",
-          "playerId": "806198"
-        },
-        {
-          "slot": 8,
-          "name": "Garrett Mitchell",
-          "playerId": "669003"
-        },
-        {
-          "slot": 9,
-          "name": "David Hamilton",
-          "playerId": "666152"
-        }
-      ],
-      "homeLineup": [
-        {
-          "slot": 1,
-          "name": "Yandy D\u00edaz",
-          "playerId": "650490"
-        },
-        {
-          "slot": 2,
-          "name": "Jonathan Aranda",
-          "playerId": "666018"
-        },
-        {
-          "slot": 3,
-          "name": "Junior Caminero",
-          "playerId": "691406"
-        },
-        {
-          "slot": 4,
-          "name": "Liam Hicks",
-          "playerId": "689414"
-        },
-        {
-          "slot": 5,
-          "name": "Jonny DeLuca",
-          "playerId": "676356"
-        },
-        {
-          "slot": 6,
-          "name": "Chandler Simpson",
-          "playerId": "802415"
-        },
-        {
-          "slot": 7,
-          "name": "Ben Williamson",
-          "playerId": "810938"
-        },
-        {
-          "slot": 8,
-          "name": "Ryan Vilade",
-          "playerId": "668723"
-        },
-        {
-          "slot": 9,
-          "name": "Taylor Walls",
-          "playerId": "670764"
-        }
-      ]
-    }
-  ],
+  "slate": [],
   "moneylinePicks": [],
   "propPicks": {
     "conviction": [],
