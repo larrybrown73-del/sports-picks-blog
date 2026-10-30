@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30T17:48:33Z",
+  "meta": {
+    "slateGames": 0,
+    "valuePicks": 0,
+    "propsAvailable": false,
+    "scheduleGames": null
+  },
+  "slate": [],
+  "moneylinePicks": [],
+  "propPicks": {
+    "conviction": [],
+    "batterEdges": [],
+    "pitcherEdges": []
+  },
+  "performance": {
+    "accuracy": "N/A",
+    "roi": "N/A",
+    "netProfit": "N/A",
+    "brierScore": "N/A",
+    "gamesScored": 0,
+    "betsPlaced": 0
+  }
+}
